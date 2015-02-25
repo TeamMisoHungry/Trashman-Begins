@@ -116,19 +116,6 @@ game.PlayerEntity = me.Entity.extend({
     onCollision : function (response, other) {
   	switch (response.b.body.collisionType) {
 	    case me.collision.types.WORLD_SHAPE:
-	    	if(other.type === "nextLevel"){
-	    		console.log("nextLevel");
-	    		var next = new me.LevelEntity(
-				    544, 1057, {
-				        "duration" : 250,
-				        "color" : "#000000",
-				        "to" : "area02",
-				        "width" : 40,
-				        "height" : 35
-				    }
-				);
-				next.goTo("area02");
-	    	}
 	    	if (other.type === "platform") {
 	        	if (this.body.falling && !me.input.isKeyPressed('down') && (response.overlapV.y > 0) && (~~this.body.vel.y >= ~~response.overlapV.y)) {
 	          		// Disable collision on the x axis
