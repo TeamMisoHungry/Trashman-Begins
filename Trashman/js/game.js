@@ -23,7 +23,7 @@ var game = {
             me.plugin.register.defer(this, me.debug.Panel, "debug", me.input.KEY.V);
         });
     }
-
+	
     // Initialize the audio.
     me.audio.init("mp3,ogg");
 
@@ -47,8 +47,10 @@ var game = {
         
         me.state.transition("fade", "#FFFFFF", 250);
 
-        // add our player entity in the entity pool
+        // add our player or other entities in the entity pool
         me.pool.register("mainPlayer", game.PlayerEntity);
+        me.pool.register("EnemyEntity", game.EnemyEntity);
+        me.pool.register("GarbageEntity", game.GarbageEntity);
 		
 		//enable the keyboard
 		me.input.bindKey(me.input.KEY.A, "left");
