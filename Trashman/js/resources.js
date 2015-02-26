@@ -12,7 +12,11 @@ game.resources = [
 	/*
 	 * sprite's
 	 */ 
+<<<<<<< HEAD
 	{name: "hero", type: "image", src: "data/img/sprites/trashman3.png"},
+=======
+	{name: "hero", type: "image", src: "data/img/sprites/trashman2.png"},
+>>>>>>> 9f8539fd02059df2e39ce54a8b0188eca892ef30
 	{name: "evilPokemon", type: "image", src: "data/img/sprites/pokemon5.png"},
 	{name: "garbage", type: "image", src: "data/img/sprites/garbage.png"},
 	
