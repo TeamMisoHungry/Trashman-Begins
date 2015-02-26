@@ -6,7 +6,12 @@ var game = {
         // score
         score : 0
     },
-
+	
+	time : {
+		time : 0,
+		limit : 300,
+		overallTime : 0
+	},
 
     // Run on page load.
     "onload" : function () {

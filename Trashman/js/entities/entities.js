@@ -28,11 +28,13 @@ game.PlayerEntity = me.Entity.extend({
 		this.renderable.addAnimation("standUp", [16]);
 		this.renderable.addAnimation("standLeft", [8]);
 		this.renderable.addAnimation("standRight", [12]);
+		//set hittin animations
 		this.renderable.addAnimation("hitRight", [2]);
 		this.renderable.addAnimation("hitLeft", [0]);
 		this.renderable.addAnimation("hitUp", [3]);
 		this.renderable.addAnimation("hitDown", [1]);
-				
+
+		this.time = 0;
 		this.health = 100;
 		this.left1 = false;
  		this.right1 = false;
@@ -46,7 +48,11 @@ game.PlayerEntity = me.Entity.extend({
      * update the entity
      */
     update : function (dt) {
- 		
+    	this.time++;
+    	//console.log(this.time);
+    	if(this.time % 50 === 0){
+			game.time.limit--;
+		}
  		//pause button, hit P to pause, ESC to unpause
  		if(me.input.isKeyPressed('pause') && !me.state.isPaused()){
  			me.state.pause(true);
@@ -149,8 +155,6 @@ game.PlayerEntity = me.Entity.extend({
 	    		this.renderable.flicker(750);
 	        	this.health -= 1;
 	       	}
-	    	this.renderable.flicker(750);
-	        this.health -= 10;
 	      	return false;
 	      	break;
 	 
@@ -362,9 +366,6 @@ game.EnemyEntity2 = me.Entity.extend({
    */
   onCollision : function (response, other) {
   	if(me.collision.types.PLAYER_OBJECT){
-  		/*if(me.input.isKeyPressed('punch')){
-      		me.game.world.removeChild(this);	
-      	}*/
   		this.renderable.flicker(750);  		
   	}
     if (response.b.body.collisionType !== me.collision.types.WORLD_SHAPE) {

@@ -23,7 +23,6 @@ game.TitleScreen = me.ScreenObject.extend({
     	}
     });
     
-  //me.game.world.addChild(new me.Sprite(50, 50, me.loader.getImage('beginGame')), 2);
     // title screen
     me.game.world.addChild(new me.Sprite (0, 0, me.loader.getImage('title_screen')), 1);
    

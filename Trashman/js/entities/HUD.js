@@ -25,6 +25,7 @@ game.HUD.Container = me.Container.extend({
 
         // add our child score object at the top left corner
         this.addChild(new game.HUD.ScoreItem(630, 460));
+        this.addChild(new game.HUD.TimeItem(10, 10));
     }
 });
 
@@ -41,7 +42,7 @@ game.HUD.ScoreItem = me.Renderable.extend({
         // call the parent constructor
         // (size does not matter here)
         this._super(me.Renderable, 'init', [x, y, 10, 10]);
-		this.font = new me.BitmapFont("32x32_font", 16);
+		this.font = new me.BitmapFont("32x32Size8", 12);
 		this.font.set("right");
         // local copy of the global score
         this.score = -1;
@@ -67,4 +68,27 @@ game.HUD.ScoreItem = me.Renderable.extend({
         this.font.draw(renderer, game.data.score, this.pos.x, this.pos.y);
     }
 
+});
+
+game.HUD.TimeItem = me.Renderable.extend({
+	
+	init: function(x, y){
+		this._super(me.Renderable, 'init', [x, y, 10, 10]);
+		this.font = new me.BitmapFont("32x32Size8", 12);
+		this.font.set("left");
+		this.limit = -1;
+	},
+	
+	update: function(){
+		if(this.limit !== game.time.limit){
+			this.limit = game.time.limit;
+			return true;
+		}
+		return false;
+	},
+	
+	draw: function(renderer){
+		this.font.draw(renderer, game.time.limit, this.pos.x, this.pos.y);
+	}
+	
 });
