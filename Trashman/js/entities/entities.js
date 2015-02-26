@@ -287,18 +287,6 @@ game.EnemyEntity = me.Entity.extend({
   }
 });
 
-game.GarbageEntity = me.CollectableEntity.extend({	
-	init: function(x, y, settings){
-		this._super(me.CollectableEntity, 'init', [x, y, settings]);
-	},
-	
-	onCollision: function(response, other){
-		game.data.score += 150;
-		this.body.setCollisionMask(me.collision.types.NO_OBJECT);
-		me.game.world.removeChild(this);
-	}
-});
-
 game.EnemyEntity2 = me.Entity.extend({
   init: function(x, y, settings) {
     // define this here instead of tiled
@@ -357,27 +345,7 @@ game.EnemyEntity2 = me.Entity.extend({
     }else {
      	this.body.vel.y = 0;
     }
-
-    if (this.alive) {
-      if (this.walkLeft && this.pos.x <= this.startX) {
-      this.walkLeft = false;
-    } else if (!this.walkLeft && this.pos.x >= this.endX) {
-      this.walkLeft = true;
-    }
-    
-    // make it walk
-    if(this.walkLeft){
-    	this.renderable.setCurrentAnimation("walkLeft");
-    }else{
-    	this.renderable.setCurrentAnimation("walkRight");
-    }
-	
-    this.body.vel.x += (this.walkLeft) ? -this.body.accel.x * me.timer.tick : this.body.accel.x * me.timer.tick;
-     
-    } else {
-      this.body.vel.x = 0;
-    }
-           
+  
     // update the body movement
     this.body.update(dt);
      
