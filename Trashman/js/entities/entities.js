@@ -21,7 +21,6 @@ game.PlayerEntity = me.Entity.extend({
 		//define a basic walking animation(using all frames)
 		this.renderable.addAnimation("walkRight", [12, 13, 14, 15]);
 		this.renderable.addAnimation("walkLeft", [8, 9, 10, 11]);
-<<<<<<< HEAD
 		this.renderable.addAnimation("walkUp", [16, 17, 18, 19]);
 		this.renderable.addAnimation("walkDown", [4, 5, 6, 7]);
 		//define standing(not moving), using the first frame
@@ -33,25 +32,14 @@ game.PlayerEntity = me.Entity.extend({
 		this.renderable.addAnimation("hitLeft", [0]);
 		this.renderable.addAnimation("hitUp", [3]);
 		this.renderable.addAnimation("hitDown", [1]);
-=======
-		this.renderable.addAnimation("walkUp", [0, 1, 2, 3]);
-		this.renderable.addAnimation("walkDown", [4, 5, 6, 7]);
-		//define standing(not moving), using the first frame
-		this.renderable.addAnimation("standDown", [4]);
-		this.renderable.addAnimation("standUp", [0]);
-		this.renderable.addAnimation("standLeft", [8]);
-		this.renderable.addAnimation("standRight", [12]);
->>>>>>> 9f8539fd02059df2e39ce54a8b0188eca892ef30
 				
 		this.health = 100;
 		this.left1 = false;
  		this.right1 = false;
  		this.up = false;
  		this.down = true;
-<<<<<<< HEAD
  		this.hitting = false;
-=======
->>>>>>> 9f8539fd02059df2e39ce54a8b0188eca892ef30
+
     },
 
     /**
@@ -109,7 +97,6 @@ game.PlayerEntity = me.Entity.extend({
 			this.body.vel.x = 0;
 			this.body.vel.y = 0;
 			//change to the standing animation
-<<<<<<< HEAD
 			this.setStandingAnimation();
 			if(me.input.isKeyPressed('punch')){
 				this.setHittingAnimation();			
@@ -123,19 +110,7 @@ game.PlayerEntity = me.Entity.extend({
 		}else{
 			this.hitting = false;
 		}
-=======
-			if(this.up){
-				this.renderable.setCurrentAnimation("standUp");
-			}else if(this.left1){
-				 this.renderable.setCurrentAnimation("standLeft");
-			}else if(this.right1){ 
-				this.renderable.setCurrentAnimation("standRight");
-			}else if(this.down){
-				this.renderable.setCurrentAnimation("standDown");
-			}
-		}
 
->>>>>>> 9f8539fd02059df2e39ce54a8b0188eca892ef30
         // apply physics to the body (this moves the entity)
         this.body.update(dt);
         // handle collisions against other shapes
@@ -166,7 +141,6 @@ game.PlayerEntity = me.Entity.extend({
  
 	    case me.collision.types.ENEMY_OBJECT:
 			//flicker in case we touched an enemy
-<<<<<<< HEAD
 			if(me.input.isKeyPressed('punch')){
 				me.game.world.removeChild(other);
 				game.data.score += 50;
@@ -175,10 +149,8 @@ game.PlayerEntity = me.Entity.extend({
 	    		this.renderable.flicker(750);
 	        	this.health -= 1;
 	       	}
-=======
 	    	this.renderable.flicker(750);
 	        this.health -= 10;
->>>>>>> 9f8539fd02059df2e39ce54a8b0188eca892ef30
 	      	return false;
 	      	break;
 	 
@@ -186,8 +158,7 @@ game.PlayerEntity = me.Entity.extend({
 	    	// Do not respond to other objects (e.g. coins)
 	      	return false;
 	  }
- 
-<<<<<<< HEAD
+
  	  // Make the object solid
   	  return true;
 	},
@@ -216,11 +187,6 @@ game.PlayerEntity = me.Entity.extend({
 		}
 		this.hitting = true;
 	}
-=======
-  // Make the object solid
-  return true;
-}
->>>>>>> 9f8539fd02059df2e39ce54a8b0188eca892ef30
 });
 
 /*
@@ -267,7 +233,6 @@ game.EnemyEntity = me.Entity.extend({
   // manage the enemy movement
   update: function(dt) {
  
-<<<<<<< HEAD
     if(this.alive) {
       if (this.walkLeft && this.pos.x <= this.startX) {
       this.walkLeft = false;
@@ -392,7 +357,7 @@ game.EnemyEntity2 = me.Entity.extend({
     }else {
      	this.body.vel.y = 0;
     }
-=======
+
     if (this.alive) {
       if (this.walkLeft && this.pos.x <= this.startX) {
       this.walkLeft = false;
@@ -412,7 +377,6 @@ game.EnemyEntity2 = me.Entity.extend({
     } else {
       this.body.vel.x = 0;
     }
->>>>>>> 9f8539fd02059df2e39ce54a8b0188eca892ef30
            
     // update the body movement
     this.body.update(dt);
@@ -430,16 +394,10 @@ game.EnemyEntity2 = me.Entity.extend({
    */
   onCollision : function (response, other) {
   	if(me.collision.types.PLAYER_OBJECT){
-<<<<<<< HEAD
   		/*if(me.input.isKeyPressed('punch')){
       		me.game.world.removeChild(this);	
       	}*/
   		this.renderable.flicker(750);  		
-  		
-=======
-  		this.renderable.flicker(750);  		
-  		//me.game.world.removeChild(this);
->>>>>>> 9f8539fd02059df2e39ce54a8b0188eca892ef30
   	}
     if (response.b.body.collisionType !== me.collision.types.WORLD_SHAPE) {
       // res.y >0 means touched by something on the bottom

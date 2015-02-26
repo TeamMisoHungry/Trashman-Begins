@@ -49,10 +49,7 @@ var game = {
         // add our player or other entities in the entity pool
         me.pool.register("mainPlayer", game.PlayerEntity);
         me.pool.register("EnemyEntity", game.EnemyEntity);
-<<<<<<< HEAD
         me.pool.register("EnemyEntity2", game.EnemyEntity2);
-=======
->>>>>>> 9f8539fd02059df2e39ce54a8b0188eca892ef30
         me.pool.register("GarbageEntity", game.GarbageEntity);
 		
 		//enable the keyboard
