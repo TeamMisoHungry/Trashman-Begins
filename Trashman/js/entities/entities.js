@@ -21,19 +21,24 @@ game.PlayerEntity = me.Entity.extend({
 		//define a basic walking animation(using all frames)
 		this.renderable.addAnimation("walkRight", [12, 13, 14, 15]);
 		this.renderable.addAnimation("walkLeft", [8, 9, 10, 11]);
-		this.renderable.addAnimation("walkUp", [0, 1, 2, 3]);
+		this.renderable.addAnimation("walkUp", [16, 17, 18, 19]);
 		this.renderable.addAnimation("walkDown", [4, 5, 6, 7]);
 		//define standing(not moving), using the first frame
 		this.renderable.addAnimation("standDown", [4]);
-		this.renderable.addAnimation("standUp", [0]);
+		this.renderable.addAnimation("standUp", [16]);
 		this.renderable.addAnimation("standLeft", [8]);
 		this.renderable.addAnimation("standRight", [12]);
+		this.renderable.addAnimation("hitRight", [2]);
+		this.renderable.addAnimation("hitLeft", [0]);
+		this.renderable.addAnimation("hitUp", [3]);
+		this.renderable.addAnimation("hitDown", [1]);
 				
 		this.health = 100;
 		this.left1 = false;
  		this.right1 = false;
  		this.up = false;
  		this.down = true;
+ 		this.hitting = false;
     },
 
     /**
@@ -41,6 +46,7 @@ game.PlayerEntity = me.Entity.extend({
      */
     update : function (dt) {
  		
+ 		//pause button, hit P to pause, ESC to unpause
  		if(me.input.isKeyPressed('pause') && !me.state.isPaused()){
  			me.state.pause(true);
  			var resume_loop = setInterval(function check_resume(){
@@ -89,17 +95,19 @@ game.PlayerEntity = me.Entity.extend({
 			this.body.vel.x = 0;
 			this.body.vel.y = 0;
 			//change to the standing animation
-			if(this.up){
-				this.renderable.setCurrentAnimation("standUp");
-			}else if(this.left1){
-				 this.renderable.setCurrentAnimation("standLeft");
-			}else if(this.right1){ 
-				this.renderable.setCurrentAnimation("standRight");
-			}else if(this.down){
-				this.renderable.setCurrentAnimation("standDown");
+			this.setStandingAnimation();
+			if(me.input.isKeyPressed('punch')){
+				this.setHittingAnimation();			
+			}else{
+				this.hitting = false;
 			}
 		}
-
+		
+		if(me.input.isKeyPressed('punch')){
+			this.setHittingAnimation();
+		}else{
+			this.hitting = false;
+		}
         // apply physics to the body (this moves the entity)
         this.body.update(dt);
         // handle collisions against other shapes
@@ -130,8 +138,14 @@ game.PlayerEntity = me.Entity.extend({
  
 	    case me.collision.types.ENEMY_OBJECT:
 			//flicker in case we touched an enemy
-	    	this.renderable.flicker(750);
-	        this.health -= 10;
+			if(me.input.isKeyPressed('punch')){
+				me.game.world.removeChild(other);
+				game.data.score += 50;
+			}
+			else{
+	    		this.renderable.flicker(750);
+	        	this.health -= 1;
+	       	}
 	      	return false;
 	      	break;
 	 
@@ -140,9 +154,34 @@ game.PlayerEntity = me.Entity.extend({
 	      	return false;
 	  }
  
-  // Make the object solid
-  return true;
-}
+ 	  // Make the object solid
+  	  return true;
+	},
+	
+	setStandingAnimation: function(){
+		if(this.up){
+			this.renderable.setCurrentAnimation("standUp");
+		}else if(this.left1){
+			 this.renderable.setCurrentAnimation("standLeft");
+		}else if(this.right1){ 
+			this.renderable.setCurrentAnimation("standRight");
+		}else if(this.down){
+			this.renderable.setCurrentAnimation("standDown");
+		}
+	},
+	
+	setHittingAnimation: function(){
+		if(this.up){
+			this.renderable.setCurrentAnimation("hitUp");
+		}else if(this.left1){
+			 this.renderable.setCurrentAnimation("hitLeft");
+		}else if(this.right1){ 
+			this.renderable.setCurrentAnimation("hitRight");
+		}else if(this.down){
+			this.renderable.setCurrentAnimation("hitDown");
+		}
+		this.hitting = true;
+	}
 });
 
 /*
@@ -189,21 +228,20 @@ game.EnemyEntity = me.Entity.extend({
   // manage the enemy movement
   update: function(dt) {
  
-    if (this.alive) {
+    if(this.alive) {
       if (this.walkLeft && this.pos.x <= this.startX) {
       this.walkLeft = false;
-    } else if (!this.walkLeft && this.pos.x >= this.endX) {
+    }else if (!this.walkLeft && this.pos.x >= this.endX) {
       this.walkLeft = true;
     }
     
-    // make it walk
-    if(this.walkLeft){
-    	this.renderable.setCurrentAnimation("walkLeft");
-    }else{
-    	this.renderable.setCurrentAnimation("walkRight");
-    }
-	
-    this.body.vel.x += (this.walkLeft) ? -this.body.accel.x * me.timer.tick : this.body.accel.x * me.timer.tick;
+    	// make it walk
+    	if(this.walkLeft){
+	    	this.renderable.setCurrentAnimation("walkLeft");
+	    }else{
+    		this.renderable.setCurrentAnimation("walkRight");
+    	}	
+    	this.body.vel.x += (this.walkLeft) ? -this.body.accel.x * me.timer.tick : this.body.accel.x * me.timer.tick;
      
     } else {
       this.body.vel.x = 0;
@@ -225,8 +263,117 @@ game.EnemyEntity = me.Entity.extend({
    */
   onCollision : function (response, other) {
   	if(me.collision.types.PLAYER_OBJECT){
+  		/*if(me.input.isKeyPressed('punch')){
+      		me.game.world.removeChild(this);	
+      	}*/
   		this.renderable.flicker(750);  		
-  		//me.game.world.removeChild(this);
+  		
+  	}
+    if (response.b.body.collisionType !== me.collision.types.WORLD_SHAPE) {
+      // res.y >0 means touched by something on the bottom
+      // which mean at top position for this one
+      if (this.alive && (response.overlapV.y > 0) && response.a.body.falling) {
+        this.renderable.flicker(750);
+      }
+      return false;
+    }
+    // Make all other objects solid
+    return true;
+  }
+});
+
+game.GarbageEntity = me.CollectableEntity.extend({	
+	init: function(x, y, settings){
+		this._super(me.CollectableEntity, 'init', [x, y, settings]);
+	},
+	
+	onCollision: function(response, other){
+		game.data.score += 150;
+		this.body.setCollisionMask(me.collision.types.NO_OBJECT);
+		me.game.world.removeChild(this);
+	}
+});
+
+game.EnemyEntity2 = me.Entity.extend({
+  init: function(x, y, settings) {
+    // define this here instead of tiled
+    settings.image = "evilPokemon";
+     
+    // save the area size defined in Tiled
+    var width = settings.width;
+    var height = settings.height;
+
+ 
+    // adjust the size setting information to match the sprite size
+    // so that the entity object is created with the right size
+    settings.spritewidth = settings.width = 16;
+    settings.spriteheight = settings.height = 16;
+     
+    // call the parent constructor
+    this._super(me.Entity, 'init', [x, y , settings]);
+  
+    // set start/end position based on the initial area size
+    y = this.pos.y;
+    this.startY = y;
+    this.endY   = y + height - settings.spriteheight * 5;
+    this.pos.y = y + height - settings.spriteheight * 5;
+ 
+    // manually update the entity bounds as we manually change the position
+    this.updateBounds();
+ 
+    // to remember which side we were walking
+    this.walkUp = false;
+ 
+    // walking & jumping speed
+    this.body.setVelocity(3, 3);
+    
+    this.renderable.addAnimation("walkDown", [1]);
+	this.renderable.addAnimation("walkUp", [2]);   
+	     
+  },
+ 
+  // manage the enemy movement
+  update: function(dt) {
+ 
+    if (this.alive) {
+      if (this.walkUp && this.pos.y <= this.startY) {
+      	this.walkUp = false;
+      }else if (!this.walkUp && this.pos.y >= this.endY) {
+      	this.walkUp = true;
+      }
+	    // make it walk
+	    if(this.walkUp){
+	    	this.renderable.setCurrentAnimation("walkUp");
+	    }else{
+	    	this.renderable.setCurrentAnimation("walkDown");
+	    }
+	    this.body.vel.y += (this.walkUp) ? -this.body.accel.y * me.timer.tick : this.body.accel.y * me.timer.tick;
+     
+    }else {
+     	this.body.vel.y = 0;
+    }
+           
+    // update the body movement
+    this.body.update(dt);
+     
+    // handle collisions against other shapes
+    me.collision.check(this);
+       
+    // return true if we moved or if the renderable was updated
+    return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0 || this.body.vel.y !== 0);
+  },
+   
+  /**
+   * colision handler
+   * (called when colliding with other objects)
+   */
+  onCollision : function (response, other) {
+  	if(me.collision.types.PLAYER_OBJECT){
+  		/*if(me.input.isKeyPressed('punch')){
+      		me.game.world.removeChild(this);	
+      	}*/
+  		this.renderable.flicker(750);  		
+  		
   	}
     if (response.b.body.collisionType !== me.collision.types.WORLD_SHAPE) {
       // res.y >0 means touched by something on the bottom

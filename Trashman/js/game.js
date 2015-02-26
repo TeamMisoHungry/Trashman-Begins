@@ -1,7 +1,6 @@
-
 /* Game namespace */
 var game = {
-
+	
     // an object where to store game information
     data : {
         // score
@@ -50,8 +49,8 @@ var game = {
         // add our player or other entities in the entity pool
         me.pool.register("mainPlayer", game.PlayerEntity);
         me.pool.register("EnemyEntity", game.EnemyEntity);
+        me.pool.register("EnemyEntity2", game.EnemyEntity2);
         me.pool.register("GarbageEntity", game.GarbageEntity);
-        me.pool.register("turbine", game.TurbineEntity);
 		
 		//enable the keyboard
 		me.input.bindKey(me.input.KEY.A, "left");
@@ -60,6 +59,7 @@ var game = {
 		me.input.bindKey(me.input.KEY.S, "down");	
 		me.input.bindKey(me.input.KEY.P, "pause");
 		me.input.bindKey(me.input.KEY.ESC, "unpause");	
+		me.input.bindKey(me.input.KEY.SPACE, "punch");
 
 		//turn gravity off since this is a top-down
 		me.sys.gravity = 0;
