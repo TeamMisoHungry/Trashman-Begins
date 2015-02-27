@@ -57,7 +57,9 @@ game.PlayerEntity = me.Entity.extend({
 			game.time.limit--;
 			game.time.overallTime++;
 		}
-		
+		if(game.time.limit == 0){
+			me.state.change(me.state.GAME_END);
+		}
 		if(this.bladesCollected >= 4){
 			me.state.change(me.state.GAME_END);
 		}
