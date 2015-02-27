@@ -250,20 +250,19 @@ game.EnemyEntity = me.Entity.extend({
  
     if(this.alive) {
       if (this.walkLeft && this.pos.x <= this.startX) {
-      this.walkLeft = false;
-    }else if (!this.walkLeft && this.pos.x >= this.endX) {
-      this.walkLeft = true;
+      	this.walkLeft = false;
+      }else if (!this.walkLeft && this.pos.x >= this.endX) {
+      	this.walkLeft = true;
     }
-    
-    	// make it walk
-    	if(this.walkLeft){
-	    	this.renderable.setCurrentAnimation("walkLeft");
-	    }else{
-    		this.renderable.setCurrentAnimation("walkRight");
-    	}	
-    	this.body.vel.x += (this.walkLeft) ? -this.body.accel.x * me.timer.tick : this.body.accel.x * me.timer.tick;
+	  // make it walk
+	  if(this.walkLeft){
+		this.renderable.setCurrentAnimation("walkLeft");
+	  }else{
+	   	this.renderable.setCurrentAnimation("walkRight");
+	  }	
+	  this.body.vel.x += (this.walkLeft) ? -this.body.accel.x * me.timer.tick : this.body.accel.x * me.timer.tick;
      
-    } else {
+    }else {
       this.body.vel.x = 0;
     }
            
@@ -283,9 +282,6 @@ game.EnemyEntity = me.Entity.extend({
    */
   onCollision : function (response, other) {
   	if(me.collision.types.PLAYER_OBJECT){
-  		/*if(me.input.isKeyPressed('punch')){
-      		me.game.world.removeChild(this);	
-      	}*/
   		this.renderable.flicker(750);  		
   		
   	}
@@ -390,6 +386,54 @@ game.EnemyEntity2 = me.Entity.extend({
     // Make all other objects solid
     return true;
   }
+});
+
+game.LaserEntity = me.Entity.extend({
+	init: function(x, y, settings){
+		settings.image = "fire";
+		settings.spritewidth = 21;
+		settings.spriteheight = 11;
+		this.renderable.addAnimation("fire", [0]);
+	}
+});
+
+game.TurretEntity = me.Entity.extend({
+	init: function(x, y, settings){
+		this._super(me.Entity, 'init', [x, y, settings]);
+		this.renderable.addAnimation("safe", [2]);
+		this.renderable.addAnimation("prep", [3, 4]);
+		this.renderable.addAnimation("fire", [0, 1,]);
+		this.time = 0;
+		this.safe = true;
+		this.prep = false;
+		this.fire = false;
+	
+		this.renderable.setCurrentAnimation("safe");
+	},
+	
+	update: function(dt){
+		this.time++;
+		
+		if(this.time % 250 === 0 && this.safe){
+			this.safe = false;
+			this.prep = true;
+		}else if(this.time % 150 === 0 && this.prep){
+			this.prep = false;
+			this.fire = true;
+		}else if(this.time % 250 === 0 && this.fire){
+			this.fire = false;
+			this.safe = true;
+		}
+		
+		if(this.safe){
+			this.renderable.setCurrentAnimation("safe");
+		}else if(this.prep){
+			this.renderable.setCurrentAnimation("prep");
+		}else if(this.fire){
+			this.renderable.setCurrentAnimation("fire");
+		}
+	},
+	
 });
 
 game.GarbageEntity = me.CollectableEntity.extend({	

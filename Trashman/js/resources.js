@@ -16,6 +16,8 @@ game.resources = [
 	{name: "evilPokemon", type: "image", src: "data/img/sprites/pokemon5.png"},
 	{name: "garbage", type: "image", src: "data/img/sprites/garbage.png"},
 	{name: "turbineBlade", type: "image", src: "data/img/sprites/turbineBlade.png"},
+	{name: "turret", type: "image", src: "data/img/sprites/TurretSheet.png"},
+	{name: "fire", type: "image", src: "data/img/sprites/laserBeam.png"},
 	
 	//font
     {name: "32x32_font", type: "image", src: "data/img/font/32x32_font.png"},

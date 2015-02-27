@@ -25,13 +25,13 @@ game.EndScreen = me.ScreenObject.extend({
       draw : function (renderer) {
       	this.font.draw(renderer, "THANKS FOR TESTING IT OUT!!!", 100, 350);
         this.font.draw(renderer, "PRESS ENTER TO RE-PLAY", 150, 400);
+        //console.log(game.time.overallTime);
       },
       onDestroyEvent : function() {
         //just in case
       }
     })), 2);
     
-   // console.log("Hello World");
     // change to play state on press Enter
     me.input.bindKey(me.input.KEY.ENTER, "enter", true);
     me.input.bindPointer(me.input.mouse.LEFT, me.input.KEY.ENTER);
