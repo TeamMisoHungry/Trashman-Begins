@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="left-down" width="40" height="35" tilewidth="32" tileheight="32" nextobjectid="124">
+<map version="1.0" orientation="orthogonal" renderorder="left-down" width="40" height="35" tilewidth="32" tileheight="32" nextobjectid="128">
  <tileset firstgid="1" name="tileSheet3" tilewidth="32" tileheight="32">
   <image source="../img/map/tileSheet3.png" width="960" height="960"/>
  </tileset>
@@ -82,6 +82,12 @@
    <polyline points="0,0 -140,1 -141,51 3,49"/>
   </object>
   <object id="104" name="rock" x="296" y="488" width="18.5" height="13.5"/>
+  <object id="126" x="749.333" y="2.66667">
+   <polyline points="0,0 0,89.3333 14.6667,106.667 28,106.667"/>
+  </object>
+  <object id="127" x="777.333" y="109.333">
+   <polyline points="0,0 8,0 8,30.6667 8,48"/>
+  </object>
  </objectgroup>
  <objectgroup name="Entities">
   <object id="1" name="mainPlayer" x="544" y="1057" width="32" height="32">
@@ -163,7 +169,7 @@
     <property name="spritewidth" value="50"/>
    </properties>
   </object>
-  <object id="123" name="TurbineEntity" x="1224" y="383.136" width="42" height="55" rotation="55.0744">
+  <object id="123" name="TurbineEntity" x="1190.94" y="404.329" width="42" height="55" rotation="-27.6708">
    <properties>
     <property name="image" value="turbineBlade"/>
     <property name="spritewidth" value="50"/>
