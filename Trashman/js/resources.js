@@ -15,6 +15,7 @@ game.resources = [
 	{name: "hero", type: "image", src: "data/img/sprites/trashman3.png"},
 	{name: "evilPokemon", type: "image", src: "data/img/sprites/pokemon5.png"},
 	{name: "garbage", type: "image", src: "data/img/sprites/garbage.png"},
+	{name: "turbineBlade", type: "image", src: "data/img/sprites/turbineBlade.png"},
 	
 	//font
     {name: "32x32_font", type: "image", src: "data/img/font/32x32_font.png"},
@@ -25,6 +26,7 @@ game.resources = [
 	 */
 	{name: "title_screen", type:"image", src:"data/img/gui/title_screen.png"},
 	{name: "beginGame", type:"image", src:"data/img/gui/startButton.png"},
+	{name: "endScreen", type:"image", src:"data/img/gui/endScreen.png"},
     
     /* 
 	*  Maps

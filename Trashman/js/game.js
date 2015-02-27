@@ -49,6 +49,9 @@ var game = {
         //set ingame screen object, play level
         me.state.set(me.state.PLAY, new game.PlayScreen());
         
+        //set ingame screen object, end game
+        me.state.set(me.state.GAME_END, new game.EndScreen());
+        
         me.state.transition("fade", "#FFFFFF", 250);
 
         // add our player or other entities in the entity pool
@@ -56,6 +59,7 @@ var game = {
         me.pool.register("EnemyEntity", game.EnemyEntity);
         me.pool.register("EnemyEntity2", game.EnemyEntity2);
         me.pool.register("GarbageEntity", game.GarbageEntity);
+        me.pool.register("TurbineEntity", game.TurbineEntity);
 		
 		//enable the keyboard
 		me.input.bindKey(me.input.KEY.A, "left");
@@ -65,6 +69,7 @@ var game = {
 		me.input.bindKey(me.input.KEY.P, "pause");
 		me.input.bindKey(me.input.KEY.ESC, "unpause");	
 		me.input.bindKey(me.input.KEY.SPACE, "punch");
+		me.input.bindKey(me.input.KEY.T, "quit");
 
 		//turn gravity off since this is a top-down
 		me.sys.gravity = 0;

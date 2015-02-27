@@ -12,6 +12,8 @@ game.PlayerEntity = me.Entity.extend({
 		//setting deafauly horizontal & vertical speed
 		this.body.setVelocity(3, 3);
 		
+		//reset time limit
+		game.time.limit = 300;
 		//setting display to follow our position on both axis
 		me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
 		
@@ -41,6 +43,7 @@ game.PlayerEntity = me.Entity.extend({
  		this.up = false;
  		this.down = true;
  		this.hitting = false;
+ 		this.bladesCollected = 3;
 
     },
 
@@ -49,9 +52,14 @@ game.PlayerEntity = me.Entity.extend({
      */
     update : function (dt) {
     	this.time++;
-    	//console.log(this.time);
+    
     	if(this.time % 50 === 0){
 			game.time.limit--;
+			game.time.overallTime++;
+		}
+		
+		if(this.bladesCollected >= 4){
+			me.state.change(me.state.GAME_END);
 		}
  		//pause button, hit P to pause, ESC to unpause
  		if(me.input.isKeyPressed('pause') && !me.state.isPaused()){
@@ -65,6 +73,9 @@ game.PlayerEntity = me.Entity.extend({
  			}, 100);
  		}
  		
+ 		if(me.input.isKeyPressed('quit')){
+ 			me.state.change(me.state.GAME_END);
+ 		}
 		//adding movement based on up, down, left, right arrows
 		if(me.input.isKeyPressed('left')){
 			this.body.vel.x -= this.body.accel.x * me.timer.tick;
@@ -393,9 +404,15 @@ game.GarbageEntity = me.CollectableEntity.extend({
 	}
 });
 
-
-
-
-
-
+game.TurbineEntity = me.CollectableEntity.extend({
+	init: function(x, y, settings){
+		this._super(me.CollectableEntity, 'init', [x, y, settings]);
+	},
+	
+	onCollision: function(response, other){
+		this.body.setCollisionMask(me.collision.types.NO_OBJECT);
+		me.game.world.removeChild(this);
+		other.bladesCollected++;
+	}
+});
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="left-down" width="40" height="35" tilewidth="32" tileheight="32" nextobjectid="117">
+<map version="1.0" orientation="orthogonal" renderorder="left-down" width="40" height="35" tilewidth="32" tileheight="32" nextobjectid="124">
  <tileset firstgid="1" name="tileSheet3" tilewidth="32" tileheight="32">
   <image source="../img/map/tileSheet3.png" width="960" height="960"/>
  </tileset>
@@ -143,6 +143,30 @@
    <properties>
     <property name="image" value="garbage"/>
     <property name="spritewidth" value="16"/>
+   </properties>
+  </object>
+  <object id="120" name="TurbineEntity" x="87.551" y="1044.43" width="42" height="55" rotation="-23.8269">
+   <properties>
+    <property name="image" value="turbineBlade"/>
+    <property name="spritewidth" value="50"/>
+   </properties>
+  </object>
+  <object id="121" name="TurbineEntity" x="56.77" y="17.1721" width="42" height="55" rotation="37.2022">
+   <properties>
+    <property name="image" value="turbineBlade"/>
+    <property name="spritewidth" value="50"/>
+   </properties>
+  </object>
+  <object id="122" name="TurbineEntity" x="974.939" y="46.329" width="42" height="55" rotation="-27.6708">
+   <properties>
+    <property name="image" value="turbineBlade"/>
+    <property name="spritewidth" value="50"/>
+   </properties>
+  </object>
+  <object id="123" name="TurbineEntity" x="1224" y="383.136" width="42" height="55" rotation="55.0744">
+   <properties>
+    <property name="image" value="turbineBlade"/>
+    <property name="spritewidth" value="50"/>
    </properties>
   </object>
  </objectgroup>
