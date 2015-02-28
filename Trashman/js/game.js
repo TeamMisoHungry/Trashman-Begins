@@ -70,6 +70,7 @@ var game = {
 		me.input.bindKey(me.input.KEY.W, "up");
 		me.input.bindKey(me.input.KEY.S, "down");	
 		me.input.bindKey(me.input.KEY.P, "pause");
+		me.input.bindKey(me.input.KEY.R, "read");	
 		me.input.bindKey(me.input.KEY.ESC, "unpause");	
 		me.input.bindKey(me.input.KEY.SPACE, "punch");
 		me.input.bindKey(me.input.KEY.T, "quit");

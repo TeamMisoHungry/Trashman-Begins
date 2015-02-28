@@ -62,19 +62,19 @@
     <property name="spritewidth" value="16"/>
    </properties>
   </object>
-  <object id="59" gid="0" x="664" y="696"/>
-  <object id="60" gid="0" x="440" y="680"/>
-  <object id="61" gid="0" x="432" y="680"/>
-  <object id="62" gid="0" x="440" y="688"/>
-  <object id="63" gid="0" x="440" y="688"/>
-  <object id="64" gid="0" x="424" y="696"/>
-  <object id="65" gid="0" x="448" y="688"/>
-  <object id="66" gid="0" x="424" y="680"/>
-  <object id="67" gid="0" x="592" y="464"/>
-  <object id="68" gid="0" x="584" y="456"/>
-  <object id="69" gid="0" x="584" y="456"/>
-  <object id="73" gid="0" x="424" y="696"/>
-  <object id="74" gid="0" x="424" y="696"/>
+  <object id="59" x="664" y="696"/>
+  <object id="60" x="440" y="680"/>
+  <object id="61" x="432" y="680"/>
+  <object id="62" x="440" y="688"/>
+  <object id="63" x="440" y="688"/>
+  <object id="64" x="424" y="696"/>
+  <object id="65" x="448" y="688"/>
+  <object id="66" x="424" y="680"/>
+  <object id="67" x="592" y="464"/>
+  <object id="68" x="584" y="456"/>
+  <object id="69" x="584" y="456"/>
+  <object id="73" x="424" y="696"/>
+  <object id="74" x="424" y="696"/>
   <object id="76" name="me.LevelEntity" x="752" y="40">
    <properties>
     <property name="duration" value="250"/>
@@ -84,23 +84,23 @@
   </object>
  </objectgroup>
  <objectgroup name="collision">
-  <object id="27" x="2" y="235">
-   <polyline points="0,0 382,-1 382,51"/>
+  <object id="27" x="1.33034" y="235">
+   <polyline points="0,0 375.303,1.00897 375.303,53.6786"/>
   </object>
-  <object id="28" x="415.46" y="285.521" rotation="-0.211398">
-   <polyline points="0,0 0,-51 281,-51 281,343 103.996,342.022 103.015,256.022"/>
+  <object id="28" x="416.799" y="284.851" rotation="-0.211398">
+   <polyline points="6.69406,0.694361 7.36619,-50.9728 281,-51 281,343 103.996,342.022 103.015,256.022"/>
   </object>
-  <object id="35" x="383" y="235">
+  <object id="35" x="375.634" y="235">
    <polyline points="0,0 2,-139"/>
   </object>
-  <object id="36" x="415" y="96">
+  <object id="36" x="423.706" y="99.3483">
    <polyline points="0,0 0,139"/>
   </object>
   <object id="37" x="384" y="128">
-   <polyline points="0,0 -383,-1 -382,-128 381,-127"/>
+   <polyline points="-6.69658,0 -383,-1 -382,-128 381,-127"/>
   </object>
-  <object id="38" x="768" y="1">
-   <polyline points="0,0 31,28 31,98 -257,96 -257,127 -352,127"/>
+  <object id="38" x="770.679" y="3.67863">
+   <polyline points="0,0 31,28 31,98 -257,96 -257,127 -345.303,125.661"/>
   </object>
   <object id="42" x="194" y="385">
    <polyline points="0,0 -1,129 96,129 96,94 189,95 188,-1 157,-31 33,-31 2,0"/>
@@ -108,8 +108,8 @@
   <object id="46" x="474" y="544">
    <polyline points="0,0 1,89 -472,88 -472,-309"/>
   </object>
-  <object id="70" gid="0" x="584" y="456"/>
-  <object id="71" gid="0" x="592" y="456"/>
-  <object id="72" gid="0" x="592" y="464"/>
+  <object id="70" x="584" y="456"/>
+  <object id="71" x="592" y="456"/>
+  <object id="72" x="592" y="464"/>
  </objectgroup>
 </map>

@@ -74,7 +74,11 @@ game.PlayerEntity = me.Entity.extend({
  				}
  			}, 100);
  		}
- 		
+
+ 		if(me.input.isKeyPressed('talk')){
+ 			console.log("talk");
+ 		}
+
  		if(me.input.isKeyPressed('quit')){
  			me.state.change(me.state.GAME_END);
  		}
@@ -88,7 +92,6 @@ game.PlayerEntity = me.Entity.extend({
 				this.right1 = this.up = this.down = false;
 			}
 		}else if(me.input.isKeyPressed('right')){
-
 			this.body.vel.x += this.body.accel.x * me.timer.tick;
 			this.body.vel.y = 0;
 			if(!this.renderable.isCurrentAnimation("walkRight")){
@@ -124,6 +127,18 @@ game.PlayerEntity = me.Entity.extend({
 			}
 		}
 		
+		/*if(me.input.isKeyPressed('read')){
+			if(is_facing_hq_sign){
+				
+			}else if(is_facing_city_sign){
+				
+			}else if(is_facing_ice_sign){
+				
+			}else if(is_facing_desert_sign){
+				
+			}	
+		}*/
+		
 		if(me.input.isKeyPressed('punch')){
 			this.setHittingAnimation();
 		}else{
@@ -144,6 +159,7 @@ game.PlayerEntity = me.Entity.extend({
      * (called when colliding with other objects)
      */
     onCollision : function (response, other) {
+<<<<<<< HEAD
 	  	switch (response.b.body.collisionType) {
 		    case me.collision.types.WORLD_SHAPE:
 		    	if (other.type === "platform") {
@@ -176,6 +192,43 @@ game.PlayerEntity = me.Entity.extend({
 		      	return false;
 		  }
 
+=======
+  	switch (response.b.body.collisionType) {
+	    case me.collision.types.WORLD_SHAPE:
+	    	if (other.type === "platform") {
+	        	if (this.body.falling && !me.input.isKeyPressed('down') && (response.overlapV.y > 0) && (~~this.body.vel.y >= ~~response.overlapV.y)) {
+	          		// Disable collision on the x axis
+	          		response.overlapV.x = 0;
+	          		// Respond to the platform (it is solid)
+	          		return true;
+	        	}
+	        // Do not respond to the platform (pass through)
+	        	return false;
+	      	}
+	      	break;
+ 
+	    case me.collision.types.ENEMY_OBJECT:
+			//flicker in case we touched an enemy
+			if(me.input.isKeyPressed('punch')){
+				me.game.world.removeChild(other);
+				game.data.score += 50;
+			}
+			else{
+	    		this.renderable.flicker(750);
+	        	game.data.hp -= 0.1;
+	        	if(game.data.hp == 0){
+	        		me.state.change(me.state.GAME_END);
+	        	}
+	       	}
+	      	return false;
+	      	break;
+	 
+	    default:
+	    	// Do not respond to other objects (e.g. coins)
+	      	return false;
+	  }
+
+>>>>>>> 9eec9df68e82d00277af433ee2b2abd66d029f9d
  	  // Make the object solid
   	  return true;
 	},
@@ -205,6 +258,15 @@ game.PlayerEntity = me.Entity.extend({
 		this.hitting = true;
 	}
 });
+/*
+ * Sign entities
+ */
+
+/*game.SignEntity = me.Entity.extend({
+	init: function(x,y,settings){
+		
+	}
+)};*/
 
 /*
  * Enemy entities
@@ -427,6 +489,8 @@ game.LaserEntity = me.Entity.extend({
 	    return true;
 	}
 });
+
+
 
 game.TurretEntity = me.Entity.extend({
 	init: function(x, y, settings){
