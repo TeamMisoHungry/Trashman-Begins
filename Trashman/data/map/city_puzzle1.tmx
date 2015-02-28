@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="10" height="40" tilewidth="16" tileheight="16" nextobjectid="25">
+ <tileset firstgid="1" name="bunch_o__free_tiles_by_magiscarf-d6ih36g copy" tilewidth="16" tileheight="16">
+  <image source="../Dropbox/CMPM20/Trashman images/tiles/bunch_o__free_tiles_by_magiscarf-d6ih36g copy.png" trans="ff00ff" width="992" height="1472"/>
+ </tileset>
+ <tileset firstgid="5705" name="look_both_ways_by_magiscarf-d5ssq6g" tilewidth="16" tileheight="16">
+  <image source="../Dropbox/CMPM20/Trashman images/tiles/look_both_ways_by_magiscarf-d5ssq6g.png" trans="ff00ff" width="256" height="192"/>
+ </tileset>
+ <layer name="Copy of Tile Layer 1" width="10" height="40">
+  <data encoding="base64" compression="zlib">
+   eJx7z8DA8H4Uj+JRPIqHAB4FgwsAAITAGCQ=
+  </data>
+ </layer>
+ <layer name="Copy of Copy of Tile Layer 1" width="10" height="40">
+  <data encoding="base64" compression="zlib">
+   eJx7z8DA8J7GeBsd7BjFo3gUD388CgYXAAA2tRfr
+  </data>
+ </layer>
+ <layer name="Copy of Tile Layer 1" width="10" height="40">
+  <data encoding="base64" compression="zlib">
+   eJztzEEOQDAQheFpj0NZIcGtRIJbIcGlqCt4i5coCbYWneRbdPJPExFJKYeCSmefQQU7NdBS5+zrWzfBTMtL98R3vvPdP7sehg8jWOduVSIbWXX90+AdUaBFQjL63Mfg519zANvv6vY=
+  </data>
+ </layer>
+ <objectgroup name="Object Layer 1">
+  <object id="6" x="4" y="4" width="56" height="12"/>
+  <object id="8" x="4" y="20" width="12" height="460"/>
+  <object id="9" x="52" y="20" width="8" height="24"/>
+  <object id="12" x="100" y="4" width="56" height="12"/>
+  <object id="18" x="144" y="20" width="12" height="460"/>
+  <object id="19" x="20" y="440" width="124" height="40"/>
+  <object id="24" x="100" y="20" width="8" height="24"/>
+ </objectgroup>
+</map>
