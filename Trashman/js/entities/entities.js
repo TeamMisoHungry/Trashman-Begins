@@ -144,37 +144,37 @@ game.PlayerEntity = me.Entity.extend({
      * (called when colliding with other objects)
      */
     onCollision : function (response, other) {
-  	switch (response.b.body.collisionType) {
-	    case me.collision.types.WORLD_SHAPE:
-	    	if (other.type === "platform") {
-	        	if (this.body.falling && !me.input.isKeyPressed('down') && (response.overlapV.y > 0) && (~~this.body.vel.y >= ~~response.overlapV.y)) {
-	          		// Disable collision on the x axis
-	          		response.overlapV.x = 0;
-	          		// Respond to the platform (it is solid)
-	          		return true;
-	        	}
-	        // Do not respond to the platform (pass through)
-	        	return false;
-	      	}
-	      	break;
- 
-	    case me.collision.types.ENEMY_OBJECT:
-			//flicker in case we touched an enemy
-			if(me.input.isKeyPressed('punch')){
-				me.game.world.removeChild(other);
-				game.data.score += 50;
-			}
-			else{
-	    		this.renderable.flicker(750);
-	        	game.data.hp -= 1;
-	       	}
-	      	return false;
-	      	break;
+	  	switch (response.b.body.collisionType) {
+		    case me.collision.types.WORLD_SHAPE:
+		    	if (other.type === "platform") {
+		        	if (this.body.falling && !me.input.isKeyPressed('down') && (response.overlapV.y > 0) && (~~this.body.vel.y >= ~~response.overlapV.y)) {
+		          		// Disable collision on the x axis
+		          		response.overlapV.x = 0;
+		          		// Respond to the platform (it is solid)
+		          		return true;
+		        	}
+		        // Do not respond to the platform (pass through)
+		        	return false;
+		      	}
+		      	break;
 	 
-	    default:
-	    	// Do not respond to other objects (e.g. coins)
-	      	return false;
-	  }
+		    case me.collision.types.ENEMY_OBJECT:
+				//flicker in case we touched an enemy
+				if(me.input.isKeyPressed('punch')){
+					me.game.world.removeChild(other);
+					game.data.score += 50;
+				}
+				else{
+		    		this.renderable.flicker(750);
+		        	game.data.hp -= 1;
+		       	}
+		      	return false;
+		      	break;
+		 
+		    default:
+		    	// Do not respond to other objects (e.g. coins)
+		      	return false;
+		  }
 
  	  // Make the object solid
   	  return true;
@@ -393,14 +393,13 @@ game.EnemyEntity2 = me.Entity.extend({
 game.LaserEntity = me.Entity.extend({
 	init: function(x, y, settings){
 		settings.image = "fire";
-		settings.width = 21;
+		settings.width = 75;
 		settings.height = 11;
-		settings.z = Infinity;
-		settings.name = "LaserEntity";
-		settings.GUID = "LaserEntity";
+		settings.name = "laser";
 		this._super(me.Entity, 'init', [x, y, settings]);
 		this.renderable.addAnimation("fire", [0]);
 		this.time = 0;
+		this.body.setCollisionType = me.collision.types.ENEMY_OBJECT;
 	},
 	
 	update: function(dt){
@@ -409,10 +408,23 @@ game.LaserEntity = me.Entity.extend({
 		if(this.time % 175 == 0){
 			me.game.world.removeChild(this);
 		}
+		
+		me.collision.check(this);
+		return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0 || this.body.vel.y !== 0);
 	},
 	
 	onCollision: function(response, other){
-		this.body.setCollisionMask(me.collision.types.ENEMY_OBJECT);
+	  	if(me.collision.types.PLAYER_OBJECT){
+	  		this.renderable.flicker(750);  		
+	  	}
+	    if (response.b.body.collisionType !== me.collision.types.WORLD_SHAPE) {
+	      if (this.alive && (response.overlapV.y > 0) && response.a.body.falling) {
+	        this.renderable.flicker(750);
+	      }
+	      return false;
+	    }
+	    // Make all other objects solid
+	    return true;
 	}
 });
 
@@ -427,7 +439,7 @@ game.TurretEntity = me.Entity.extend({
 		this.prep = false;
 		this.fire = false;
 		this.fireObject = false;
-		
+		this.body.setCollisionMask(me.collision.types.NO_OBJECT);
 		this.renderable.setCurrentAnimation("safe");
 	},
 	
@@ -454,12 +466,10 @@ game.TurretEntity = me.Entity.extend({
 			if(!this.fireObject){
 				this.fireObject = true;
 				var myLaser = new game.LaserEntity(this.pos.x + 10, this.pos.y + 3, {});
-				me.game.world.addChild(myLaser, Infinity);
+				me.game.world.addChild(myLaser, 100);
 			}
-			//this.renderable.setCurrentAnimation("fire");
 		}
-	},
-	
+	},	
 });
 
 game.GarbageEntity = me.CollectableEntity.extend({	

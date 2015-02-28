@@ -89,7 +89,6 @@ game.HUD.TimeItem = me.Renderable.extend({
 	},
 	
 	draw: function(renderer){
-		console.log(game.data.hp);
 		this.font.draw(renderer, game.time.limit, this.pos.x, this.pos.y);
 	}
 	
