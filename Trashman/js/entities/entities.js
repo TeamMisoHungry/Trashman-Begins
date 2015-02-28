@@ -88,7 +88,6 @@ game.PlayerEntity = me.Entity.extend({
 				this.right1 = this.up = this.down = false;
 			}
 		}else if(me.input.isKeyPressed('right')){
-
 			this.body.vel.x += this.body.accel.x * me.timer.tick;
 			this.body.vel.y = 0;
 			if(!this.renderable.isCurrentAnimation("walkRight")){
@@ -123,6 +122,18 @@ game.PlayerEntity = me.Entity.extend({
 				this.hitting = false;
 			}
 		}
+		
+		/*if(me.input.isKeyPressed('read')){
+			if(is_facing_hq_sign){
+				
+			}else if(is_facing_city_sign){
+				
+			}else if(is_facing_ice_sign){
+				
+			}else if(is_facing_desert_sign){
+				
+			}	
+		}*/
 		
 		if(me.input.isKeyPressed('punch')){
 			this.setHittingAnimation();
@@ -205,6 +216,15 @@ game.PlayerEntity = me.Entity.extend({
 		this.hitting = true;
 	}
 });
+/*
+ * Sign entities
+ */
+
+/*game.SignEntity = me.Entity.extend({
+	init: function(x,y,settings){
+		
+	}
+)};*/
 
 /*
  * Enemy entities
