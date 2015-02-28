@@ -79,7 +79,7 @@
    <properties>
     <property name="duration" value="250"/>
     <property name="fade" value="#000000"/>
-    <property name="to" value="city_puzzle1"/>
+    <property name="to" value="city1"/>
    </properties>
   </object>
  </objectgroup>

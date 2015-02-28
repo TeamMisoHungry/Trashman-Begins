@@ -8,9 +8,10 @@ game.resources = [
     {name: "tileSheet4", type: "image", src: "data/img/map/tileSheet4.png"},
     {name: "tileSheet5", type: "image", src: "data/img/map/tileSheet5.png"},
     {name: "tileSheet8", type: "image", src: "data/img/map/tileSheet8.png"},
-    {name: "city_tile", type: "image", src: "data/img/map/city_tile.png"},
+    {name: "city", 		type: "image", src: "data/img/map/city.png"},
+	
 	/*
-	 * sprite's
+	 * sprite'si
 	 */ 
 	{name: "hero", type: "image", src: "data/img/sprites/trashman3.png"},
 	{name: "evilPokemon", type: "image", src: "data/img/sprites/pokemon5.png"},
@@ -35,6 +36,6 @@ game.resources = [
 	*/
     {name: "area01", type: "tmx", src: "data/map/area01.tmx"},
     {name: "area02", type: "tmx", src: "data/map/area02.tmx"},
-    {name: "city_puzzle1", type: "tmx", src: "data/map/city_puzzle1.tmx"},
-      
+    {name: "city1", type: "tmx", src: "data/map/city1.tmx"},
+
 ];
