@@ -1,35 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="10" height="40" tilewidth="16" tileheight="16" nextobjectid="52">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="10" height="40" tilewidth="16" tileheight="16" nextobjectid="57">
  <tileset firstgid="1" name="city_tile" tilewidth="16" tileheight="16">
-  <image source="../../../../../Dropbox/CMPM20/Trashman images/tiles/bunch_o__free_tiles_by_magiscarf-d6ih36g copy.png" trans="ff00ff" width="992" height="1472"/>
-  <terraintypes>
-   <terrain name="New Terrain" tile="-1"/>
-  </terraintypes>
-  <tile id="2625">
-   <objectgroup draworder="index">
-    <object id="0" x="8" y="12"/>
-    <object id="0" x="8" y="12" width="8" height="16"/>
-    <object id="0" x="-8" y="-8" height="24"/>
-   </objectgroup>
-  </tile>
+  <image source="../img/map/city_tile.png" trans="ff00ff" width="992" height="1472"/>
  </tileset>
  <layer name="Copy of Tile Layer 1" width="10" height="40">
   <data encoding="base64" compression="zlib">
-   eJx7z8DA8H4Uj+JRPIqHAB4FgwsAAITAGCQ=
+   eJx7z8DA8H4Uj+JRPIpH8SgmEQMAM651gA==
   </data>
  </layer>
  <layer name="Copy of Tile Layer 1" width="10" height="40">
   <data encoding="base64" compression="zlib">
-   eJwzYWBgMIViSyC2gmJrJHEzIC4C4vdQXA7EFVBciSRegqZuKxBvg+LteNThwqPqRtWNqqOuOncW4tS1ElC3AYg3EsCbgPgdkr43jAwMb6H4HSOqmTpAvi4UazExMGhDsQ4TQlwPiEfB4AIAhJnp7A==
+   eJwzYWBgMIViSyC2gmJrJHEzIC4C4ncMEFAOxBVQXAkV+wDEJWjqtgLxNijejkOdOwsDVoCurpVIdbjAqLpRdaPqRtUNVXWuXAwMblwIeWcg24ULU10zUKwFiN8zQHAjkN2EpG4DEG+E4kNI6vZzIcQ3AbEOIwODLgGsB8QA3kB8tg==
   </data>
  </layer>
  <objectgroup name="collision">
-  <object id="37" x="16" y="16">
-   <polyline points="0,0 32,0 32,32 44,32 44,-16 84,-16 84,32 96,32 96,0 132,0 136,420 -4,420 -4,0 12,0"/>
+  <object id="56" x="16" y="16">
+   <polyline points="0,0 0,592 36,592 36,584 24,576 24,564 40,564 40,576 44,584 44,604 40,616 84,616 84,584 84,580 92,576 88,564 104,564 104,572 92,584 96,592 128,592 128,0 92,0 92,32 84,32 84,-12 44,-12 44,32 36,32 36,0 0,0"/>
   </object>
  </objectgroup>
  <objectgroup name="Entities">
-  <object id="43" name="me.LevelEntity" x="32" y="412">
+  <object id="43" name="me.LevelEntity" x="72" y="604">
    <properties>
     <property name="duration" value="250"/>
     <property name="fade" value="#000000"/>
@@ -37,13 +27,13 @@
    </properties>
    <polyline points="0,0 0,20 16,20 16,0 0,0"/>
   </object>
-  <object id="48" name="mainPlayer" x="64" y="56" width="32" height="32">
+  <object id="48" name="mainPlayer" x="64" y="64" width="32" height="32">
    <properties>
     <property name="image" value="hero"/>
     <property name="spritewidth" value="24"/>
    </properties>
   </object>
-  <object id="49" name="me.LevelEntity" x="73" y="13" width="16" height="16">
+  <object id="49" name="me.LevelEntity" x="73" y="22" width="16" height="16">
    <properties>
     <property name="duration" value="250"/>
     <property name="fade" value="#000000"/>
