@@ -8,7 +8,7 @@ game.resources = [
     {name: "tileSheet4", type: "image", src: "data/img/map/tileSheet4.png"},
     {name: "tileSheet5", type: "image", src: "data/img/map/tileSheet5.png"},
     {name: "tileSheet8", type: "image", src: "data/img/map/tileSheet8.png"},
-    {name: "city_puzzle1", type: "image", src: "data/img/map/City_level/city_puzzle1.png"},
+    {name: "city_tile", type: "image", src: "data/img/map/city_tile.png"},
 	/*
 	 * sprite's
 	 */ 
