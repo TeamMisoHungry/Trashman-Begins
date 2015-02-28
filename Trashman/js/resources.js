@@ -8,7 +8,7 @@ game.resources = [
     {name: "tileSheet4", type: "image", src: "data/img/map/tileSheet4.png"},
     {name: "tileSheet5", type: "image", src: "data/img/map/tileSheet5.png"},
     {name: "tileSheet8", type: "image", src: "data/img/map/tileSheet8.png"},
-    
+    {name: "city_puzzle1", type: "image", src: "data/img/map/city_level/city_puzzle1"};
 	/*
 	 * sprite's
 	 */ 
@@ -33,5 +33,6 @@ game.resources = [
 	*/
     {name: "area01", type: "tmx", src: "data/map/area01.tmx"},
     {name: "area02", type: "tmx", src: "data/map/area02.tmx"},
+    {name: "city_puzzle1", type: "tmx", src: "data/map/city_puzzle1.tmx"},
       
 ];
