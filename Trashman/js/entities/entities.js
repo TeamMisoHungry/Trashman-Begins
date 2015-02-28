@@ -159,7 +159,6 @@ game.PlayerEntity = me.Entity.extend({
      * (called when colliding with other objects)
      */
     onCollision : function (response, other) {
-<<<<<<< HEAD
 	  	switch (response.b.body.collisionType) {
 		    case me.collision.types.WORLD_SHAPE:
 		    	if (other.type === "platform") {
@@ -182,7 +181,10 @@ game.PlayerEntity = me.Entity.extend({
 				}
 				else{
 		    		this.renderable.flicker(750);
-		        	game.data.hp -= 1;
+		        	game.data.hp -= 0.1;
+		        	if(game.data.hp == 0){
+		        		me.state.change(me.state.GAME_END);
+		        	}
 		       	}
 		      	return false;
 		      	break;
@@ -191,47 +193,10 @@ game.PlayerEntity = me.Entity.extend({
 		    	// Do not respond to other objects (e.g. coins)
 		      	return false;
 		  }
-
-=======
-  	switch (response.b.body.collisionType) {
-	    case me.collision.types.WORLD_SHAPE:
-	    	if (other.type === "platform") {
-	        	if (this.body.falling && !me.input.isKeyPressed('down') && (response.overlapV.y > 0) && (~~this.body.vel.y >= ~~response.overlapV.y)) {
-	          		// Disable collision on the x axis
-	          		response.overlapV.x = 0;
-	          		// Respond to the platform (it is solid)
-	          		return true;
-	        	}
-	        // Do not respond to the platform (pass through)
-	        	return false;
-	      	}
-	      	break;
- 
-	    case me.collision.types.ENEMY_OBJECT:
-			//flicker in case we touched an enemy
-			if(me.input.isKeyPressed('punch')){
-				me.game.world.removeChild(other);
-				game.data.score += 50;
-			}
-			else{
-	    		this.renderable.flicker(750);
-	        	game.data.hp -= 0.1;
-	        	if(game.data.hp == 0){
-	        		me.state.change(me.state.GAME_END);
-	        	}
-	       	}
-	      	return false;
-	      	break;
-	 
-	    default:
-	    	// Do not respond to other objects (e.g. coins)
-	      	return false;
-	  }
-
->>>>>>> 9eec9df68e82d00277af433ee2b2abd66d029f9d
- 	  // Make the object solid
-  	  return true;
-	},
+	
+	 	  // Make the object solid
+	  	  return true;
+		},
 	
 	setStandingAnimation: function(){
 		if(this.up){
@@ -489,8 +454,6 @@ game.LaserEntity = me.Entity.extend({
 	    return true;
 	}
 });
-
-
 
 game.TurretEntity = me.Entity.extend({
 	init: function(x, y, settings){
