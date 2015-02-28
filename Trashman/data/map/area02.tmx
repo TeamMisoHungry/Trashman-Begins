@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="left-down" width="40" height="35" tilewidth="32" tileheight="32" nextobjectid="130">
+<map version="1.0" orientation="orthogonal" renderorder="left-down" width="40" height="35" tilewidth="32" tileheight="32" nextobjectid="132">
  <tileset firstgid="1" name="tileSheet3" tilewidth="32" tileheight="32">
   <image source="../img/map/tileSheet3.png" width="960" height="960"/>
  </tileset>
@@ -176,6 +176,7 @@
     <property name="z" value="0"/>
    </properties>
   </object>
+  <object id="131" x="429.333" y="256" width="129.333" height="114.667"/>
  </objectgroup>
  <objectgroup name="EnemyEntities">
   <object id="53" name="EnemyEntity" x="669.667" y="472.667"/>
@@ -183,10 +184,10 @@
   <object id="114" name="EnemyEntity" x="572.333" y="70"/>
   <object id="115" name="EnemyEntity2" x="447" y="400.333"/>
   <object id="116" name="EnemyEntity2" x="64.3333" y="727"/>
-  <object id="129" name="TurretEntity" x="460" y="696" width="35" height="16">
+  <object id="129" name="TurretEntity" x="460" y="696" width="16" height="14">
    <properties>
     <property name="image" value="turret"/>
-    <property name="spritewidth" value="35"/>
+    <property name="spritewidth" value="16"/>
    </properties>
   </object>
  </objectgroup>
