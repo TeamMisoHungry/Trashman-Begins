@@ -1,33 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="10" height="40" tilewidth="16" tileheight="16" nextobjectid="25">
- <tileset firstgid="1" name="bunch_o__free_tiles_by_magiscarf-d6ih36g copy" tilewidth="16" tileheight="16">
-  <image source="../Dropbox/CMPM20/Trashman images/tiles/bunch_o__free_tiles_by_magiscarf-d6ih36g copy.png" trans="ff00ff" width="992" height="1472"/>
- </tileset>
- <tileset firstgid="5705" name="look_both_ways_by_magiscarf-d5ssq6g" tilewidth="16" tileheight="16">
-  <image source="../Dropbox/CMPM20/Trashman images/tiles/look_both_ways_by_magiscarf-d5ssq6g.png" trans="ff00ff" width="256" height="192"/>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="10" height="40" tilewidth="16" tileheight="16" nextobjectid="52">
+ <tileset firstgid="1" name="city_tile" tilewidth="16" tileheight="16">
+  <image source="../../../../../Dropbox/CMPM20/Trashman images/tiles/bunch_o__free_tiles_by_magiscarf-d6ih36g copy.png" trans="ff00ff" width="992" height="1472"/>
+  <terraintypes>
+   <terrain name="New Terrain" tile="-1"/>
+  </terraintypes>
+  <tile id="2625">
+   <objectgroup draworder="index">
+    <object id="0" x="8" y="12"/>
+    <object id="0" x="8" y="12" width="8" height="16"/>
+    <object id="0" x="-8" y="-8" height="24"/>
+   </objectgroup>
+  </tile>
  </tileset>
  <layer name="Copy of Tile Layer 1" width="10" height="40">
   <data encoding="base64" compression="zlib">
    eJx7z8DA8H4Uj+JRPIqHAB4FgwsAAITAGCQ=
   </data>
  </layer>
- <layer name="Copy of Copy of Tile Layer 1" width="10" height="40">
-  <data encoding="base64" compression="zlib">
-   eJx7z8DA8J7GeBsd7BjFo3gUD388CgYXAAA2tRfr
-  </data>
- </layer>
  <layer name="Copy of Tile Layer 1" width="10" height="40">
   <data encoding="base64" compression="zlib">
-   eJztzEEOQDAQheFpj0NZIcGtRIJbIcGlqCt4i5coCbYWneRbdPJPExFJKYeCSmefQQU7NdBS5+zrWzfBTMtL98R3vvPdP7sehg8jWOduVSIbWXX90+AdUaBFQjL63Mfg519zANvv6vY=
+   eJwzYWBgMIViSyC2gmJrJHEzIC4C4vdQXA7EFVBciSRegqZuKxBvg+LteNThwqPqRtWNqqOuOncW4tS1ElC3AYg3EsCbgPgdkr43jAwMb6H4HSOqmTpAvi4UazExMGhDsQ4TQlwPiEfB4AIAhJnp7A==
   </data>
  </layer>
- <objectgroup name="Object Layer 1">
-  <object id="6" x="4" y="4" width="56" height="12"/>
-  <object id="8" x="4" y="20" width="12" height="460"/>
-  <object id="9" x="52" y="20" width="8" height="24"/>
-  <object id="12" x="100" y="4" width="56" height="12"/>
-  <object id="18" x="144" y="20" width="12" height="460"/>
-  <object id="19" x="20" y="440" width="124" height="40"/>
-  <object id="24" x="100" y="20" width="8" height="24"/>
+ <objectgroup name="collision">
+  <object id="37" x="16" y="16">
+   <polyline points="0,0 32,0 32,32 44,32 44,-16 84,-16 84,32 96,32 96,0 132,0 136,420 -4,420 -4,0 12,0"/>
+  </object>
+ </objectgroup>
+ <objectgroup name="Entities">
+  <object id="43" name="me.LevelEntity" x="32" y="412">
+   <properties>
+    <property name="duration" value="250"/>
+    <property name="fade" value="#000000"/>
+    <property name="to" value="area01"/>
+   </properties>
+   <polyline points="0,0 0,20 16,20 16,0 0,0"/>
+  </object>
+  <object id="48" name="mainPlayer" x="64" y="56" width="32" height="32">
+   <properties>
+    <property name="image" value="hero"/>
+    <property name="spritewidth" value="24"/>
+   </properties>
+  </object>
+  <object id="49" name="me.LevelEntity" x="73" y="13" width="16" height="16">
+   <properties>
+    <property name="duration" value="250"/>
+    <property name="fade" value="#000000"/>
+    <property name="to" value="area01"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>
