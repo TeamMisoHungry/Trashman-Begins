@@ -84,10 +84,10 @@
   </object>
  </objectgroup>
  <objectgroup name="collision">
-  <object id="27" x="2" y="235">
+  <object id="27" x="-6.70555" y="235">
    <polyline points="0,0 382,-1 382,51"/>
   </object>
-  <object id="28" x="415.46" y="285.521" rotation="-0.211398">
+  <object id="28" x="424.166" y="284.851" rotation="-0.211398">
    <polyline points="0,0 0,-51 281,-51 281,343 103.996,342.022 103.015,256.022"/>
   </object>
   <object id="35" x="375.634" y="235">
