@@ -43,7 +43,7 @@ game.PlayerEntity = me.Entity.extend({
  		this.up = false;
  		this.down = true;
  		this.hitting = false;
- 		this.bladesCollected = 3;
+ 		this.bladesCollected = 0;
 
     },
 
@@ -393,9 +393,18 @@ game.EnemyEntity2 = me.Entity.extend({
 game.LaserEntity = me.Entity.extend({
 	init: function(x, y, settings){
 		settings.image = "fire";
-		settings.spritewidth = 21;
-		settings.spriteheight = 11;
+		settings.width = 21;
+		settings.height = 11;
+		settings.z = Infinity;
+		settings.name = "LaserEntity";
+		settings.GUID = "LaserEntity";
+		this._super(me.Entity, 'init', [x, y, settings]);
 		this.renderable.addAnimation("fire", [0]);
+		this.time = 0;
+	},
+	
+	update: function(dt){
+		this.renderable.setCurrentAnimation("fire");
 	}
 });
 
@@ -415,8 +424,9 @@ game.TurretEntity = me.Entity.extend({
 	
 	update: function(dt){
 		this.time++;
-		
+		var myLaser = new game.LaserEntity(this.pos.x + 16, this.pos.y + 5, {});
 		if(this.time % 250 === 0 && this.safe){
+			me.game.world.removeChild(myLaser);
 			this.safe = false;
 			this.prep = true;
 		}else if(this.time % 150 === 0 && this.prep){
@@ -432,7 +442,8 @@ game.TurretEntity = me.Entity.extend({
 		}else if(this.prep){
 			this.renderable.setCurrentAnimation("prep");
 		}else if(this.fire){
-			this.renderable.setCurrentAnimation("fire");
+			me.game.world.addChild(myLaser, Infinity);
+			//this.renderable.setCurrentAnimation("fire");
 		}
 	},
 	
