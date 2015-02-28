@@ -74,7 +74,11 @@ game.PlayerEntity = me.Entity.extend({
  				}
  			}, 100);
  		}
- 		
+
+ 		if(me.input.isKeyPressed('talk')){
+ 			console.log("talk");
+ 		}
+
  		if(me.input.isKeyPressed('quit')){
  			me.state.change(me.state.GAME_END);
  		}
@@ -177,7 +181,10 @@ game.PlayerEntity = me.Entity.extend({
 			}
 			else{
 	    		this.renderable.flicker(750);
-	        	game.data.hp -= 1;
+	        	game.data.hp -= 0.1;
+	        	if(game.data.hp == 0){
+	        		me.state.change(me.state.GAME_END);
+	        	}
 	       	}
 	      	return false;
 	      	break;
@@ -429,15 +436,21 @@ game.LaserEntity = me.Entity.extend({
 		if(this.time % 175 == 0){
 			me.game.world.removeChild(this);
 		}
+	},
+	
+	onCollision: function(response, other){
+		this.body.setCollisionMask(me.collision.types.ENEMY_OBJECT);
 	}
 });
+
+
 
 game.TurretEntity = me.Entity.extend({
 	init: function(x, y, settings){
 		this._super(me.Entity, 'init', [x, y, settings]);
-		this.renderable.addAnimation("safe", [2]);
-		this.renderable.addAnimation("prep", [3, 4]);
-		this.renderable.addAnimation("fire", [0, 1,]);
+		this.renderable.addAnimation("safe", [1]);
+		this.renderable.addAnimation("prep", [0, 2]);
+
 		this.time = 0;
 		this.safe = true;
 		this.prep = false;
@@ -469,7 +482,7 @@ game.TurretEntity = me.Entity.extend({
 		}else if(this.fire){
 			if(!this.fireObject){
 				this.fireObject = true;
-				var myLaser = new game.LaserEntity(this.pos.x + 14, this.pos.y + 5, {});
+				var myLaser = new game.LaserEntity(this.pos.x + 10, this.pos.y + 3, {});
 				me.game.world.addChild(myLaser, Infinity);
 			}
 			//this.renderable.setCurrentAnimation("fire");

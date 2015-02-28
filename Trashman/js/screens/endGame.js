@@ -41,6 +41,7 @@ game.EndScreen = me.ScreenObject.extend({
         me.state.change(me.state.MENU);
       }
     });
+    game.data.hp = 100;
   },
  
   /**    
@@ -50,5 +51,5 @@ game.EndScreen = me.ScreenObject.extend({
     me.input.unbindKey(me.input.KEY.ENTER);
     me.input.unbindPointer(me.input.mouse.LEFT);
     me.event.unsubscribe(this.handler);
-   }
+  }
 });

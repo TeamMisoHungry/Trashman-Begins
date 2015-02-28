@@ -26,7 +26,8 @@ game.HUD.Container = me.Container.extend({
         // add our child score object at the top left corner
         this.addChild(new game.HUD.ScoreItem(630, 460));
         this.addChild(new game.HUD.TimeItem(10, 10));
-        this.addChild(new game.HUD.HealthItem(10, 25));
+        this.addChild(new game.HUD.HealthItem(46, 25));
+        this.addChild(new game.HUD.HPboxItem(10, 25));
     }
 });
 
@@ -89,7 +90,6 @@ game.HUD.TimeItem = me.Renderable.extend({
 	},
 	
 	draw: function(renderer){
-		console.log(game.data.hp);
 		this.font.draw(renderer, game.time.limit, this.pos.x, this.pos.y);
 	}
 	
@@ -113,8 +113,18 @@ game.HUD.HealthItem = me.Renderable.extend({
 	},
 	
 	draw: function(renderer){
-		this.font.draw(renderer, game.data.hp, this.pos.x, this.pos.y);
+		this.font.draw(renderer, Math.trunc(game.data.hp), this.pos.x, this.pos.y);
 	}
 	
 });
 
+game.HUD.HPboxItem = me.Renderable.extend({
+    init: function(x, y){
+        this._super(me.Renderable, 'init', [x, y, 10, 10]);
+        this.font = new me.BitmapFont("32x32Size8", 12);
+        this.font.set("left");
+    },
+    draw: function(renderer){
+        this.font.draw(renderer, "HP: ", this.pos.x, this.pos.y);
+    }
+});
