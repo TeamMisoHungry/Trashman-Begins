@@ -166,7 +166,7 @@ game.PlayerEntity = me.Entity.extend({
 			}
 			else{
 	    		this.renderable.flicker(750);
-	        	this.health -= 1;
+	        	game.data.hp -= 1;
 	       	}
 	      	return false;
 	      	break;
@@ -404,7 +404,11 @@ game.LaserEntity = me.Entity.extend({
 	},
 	
 	update: function(dt){
+		this.time++;	
 		this.renderable.setCurrentAnimation("fire");
+		if(this.time % 175 == 0){
+			me.game.world.removeChild(this);
+		}
 	}
 });
 
@@ -418,15 +422,16 @@ game.TurretEntity = me.Entity.extend({
 		this.safe = true;
 		this.prep = false;
 		this.fire = false;
-	
+		this.fireObject = false;
+		
 		this.renderable.setCurrentAnimation("safe");
 	},
 	
 	update: function(dt){
 		this.time++;
-		var myLaser = new game.LaserEntity(this.pos.x + 16, this.pos.y + 5, {});
+		
 		if(this.time % 250 === 0 && this.safe){
-			me.game.world.removeChild(myLaser);
+			this.fireObject = false;
 			this.safe = false;
 			this.prep = true;
 		}else if(this.time % 150 === 0 && this.prep){
@@ -442,7 +447,11 @@ game.TurretEntity = me.Entity.extend({
 		}else if(this.prep){
 			this.renderable.setCurrentAnimation("prep");
 		}else if(this.fire){
-			me.game.world.addChild(myLaser, Infinity);
+			if(!this.fireObject){
+				this.fireObject = true;
+				var myLaser = new game.LaserEntity(this.pos.x + 14, this.pos.y + 5, {});
+				me.game.world.addChild(myLaser, Infinity);
+			}
 			//this.renderable.setCurrentAnimation("fire");
 		}
 	},
