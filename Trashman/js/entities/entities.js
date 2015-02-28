@@ -74,7 +74,11 @@ game.PlayerEntity = me.Entity.extend({
  				}
  			}, 100);
  		}
- 		
+
+ 		if(me.input.isKeyPressed('talk')){
+ 			console.log("talk");
+ 		}
+
  		if(me.input.isKeyPressed('quit')){
  			me.state.change(me.state.GAME_END);
  		}
@@ -166,7 +170,10 @@ game.PlayerEntity = me.Entity.extend({
 			}
 			else{
 	    		this.renderable.flicker(750);
-	        	game.data.hp -= 1;
+	        	game.data.hp -= 0.1;
+	        	if(game.data.hp == 0){
+	        		me.state.change(me.state.GAME_END);
+	        	}
 	       	}
 	      	return false;
 	      	break;
@@ -411,6 +418,8 @@ game.LaserEntity = me.Entity.extend({
 		}
 	}
 });
+
+
 
 game.TurretEntity = me.Entity.extend({
 	init: function(x, y, settings){
