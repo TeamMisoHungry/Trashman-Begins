@@ -70,9 +70,6 @@
   <object id="64" x="424" y="696"/>
   <object id="65" x="448" y="688"/>
   <object id="66" x="424" y="680"/>
-  <object id="67" x="592" y="464"/>
-  <object id="68" x="584" y="456"/>
-  <object id="69" x="584" y="456"/>
   <object id="73" x="424" y="696"/>
   <object id="74" x="424" y="696"/>
   <object id="76" name="me.LevelEntity" x="752" y="40">
@@ -108,8 +105,5 @@
   <object id="46" x="474" y="544">
    <polyline points="0,0 1,89 -472,88 -472,-309"/>
   </object>
-  <object id="70" x="584" y="456"/>
-  <object id="71" x="592" y="456"/>
-  <object id="72" x="592" y="464"/>
  </objectgroup>
 </map>
