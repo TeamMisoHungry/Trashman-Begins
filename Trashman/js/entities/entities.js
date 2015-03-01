@@ -182,7 +182,7 @@ game.PlayerEntity = me.Entity.extend({
 				else{
 		    		this.renderable.flicker(750);
 		        	game.data.hp -= 0.1;
-		        	if(game.data.hp == 0){
+		        	if(game.data.hp <= 0){
 		        		me.state.change(me.state.GAME_END);
 		        	}
 		       	}
@@ -336,7 +336,7 @@ game.EnemyEntity2 = me.Entity.extend({
     var width = settings.width;
     var height = settings.height;
 
- 
+ 	
     // adjust the size setting information to match the sprite size
     // so that the entity object is created with the right size
     settings.spritewidth = settings.width = 16;
@@ -361,13 +361,13 @@ game.EnemyEntity2 = me.Entity.extend({
     this.body.setVelocity(3, 3);
     
     this.renderable.addAnimation("walkDown", [1]);
-	this.renderable.addAnimation("walkUp", [2]);   
-	     
+	this.renderable.addAnimation("walkUp", [2]);
+	   
   },
  
   // manage the enemy movement
   update: function(dt) {
- 
+ 	console.log(this);
     if (this.alive) {
       if (this.walkUp && this.pos.y <= this.startY) {
       	this.walkUp = false;
@@ -391,7 +391,6 @@ game.EnemyEntity2 = me.Entity.extend({
      
     // handle collisions against other shapes
     me.collision.check(this);
-       
     // return true if we moved or if the renderable was updated
     return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0 || this.body.vel.y !== 0);
   },
@@ -435,8 +434,9 @@ game.LaserEntity = me.Entity.extend({
 		if(this.time % 175 == 0){
 			me.game.world.removeChild(this);
 		}
-		
+		//console.log(this);
 		me.collision.check(this);
+		//console.log(me.collision.check(this));
 		return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0 || this.body.vel.y !== 0);
 	},
 	
@@ -473,14 +473,14 @@ game.TurretEntity = me.Entity.extend({
 	update: function(dt){
 		this.time++;
 		
-		if(this.time % 250 === 0 && this.safe){
+		if(this.time % 150 === 0 && this.safe){
 			this.fireObject = false;
 			this.safe = false;
 			this.prep = true;
 		}else if(this.time % 150 === 0 && this.prep){
 			this.prep = false;
 			this.fire = true;
-		}else if(this.time % 250 === 0 && this.fire){
+		}else if(this.time % 175 === 0 && this.fire){
 			this.fire = false;
 			this.safe = true;
 		}
@@ -493,7 +493,7 @@ game.TurretEntity = me.Entity.extend({
 			if(!this.fireObject){
 				this.fireObject = true;
 				var myLaser = new game.LaserEntity(this.pos.x + 10, this.pos.y + 3, {});
-				me.game.world.addChild(myLaser, 100);
+				me.game.world.addChild(myLaser, 75);
 			}
 		}
 	},	
