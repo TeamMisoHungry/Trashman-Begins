@@ -9,7 +9,7 @@ game.resources = [
     {name: "tileSheet5", type: "image", src: "data/img/map/tileSheet5.png"},
     {name: "tileSheet8", type: "image", src: "data/img/map/tileSheet8.png"},
     {name: "city", 		type: "image", src: "data/img/map/city.png"},
-	
+	{name: "verynicetile", type: "image", src: "data/img/map/verynicetile.png"},	
 	/*
 	 * sprite'si
 	 */ 
@@ -35,6 +35,7 @@ game.resources = [
 	*  Maps
 	*/
     {name: "area01", type: "tmx", src: "data/map/area01.tmx"},
+    {name: "area01b", type: "tmx", src: "data/map/area01b.tmx"},
     {name: "area02", type: "tmx", src: "data/map/area02.tmx"},
     {name: "city1", type: "tmx", src: "data/map/city1.tmx"},
 
