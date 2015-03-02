@@ -12,6 +12,7 @@ game.resources = [
 	//{name: "verynicetile", type: "image", src: "data/img/map/verynicetile.png"},
 	{name: "antarctica", type: "image", src: "data/map/antarctica.png"},	
 	{name: "headquarter", type: "image", src: "data/map/headquarter.png"},
+	{name: "desert", type: "image", src: "data/map/desert.png"},
 	/*
 	 * sprite'si
 	 */ 
@@ -36,10 +37,11 @@ game.resources = [
     /* 
 	*  Maps
 	*/
-    {name: "area01", type: "tmx", src: "data/map/area01.tmx"},
+    {name: "headquarter", type: "tmx", src: "data/map/headquarter.tmx"},
     //{name: "area01b", type: "tmx", src: "data/map/area01b.tmx"},
-    {name: "area02", type: "tmx", src: "data/map/area02.tmx"},
+    //{name: "area02", type: "tmx", src: "data/map/area02.tmx"},
     {name: "city1", type: "tmx", src: "data/map/city1.tmx"},
     {name: "antarctica", type: "tmx", src: "data/map/antarctica.tmx"},
+    {name: "desert", type: "tmx", src: "data/map/desert.tmx"},
 
 ];
