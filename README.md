@@ -1,7 +1,24 @@
 # Trashman-Begins
 **By the MisoHungry team**
 
-###Game Project
+###Walkthrough:
+######KEYS: 
+	1. WASD to move around
+	2. SPACE BAR to attack/punch
+######MAPS:
+	1. Headquarter
+		Left: City
+		Right: Desert
+		Bottom (little bridge by river): Antarctica
+	2. Desert
+	3. Antarctica
+	4. City - still working
+
+
+
+
+
+###How to run the game:
 
 Project file are in the directory Trashman.
 
