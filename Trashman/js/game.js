@@ -63,6 +63,7 @@ var game = {
         me.pool.register("TurbineEntity", game.TurbineEntity);
         me.pool.register("TurretEntity", game.TurretEntity);
         me.pool.register("LaserEntity", game.LaserEntity);
+        me.pool.register("ThrowBook", game.ThrowEntity);
 		
 		//enable the keyboard
 		me.input.bindKey(me.input.KEY.A, "left");
@@ -72,7 +73,7 @@ var game = {
 		me.input.bindKey(me.input.KEY.P, "pause");
 		me.input.bindKey(me.input.KEY.R, "read");	
 		me.input.bindKey(me.input.KEY.ESC, "unpause");	
-		me.input.bindKey(me.input.KEY.SPACE, "punch");
+		me.input.bindKey(me.input.KEY.SPACE, "throw");
 		me.input.bindKey(me.input.KEY.T, "quit");
 
 		//turn gravity off since this is a top-down

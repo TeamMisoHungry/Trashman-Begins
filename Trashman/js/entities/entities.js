@@ -30,14 +30,13 @@ game.PlayerEntity = me.Entity.extend({
 		this.renderable.addAnimation("standUp", [16]);
 		this.renderable.addAnimation("standLeft", [8]);
 		this.renderable.addAnimation("standRight", [12]);
-		//set hittin animations
+		//set hitting animations
 		this.renderable.addAnimation("hitRight", [2]);
 		this.renderable.addAnimation("hitLeft", [0]);
 		this.renderable.addAnimation("hitUp", [3]);
 		this.renderable.addAnimation("hitDown", [1]);
 
 		this.time = 0;
-		this.health = 100;
 		this.left1 = false;
  		this.right1 = false;
  		this.up = false;
@@ -75,9 +74,11 @@ game.PlayerEntity = me.Entity.extend({
  			}, 100);
  		}
 
+		//this needs to be declared in the game.js file. 
+		/*
  		if(me.input.isKeyPressed('talk')){
  			console.log("talk");
- 		}
+ 		}*/
 
  		if(me.input.isKeyPressed('quit')){
  			me.state.change(me.state.GAME_END);
@@ -138,7 +139,6 @@ game.PlayerEntity = me.Entity.extend({
 				
 			}	
 		}*/
-		
 		if(me.input.isKeyPressed('punch')){
 			this.setHittingAnimation();
 		}else{
@@ -174,6 +174,7 @@ game.PlayerEntity = me.Entity.extend({
 		      	break;
 	 
 		    case me.collision.types.ENEMY_OBJECT:
+		    	
 				//flicker in case we touched an enemy
 				if(me.input.isKeyPressed('punch')){
 					me.game.world.removeChild(other);
@@ -222,6 +223,41 @@ game.PlayerEntity = me.Entity.extend({
 		}
 		this.hitting = true;
 	}
+});
+
+game.ThrowEntity = me.Entity.extend({
+	init: function(x, y, settings){
+		
+		//needs an image of rotating book
+		settings.image = "throwBook";
+		//need to implement the size
+		settings.width = settings.spritewidth = 0;
+		settings.height = settings.spriteheight = 0;
+		this._super(me.Entity, 'init', [x, y, settings]);		
+		
+		//will be used to determine how far a book will travel before removal
+		x = this.pos.x;
+		this.startX = x;
+		this.endX = x + settings.width - settings.spritewidth * 20;
+		this.pos.x = x + settings.width - settings.spritewidth * 20;
+		
+		//will be used to determine how far a book will travel before removal		
+	    y = this.pos.y;
+	    this.startY = y;
+	    this.endY   = y + settings.height - settings.spriteheight * 20;
+	    this.pos.y = y + settings.height - settings.spriteheight * 20;
+	    
+		this.updateBounds();
+		this.body.setVelocity(5, 5);
+		
+		//needs sprite sheet
+		this.renderable.addAnimation("throw", [0]);
+	}, 
+	
+	update: function(dt){
+		
+	}
+	
 });
 /*
  * Sign entities
@@ -422,10 +458,12 @@ game.LaserEntity = me.Entity.extend({
 		settings.width = 75;
 		settings.height = 11;
 		settings.name = "laser";
+		settings.collisionMask = 4;
 		this._super(me.Entity, 'init', [x, y, settings]);
 		this.renderable.addAnimation("fire", [0]);
 		this.time = 0;
 		this.body.setCollisionType = me.collision.types.ENEMY_OBJECT;
+		this.updateBounds();
 	},
 	
 	update: function(dt){

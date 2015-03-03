@@ -1,20 +1,21 @@
 game.resources = [
 
     /* Graphics.
-     * @example */
+     *
+    
     {name: "tileSheet", type: "image", src: "data/img/map/tileSheet.png"},
     {name: "tileSheet2", type: "image", src: "data/img/map/tileSheet2.png"},
     {name: "tileSheet3", type: "image", src: "data/img/map/tileSheet3.png"},
     {name: "tileSheet4", type: "image", src: "data/img/map/tileSheet4.png"},
     {name: "tileSheet5", type: "image", src: "data/img/map/tileSheet5.png"},
-    {name: "tileSheet8", type: "image", src: "data/img/map/tileSheet8.png"},
+    {name: "tileSheet8", type: "image", src: "data/img/map/tileSheet8.png"},*/
     //{name: "city", 		type: "image", src: "data/img/map/city.png"},
 	//{name: "verynicetile", type: "image", src: "data/img/map/verynicetile.png"},
 	{name: "antarctica", type: "image", src: "data/map/antarctica.png"},	
 	{name: "headquarter", type: "image", src: "data/map/headquarter.png"},
 	{name: "desert", type: "image", src: "data/map/desert.png"},
 	/*
-	 * sprite'si
+	 * sprite's
 	 */ 
 	{name: "hero", type: "image", src: "data/img/sprites/trashman3.png"},
 	{name: "evilPokemon", type: "image", src: "data/img/sprites/pokemon5.png"},
