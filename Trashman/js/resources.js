@@ -8,6 +8,7 @@ game.resources = [
 	{name: "antarctica", type: "image", src: "data/map/antarctica.png"},	
 	{name: "headquarter", type: "image", src: "data/map/headquarter.png"},
 	{name: "desert", type: "image", src: "data/map/desert.png"},
+	{name: "city1", type: "image", src: "data/map/city1.png"},
 	/*
 	 * sprite'si
 	 */ 
