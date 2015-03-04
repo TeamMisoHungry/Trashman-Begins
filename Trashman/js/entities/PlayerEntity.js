@@ -131,7 +131,7 @@ game.PlayerEntity = me.Entity.extend({
 
 		//throwing
 		if(me.input.isKeyPressed('throw')){
-			var shot = new game.BulletEntity(this.pos.x, this.pos.y, {
+			var shot = new game.BulletEntity(this.pos.x+5, this.pos.y+5, {
 				image: 'garbage', 
 				spritewidth: 16, 
 				spriteheight:14, 
