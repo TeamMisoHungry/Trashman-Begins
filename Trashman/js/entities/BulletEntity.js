@@ -1,10 +1,9 @@
 game.BulletEntity = me.Entity.extend({
 
-    init: function (x, y, settings) {    
-        //llama al constructor
+    init: function (x, y, settings) {
+    	//constructor    
         this._super(me.Entity, 'init', [x, y , settings]);
-        
-        // Add missing shape (melonJS 2.0.x) 
+         //conllision object
         if (this.body.shapes.length === 0) {
             this.body.addShape(new me.Rect(0, 0, this.width, this.height));
         }
@@ -16,7 +15,6 @@ game.BulletEntity = me.Entity.extend({
             
     update: function(dt) {
         this.body.gravity = 0;
-        //velocidad y posición del disparo
         this.body.vel.x = 8;
         // update the body movement
         this.body.update(dt);

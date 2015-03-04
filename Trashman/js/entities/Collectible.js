@@ -21,4 +21,3 @@ game.TurbineEntity = me.CollectableEntity.extend({
 		other.bladesCollected++;
 	}
 });
-
