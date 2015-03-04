@@ -2,16 +2,7 @@ game.resources = [
 
     /* Graphics.
      *
-    
-    {name: "tileSheet", type: "image", src: "data/img/map/tileSheet.png"},
-    {name: "tileSheet2", type: "image", src: "data/img/map/tileSheet2.png"},
-    {name: "tileSheet3", type: "image", src: "data/img/map/tileSheet3.png"},
-    {name: "tileSheet4", type: "image", src: "data/img/map/tileSheet4.png"},
-    {name: "tileSheet5", type: "image", src: "data/img/map/tileSheet5.png"},
-    {name: "tileSheet8", type: "image", src: "data/img/map/tileSheet8.png"},*/
-
-    //{name: "city", 		type: "image", src: "data/img/map/city.png"},
-	//{name: "verynicetile", type: "image", src: "data/img/map/verynicetile.png"},
+	*/
 	{name: "antarctica", type: "image", src: "data/map/antarctica.png"},	
 	{name: "headquarter", type: "image", src: "data/map/headquarter.png"},
 	{name: "desert", type: "image", src: "data/map/desert.png"},
@@ -41,8 +32,6 @@ game.resources = [
 	*  Maps
 	*/
     {name: "headquarter", type: "tmx", src: "data/map/headquarter.tmx"},
-    //{name: "area01b", type: "tmx", src: "data/map/area01b.tmx"},
-    //{name: "area02", type: "tmx", src: "data/map/area02.tmx"},
     {name: "city1", type: "tmx", src: "data/map/city1.tmx"},
     {name: "antarctica", type: "tmx", src: "data/map/antarctica.tmx"},
     {name: "desert", type: "tmx", src: "data/map/desert.tmx"},
