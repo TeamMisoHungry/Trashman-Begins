@@ -74,12 +74,6 @@ game.PlayerEntity = me.Entity.extend({
  			}, 100);
  		}
 
-		//this needs to be declared in the game.js file. 
-		/*
- 		if(me.input.isKeyPressed('talk')){
- 			console.log("talk");
- 		}*/
-
  		if(me.input.isKeyPressed('quit')){
  			me.state.change(me.state.GAME_END);
  		}
@@ -128,17 +122,6 @@ game.PlayerEntity = me.Entity.extend({
 			}
 		}
 		
-		/*if(me.input.isKeyPressed('read')){
-			if(is_facing_hq_sign){
-				
-			}else if(is_facing_city_sign){
-				
-			}else if(is_facing_ice_sign){
-				
-			}else if(is_facing_desert_sign){
-				
-			}	
-		}*/
 		if(me.input.isKeyPressed('punch')){
 			this.setHittingAnimation();
 		}else{
@@ -151,7 +134,7 @@ game.PlayerEntity = me.Entity.extend({
         me.collision.check(this);
 
         // return true if we moved or if the renderable was updated
-        return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0 || this.body.vel.y !== 0);
+        return (this._super(me.Entity, 'update', [dt]));
     },
 
    /**
@@ -174,19 +157,15 @@ game.PlayerEntity = me.Entity.extend({
 		      	break;
 	 
 		    case me.collision.types.ENEMY_OBJECT:
-		    	
 				//flicker in case we touched an enemy
-				if(me.input.isKeyPressed('punch')){
-					me.game.world.removeChild(other);
-					game.data.score += 50;
-				}
-				else{
-		    		this.renderable.flicker(750);
-		        	game.data.hp -= 0.1;
-		        	if(game.data.hp <= 0){
+				//if flickering, don't deduct hp until done flickering'
+	    		if(!this.renderable.isFlickering()){
+	    			this.renderable.flicker(750);
+	        		game.data.hp -= 0.1;
+	        		if(game.data.hp <= 0){
 		        		me.state.change(me.state.GAME_END);
-		        	}
-		       	}
+	        		}
+	        	}
 		      	return false;
 		      	break;
 		 
@@ -225,67 +204,23 @@ game.PlayerEntity = me.Entity.extend({
 	}
 });
 
-game.ThrowEntity = me.Entity.extend({
-	init: function(x, y, settings){
-		
-		//needs an image of rotating book
-		settings.image = "throwBook";
-		//need to implement the size
-		settings.width = settings.spritewidth = 0;
-		settings.height = settings.spriteheight = 0;
-		this._super(me.Entity, 'init', [x, y, settings]);		
-		
-		//will be used to determine how far a book will travel before removal
-		x = this.pos.x;
-		this.startX = x;
-		this.endX = x + settings.width - settings.spritewidth * 20;
-		this.pos.x = x + settings.width - settings.spritewidth * 20;
-		
-		//will be used to determine how far a book will travel before removal		
-	    y = this.pos.y;
-	    this.startY = y;
-	    this.endY   = y + settings.height - settings.spriteheight * 20;
-	    this.pos.y = y + settings.height - settings.spriteheight * 20;
-	    
-		this.updateBounds();
-		this.body.setVelocity(5, 5);
-		
-		//needs sprite sheet
-		this.renderable.addAnimation("throw", [0]);
-	}, 
-	
-	update: function(dt){
-		
-	}
-	
-});
-/*
- * Sign entities
- */
-
-/*game.SignEntity = me.Entity.extend({
-	init: function(x,y,settings){
-		
-	}
-)};*/
-
 /*
  * Enemy entities
  */
 game.EnemyEntity = me.Entity.extend({
   init: function(x, y, settings) {
     // define this here instead of tiled
-    settings.image = "evilPokemon";
+    settings.image = "badGuy";
      
     // save the area size defined in Tiled
     var width = settings.width;
     var height = settings.height;
 
- 
+ 	this.alwaysUpdate = true;
     // adjust the size setting information to match the sprite size
     // so that the entity object is created with the right size
-    settings.spritewidth = settings.width = 16;
-    settings.spriteheight = settings.height = 16;
+    settings.spritewidth = settings.width = 40;
+    settings.spriteheight = settings.height = 32;
      
     // call the parent constructor
     this._super(me.Entity, 'init', [x, y , settings]);
@@ -303,16 +238,12 @@ game.EnemyEntity = me.Entity.extend({
     this.walkLeft = false;
  
     // walking & jumping speed
-    this.body.setVelocity(3, 3);
-    
-    this.renderable.addAnimation("walkRight", [0]);
-	this.renderable.addAnimation("walkLeft", [3]);   
+    this.body.setVelocity(3, 3); 
 	     
   },
  
   // manage the enemy movement
   update: function(dt) {
- 
     if(this.alive) {
       if (this.walkLeft && this.pos.x <= this.startX) {
       	this.walkLeft = false;
@@ -320,13 +251,8 @@ game.EnemyEntity = me.Entity.extend({
       	this.walkLeft = true;
     }
 	  // make it walk
-	  if(this.walkLeft){
-		this.renderable.setCurrentAnimation("walkLeft");
-	  }else{
-	   	this.renderable.setCurrentAnimation("walkRight");
-	  }	
+	  this.renderable.flipX(this.walkLeft);
 	  this.body.vel.x += (this.walkLeft) ? -this.body.accel.x * me.timer.tick : this.body.accel.x * me.timer.tick;
-     
     }else {
       this.body.vel.x = 0;
     }
@@ -338,7 +264,7 @@ game.EnemyEntity = me.Entity.extend({
     me.collision.check(this);
        
     // return true if we moved or if the renderable was updated
-    return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0 || this.body.vel.y !== 0);
+    return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0);
   },
    
   /**
@@ -348,7 +274,6 @@ game.EnemyEntity = me.Entity.extend({
   onCollision : function (response, other) {
   	if(me.collision.types.PLAYER_OBJECT){
   		this.renderable.flicker(750);  		
-  		
   	}
     if (response.b.body.collisionType !== me.collision.types.WORLD_SHAPE) {
       // res.y >0 means touched by something on the bottom
@@ -384,8 +309,8 @@ game.EnemyEntity2 = me.Entity.extend({
     // set start/end position based on the initial area size
     y = this.pos.y;
     this.startY = y;
-    this.endY   = y + height - settings.spriteheight * 5;
-    this.pos.y = y + height - settings.spriteheight * 5;
+    this.endY   = y + height - settings.spriteheight * 2;
+    this.pos.y = y + height - settings.spriteheight * 2;
  
     // manually update the entity bounds as we manually change the position
     this.updateBounds();
@@ -403,7 +328,7 @@ game.EnemyEntity2 = me.Entity.extend({
  
   // manage the enemy movement
   update: function(dt) {
- 	console.log(this);
+ 	//console.log(this);
     if (this.alive) {
       if (this.walkUp && this.pos.y <= this.startY) {
       	this.walkUp = false;
@@ -412,9 +337,13 @@ game.EnemyEntity2 = me.Entity.extend({
       }
 	    // make it walk
 	    if(this.walkUp){
-	    	this.renderable.setCurrentAnimation("walkUp");
+	    	if(!this.renderable.isCurrentAnimation("walkUp")){
+	    		this.renderable.setCurrentAnimation("walkUp");
+	    	}
 	    }else{
-	    	this.renderable.setCurrentAnimation("walkDown");
+	    	if(!this.renderable.isCurrentAnimation("walkDown")){
+	    		this.renderable.setCurrentAnimation("walkDown");
+	    	}
 	    }
 	    this.body.vel.y += (this.walkUp) ? -this.body.accel.y * me.timer.tick : this.body.accel.y * me.timer.tick;
      
@@ -452,49 +381,9 @@ game.EnemyEntity2 = me.Entity.extend({
   }
 });
 
-game.LaserEntity = me.Entity.extend({
-	init: function(x, y, settings){
-		settings.image = "fire";
-		settings.width = 75;
-		settings.height = 11;
-		settings.name = "laser";
-		settings.collisionMask = 4;
-		this._super(me.Entity, 'init', [x, y, settings]);
-		this.renderable.addAnimation("fire", [0]);
-		this.time = 0;
-		this.body.setCollisionType = me.collision.types.ENEMY_OBJECT;
-		this.updateBounds();
-	},
-	
-	update: function(dt){
-		this.time++;	
-		this.renderable.setCurrentAnimation("fire");
-		if(this.time % 175 == 0){
-			me.game.world.removeChild(this);
-		}
-		//console.log(this);
-		me.collision.check(this);
-		//console.log(me.collision.check(this));
-		return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0 || this.body.vel.y !== 0);
-	},
-	
-	onCollision: function(response, other){
-	  	if(me.collision.types.PLAYER_OBJECT){
-	  		this.renderable.flicker(750);  		
-	  	}
-	    if (response.b.body.collisionType !== me.collision.types.WORLD_SHAPE) {
-	      if (this.alive && (response.overlapV.y > 0) && response.a.body.falling) {
-	        this.renderable.flicker(750);
-	      }
-	      return false;
-	    }
-	    // Make all other objects solid
-	    return true;
-	}
-});
-
 game.TurretEntity = me.Entity.extend({
 	init: function(x, y, settings){
+		settings.z = 4;
 		this._super(me.Entity, 'init', [x, y, settings]);
 		this.renderable.addAnimation("safe", [1]);
 		this.renderable.addAnimation("prep", [0, 2]);
@@ -531,10 +420,54 @@ game.TurretEntity = me.Entity.extend({
 			if(!this.fireObject){
 				this.fireObject = true;
 				var myLaser = new game.LaserEntity(this.pos.x + 10, this.pos.y + 3, {});
-				me.game.world.addChild(myLaser, 75);
 			}
 		}
 	},	
+});
+
+game.LaserEntity = game.EnemyEntity.extend({
+	init: function(x, y, settings){
+		settings.image = "fire";
+		settings.width = 75;
+		settings.height = 11;
+		settings.name = "laser";
+		this._super(me.Entity, 'init', [x, y, settings]);
+		this.renderable.addAnimation("fire", [0]);
+		this.time = 0;
+		this.body.setCollisionType = me.collision.types.ENEMY_OBJECT;
+		this.updateBounds();
+		this.body.addShape(new me.Rect(0, 0, settings.width, settings.height));
+		me.game.world.addChild(this, 5);
+	},
+	
+	update: function(dt){
+		this.time++;
+		if(!this.renderable.isCurrentAnimation("fire")){	
+			this.renderable.setCurrentAnimation("fire");
+		}
+		
+		if(this.time % 175 == 0){
+			me.game.world.removeChild(this);
+		}
+		
+		me.collision.check(this);
+		//console.log(me.collision.check(this));
+		return (this._super(me.Entity, 'update', [dt]));
+	},
+	
+	onCollision: function(response, other){
+	  	if(me.collision.types.PLAYER_OBJECT){
+	  		this.renderable.flicker(750);  		
+	  	}
+	    if (response.b.body.collisionType !== me.collision.types.WORLD_SHAPE) {
+	      if (this.alive && (response.overlapV.y > 0) && response.a.body.falling) {
+	        this.renderable.flicker(750);
+	      }
+	      return false;
+	    }
+	    // Make all other objects solid
+	    return true;
+	}
 });
 
 game.GarbageEntity = me.CollectableEntity.extend({	
