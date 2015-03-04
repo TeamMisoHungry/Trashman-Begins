@@ -1,27 +1,31 @@
-game.LaserEntity = me.Entity.extend({
+game.LaserEntity = game.EnemyEntity.extend({
 	init: function(x, y, settings){
 		settings.image = "fire";
 		settings.width = 75;
 		settings.height = 11;
 		settings.name = "laser";
-		settings.collisionMask = 4;
 		this._super(me.Entity, 'init', [x, y, settings]);
 		this.renderable.addAnimation("fire", [0]);
 		this.time = 0;
 		this.body.setCollisionType = me.collision.types.ENEMY_OBJECT;
 		this.updateBounds();
+		this.body.addShape(new me.Rect(0, 0, settings.width, settings.height));
+		me.game.world.addChild(this, 5);
 	},
 	
 	update: function(dt){
-		this.time++;	
-		this.renderable.setCurrentAnimation("fire");
+		this.time++;
+		if(!this.renderable.isCurrentAnimation("fire")){	
+			this.renderable.setCurrentAnimation("fire");
+		}
+		
 		if(this.time % 175 == 0){
 			me.game.world.removeChild(this);
 		}
-		//console.log(this);
+		
 		me.collision.check(this);
 		//console.log(me.collision.check(this));
-		return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0 || this.body.vel.y !== 0);
+		return (this._super(me.Entity, 'update', [dt]));
 	},
 	
 	onCollision: function(response, other){
@@ -38,6 +42,3 @@ game.LaserEntity = me.Entity.extend({
 	    return true;
 	}
 });
-
-
-

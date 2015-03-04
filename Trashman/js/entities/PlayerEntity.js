@@ -32,11 +32,6 @@ game.PlayerEntity = me.Entity.extend({
 		this.renderable.addAnimation("standUp", [16]);
 		this.renderable.addAnimation("standLeft", [8]);
 		this.renderable.addAnimation("standRight", [12]);
-		//set hitting animations
-		this.renderable.addAnimation("hitRight", [2]);
-		this.renderable.addAnimation("hitLeft", [0]);
-		this.renderable.addAnimation("hitUp", [3]);
-		this.renderable.addAnimation("hitDown", [1]);
 
 		//shooting
 		this.lastTick = 0;
@@ -84,12 +79,6 @@ game.PlayerEntity = me.Entity.extend({
  			}, 100);
  		}
 
-		//this needs to be declared in the game.js file. 
-		/*
- 		if(me.input.isKeyPressed('talk')){
- 			console.log("talk");
- 		}*/
-
  		if(me.input.isKeyPressed('quit')){
  			me.state.change(me.state.GAME_END);
  		}
@@ -132,12 +121,8 @@ game.PlayerEntity = me.Entity.extend({
 			this.body.vel.y = 0;
 			//change to the standing animation
 			this.setStandingAnimation();
-			if(me.input.isKeyPressed('punch')){
-				this.setHittingAnimation();			
-			}else{
-				this.hitting = false;
-			}
 		}
+<<<<<<< HEAD:Trashman/js/entities/PlayerEntity.js
 		
 		/*if(me.input.isKeyPressed('read')){
 			if(is_facing_hq_sign){
@@ -152,6 +137,9 @@ game.PlayerEntity = me.Entity.extend({
 		}*/
 
 		//Attack
+=======
+
+>>>>>>> b35df5ae5e68174814ebc077e9decaa9ebf2a8e0:Trashman/js/entities/entities.js
 		if(me.input.isKeyPressed('punch')){
 			this.setHittingAnimation();
 		}else{
@@ -178,7 +166,7 @@ game.PlayerEntity = me.Entity.extend({
         me.collision.check(this);
 
         // return true if we moved or if the renderable was updated
-        return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0 || this.body.vel.y !== 0);
+        return (this._super(me.Entity, 'update', [dt]));
     },
 
    /**
@@ -201,19 +189,15 @@ game.PlayerEntity = me.Entity.extend({
 		      	break;
 	 
 		    case me.collision.types.ENEMY_OBJECT:
-		    	
 				//flicker in case we touched an enemy
-				if(me.input.isKeyPressed('punch')){
-					me.game.world.removeChild(other);
-					game.data.score += 50;
-				}
-				else{
-		    		this.renderable.flicker(750);
-		        	game.data.hp -= 0.1;
-		        	if(game.data.hp <= 0){
+				//if flickering, don't deduct hp until done flickering'
+	    		if(!this.renderable.isFlickering()){
+	    			this.renderable.flicker(750);
+	        		game.data.hp -= 0.1;
+	        		if(game.data.hp <= 0){
 		        		me.state.change(me.state.GAME_END);
-		        	}
-		       	}
+	        		}
+	        	}
 		      	return false;
 		      	break;
 		 
@@ -237,21 +221,5 @@ game.PlayerEntity = me.Entity.extend({
 			this.renderable.setCurrentAnimation("standDown");
 		}
 	},
-	
-	setHittingAnimation: function(){
-		if(this.up){
-			this.renderable.setCurrentAnimation("hitUp");
-		}else if(this.left1){
-			 this.renderable.setCurrentAnimation("hitLeft");
-		}else if(this.right1){ 
-			this.renderable.setCurrentAnimation("hitRight");
-		}else if(this.down){
-			this.renderable.setCurrentAnimation("hitDown");
-		}
-		this.hitting = true;
-	}
-
 });
-
-
 
