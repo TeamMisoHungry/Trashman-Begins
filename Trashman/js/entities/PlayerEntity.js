@@ -151,22 +151,23 @@ game.PlayerEntity = me.Entity.extend({
 			}	
 		}*/
 
+		//Attack
 		if(me.input.isKeyPressed('punch')){
 			this.setHittingAnimation();
 		}else{
 			this.hitting = false;
 		}
 
-		//throwing
+		//Throwing
 		if(me.input.isKeyPressed('throw')){
-			var shot = new game.BulletEntity(this.pos.x, this.pos.y, {
+			var throwTrash = new game.BulletEntity(this.pos.x, this.pos.y, {
 				image: 'garbage', 
 				spritewidth: 16, 
 				spriteheight:14, 
 				width:16, 
 				height:14
 			});
-			me.game.world.addChild(shot, this.z);
+			me.game.world.addChild(throwTrash, this.z);
 			me.game.world.sort();
 		}
         

@@ -11,17 +11,29 @@ game.BulletEntity = me.Entity.extend({
 
         this.pos.y = (this.pos.y)+15; 
         this.pos.x = (this.pos.x)+15;
+        console.log("shot created");
+        this.gravity = 1;
     },
   
             
     update: function(dt) {
-        this.body.gravity = 0;
-        //velocidad y posición del disparo
+        this.body.gravity = 1;
         this.body.vel.x = 8;
+        
+        if(!this.visible) { take bullet offscreen
+            me.game.remove(this);
+        }
+
+        if(this.scale.x > 0){
+            this.vel.x += 2; // ------------------------- give it some speed
+        } else {
+            this.vel.x -= 2;
+        }
+    
         // update the body movement
         this.body.update(dt);
         // handle collisions against other shapes
-        me.collision.check(this);
+        var res = me.collision.check(this);
         // return true if we moved or if the renderable was updated
         return (this._super(me.Entity, 'update', [dt])); 
         
@@ -33,8 +45,12 @@ game.BulletEntity = me.Entity.extend({
      */
     onCollision : function (response, other) { 
         // Make all other objects solid
-        if (other.body.collisionType === me.collision.types.PROJECTILE_OBJECT) {
-        // apply "hit by bullet" effects here...
+        if(res && (res.obj.type == me.game.ENEMY_OBJECT)) {
+    /*me.game.HUD.updateItemValue("score", 50);*/
+            me.game.remove(this);
+            me.game.remove(res.obj);
+        }
+    
     }
         // Do not adjust entity position
         return false;
