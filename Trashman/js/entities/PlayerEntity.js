@@ -122,40 +122,23 @@ game.PlayerEntity = me.Entity.extend({
 			//change to the standing animation
 			this.setStandingAnimation();
 		}
-<<<<<<< HEAD:Trashman/js/entities/PlayerEntity.js
-		
-		/*if(me.input.isKeyPressed('read')){
-			if(is_facing_hq_sign){
-				
-			}else if(is_facing_city_sign){
-				
-			}else if(is_facing_ice_sign){
-				
-			}else if(is_facing_desert_sign){
-				
-			}	
-		}*/
 
-		//Attack
-=======
-
->>>>>>> b35df5ae5e68174814ebc077e9decaa9ebf2a8e0:Trashman/js/entities/entities.js
 		if(me.input.isKeyPressed('punch')){
 			this.setHittingAnimation();
 		}else{
 			this.hitting = false;
 		}
 
-		//Throwing
+		//throwing
 		if(me.input.isKeyPressed('throw')){
-			var throwTrash = new game.BulletEntity(this.pos.x, this.pos.y, {
+			var shot = new game.BulletEntity(this.pos.x, this.pos.y, {
 				image: 'garbage', 
 				spritewidth: 16, 
 				spriteheight:14, 
 				width:16, 
 				height:14
 			});
-			me.game.world.addChild(throwTrash, this.z);
+			me.game.world.addChild(shot, this.z);
 			me.game.world.sort();
 		}
         
@@ -222,4 +205,5 @@ game.PlayerEntity = me.Entity.extend({
 		}
 	},
 });
+
 

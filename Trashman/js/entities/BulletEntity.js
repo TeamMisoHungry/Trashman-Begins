@@ -20,6 +20,9 @@ game.BulletEntity = me.Entity.extend({
         this.body.gravity = 1;
 =======
         this.body.gravity = 0;
+<<<<<<< HEAD
+>>>>>>> b35df5ae5e68174814ebc077e9decaa9ebf2a8e0
+=======
 >>>>>>> b35df5ae5e68174814ebc077e9decaa9ebf2a8e0
         this.body.vel.x = 8;
         
