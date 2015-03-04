@@ -56,6 +56,8 @@ var game = {
         me.state.transition("fade", "#FFFFFF", 250);
 
         // add our player or other entities in the entity pool
+
+        me.pool.register("BulletEntity", game.BulletEntity);
         me.pool.register("mainPlayer", game.PlayerEntity);
         me.pool.register("EnemyEntity", game.EnemyEntity);
         me.pool.register("EnemyEntity2", game.EnemyEntity2);
@@ -64,6 +66,7 @@ var game = {
         me.pool.register("TurretEntity", game.TurretEntity);
         me.pool.register("LaserEntity", game.LaserEntity);
         me.pool.register("ThrowBook", game.ThrowEntity);
+
 		
 		//enable the keyboard
 		me.input.bindKey(me.input.KEY.A, "left");
@@ -80,5 +83,6 @@ var game = {
 		me.sys.gravity = 0;
         // display the menu title
         me.state.change(me.state.MENU);
-    }
+    },
+
 };
