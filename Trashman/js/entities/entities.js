@@ -8,7 +8,9 @@ game.PlayerEntity = me.Entity.extend({
     init:function (x, y, settings) {
         // call the constructor
     	this._super(me.Entity, 'init', [x, y , settings]);
-		
+
+		this.isWeaponCoolDown = false;
+        this.weaponCoolDownTime = 500;
 		//setting deafauly horizontal & vertical speed
 		this.body.setVelocity(3, 3);
 		
@@ -36,6 +38,9 @@ game.PlayerEntity = me.Entity.extend({
 		this.renderable.addAnimation("hitUp", [3]);
 		this.renderable.addAnimation("hitDown", [1]);
 
+		//shooting
+		this.lastTick = 0;
+
 		this.time = 0;
 		this.left1 = false;
  		this.right1 = false;
@@ -50,6 +55,8 @@ game.PlayerEntity = me.Entity.extend({
      * update the entity
      */
     update : function (dt) {
+    	
+    	//time limits
     	this.time++;
     
     	if(this.time % 50 === 0){
@@ -62,6 +69,9 @@ game.PlayerEntity = me.Entity.extend({
 		if(this.bladesCollected >= 4){
 			me.state.change(me.state.GAME_END);
 		}
+
+		//************CHECK FOR KEY INPUT ****************
+
  		//pause button, hit P to pause, ESC to unpause
  		if(me.input.isKeyPressed('pause') && !me.state.isPaused()){
  			me.state.pause(true);
@@ -77,7 +87,8 @@ game.PlayerEntity = me.Entity.extend({
  		if(me.input.isKeyPressed('quit')){
  			me.state.change(me.state.GAME_END);
  		}
-		//adding movement based on up, down, left, right arrows
+
+		//adding movement/changing main character's sprite based on up, down, left, right arrows
 		if(me.input.isKeyPressed('left')){
 			this.body.vel.x -= this.body.accel.x * me.timer.tick;
 			this.body.vel.y = 0;
@@ -122,11 +133,40 @@ game.PlayerEntity = me.Entity.extend({
 			}
 		}
 		
+<<<<<<< HEAD
+=======
+		/*if(me.input.isKeyPressed('read')){
+			if(is_facing_hq_sign){
+				
+			}else if(is_facing_city_sign){
+				
+			}else if(is_facing_ice_sign){
+				
+			}else if(is_facing_desert_sign){
+				
+			}	
+		}*/
+
+>>>>>>> eae5c2e2fa26bdf0eedfdda5c2055f348fc1a8e9
 		if(me.input.isKeyPressed('punch')){
 			this.setHittingAnimation();
 		}else{
 			this.hitting = false;
 		}
+
+		//throwing
+		if(me.input.isKeyPressed('throw')){
+			var shot = new game.BulletEntity(this.pos.x, this.pos.y, {
+				image: 'garbage', 
+				spritewidth: 16, 
+				spriteheight:14, 
+				width:16, 
+				height:14
+			});
+			me.game.world.addChild(shot, this.z);
+			me.game.world.sort();
+		}
+        
 
         // apply physics to the body (this moves the entity)
         this.body.update(dt);
@@ -176,7 +216,7 @@ game.PlayerEntity = me.Entity.extend({
 	
 	 	  // Make the object solid
 	  	  return true;
-		},
+	},
 	
 	setStandingAnimation: function(){
 		if(this.up){
@@ -202,8 +242,8 @@ game.PlayerEntity = me.Entity.extend({
 		}
 		this.hitting = true;
 	}
-});
 
+<<<<<<< HEAD
 /*
  * Enemy entities
  */
@@ -493,4 +533,9 @@ game.TurbineEntity = me.CollectableEntity.extend({
 		other.bladesCollected++;
 	}
 });
+=======
+});
+
+
+>>>>>>> eae5c2e2fa26bdf0eedfdda5c2055f348fc1a8e9
 

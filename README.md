@@ -5,6 +5,8 @@
 ######KEYS: 
 	1. WASD to move around
 	2. SPACE BAR to attack/punch
+	3. P to pause
+	4. ESC to unpause
 ######MAPS:
 	1. Headquarter
 		Left: City
