@@ -121,9 +121,9 @@ game.PlayerEntity = me.Entity.extend({
 			var shot = new game.BulletEntity(this.pos.x+5, this.pos.y+5, {
 				image: 'garbage', 
 				spritewidth: 16, 
-				spriteheight:16, 
+				spriteheight:14, 
 				width:16, 
-				height:16
+				height:14
 			}, [this.up, this.down, this.left1, this.right1]);
 			me.game.world.addChild(shot, this.z);
 			//me.game.world.sort();
