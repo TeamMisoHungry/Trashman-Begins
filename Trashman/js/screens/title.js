@@ -22,6 +22,8 @@ game.TitleScreen = me.ScreenObject.extend({
      
         this.scroller = "A SIMPLE PROTOTYPE WITH TITLE SCREEN, MOVEMENT, AND LEVEL TRANSITION";
         this.scrollerpos = 600;
+ 
+        me.audio.playTrack("main", true);
       },
       
       // some callback for the tween objects
@@ -61,6 +63,7 @@ game.TitleScreen = me.ScreenObject.extend({
    *  action to perform when leaving this screen (state change)
    */
   onDestroyEvent : function() {
+  	me.audio.fade("main", 1, 0, 1000);
     me.input.unbindKey(me.input.KEY.ENTER);
     me.input.unbindPointer(me.input.mouse.LEFT);
     me.event.unsubscribe(this.handler);

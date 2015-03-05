@@ -6,6 +6,7 @@ game.PlayerEntity = me.Entity.extend({
      * constructor
      */
     init:function (x, y, settings) {
+    	
         // call the constructor
     	this._super(me.Entity, 'init', [x, y , settings]);
 
@@ -39,7 +40,22 @@ game.PlayerEntity = me.Entity.extend({
 		this.left1 = false;
  		this.right1 = false;
  		this.up = false;
- 		this.down = true; 		
+ 		this.down = true; 	
+ 		
+ 		me.audio.stopTrack();
+ 		
+ 		if(me.game.currentLevel.name == "headquarter"){
+ 			me.audio.playTrack("hq", true);
+ 		}
+ 		else if(me.game.currentLevel.name == "city1"){
+ 			me.audio.playTrack("city", true);
+ 		}
+ 		else if(me.game.currentLevel.name == "antarctica"){
+ 			me.audio.playTrack("ice", true);
+ 		}
+ 		else if(me.game.currentLevel.name == "desert"){
+ 			me.audio.playTrack("desert", true);
+ 		}
     },
 
     /**
