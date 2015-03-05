@@ -115,11 +115,25 @@ game.PlayerEntity = me.Entity.extend({
 			//change to the standing animation
 			this.setStandingAnimation();
 		}
+<<<<<<< HEAD:Trashman/js/entities/entities.js
 
 		//throwing
 		if(me.input.isKeyPressed('throw')){
 			var shot = new game.BulletEntity(this.pos.x, this.pos.y, {
 				image: 'book', 
+=======
+
+		if(me.input.isKeyPressed('punch')){
+			this.setHittingAnimation();
+		}else{
+			this.hitting = false;
+		}
+
+		//throwing
+		if(me.input.isKeyPressed('throw')){
+			var shot = new game.BulletEntity(this.pos.x+5, this.pos.y+5, {
+				image: 'garbage', 
+>>>>>>> cf59a72f84b69a9c63e2be1e1933e1af1407ec21:Trashman/js/entities/PlayerEntity.js
 				spritewidth: 16, 
 				spriteheight:16, 
 				width:16, 
@@ -193,4 +207,5 @@ game.PlayerEntity = me.Entity.extend({
 		}
 	},
 });
+
 
