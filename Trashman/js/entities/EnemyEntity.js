@@ -53,9 +53,6 @@ game.EnemyEntity = me.Entity.extend({
            
     // update the body movement
     this.body.update(dt);
-     
-    // handle collisions against other shapes
-    me.collision.check(this);
        
     // return true if we moved or if the renderable was updated
     return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0);
@@ -66,20 +63,9 @@ game.EnemyEntity = me.Entity.extend({
    * (called when colliding with other objects)
    */
   onCollision : function (response, other) {
-  	if(me.collision.types.PLAYER_OBJECT){
-  		this.renderable.flicker(750);  		
-  	}
-    if (response.b.body.collisionType !== me.collision.types.WORLD_SHAPE) {
-      // res.y >0 means touched by something on the bottom
-      // which mean at top position for this one
-      if (this.alive && (response.overlapV.y > 0) && response.a.body.falling) {
-        this.renderable.flicker(750);
-      }
-      return false;
-    }
-    // Make all other objects solid
-    return true;
+  	this.body.setCollisionMask(me.collision.types.ENEMY_OBJECT);
   }
+  
 });
 
 game.EnemyEntity2 = me.Entity.extend({
@@ -148,8 +134,6 @@ game.EnemyEntity2 = me.Entity.extend({
     // update the body movement
     this.body.update(dt);
      
-    // handle collisions against other shapes
-    me.collision.check(this);
     // return true if we moved or if the renderable was updated
     return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0 || this.body.vel.y !== 0);
   },
@@ -159,20 +143,9 @@ game.EnemyEntity2 = me.Entity.extend({
    * (called when colliding with other objects)
    */
   onCollision : function (response, other) {
-  	if(me.collision.types.PLAYER_OBJECT){
-  		this.renderable.flicker(750);  		
-  	}
-    if (response.b.body.collisionType !== me.collision.types.WORLD_SHAPE) {
-      // res.y >0 means touched by something on the bottom
-      // which mean at top position for this one
-      if (this.alive && (response.overlapV.y > 0) && response.a.body.falling) {
-        this.renderable.flicker(750);
-      }
-      return false;
-    }
-    // Make all other objects solid
-    return true;
+  	this.body.setCollisionMask(me.collision.types.ENEMY_OBJECT);
   }
+  
 });
 
 game.TurretEntity = me.Entity.extend({
@@ -187,7 +160,6 @@ game.TurretEntity = me.Entity.extend({
 		this.prep = false;
 		this.fire = false;
 		this.fireObject = false;
-		this.body.setCollisionMask(me.collision.types.NO_OBJECT);
 		this.renderable.setCurrentAnimation("safe");
 	},
 	
@@ -217,4 +189,8 @@ game.TurretEntity = me.Entity.extend({
 			}
 		}
 	},	
+	
+	onCollision: function(){
+		this.body.setCollisionMask(me.collision.types.NO_OBJECT);
+	}
 });

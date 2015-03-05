@@ -96,7 +96,7 @@ game.PlayerEntity = me.Entity.extend({
 		if(me.input.isKeyPressed('left')){
 			this.body.vel.x -= this.body.accel.x * me.timer.tick;
 			this.body.vel.y = 0;
-			if(!this.renderable.isCurrentAnimation("walkLeft")){
+			if(!this.left1){
 				this.renderable.setCurrentAnimation("walkLeft");
 				this.left1 = true;
 				this.right1 = this.up = this.down = false;
@@ -104,7 +104,7 @@ game.PlayerEntity = me.Entity.extend({
 		}else if(me.input.isKeyPressed('right')){
 			this.body.vel.x += this.body.accel.x * me.timer.tick;
 			this.body.vel.y = 0;
-			if(!this.renderable.isCurrentAnimation("walkRight")){
+			if(!this.right1){
 				this.renderable.setCurrentAnimation("walkRight");
 				this.right1 = true;
 				this.up = this.down = this.left1 = false;
@@ -112,7 +112,7 @@ game.PlayerEntity = me.Entity.extend({
 		}else if(me.input.isKeyPressed('up')){
 			this.body.vel.y -= this.body.accel.y * me.timer.tick;
 			this.body.vel.x = 0;
-			if(!this.renderable.isCurrentAnimation("walkUp")){
+			if(!this.up){
 				this.renderable.setCurrentAnimation("walkUp");
 				this.up = true;
 				this.right1 = this.left1 = this.down = false;
@@ -120,7 +120,7 @@ game.PlayerEntity = me.Entity.extend({
 		}else if(me.input.isKeyPressed('down')){
 			this.body.vel.y += this.body.accel.y * me.timer.tick;
 			this.body.vel.x = 0;
-			if(!this.renderable.isCurrentAnimation("walkDown")){
+			if(!this.down){
 				this.renderable.setCurrentAnimation("walkDown");
 				this.down = true;
 				this.up = this.left1 = this.right1 = false;
