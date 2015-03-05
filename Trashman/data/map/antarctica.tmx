@@ -16,7 +16,7 @@
     <property name="to" value="headquarter"/>
    </properties>
   </object>
-  <object id="39" name="me.LevelEntity" x="116" y="564" width="16" height="24" visible="0"/>
+  <object id="39" name="me.LevelEntity" x="116" y="564" width="16" height="24"/>
   <object id="40" name="mainPlayer" x="836" y="504" width="32" height="32">
    <properties>
     <property name="image" value="hero"/>

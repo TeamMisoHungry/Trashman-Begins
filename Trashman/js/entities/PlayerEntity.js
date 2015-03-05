@@ -6,11 +6,10 @@ game.PlayerEntity = me.Entity.extend({
      * constructor
      */
     init:function (x, y, settings) {
+    	
         // call the constructor
     	this._super(me.Entity, 'init', [x, y , settings]);
 
-		this.isWeaponCoolDown = false;
-        this.weaponCoolDownTime = 500;
 		//setting deafauly horizontal & vertical speed
 		this.body.setVelocity(3, 3);
 		
@@ -21,6 +20,7 @@ game.PlayerEntity = me.Entity.extend({
 		
 		//ensure the player is updated even when outside of viewport
 		this.alwaysUpdate = true;
+		this.body.collisionType = me.collision.types.PLAYER_OBJECT;
 		
 		//define a basic walking animation(using all frames)
 		this.renderable.addAnimation("walkRight", [12, 13, 14, 15]);
@@ -40,10 +40,22 @@ game.PlayerEntity = me.Entity.extend({
 		this.left1 = false;
  		this.right1 = false;
  		this.up = false;
- 		this.down = true;
- 		this.hitting = false;
- 		this.bladesCollected = 0;
-
+ 		this.down = true; 	
+ 		
+ 		me.audio.stopTrack();
+ 		
+ 		if(me.game.currentLevel.name == "headquarter"){
+ 			me.audio.playTrack("hq", true);
+ 		}
+ 		else if(me.game.currentLevel.name == "city1"){
+ 			me.audio.playTrack("city", true);
+ 		}
+ 		else if(me.game.currentLevel.name == "antarctica"){
+ 			me.audio.playTrack("ice", true);
+ 		}
+ 		else if(me.game.currentLevel.name == "desert"){
+ 			me.audio.playTrack("desert", true);
+ 		}
     },
 
     /**
@@ -59,9 +71,6 @@ game.PlayerEntity = me.Entity.extend({
 			game.time.overallTime++;
 		}
 		if(game.time.limit == 0){
-			me.state.change(me.state.GAME_END);
-		}
-		if(this.bladesCollected >= 4){
 			me.state.change(me.state.GAME_END);
 		}
 
@@ -123,23 +132,17 @@ game.PlayerEntity = me.Entity.extend({
 			this.setStandingAnimation();
 		}
 
-		if(me.input.isKeyPressed('punch')){
-			this.setHittingAnimation();
-		}else{
-			this.hitting = false;
-		}
-
 		//throwing
 		if(me.input.isKeyPressed('throw')){
-			var shot = new game.BulletEntity(this.pos.x, this.pos.y, {
+			var shot = new game.BulletEntity(this.pos.x+5, this.pos.y+5, {
 				image: 'garbage', 
 				spritewidth: 16, 
 				spriteheight:14, 
 				width:16, 
 				height:14
-			});
+			}, [this.up, this.down, this.left1, this.right1]);
 			me.game.world.addChild(shot, this.z);
-			me.game.world.sort();
+			//me.game.world.sort();
 		}
         
 
@@ -149,7 +152,7 @@ game.PlayerEntity = me.Entity.extend({
         me.collision.check(this);
 
         // return true if we moved or if the renderable was updated
-        return (this._super(me.Entity, 'update', [dt]));
+        return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0 || this.body.vel.y !== 0);
     },
 
    /**
@@ -174,16 +177,17 @@ game.PlayerEntity = me.Entity.extend({
 		    case me.collision.types.ENEMY_OBJECT:
 				//flicker in case we touched an enemy
 				//if flickering, don't deduct hp until done flickering'
-	    		if(!this.renderable.isFlickering()){
-	    			this.renderable.flicker(750);
-	        		game.data.hp -= 0.1;
-	        		if(game.data.hp <= 0){
-		        		me.state.change(me.state.GAME_END);
-	        		}
+				if(other.type != "playerBullet"){
+		    		if(!this.renderable.isFlickering()){
+		    			this.renderable.flicker(750);
+		        		game.data.hp -= 0.1;
+		        		if(game.data.hp <= 0){
+			        		me.state.change(me.state.GAME_END);
+		        		}
+		        	}
 	        	}
 		      	return false;
 		      	break;
-		 
 		    default:
 		    	// Do not respond to other objects (e.g. coins)
 		      	return false;
@@ -205,5 +209,4 @@ game.PlayerEntity = me.Entity.extend({
 		}
 	},
 });
-
 

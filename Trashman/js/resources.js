@@ -11,6 +11,7 @@ game.resources = [
 	 * sprite's
 	 */ 
 	{name: "hero", type: "image", src: "data/img/sprites/trashman3.png"},
+	{name: "book", type: "image", src: "data/img/sprites/book.png"},
 	{name: "badGuy", type: "image", src: "data/img/sprites/badGuy.png"},
 	{name: "garbage", type: "image", src: "data/img/sprites/garbage.png"},
 	{name: "bullet", type: "image", src: "data/img/sprites/bullet.png"},
@@ -36,5 +37,17 @@ game.resources = [
     {name: "city1", type: "tmx", src: "data/map/city1.tmx"},
     {name: "antarctica", type: "tmx", src: "data/map/antarctica.tmx"},
     {name: "desert", type: "tmx", src: "data/map/desert.tmx"},
-
+    
+    /*
+     * BGM
+     */
+	{name: "main", type: "audio", src: "data/bgm/"},
+	{name: "hq", type: "audio", src: "data/bgm/"},
+	{name: "city", type: "audio", src: "data/bgm/"},
+	{name: "ice", type: "audio", src: "data/bgm/"},
+	{name: "desert", type: "audio", src: "data/bgm/"},
+	
+	/*
+	 * SFX
+	 */
 ];
