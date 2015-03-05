@@ -15,11 +15,9 @@ game.BulletEntity = me.Entity.extend({
   
             
     update: function(dt) {
-        this.body.vel.x = 8;
+        this.body.vel.x = 3;
         this.body.gravity = 0;
         
-
-    
         // update the body movement
         this.body.update(dt);
         // handle collisions against other shapes
@@ -34,12 +32,15 @@ game.BulletEntity = me.Entity.extend({
      * (called when colliding with other objects)
      */
     onCollision : function (response, other) { 
-        // Make all other objects solid
-        //if(res && (res.obj.type == me.game.ENEMY_OBJECT)) {
-    /*me.game.HUD.updateItemValue("score", 50);*/
-          //  me.game.remove(this);
-           // me.game.remove(res.obj);
-        //}
+        if(me.collision.types.PLAYER_OBJECT){
+            this.body.vel.x = 0;      
+        } else if (me.collision.types.ENEMY_OBJECT){
+
+        }
+        // apply "hit by bullet" effects here...
+
+        // Do not adjust entity position
+    
     
     
         // Do not adjust entity position
