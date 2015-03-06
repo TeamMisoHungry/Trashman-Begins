@@ -17,19 +17,20 @@ game.CreditsScreen = me.ScreenObject.extend({
 	     
 	        this.scroller = "A MISOHUNRGY GAME";
 	        this.scrollerpos = -16;
-	      },
+	      	},
 	       
-	      update : function (dt) {
-	        return true;
-	      },
+	     	update : function (dt) {
+	        	return true;
+	      	},
 	       
-	      draw : function (renderer) {
-	        this.font.draw(renderer, this.scroller, 200, this.scrollerpos);
-	      },
-	      onDestroyEvent : function() {
-	        //just in case
-	        this.scrollertween.stop();
-	      }
+	      	draw : function (renderer) {
+	        	this.font.draw(renderer, this.scroller, 200, this.scrollerpos);
+	      	},
+	      	
+	      	onDestroyEvent : function() {
+	        	//just in case
+	      		this.scrollertween.stop();
+	      	}
     })), 2);
 	}, 
 	
