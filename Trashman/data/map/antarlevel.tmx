@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="10" height="40" tilewidth="32" tileheight="32" nextobjectid="6">
+ <tileset firstgid="1" name="toAntar2" tilewidth="32" tileheight="32">
+  <image source="toAntar2.png" width="720" height="640"/>
+ </tileset>
+ <tileset firstgid="441" name="toAntar1" tilewidth="32" tileheight="32">
+  <image source="toAntar1.png" width="640" height="640"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="10" height="40">
+  <data encoding="base64" compression="zlib">
+   eJwzZmBgMB5B+CkjBJMrPxBuHUxuopcfh7rf6eVu9HAaKuFGT3cOxvAYSnGFz+0ADr1sXA==
+  </data>
+ </layer>
+ <objectgroup name="Entities">
+  <object id="2" name="mainPlayer" x="128" y="3" width="28" height="29">
+   <properties>
+    <property name="image" value="hero"/>
+    <property name="spritewidth" value="24"/>
+   </properties>
+  </object>
+  <object id="3" name="me.LevelEntity" x="123" y="1218" width="68" height="60">
+   <properties>
+    <property name="duration" value="250"/>
+    <property name="fade" value="#000000"/>
+    <property name="to" value="antarctica"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
