@@ -5,7 +5,8 @@ var game = {
     data : {
         // score
         score : 0,
-        hp : 100
+        hp : 100,
+        fps : 30
     },
 
     item : {
