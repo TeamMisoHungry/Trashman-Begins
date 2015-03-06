@@ -63,7 +63,7 @@ game.EnemyEntity = me.Entity.extend({
    * (called when colliding with other objects)
    */
   onCollision : function (response, other) {
-  	this.body.setCollisionMask(me.collision.types.ENEMY_OBJECT);
+  	this.body.setCollisionMask(me.collision.types.PROJECTILE_OBJECT);
   }
   
 });
@@ -143,7 +143,7 @@ game.EnemyEntity2 = me.Entity.extend({
    * (called when colliding with other objects)
    */
   onCollision : function (response, other) {
-  	this.body.setCollisionMask(me.collision.types.ENEMY_OBJECT);
+  	this.body.setCollisionMask(me.collision.types.PROJECTILE_OBJECT);
   }
   
 });
