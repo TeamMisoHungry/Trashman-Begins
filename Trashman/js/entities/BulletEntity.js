@@ -10,7 +10,7 @@ game.BulletEntity = me.Entity.extend({
 		
 		//set to projectile so doesn't hurt player
 		this.body.collisionType = me.collision.types.PROJECTILE_OBJECT;
-		this.body.setVelocity(5, 5);
+		this.body.setVelocity(8, 8);
 		this.alwaysUpdate = true;
         this.up = direction[0];
         this.down = direction[1];

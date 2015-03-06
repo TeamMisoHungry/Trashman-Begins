@@ -11,7 +11,7 @@ game.PlayerEntity = me.Entity.extend({
     	this._super(me.Entity, 'init', [x, y , settings]);
 
 		//setting deafauly horizontal & vertical speed
-		this.body.setVelocity(3, 3);
+		this.body.setVelocity(5, 5);
 		
 		//reset time limit
 		game.time.limit = 300;
@@ -141,7 +141,7 @@ game.PlayerEntity = me.Entity.extend({
 		//throwing
 		if(me.input.isKeyPressed('throw')){
 			if(game.item.garbage >= 1){
-				var shot = new game.BulletEntity(this.pos.x+5, this.pos.y+5, {
+				var shot = me.pool.pull("BulletEntity", this.pos.x+5, this.pos.y+5, {
 					image: 'garbage', 
 					spritewidth: 16, 
 					spriteheight:14, 
@@ -185,7 +185,7 @@ game.PlayerEntity = me.Entity.extend({
 		    case me.collision.types.ENEMY_OBJECT:
 				//flicker in case we touched an enemy
 				//if flickering, don't deduct hp until done flickering'
-				if(other.type != "playerBullet" && other.name != "laser"){
+				if(other.name != "laser"){
 		    		if(!this.renderable.isFlickering()){
 		    			this.renderable.flicker(750);
 		        		game.data.hp -= 1;
@@ -194,7 +194,7 @@ game.PlayerEntity = me.Entity.extend({
 		        		}
 		        	}
 	        	}
-	        	if(other.name == "laser" && other.type != "playerBullet"){
+	        	if(other.name == "laser"){
 	        		if(!this.renderable.isFlickering()){
 	        			this.renderable.flicker(750);
 	        			game.data.hp -= 10;
