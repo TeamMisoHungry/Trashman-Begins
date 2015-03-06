@@ -147,11 +147,8 @@ game.PlayerEntity = me.Entity.extend({
 				height:16
 			}, [this.up, this.down, this.left1, this.right1]);
 			me.game.world.addChild(shot, this.z);
-<<<<<<< HEAD
 			me.audio.play("hit");
 			//me.game.world.sort();
-=======
->>>>>>> da5e6441436c463c6df13c0545560cf6a18b9dce
 		}
         
 
