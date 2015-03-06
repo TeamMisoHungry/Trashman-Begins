@@ -24,11 +24,13 @@ game.resources = [
     {name: "32x32Size8", type: "image", src: "data/img/font/32x32Size8.png"},  
 	
 	/*
-	 * Title screen
+	 * Screen's
 	 */
 	{name: "title_screen", type:"image", src:"data/img/gui/title_screen.png"},
 	{name: "beginGame", type:"image", src:"data/img/gui/startButton.png"},
+	{name: "creditScreen", type:"image", src:"data/img/gui/creditb.png"},
 	{name: "endScreen", type:"image", src:"data/img/gui/endScreen.png"},
+	{name: "credits", type:"image", src:"data/img/gui/credits.png"},
     
     /* 
 	*  Maps
