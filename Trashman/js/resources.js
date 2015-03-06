@@ -50,4 +50,5 @@ game.resources = [
 	/*
 	 * SFX
 	 */
+	{name: "hit", type: "audio", src: "data/sfx/"},
 ];
