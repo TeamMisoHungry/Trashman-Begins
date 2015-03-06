@@ -33,9 +33,6 @@ game.PlayerEntity = me.Entity.extend({
 		this.renderable.addAnimation("standLeft", [8]);
 		this.renderable.addAnimation("standRight", [12]);
 
-		//shooting
-		this.lastTick = 0;
-
 		this.time = 0;
 		this.left1 = false;
  		this.right1 = false;
@@ -96,7 +93,7 @@ game.PlayerEntity = me.Entity.extend({
 		if(me.input.isKeyPressed('left')){
 			this.body.vel.x -= this.body.accel.x * me.timer.tick;
 			this.body.vel.y = 0;
-			if(!this.renderable.isCurrentAnimation("walkLeft")){
+			if(!this.renderable.isCurrentAnimation('walkLeft')){
 				this.renderable.setCurrentAnimation("walkLeft");
 				this.left1 = true;
 				this.right1 = this.up = this.down = false;
@@ -104,7 +101,7 @@ game.PlayerEntity = me.Entity.extend({
 		}else if(me.input.isKeyPressed('right')){
 			this.body.vel.x += this.body.accel.x * me.timer.tick;
 			this.body.vel.y = 0;
-			if(!this.renderable.isCurrentAnimation("walkRight")){
+			if(!this.renderable.isCurrentAnimation('walkRight')){
 				this.renderable.setCurrentAnimation("walkRight");
 				this.right1 = true;
 				this.up = this.down = this.left1 = false;
@@ -112,7 +109,7 @@ game.PlayerEntity = me.Entity.extend({
 		}else if(me.input.isKeyPressed('up')){
 			this.body.vel.y -= this.body.accel.y * me.timer.tick;
 			this.body.vel.x = 0;
-			if(!this.renderable.isCurrentAnimation("walkUp")){
+			if(!this.renderable.isCurrentAnimation('walkUp')){
 				this.renderable.setCurrentAnimation("walkUp");
 				this.up = true;
 				this.right1 = this.left1 = this.down = false;
@@ -120,7 +117,7 @@ game.PlayerEntity = me.Entity.extend({
 		}else if(me.input.isKeyPressed('down')){
 			this.body.vel.y += this.body.accel.y * me.timer.tick;
 			this.body.vel.x = 0;
-			if(!this.renderable.isCurrentAnimation("walkDown")){
+			if(!this.renderable.isCurrentAnimation('walkDown')){
 				this.renderable.setCurrentAnimation("walkDown");
 				this.down = true;
 				this.up = this.left1 = this.right1 = false;
@@ -129,21 +126,32 @@ game.PlayerEntity = me.Entity.extend({
 			this.body.vel.x = 0;
 			this.body.vel.y = 0;
 			//change to the standing animation
-			this.setStandingAnimation();
+			if(this.up){
+				this.renderable.setCurrentAnimation("standUp");
+			}else if(this.left1){
+				 this.renderable.setCurrentAnimation("standLeft");
+			}else if(this.right1){ 
+				this.renderable.setCurrentAnimation("standRight");
+			}else if(this.down){
+				this.renderable.setCurrentAnimation("standDown");
+			}
 		}
 
 		//throwing
 		if(me.input.isKeyPressed('throw')){
-			var shot = new game.BulletEntity(this.pos.x+5, this.pos.y+5, {
-				image: 'garbage', 
+			var shot = me.pool.pull("BulletEntity", this.pos.x+5, this.pos.y+5, {
+				image: 'book', 
 				spritewidth: 16, 
-				spriteheight:14, 
+				spriteheight:16, 
 				width:16, 
-				height:14
+				height:16
 			}, [this.up, this.down, this.left1, this.right1]);
 			me.game.world.addChild(shot, this.z);
+<<<<<<< HEAD
 			me.audio.play("hit");
 			//me.game.world.sort();
+=======
+>>>>>>> da5e6441436c463c6df13c0545560cf6a18b9dce
 		}
         
 
@@ -178,14 +186,20 @@ game.PlayerEntity = me.Entity.extend({
 		    case me.collision.types.ENEMY_OBJECT:
 				//flicker in case we touched an enemy
 				//if flickering, don't deduct hp until done flickering'
-				if(other.type != "playerBullet"){
+				if(other.type != "playerBullet" && other.name != "laser"){
 		    		if(!this.renderable.isFlickering()){
 		    			this.renderable.flicker(750);
-		        		game.data.hp -= 0.1;
+		        		game.data.hp -= 1;
 		        		if(game.data.hp <= 0){
 			        		me.state.change(me.state.GAME_END);
 		        		}
 		        	}
+	        	}
+	        	if(other.name == "laser" && other.type != "playerBullet"){
+	        		if(!this.renderable.isFlickering()){
+	        			this.renderable.flicker(750);
+	        			game.data.hp -= 10;
+	        		}
 	        	}
 		      	return false;
 		      	break;
@@ -196,18 +210,6 @@ game.PlayerEntity = me.Entity.extend({
 	
 	 	  // Make the object solid
 	  	  return true;
-	},
-	
-	setStandingAnimation: function(){
-		if(this.up){
-			this.renderable.setCurrentAnimation("standUp");
-		}else if(this.left1){
-			 this.renderable.setCurrentAnimation("standLeft");
-		}else if(this.right1){ 
-			this.renderable.setCurrentAnimation("standRight");
-		}else if(this.down){
-			this.renderable.setCurrentAnimation("standDown");
-		}
 	},
 });
 

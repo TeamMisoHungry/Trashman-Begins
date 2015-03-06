@@ -58,6 +58,8 @@ var game = {
         //set ingame screen object, end game
         me.state.set(me.state.GAME_END, new game.EndScreen());
         
+        me.state.set(me.state.CREDITS, new game.CreditsScreen());
+        
         me.state.transition("fade", "#FFFFFF", 250);
 
         // add our player or other entities in the entity pool
@@ -83,6 +85,7 @@ var game = {
 
 		//turn gravity off since this is a top-down
 		me.sys.gravity = 0;
+		me.sys.fps = 50;
         // display the menu title
         me.state.change(me.state.MENU);
     },
