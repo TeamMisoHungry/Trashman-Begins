@@ -45,16 +45,19 @@ game.PlayerEntity = me.Entity.extend({
  		if(name == "headquarter"){
  			me.audio.playTrack("hq", true);
  		}
- 		else if(name == "tocity1" || name == "tocity2" || name == "tocity3" || name == "city1"){
+ 		else if(name == "tocity1" || name == "tocity2" || name == "tocity3"){
+ 			me.audio.playTrack("tocity", true);
+ 		}
+ 		else if(name == "city"){
  			me.audio.playTrack("city", true);
  		}
  		else if(name == "antarctica" || name == "toantar1" || name == "toantar2"){
  			me.audio.playTrack("ice", true);
  		}
- 		else if(name == "todesert1" || name == "todesert2" || name == "todesert3" || name == "desert"){
+ 		else if(name == "todesert1" || name == "todesert2" || name == "todesert3" || name == "desert" || name == "turbinemap"){
  			me.audio.playTrack("desert", true);
  		}
- 		console.log(me.game.currentLevel.name);
+ 		console.log(name);
     },
 
     /**

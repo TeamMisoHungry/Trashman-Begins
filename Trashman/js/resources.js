@@ -70,7 +70,7 @@ game.resources = [
 	{name: "city", type: "audio", src: "data/bgm/"},
 	{name: "ice", type: "audio", src: "data/bgm/"},
 	{name: "desert", type: "audio", src: "data/bgm/"},
-	
+	{name: "tocity", type: "audio", src: "data/bgm/"},
 	/*
 	 * SFX
 	 */
