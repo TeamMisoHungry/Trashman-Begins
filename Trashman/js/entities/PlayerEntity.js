@@ -41,18 +41,20 @@ game.PlayerEntity = me.Entity.extend({
  		
  		me.audio.stopTrack();
  		
- 		if(me.game.currentLevel.name == "headquarter"){
+ 		var name = me.game.currentLevel.name;
+ 		if(name == "headquarter"){
  			me.audio.playTrack("hq", true);
  		}
- 		else if(me.game.currentLevel.name == "city1"){
+ 		else if(name == "tocity1" || name == "tocity2" || name == "tocity3" || name == "city1"){
  			me.audio.playTrack("city", true);
  		}
- 		else if(me.game.currentLevel.name == "antarctica"){
+ 		else if(name == "antarctica"){
  			me.audio.playTrack("ice", true);
  		}
- 		else if(me.game.currentLevel.name == "desert"){
+ 		else if(name == "todesert1" || name == "todesert2" || name == "todesert3" || name == "desert"){
  			me.audio.playTrack("desert", true);
  		}
+ 		console.log(me.game.currentLevel.name);
     },
 
     /**
@@ -162,7 +164,7 @@ game.PlayerEntity = me.Entity.extend({
         me.collision.check(this);
 
         // return true if we moved or if the renderable was updated
-        return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0 || this.body.vel.y !== 0);
+        return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0 || this.body.vel.y !== 0 || this.body.vel.x === 0 || this.body.vel.y === 0);
     },
 
    /**
