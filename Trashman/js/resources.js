@@ -11,7 +11,7 @@ game.resources = [
 	 * sprite's
 	 */ 
 	{name: "hero", type: "image", src: "data/img/sprites/trashman3.png"},
-	{name: "book", type: "image", src: "data/img/sprites/book.png"},
+	{name: "book", type: "image", src: "data/img/sprites/throwBook.png"},
 	{name: "badGuy", type: "image", src: "data/img/sprites/badGuy.png"},
 	{name: "garbage", type: "image", src: "data/img/sprites/garbage.png"},
 	{name: "bullet", type: "image", src: "data/img/sprites/bullet.png"},
@@ -24,11 +24,13 @@ game.resources = [
     {name: "32x32Size8", type: "image", src: "data/img/font/32x32Size8.png"},  
 	
 	/*
-	 * Title screen
+	 * Screen's
 	 */
 	{name: "title_screen", type:"image", src:"data/img/gui/title_screen.png"},
 	{name: "beginGame", type:"image", src:"data/img/gui/startButton.png"},
+	{name: "creditScreen", type:"image", src:"data/img/gui/creditb.png"},
 	{name: "endScreen", type:"image", src:"data/img/gui/endScreen.png"},
+	{name: "credits", type:"image", src:"data/img/gui/credits.png"},
     
     /* 
 	*  Maps
@@ -37,5 +39,17 @@ game.resources = [
     {name: "city1", type: "tmx", src: "data/map/city1.tmx"},
     {name: "antarctica", type: "tmx", src: "data/map/antarctica.tmx"},
     {name: "desert", type: "tmx", src: "data/map/desert.tmx"},
-
+    
+    /*
+     * BGM
+     */
+	{name: "main", type: "audio", src: "data/bgm/"},
+	{name: "hq", type: "audio", src: "data/bgm/"},
+	{name: "city", type: "audio", src: "data/bgm/"},
+	{name: "ice", type: "audio", src: "data/bgm/"},
+	{name: "desert", type: "audio", src: "data/bgm/"},
+	
+	/*
+	 * SFX
+	 */
 ];

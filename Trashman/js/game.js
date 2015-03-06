@@ -5,7 +5,8 @@ var game = {
     data : {
         // score
         score : 0,
-        hp : 100
+        hp : 100,
+        fps : 30
     },
 
     item : {
@@ -20,11 +21,14 @@ var game = {
 
     // Run on page load.
     "onload" : function () {
+
     // Initialize the video.
     if (!me.video.init("screen",  me.video.CANVAS, 640, 480, true)) {
         alert("Your browser does not support HTML5 canvas.");
         return;
     }
+
+    me.sys.fps = this.data.fps;
 
     // add "#debug" to the URL to enable the debug Panel
     if (document.location.hash === "#debug") {
@@ -48,6 +52,7 @@ var game = {
 
     // Run on game resources loaded.
     "loaded" : function () {
+    	
     	//set ingame screen object, title screen
         me.state.set(me.state.MENU, new game.TitleScreen());
         
@@ -56,6 +61,8 @@ var game = {
         
         //set ingame screen object, end game
         me.state.set(me.state.GAME_END, new game.EndScreen());
+        
+        me.state.set(me.state.CREDITS, new game.CreditsScreen());
         
         me.state.transition("fade", "#FFFFFF", 250);
 
@@ -83,6 +90,7 @@ var game = {
 
 		//turn gravity off since this is a top-down
 		me.sys.gravity = 0;
+		me.sys.fps = 50;
         // display the menu title
         me.state.change(me.state.MENU);
     },
