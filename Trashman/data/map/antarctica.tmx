@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="left-down" width="60" height="40" tilewidth="16" tileheight="16" nextobjectid="77">
+<map version="1.0" orientation="orthogonal" renderorder="left-down" width="60" height="40" tilewidth="16" tileheight="16" nextobjectid="78">
  <tileset firstgid="1" name="antarctica" tilewidth="16" tileheight="16">
   <image source="antarctica.png" trans="ff00ff" width="960" height="640"/>
  </tileset>
@@ -16,10 +16,16 @@
    <properties>
     <property name="duration" value="250"/>
     <property name="fade" value="#000000"/>
-    <property name="to" value="headquarter"/>
+    <property name="to" value="toAntar2"/>
    </properties>
   </object>
-  <object id="39" name="me.LevelEntity" x="116" y="564" width="16" height="24"/>
+  <object id="39" name="me.LevelEntity" x="116" y="564" width="16" height="24">
+   <properties>
+    <property name="duration" value="250"/>
+    <property name="fade" value="#000000"/>
+    <property name="to" value="antarlevel"/>
+   </properties>
+  </object>
   <object id="40" name="mainPlayer" x="836" y="504" width="32" height="32">
    <properties>
     <property name="image" value="hero"/>

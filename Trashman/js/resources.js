@@ -17,6 +17,7 @@ game.resources = [
 	{name: "toAntar1", type: "image", src: "data/map/toAntar1.png"},
 	{name: "toAntar2", type: "image", src: "data/map/toAntar2.png"},
 	{name: "turbineMap", type: "image", src: "data/map/turbineMap.png"},
+	{name: "antarlevel", type: "image", src: "data/map/antarlevel.png"},
 	/*
 	 * sprite's
 	 */ 
@@ -62,6 +63,7 @@ game.resources = [
 	{name: "toAntar1", type: "tmx", src: "data/map/toAntar1.tmx"},
 	{name: "toAntar2", type: "tmx", src: "data/map/toAntar2.tmx"},
 	{name: "turbineMap", type: "tmx", src: "data/map/turbineMap.tmx"},
+	{name: "antarlevel", type: "tmx", src: "data/map/antarlevel.tmx"},
     
     /*
      * BGM
