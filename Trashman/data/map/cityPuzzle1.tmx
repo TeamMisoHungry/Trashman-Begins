@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="10" height="40" tilewidth="16" tileheight="16" nextobjectid="57">
- <tileset firstgid="1" name="city1" tilewidth="16" tileheight="16">
-  <image source="city1.png" trans="ff00ff" width="160" height="640"/>
+ <tileset firstgid="1" name="cityPuzzle1" tilewidth="16" tileheight="16">
+  <image source="cityPuzzle1.png" trans="ff00ff" width="160" height="640"/>
  </tileset>
  <layer name="Copy of Tile Layer 1" width="10" height="40">
   <data encoding="base64">

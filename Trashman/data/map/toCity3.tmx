@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="left-up" width="69" height="22" tilewidth="16" tileheight="16" nextobjectid="14">
+<map version="1.0" orientation="orthogonal" renderorder="left-up" width="69" height="22" tilewidth="16" tileheight="16" nextobjectid="15">
  <tileset firstgid="1" name="toCity3" tilewidth="16" tileheight="16">
   <image source="toCity3.png" width="1104" height="352"/>
  </tileset>
@@ -26,7 +26,13 @@
    <properties>
     <property name="duration" value="250"/>
     <property name="fade" value="#000000"/>
-    <property name="to" value="toDesert2"/>
+    <property name="to" value="toCity2"/>
+   </properties>
+  </object>
+  <object id="14" name="GarbageEntity" x="532" y="178" width="16" height="14">
+   <properties>
+    <property name="image" value="garbage"/>
+    <property name="spritewidth" value="16"/>
    </properties>
   </object>
  </objectgroup>

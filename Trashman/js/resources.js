@@ -14,6 +14,9 @@ game.resources = [
 	{name: "toDesert1", type: "image", src: "data/map/toDesert1.png"},
 	{name: "toDesert2", type: "image", src: "data/map/toDesert2.png"},
 	{name: "toDesert3", type: "image", src: "data/map/toDesert3.png"},
+	{name: "toAntar1", type: "image", src: "data/map/toAntar1.png"},
+	{name: "toAntar2", type: "image", src: "data/map/toAntar2.png"},
+	{name: "turbineMap", type: "image", src: "data/map/turbineMap.png"},
 	/*
 	 * sprite's
 	 */ 
@@ -25,6 +28,8 @@ game.resources = [
 	{name: "turbineBlade", type: "image", src: "data/img/sprites/turbineBlade.png"},
 	{name: "turret", type: "image", src: "data/img/sprites/TurretSheet.png"},
 	{name: "fire", type: "image", src: "data/img/sprites/laserBeam.png"},
+	{name: "brokenTurbine", type: "image", src: "data/img/sprites/brokenTurbine.png"},
+	{name: "fixedTurbine", type: "image", src: "data/img/sprites/fixedTurbine.png"},
 	
 	//font
     {name: "32x32_font", type: "image", src: "data/img/font/32x32_font.png"},
@@ -53,6 +58,9 @@ game.resources = [
 	{name: "toDesert1", type: "tmx", src: "data/map/toDesert1.tmx"},
 	{name: "toDesert2", type: "tmx", src: "data/map/toDesert2.tmx"},
 	{name: "toDesert3", type: "tmx", src: "data/map/toDesert3.tmx"},
+	{name: "toAntar1", type: "tmx", src: "data/map/toAntar1.tmx"},
+	{name: "toAntar2", type: "tmx", src: "data/map/toAntar2.tmx"},
+	{name: "turbineMap", type: "tmx", src: "data/map/turbineMap.tmx"},
     
     /*
      * BGM
