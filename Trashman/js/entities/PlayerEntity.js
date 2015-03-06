@@ -151,7 +151,6 @@ game.PlayerEntity = me.Entity.extend({
 				me.game.world.addChild(shot, this.z);
 				game.item.garbage--;
 				game.data.score -= 150;
-				me.audio.play("hit");
 			}
 			//me.game.world.sort();
 		}

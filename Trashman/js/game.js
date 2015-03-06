@@ -27,8 +27,6 @@ var game = {
         return;
     }
 
-    me.sys.fps = this.data.fps;
-
     // add "#debug" to the URL to enable the debug Panel
     if (document.location.hash === "#debug") {
         window.onReady(function () {
