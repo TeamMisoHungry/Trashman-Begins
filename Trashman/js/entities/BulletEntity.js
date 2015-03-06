@@ -1,6 +1,6 @@
 game.BulletEntity = me.Entity.extend({
 
-    init: function (x, y, settings) {
+    init: function (x, y, settings, direction) {
     	//constructor    
         this._super(me.Entity, 'init', [x, y , settings]);
          //conllision object
@@ -8,21 +8,46 @@ game.BulletEntity = me.Entity.extend({
             this.body.addShape(new me.Rect(0, 0, this.width, this.height));
         }
 		
+		//set to projectile so doesn't hurt player
+		this.body.collisionType = me.collision.types.PROJECTILE_OBJECT;
+		this.body.setVelocity(5, 5);
 		this.alwaysUpdate = true;
-        this.pos.y = (this.pos.y)+15; 
-        this.pos.x = (this.pos.x)+15;
-        //console.log("shot created");
+        this.up = direction[0];
+        this.down = direction[1];
+        this.left1 = direction[2];
+        this.right1 = direction[3];
+        this.timer = 0;
     },
   
             
     update: function(dt) {
-        this.body.vel.x = 3;
-        this.body.gravity = 0;
-        
+    	this.timer++;
+    	
+		if(this.up){
+			this.body.vel.x = 0;
+			this.body.vel.y -= this.body.accel.y * me.timer.tick;
+			this.renderable.flipX(false);
+		}else if(this.down){
+			this.body.vel.x = 0;
+			this.body.vel.y += this.body.accel.y * me.timer.tick;
+			this.renderable.flipX(true);
+		}else if(this.left1){
+			this.body.vel.y = 0;
+			this.body.vel.x -= this.body.accel.x * me.timer.tick;
+			this.renderable.flipX(false);
+		}else if(this.right1){
+			this.body.vel.y = 0;
+			this.body.vel.x += this.body.accel.x * me.timer.tick;
+			this.renderable.flipX(true);
+		}
+		
+		if(this.timer % 80 == 0){
+			me.game.world.removeChild(this);
+		}
         // update the body movement
         this.body.update(dt);
         // return true if we moved or if the renderable was updated
-        return (this._super(me.Entity, 'update', [dt])); 
+        return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0 || this.body.vel.y !== 0); 
         
     },
    
@@ -31,7 +56,7 @@ game.BulletEntity = me.Entity.extend({
      * (called when colliding with other objects)
      */
     onCollision : function (response, other) { 
-        this.body.setCollisionMask(me.collision.types.PROJECTILE_OBJECT);
+        return false;
     }
      
     

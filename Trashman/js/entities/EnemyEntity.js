@@ -189,6 +189,7 @@ game.TurretEntity = me.Entity.extend({
 				var myLaser = new game.LaserEntity(this.pos.x + 10, this.pos.y + 3, {});
 			}
 		}
+		return (this._super(me.Entity, 'update', [dt]));
 	},	
 	
 	onCollision: function(){
