@@ -62,6 +62,7 @@ game.PlayerEntity = me.Entity.extend({
 
  		//pause button, hit P to pause, ESC to unpause
  		if(me.input.isKeyPressed('pause') && !me.state.isPaused()){
+ 			//me.game.world.addChild(new game.HUD.MenuBoxItem(10, 40));
  			me.state.pause(true);
  			var resume_loop = setInterval(function check_resume(){
  				if(me.input.isKeyPressed('unpause')){
@@ -75,7 +76,7 @@ game.PlayerEntity = me.Entity.extend({
  		if(me.input.isKeyPressed('quit')){
  			me.state.change(me.state.GAME_END);
  		}
-
+		
 		//adding movement/changing main character's sprite based on up, down, left, right arrows
 		if(me.input.isKeyPressed('left')){
 			this.body.vel.x -= this.body.accel.x * me.timer.tick;
@@ -118,18 +119,20 @@ game.PlayerEntity = me.Entity.extend({
 
 		//throwing
 		if(me.input.isKeyPressed('throw')){
-			var shot = new game.BulletEntity(this.pos.x+5, this.pos.y+5, {
-				image: 'garbage', 
-				spritewidth: 16, 
-				spriteheight:14, 
-				width:16, 
-				height:14
-			}, [this.up, this.down, this.left1, this.right1]);
-			me.game.world.addChild(shot, this.z);
+			if(game.item.garbage >= 1){
+				var shot = new game.BulletEntity(this.pos.x+5, this.pos.y+5, {
+					image: 'garbage', 
+					spritewidth: 16, 
+					spriteheight:14, 
+					width:16, 
+					height:14
+				}, [this.up, this.down, this.left1, this.right1]);
+				me.game.world.addChild(shot, this.z);
+				game.item.garbage--;
+			}
 			//me.game.world.sort();
 		}
         
-
         // apply physics to the body (this moves the entity)
         this.body.update(dt);
         // handle collisions against other shapes

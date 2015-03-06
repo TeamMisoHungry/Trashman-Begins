@@ -7,6 +7,10 @@ var game = {
         score : 0,
         hp : 100
     },
+
+    item : {
+        garbage : 0
+    },
 	
 	time : {
 		time : 0,
@@ -40,7 +44,7 @@ var game = {
 
     // Initialize melonJS and display a loading screen.
     me.state.change(me.state.LOADING);
-},
+    },
 
     // Run on game resources loaded.
     "loaded" : function () {
@@ -75,6 +79,7 @@ var game = {
 		me.input.bindKey(me.input.KEY.ESC, "unpause");	
 		me.input.bindKey(me.input.KEY.SPACE, "throw", true);
 		me.input.bindKey(me.input.KEY.T, "quit");
+        me.input.bindKey(me.input.KEY.I, "inventory");
 
 		//turn gravity off since this is a top-down
 		me.sys.gravity = 0;

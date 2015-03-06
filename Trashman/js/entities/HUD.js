@@ -28,6 +28,9 @@ game.HUD.Container = me.Container.extend({
         this.addChild(new game.HUD.TimeItem(10, 10));
         this.addChild(new game.HUD.HealthItem(46, 25));
         this.addChild(new game.HUD.HPboxItem(10, 25));
+        this.addChild(new game.HUD.MenuBoxItem(10, 40));
+        this.addChild(new game.HUD.GarbageBoxItem(10, 55));
+        this.addChild(new game.HUD.GarbageAmountItem(119, 55));
     }
 });
 
@@ -126,5 +129,38 @@ game.HUD.HPboxItem = me.Renderable.extend({
     },
     draw: function(renderer){
         this.font.draw(renderer, "HP: ", this.pos.x, this.pos.y);
+    }
+});
+
+game.HUD.MenuBoxItem = me.Renderable.extend({
+    init: function(x, y){
+        this._super(me.Renderable, 'init', [x, y, 10, 10]);
+        this.font = new me.BitmapFont("32x32Size8", 12);
+        this.font.set("left");
+    },
+    draw: function(renderer){
+        this.font.draw(renderer, "===INV===", this.pos.x, this.pos.y);
+    }
+});
+
+game.HUD.GarbageBoxItem = me.Renderable.extend({
+    init: function(x, y){
+        this._super(me.Renderable, 'init', [x, y, 10, 10]);
+        this.font = new me.BitmapFont("32x32Size8", 12);
+        this.font.set("left");
+    },
+    draw: function(renderer){
+        this.font.draw(renderer, "GARBAGE X", this.pos.x, this.pos.y);
+    }
+});
+
+game.HUD.GarbageAmountItem = me.Renderable.extend({
+    init: function(x, y){
+        this._super(me.Renderable, 'init', [x, y, 10, 10]);
+        this.font = new me.BitmapFont("32x32Size8", 12);
+        this.font.set("left");
+    },
+    draw: function(renderer){
+        this.font.draw(renderer, game.item.garbage, this.pos.x, this.pos.y);
     }
 });
