@@ -154,7 +154,7 @@ game.TurretEntity = me.Entity.extend({
 		this._super(me.Entity, 'init', [x, y, settings]);
 		this.renderable.addAnimation("safe", [1]);
 		this.renderable.addAnimation("prep", [0, 2]);
-
+		this.body.collisionType = me.collision.types.NO_OBJECT;
 		this.time = 0;
 		this.safe = true;
 		this.prep = false;
@@ -173,7 +173,7 @@ game.TurretEntity = me.Entity.extend({
 		}else if(this.time % 150 === 0 && this.prep){
 			this.prep = false;
 			this.fire = true;
-		}else if(this.time % 175 === 0 && this.fire){
+		}else if(this.time % 150 === 0 && this.fire){
 			this.fire = false;
 			this.safe = true;
 		}
@@ -184,6 +184,7 @@ game.TurretEntity = me.Entity.extend({
 			this.renderable.setCurrentAnimation("prep");
 		}else if(this.fire){
 			if(!this.fireObject){
+				this.renderable.setCurrentAnimation("safe");
 				this.fireObject = true;
 				var myLaser = new game.LaserEntity(this.pos.x + 10, this.pos.y + 3, {});
 			}
@@ -191,6 +192,6 @@ game.TurretEntity = me.Entity.extend({
 	},	
 	
 	onCollision: function(){
-		this.body.setCollisionMask(me.collision.types.NO_OBJECT);
+		return true;
 	}
 });

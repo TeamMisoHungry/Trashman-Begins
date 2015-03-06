@@ -1,4 +1,4 @@
-game.LaserEntity = game.EnemyEntity.extend({
+game.LaserEntity = me.Entity.extend({
 	init: function(x, y, settings){
 		settings.image = "fire";
 		settings.width = 75;
@@ -10,7 +10,7 @@ game.LaserEntity = game.EnemyEntity.extend({
 		this.body.setCollisionType = me.collision.types.ENEMY_OBJECT;
 		this.updateBounds();
 		this.body.addShape(new me.Rect(0, 0, settings.width, settings.height));
-		me.game.world.addChild(this, 5);
+		me.game.world.addChild(this, Infinity);
 		this.laserFire = false;
 	},
 	
@@ -25,10 +25,11 @@ game.LaserEntity = game.EnemyEntity.extend({
 			me.game.world.removeChild(this);
 		}
 		
-		return (this._super(me.Entity, 'update', [dt]));
+		//return (this._super(me.Entity, 'update', [dt]));
 	},
 	
 	onCollision: function(response, other){
-		this.body.setCollisionMask(me.collision.types.ENEMY_OBJECT);
+		//let the player object pass through
+		return false;
 	}
 });

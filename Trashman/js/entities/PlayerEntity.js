@@ -142,7 +142,6 @@ game.PlayerEntity = me.Entity.extend({
 				height:14
 			}, [this.up, this.down, this.left1, this.right1]);
 			me.game.world.addChild(shot, this.z);
-			//me.game.world.sort();
 		}
         
 
@@ -177,14 +176,20 @@ game.PlayerEntity = me.Entity.extend({
 		    case me.collision.types.ENEMY_OBJECT:
 				//flicker in case we touched an enemy
 				//if flickering, don't deduct hp until done flickering'
-				if(other.type != "playerBullet"){
+				if(other.type != "playerBullet" && other.name != "laser"){
 		    		if(!this.renderable.isFlickering()){
 		    			this.renderable.flicker(750);
-		        		game.data.hp -= 0.1;
+		        		game.data.hp -= 1;
 		        		if(game.data.hp <= 0){
 			        		me.state.change(me.state.GAME_END);
 		        		}
 		        	}
+	        	}
+	        	if(other.name == "laser" && other.type != "playerBullet"){
+	        		if(!this.renderable.isFlickering()){
+	        			this.renderable.flicker(750);
+	        			game.data.hp -= 10;
+	        		}
 	        	}
 		      	return false;
 		      	break;
