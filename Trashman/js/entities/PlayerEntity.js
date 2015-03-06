@@ -38,26 +38,35 @@ game.PlayerEntity = me.Entity.extend({
  		this.right1 = false;
  		this.up = false;
  		this.down = true; 	
- 		
- 		me.audio.stopTrack();
- 		
+
+ 		var track = me.audio.getCurrentTrack();
  		var name = me.game.currentLevel.name;
  		if(name == "headquarter"){
+ 			if(track == "hq") return;
+ 			me.audio.stopTrack();
  			me.audio.playTrack("hq", true);
  		}
  		else if(name == "tocity1" || name == "tocity2" || name == "tocity3"){
+ 			if(track == "tocity") return;
+ 			me.audio.stopTrack();
  			me.audio.playTrack("tocity", true);
  		}
  		else if(name == "city"){
+ 			if(track == "city") return;
+ 			me.audio.stopTrack();
  			me.audio.playTrack("city", true);
  		}
  		else if(name == "antarctica" || name == "toantar1" || name == "toantar2"){
+ 			if(track == "ice") return;
+ 			me.audio.stopTrack();
  			me.audio.playTrack("ice", true);
  		}
  		else if(name == "todesert1" || name == "todesert2" || name == "todesert3" || name == "desert" || name == "turbinemap"){
+ 			if(track == "desert") return;
+ 			me.audio.stopTrack();
  			me.audio.playTrack("desert", true);
  		}
- 		console.log(name);
+ 		//console.log(name);
     },
 
     /**
