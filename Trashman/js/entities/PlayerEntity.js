@@ -48,7 +48,7 @@ game.PlayerEntity = me.Entity.extend({
  		else if(name == "tocity1" || name == "tocity2" || name == "tocity3" || name == "city1"){
  			me.audio.playTrack("city", true);
  		}
- 		else if(name == "antarctica" || name == "toantar1" || name == "toantara2"){
+ 		else if(name == "antarctica" || name == "toantar1" || name == "toantar2"){
  			me.audio.playTrack("ice", true);
  		}
  		else if(name == "todesert1" || name == "todesert2" || name == "todesert3" || name == "desert"){
