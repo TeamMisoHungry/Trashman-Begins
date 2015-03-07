@@ -103,55 +103,86 @@ game.PlayerEntity = me.Entity.extend({
  		if(me.input.isKeyPressed('quit')){
  			me.state.change(me.state.GAME_END);
  		}
+
+		//ice level
 		
-		//adding movement/changing main character's sprite based on up, down, left, right arrows
-		if(me.input.isKeyPressed('left')){
+		if(me.game.currentLevel.name == "antarlevel"){
+			this.body.setVelocity(2, 2);
+			this.body.vel.y += this.body.accel.y * me.timer.tick;
+			this.body.vel.x = 0;
+			this.down = true;
+			if(!this.renderable.isCurrentAnimation('walkDown')){
+				this.renderable.setCurrentAnimation("walkDown");
+			}
+			
+			if(me.input.isKeyPressed('left')){
 			this.body.vel.x -= this.body.accel.x * me.timer.tick;
-			this.body.vel.y = 0;
 			if(!this.renderable.isCurrentAnimation('walkLeft')){
 				this.renderable.setCurrentAnimation("walkLeft");
 				this.left1 = true;
-				this.right1 = this.up = this.down = false;
+				this.right1 = false;
+				}
 			}
-		}else if(me.input.isKeyPressed('right')){
-			this.body.vel.x += this.body.accel.x * me.timer.tick;
-			this.body.vel.y = 0;
-			if(!this.renderable.isCurrentAnimation('walkRight')){
-				this.renderable.setCurrentAnimation("walkRight");
-				this.right1 = true;
-				this.up = this.down = this.left1 = false;
+			else if(me.input.isKeyPressed('right')){
+				this.body.vel.x += this.body.accel.x * me.timer.tick;
+				if(!this.renderable.isCurrentAnimation('walkRight')){
+					this.renderable.setCurrentAnimation("walkRight");
+					this.right1 = true;
+					this.left1 = false;
+				}
 			}
-		}else if(me.input.isKeyPressed('up')){
-			this.body.vel.y -= this.body.accel.y * me.timer.tick;
-			this.body.vel.x = 0;
-			if(!this.renderable.isCurrentAnimation('walkUp')){
-				this.renderable.setCurrentAnimation("walkUp");
-				this.up = true;
-				this.right1 = this.left1 = this.down = false;
-			}
-		}else if(me.input.isKeyPressed('down')){
-			this.body.vel.y += this.body.accel.y * me.timer.tick;
-			this.body.vel.x = 0;
-			if(!this.renderable.isCurrentAnimation('walkDown')){
-				this.renderable.setCurrentAnimation("walkDown");
-				this.down = true;
-				this.up = this.left1 = this.right1 = false;
-			}
-		}else{
-			this.body.vel.x = 0;
-			this.body.vel.y = 0;
-			//change to the standing animation
-			if(this.up){
-				this.renderable.setCurrentAnimation("standUp");
-			}else if(this.left1){
-				 this.renderable.setCurrentAnimation("standLeft");
-			}else if(this.right1){ 
-				this.renderable.setCurrentAnimation("standRight");
-			}else if(this.down){
-				this.renderable.setCurrentAnimation("standDown");
-			}
-		}
+		}		
+		//adding movement/changing main character's sprite based on up, down, left, right arrows
 
+		if(me.game.currentLevel.name != "antarlevel"){	
+			if(me.input.isKeyPressed('left')){
+				this.body.vel.x -= this.body.accel.x * me.timer.tick;
+				this.body.vel.y = 0;
+				if(!this.renderable.isCurrentAnimation('walkLeft')){
+					this.renderable.setCurrentAnimation("walkLeft");
+					this.left1 = true;
+					this.right1 = this.up = this.down = false;
+				}
+			}else if(me.input.isKeyPressed('right')){
+				this.body.vel.x += this.body.accel.x * me.timer.tick;
+				this.body.vel.y = 0;
+				if(!this.renderable.isCurrentAnimation('walkRight')){
+					this.renderable.setCurrentAnimation("walkRight");
+					this.right1 = true;
+					this.up = this.down = this.left1 = false;
+				}
+			}else if(me.input.isKeyPressed('up')){
+				this.body.vel.y -= this.body.accel.y * me.timer.tick;
+				this.body.vel.x = 0;
+				if(!this.renderable.isCurrentAnimation('walkUp')){
+					this.renderable.setCurrentAnimation("walkUp");
+					this.up = true;
+					this.right1 = this.left1 = this.down = false;
+				}
+			}else if(me.input.isKeyPressed('down')){
+				this.body.vel.y += this.body.accel.y * me.timer.tick;
+				this.body.vel.x = 0;
+				if(!this.renderable.isCurrentAnimation('walkDown')){
+					this.renderable.setCurrentAnimation("walkDown");
+					this.down = true;
+					this.up = this.left1 = this.right1 = false;
+				}
+			}else{
+				this.body.vel.x = 0;
+				this.body.vel.y = 0;
+				//change to the standing animation
+				if(this.up){
+					this.renderable.setCurrentAnimation("standUp");
+				}else if(this.left1){
+					 this.renderable.setCurrentAnimation("standLeft");
+				}else if(this.right1){ 
+					this.renderable.setCurrentAnimation("standRight");
+				}else if(this.down){
+					this.renderable.setCurrentAnimation("standDown");
+				}
+			}
+		}	
+		
 		//throwing
 		if(me.input.isKeyPressed('throw')){
 			if(game.item.garbage >= 1){
