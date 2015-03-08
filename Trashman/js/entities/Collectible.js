@@ -22,7 +22,7 @@ game.PenguinEntity = me.CollectableEntity.extend({
 	
 	onCollision: function(response, other){
 		game.data.score += 300;
-		game.item.penguin += 1;
+		game.data.penguin += 1;
 		this.body.setCollisionMask(me.collision.types.NO_OBJECT);
 		me.game.world.removeChild(this);
 	}

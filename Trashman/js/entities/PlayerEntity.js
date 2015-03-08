@@ -39,10 +39,10 @@ game.PlayerEntity = me.Entity.extend({
  		this.up = false;
  		this.down = true; 	
 
- 		//var track = me.audio.getCurrentTrack();
+ 		var track = me.audio.getCurrentTrack();
  		var name = me.game.currentLevel.name;
- 		
- 	/*	if(name == "headquarter"){
+ 	
+ 		if(name == "headquarter"){
  			if(track == "hq") return;
  			me.audio.stopTrack();
  			me.audio.playTrack("hq", true);
@@ -78,7 +78,7 @@ game.PlayerEntity = me.Entity.extend({
  			me.audio.stopTrack();
  			me.audio.playTrack("desert", true);
  		}
- 		//console.log(name);*/
+ 		//console.log(name);
     },
 
     /**
@@ -214,7 +214,6 @@ game.PlayerEntity = me.Entity.extend({
 				game.data.score -= 150;
 				me.audio.play("hit");
 			}
-			//me.game.world.sort();
 		}
         
         // apply physics to the body (this moves the entity)

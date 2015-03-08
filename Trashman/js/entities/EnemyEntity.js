@@ -16,7 +16,7 @@ game.EnemyEntity = me.Entity.extend({
     settings.spritewidth = settings.width = 40;
     settings.spriteheight = settings.height = 32;
      
-    // call the parent constructor
+ 
     this._super(me.Entity, 'init', [x, y , settings]);
   
     // set start/end position based on the initial area size
@@ -31,7 +31,7 @@ game.EnemyEntity = me.Entity.extend({
     // to remember which side we were walking
     this.walkLeft = false;
  
-    // walking & jumping speed
+    // walking speed
     this.body.setVelocity(3, 3); 
 	     
   },
@@ -64,6 +64,7 @@ game.EnemyEntity = me.Entity.extend({
    */
   onCollision : function (response, other) {
   	this.body.setCollisionMask(me.collision.types.PROJECTILE_OBJECT);
+  	me.game.world.removeChild(this);
   }
   
 });
@@ -189,7 +190,7 @@ game.TurretEntity = me.Entity.extend({
 				var myLaser = new game.LaserEntity(this.pos.x + 10, this.pos.y + 3, {});
 			}
 		}
-		return (this._super(me.Entity, 'update', [dt]));
+		return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x === 0 || this.body.vel.y === 0);
 	},	
 	
 	onCollision: function(){

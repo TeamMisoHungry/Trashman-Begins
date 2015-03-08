@@ -6,7 +6,8 @@ var game = {
         // score
         score : 0,
         hp : 100,
-        fps : 30
+        //fps : 30,
+        penguin : 0
     },
 
     item : {
@@ -92,7 +93,6 @@ var game = {
 
 		//turn gravity off since this is a top-down
 		me.sys.gravity = 0;
-		me.sys.fps = 50;
         // display the menu title
         me.state.change(me.state.MENU);
     },
