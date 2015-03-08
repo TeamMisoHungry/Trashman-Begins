@@ -14,7 +14,7 @@
   </object>
  </objectgroup>
  <objectgroup name="Entities">
-  <object id="43" name="me.LevelEntity" x="72" y="604">
+  <object id="43" name="me.LevelEntity" x="72" y="604" width="16" height="16">
    <properties>
     <property name="duration" value="250"/>
     <property name="fade" value="#000000"/>
