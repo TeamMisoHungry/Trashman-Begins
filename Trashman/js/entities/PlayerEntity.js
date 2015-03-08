@@ -63,10 +63,15 @@ game.PlayerEntity = me.Entity.extend({
  			me.audio.stopTrack();
  			me.audio.playTrack("city", true);
  		}
- 		else if(name == "antarctica" || name == "toAntar2"){
+ 		else if(name == "antarctica" || name == "toantar2" || name == "antarlevel2a"){
  			if(track == "ice") return;
  			me.audio.stopTrack();
  			me.audio.playTrack("ice", true);
+ 		}
+ 		else if (name == "antarlevel1" || name == "antarlevel1" ){
+ 			if(track == "icelevel") return;
+			me.audio.stopTrack();
+ 			me.audio.playTrack("icelevel", true);
  		}
  		else if(name == "todesert3" || name == "desert" || name == "turbinemap"){
  			if(track == "desert") return;
@@ -145,7 +150,7 @@ game.PlayerEntity = me.Entity.extend({
 		//adding movement/changing main character's sprite based on up, down, left, right arrows
 
 		if(me.game.currentLevel.name != "antarlevel1"
-		|| me.game.currentLevel.name == "antarlevel2" ){	
+		&& me.game.currentLevel.name != "antarlevel2" ){	
 			if(me.input.isKeyPressed('left')){
 				this.body.vel.x -= this.body.accel.x * me.timer.tick;
 				this.body.vel.y = 0;
