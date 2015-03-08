@@ -17,7 +17,9 @@ game.resources = [
 	{name: "toAntar1", type: "image", src: "data/map/toAntar1.png"},
 	{name: "toAntar2", type: "image", src: "data/map/toAntar2.png"},
 	{name: "turbineMap", type: "image", src: "data/map/turbineMap.png"},
-	{name: "antarlevel", type: "image", src: "data/map/antarlevel.png"},
+	{name: "antarlevel1", type: "image", src: "data/map/antarlevel1.png"},
+	{name: "antarlevel2a", type: "image", src: "data/map/antarlevel2a.png"},
+	{name: "antarlevel2", type: "image", src: "data/map/antarlevel2.png"},
 	/*
 	 * sprite's
 	 */ 
@@ -32,6 +34,11 @@ game.resources = [
 	//{name: "sign", type: "image", src: "data/img/sprites/sign.png"},
 	{name: "brokenTurbine", type: "image", src: "data/img/sprites/brokenTurbine.png"},
 	{name: "fixedTurbine", type: "image", src: "data/img/sprites/fixedTurbine.png"},
+	{name: "Miku", type: "image", src: "data/img/sprites/Miku.gif"},
+	{name: "MikuAntarc", type: "image", src: "data/img/sprites/MikuAntarc.gif"},
+	{name: "penguin", type: "image", src: "data/img/sprites/penguin.png"},
+	{name: "bear", type: "image", src: "data/img/sprites/bear.png"},
+
 	
 	//font
     {name: "32x32_font", type: "image", src: "data/img/font/32x32_font.png"},
@@ -63,8 +70,10 @@ game.resources = [
 	{name: "toAntar1", type: "tmx", src: "data/map/toAntar1.tmx"},
 	{name: "toAntar2", type: "tmx", src: "data/map/toAntar2.tmx"},
 	{name: "turbineMap", type: "tmx", src: "data/map/turbineMap.tmx"},
-	{name: "antarlevel", type: "tmx", src: "data/map/antarlevel.tmx"},
-    
+	{name: "antarlevel1", type: "tmx", src: "data/map/antarlevel1.tmx"},
+    {name: "antarlevel2a", type: "tmx", src: "data/map/antarlevel2a.tmx"},
+    {name: "antarlevel2", type: "tmx", src: "data/map/antarlevel2.tmx"},
+
     /*
      * BGM
      */
@@ -74,6 +83,8 @@ game.resources = [
 	{name: "ice", type: "audio", src: "data/bgm/"},
 	{name: "desert", type: "audio", src: "data/bgm/"},
 	{name: "tocity", type: "audio", src: "data/bgm/"},
+	{name: "forest", type: "audio", src: "data/bgm/"},
+
 	/*
 	 * SFX
 	 */

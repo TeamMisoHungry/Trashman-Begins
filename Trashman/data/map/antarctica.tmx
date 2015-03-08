@@ -23,7 +23,7 @@
    <properties>
     <property name="duration" value="250"/>
     <property name="fade" value="#000000"/>
-    <property name="to" value="antarlevel"/>
+    <property name="to" value="antarlevel1"/>
    </properties>
   </object>
   <object id="40" name="mainPlayer" x="836" y="504" width="32" height="32">

@@ -41,12 +41,19 @@ game.PlayerEntity = me.Entity.extend({
 
  		var track = me.audio.getCurrentTrack();
  		var name = me.game.currentLevel.name;
+ 		
  		if(name == "headquarter"){
  			if(track == "hq") return;
  			me.audio.stopTrack();
  			me.audio.playTrack("hq", true);
  		}
- 		else if(name == "tocity1" || name == "tocity2" || name == "tocity3"){
+ 		else if (name == "tocity1" || name == "todesert1" || name == "todesert2"
+ 				|| name == "toantar1"){
+ 			if (track == "forest") return;
+ 			me.audio.stopTrack();
+ 			me.audio.playTrack("forest", true);
+ 		}
+ 		else if(name == "tocity2" || name == "tocity3"){
  			if(track == "tocity") return;
  			me.audio.stopTrack();
  			me.audio.playTrack("tocity", true);
@@ -56,12 +63,12 @@ game.PlayerEntity = me.Entity.extend({
  			me.audio.stopTrack();
  			me.audio.playTrack("city", true);
  		}
- 		else if(name == "antarctica" || name == "toantar1" || name == "toantar2"){
+ 		else if(name == "antarctica" || name == "toAntar2"){
  			if(track == "ice") return;
  			me.audio.stopTrack();
  			me.audio.playTrack("ice", true);
  		}
- 		else if(name == "todesert1" || name == "todesert2" || name == "todesert3" || name == "desert" || name == "turbinemap"){
+ 		else if(name == "todesert3" || name == "desert" || name == "turbinemap"){
  			if(track == "desert") return;
  			me.audio.stopTrack();
  			me.audio.playTrack("desert", true);
@@ -106,7 +113,10 @@ game.PlayerEntity = me.Entity.extend({
 
 		//ice level
 		
-		if(me.game.currentLevel.name == "antarlevel"){
+		if(me.game.currentLevel.name == "antarlevel1" 
+		|| me.game.currentLevel.name == "antarlevel2" ){
+			//|| me.game.currentLevel.name == "antarlevel2"
+			
 			this.body.setVelocity(2, 2);
 			this.body.vel.y += this.body.accel.y * me.timer.tick;
 			this.body.vel.x = 0;
@@ -134,7 +144,8 @@ game.PlayerEntity = me.Entity.extend({
 		}		
 		//adding movement/changing main character's sprite based on up, down, left, right arrows
 
-		if(me.game.currentLevel.name != "antarlevel"){	
+		if(me.game.currentLevel.name != "antarlevel1"
+		|| me.game.currentLevel.name == "antarlevel2" ){	
 			if(me.input.isKeyPressed('left')){
 				this.body.vel.x -= this.body.accel.x * me.timer.tick;
 				this.body.vel.y = 0;

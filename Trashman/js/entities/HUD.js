@@ -95,13 +95,18 @@ game.HUD.TimeItem = me.Renderable.extend({
 			this.garbage = game.data.garbage;
 			return true;
 		}
+        if(this.garbage !== game.data.penguin){
+            this.penguin = game.data.penguin;
+            return true;
+        }
 		return false;
 	},
 	
 	draw: function(renderer){
 		this.font.draw(renderer, game.time.limit, this.pos.x, this.pos.y);
 		this.font.draw(renderer, "HP: " + Math.trunc(game.data.hp), this.pos.x, this.pos.y + 15);
-		this.font.draw(renderer,"GARBAGE X" + game.item.garbage, this.pos.x, this.pos.y + 30);		
+		this.font.draw(renderer,"GARBAGE X" + game.item.garbage, this.pos.x, this.pos.y + 30);	
+        this.font.draw(renderer,"PENGUIN X" + game.item.penguin, this.pos.x, this.pos.y + 45);	
 	}
 	
 });
