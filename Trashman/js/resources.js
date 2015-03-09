@@ -27,7 +27,6 @@ game.resources = [
 	{name: "book", type: "image", src: "data/img/sprites/throwBook.png"},
 	{name: "badGuy", type: "image", src: "data/img/sprites/badGuy.png"},
 	{name: "badGuy2", type: "image", src: "data/img/sprites/walkUp&Down.png"},
-	{name: "badGuyHurt", type: "image", src: "data/img/sprites/badGuyHurt.png"},
 	{name: "garbage", type: "image", src: "data/img/sprites/garbage.png"},
 	{name: "bullet", type: "image", src: "data/img/sprites/bullet.png"},
 	{name: "turbineBlade", type: "image", src: "data/img/sprites/turbineBlade.png"},
