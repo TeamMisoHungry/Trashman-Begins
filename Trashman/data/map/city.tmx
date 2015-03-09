@@ -169,6 +169,8 @@
   </object>
   <object id="77" name="me.LevelEntity" x="511.25" y="17.5" width="55" height="17.5">
    <properties>
+    <property name="duration" value="250"/>
+    <property name="fade" value="#000000"/>
     <property name="to" value="cityPuzzle1"/>
    </properties>
   </object>

@@ -16,14 +16,14 @@ game.EnemyEntity = me.Entity.extend({
     settings.spritewidth = settings.width = 40;
     settings.spriteheight = settings.height = 32;
      
-    // call the parent constructor
-    this._super(me.Entity, 'init', [x, y , settings]);
+ 
+    this._super(me.Entity, 'init', [x, y, settings]);
   
     // set start/end position based on the initial area size
     x = this.pos.x;
     this.startX = x;
-    this.endX   = x + width - settings.spritewidth * 5;
-    this.pos.x  = x + width - settings.spritewidth * 5;
+    this.endX   = x + width - settings.spritewidth;
+    this.pos.x  = x + width - settings.spritewidth;
  
     // manually update the entity bounds as we manually change the position
     this.updateBounds();
@@ -31,8 +31,8 @@ game.EnemyEntity = me.Entity.extend({
     // to remember which side we were walking
     this.walkLeft = false;
  
-    // walking & jumping speed
-    this.body.setVelocity(3, 3); 
+    // walking speed
+    this.body.setVelocity(1.5, 1.5); 
 	     
   },
  
@@ -53,9 +53,9 @@ game.EnemyEntity = me.Entity.extend({
            
     // update the body movement
     this.body.update(dt);
-       
+    me.collision.check(this);
     // return true if we moved or if the renderable was updated
-    return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0);
+    return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0 || this.body.vel.y !== 0);
   },
    
   /**
@@ -63,7 +63,11 @@ game.EnemyEntity = me.Entity.extend({
    * (called when colliding with other objects)
    */
   onCollision : function (response, other) {
-  	this.body.setCollisionMask(me.collision.types.PROJECTILE_OBJECT);
+  	if(response.b.body.collisionType === me.collision.types.PROJECTILE_OBJECT){
+  		var shot = me.pool.pull("DeadEntity", this.pos.x, this.pos.y, {});
+ 		me.game.world.removeChild(this);
+  	}
+  	return false;
   }
   
 });
@@ -71,7 +75,7 @@ game.EnemyEntity = me.Entity.extend({
 game.EnemyEntity2 = me.Entity.extend({
   init: function(x, y, settings) {
     // define this here instead of tiled
-    settings.image = "evilPokemon";
+    settings.image = "badGuy2";
      
     // save the area size defined in Tiled
     var width = settings.width;
@@ -80,8 +84,8 @@ game.EnemyEntity2 = me.Entity.extend({
  	
     // adjust the size setting information to match the sprite size
     // so that the entity object is created with the right size
-    settings.spritewidth = settings.width = 16;
-    settings.spriteheight = settings.height = 16;
+    settings.spritewidth = settings.width = 40;
+    settings.spriteheight = settings.height = 32;
      
     // call the parent constructor
     this._super(me.Entity, 'init', [x, y , settings]);
@@ -89,8 +93,8 @@ game.EnemyEntity2 = me.Entity.extend({
     // set start/end position based on the initial area size
     y = this.pos.y;
     this.startY = y;
-    this.endY   = y + height - settings.spriteheight * 2;
-    this.pos.y = y + height - settings.spriteheight * 2;
+    this.endY   = y + height - settings.spriteheight;
+    this.pos.y = y + height - settings.spriteheight;
  
     // manually update the entity bounds as we manually change the position
     this.updateBounds();
@@ -99,11 +103,10 @@ game.EnemyEntity2 = me.Entity.extend({
     this.walkUp = false;
  
     // walking & jumping speed
-    this.body.setVelocity(3, 3);
+    this.body.setVelocity(1.5, 1.5);
     
-    this.renderable.addAnimation("walkDown", [1]);
-	this.renderable.addAnimation("walkUp", [2]);
-	   
+    this.renderable.addAnimation("walkDown", [0, 1, 2, 3, 4, 5, 6, 7, 8]);
+	this.renderable.addAnimation("walkUp", [9, 10, 11, 12, 13, 14, 15, 16, 17]);	   
   },
  
   // manage the enemy movement
@@ -133,19 +136,39 @@ game.EnemyEntity2 = me.Entity.extend({
   
     // update the body movement
     this.body.update(dt);
-     
+    me.collision.check(this);     
     // return true if we moved or if the renderable was updated
     return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0 || this.body.vel.y !== 0);
   },
-   
+
   /**
    * colision handler
    * (called when colliding with other objects)
    */
   onCollision : function (response, other) {
-  	this.body.setCollisionMask(me.collision.types.PROJECTILE_OBJECT);
+  	if(response.b.body.collisionType === me.collision.types.PROJECTILE_OBJECT){
+  		var shot = me.pool.pull("DeadEntity", this.pos.x, this.pos.y, {});
+ 		me.game.world.removeChild(this);
+  	}
+  	return false;
   }
-  
+});
+
+game.DeadEntity = me.Entity.extend({
+	init : function(x, y, settings){
+		settings.image = "badGuy2";
+		settings.width = 40;
+		settings.height = 32;
+		this._super(me.Entity, 'init', [x, y, settings]);
+		this.renderable.addAnimation("die", [18, 19, 20, 21, 22, 23]);
+		this.renderable.setCurrentAnimation("die", (function () {
+ 	  		me.game.world.removeChild(this);
+   			return false; // do not reset to first frame
+		}).bind(this));
+		me.game.world.addChild(this, Infinity);
+		this.body.setCollisionType = me.collision.types.NO_OBJECT;
+	}
+	
 });
 
 game.TurretEntity = me.Entity.extend({
@@ -189,7 +212,7 @@ game.TurretEntity = me.Entity.extend({
 				var myLaser = new game.LaserEntity(this.pos.x + 10, this.pos.y + 3, {});
 			}
 		}
-		return (this._super(me.Entity, 'update', [dt]));
+		return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x === 0 || this.body.vel.y === 0);
 	},	
 	
 	onCollision: function(){

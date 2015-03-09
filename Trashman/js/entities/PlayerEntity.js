@@ -39,9 +39,9 @@ game.PlayerEntity = me.Entity.extend({
  		this.up = false;
  		this.down = true; 	
 
- 		var track = me.audio.getCurrentTrack();
+ 	/*	var track = me.audio.getCurrentTrack();
  		var name = me.game.currentLevel.name;
- 		
+ 	
  		if(name == "headquarter"){
  			if(track == "hq") return;
  			me.audio.stopTrack();
@@ -77,7 +77,7 @@ game.PlayerEntity = me.Entity.extend({
  			if(track == "desert") return;
  			me.audio.stopTrack();
  			me.audio.playTrack("desert", true);
- 		}
+ 		}*/
  		//console.log(name);
     },
 
@@ -103,11 +103,13 @@ game.PlayerEntity = me.Entity.extend({
  		if(me.input.isKeyPressed('pause') && !me.state.isPaused()){
  			//me.game.world.addChild(new game.HUD.MenuBoxItem(10, 40));
  			me.state.pause(true);
+ 			console.log("paused");
  			var resume_loop = setInterval(function check_resume(){
  				if(me.input.isKeyPressed('unpause')){
  					clearInterval(resume_loop);
  					me.state.pause(false);
  					me.state.resume(true);
+ 					console.log("unpaused");
  				}
  			}, 100);
  		}
@@ -214,7 +216,6 @@ game.PlayerEntity = me.Entity.extend({
 				game.data.score -= 150;
 				me.audio.play("hit");
 			}
-			//me.game.world.sort();
 		}
         
         // apply physics to the body (this moves the entity)
@@ -251,10 +252,7 @@ game.PlayerEntity = me.Entity.extend({
 				if(other.name != "laser"){
 		    		if(!this.renderable.isFlickering()){
 		    			this.renderable.flicker(750);
-		        		game.data.hp -= 1;
-		        		if(game.data.hp <= 0){
-			        		me.state.change(me.state.GAME_END);
-		        		}
+		        		game.data.hp -= 5;
 		        	}
 	        	}
 	        	if(other.name == "laser"){

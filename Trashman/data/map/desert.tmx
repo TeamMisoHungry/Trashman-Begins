@@ -143,7 +143,7 @@
     <property name="to" value="toDesert3"/>
    </properties>
   </object>
-  <object id="22" name="me.LevelEntity" x="860" y="20" width="12" height="52" rotation="-88.8393">
+  <object id="22" name="me.LevelEntity" x="907.018" y="2.3171" width="14.0941" height="56.6252" rotation="90">
    <properties>
     <property name="duration" value="250"/>
     <property name="fade" value="#000000"/>

@@ -57,7 +57,7 @@ game.BulletEntity = me.Entity.extend({
      */
     onCollision : function (response, other) { 
     	//if (response.b.body.collisionType === me.collision.types.PLAYER_OBJECT) return false;
-        return true;
+        return false;
     }
      
     
