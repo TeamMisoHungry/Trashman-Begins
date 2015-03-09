@@ -41,22 +41,7 @@ game.PlayerEntity = me.Entity.extend({
 
 
  		/*** MUSIC ***/
-
- 		if(me.game.currentLevel.name == "headquarter"){
- 			me.audio.stopTrack();
- 			me.audio.playTrack("hq2", true);
- 		}
-
-		/*var track = me.audio.getCurrentTrack();
- 		var name = me.game.currentLevel.name;
- 	
- 		if(name == "headquarter"){
- 			if(track == "hq") return;
- 			//me.audio.stopTrack();
- 			me.audio.playTrack("hq", true);
- 		}*/
-
- 		/*
+ 		
  		var track = me.audio.getCurrentTrack();
  		var name = me.game.currentLevel.name;
  	
@@ -86,7 +71,7 @@ game.PlayerEntity = me.Entity.extend({
  			me.audio.stopTrack();
  			me.audio.playTrack("ice", true);
  		}
- 		else if (name == "antarlevel1" || name == "antarlevel1" ){
+ 		else if (name == "antarlevel1" || name == "antarlevel2" ){
  			if(track == "icelevel") return;
 			me.audio.stopTrack();
  			me.audio.playTrack("icelevel", true);
@@ -95,7 +80,7 @@ game.PlayerEntity = me.Entity.extend({
  			if(track == "desert") return;
  			me.audio.stopTrack();
  			me.audio.playTrack("desert", true);
- 		}*/
+ 		}
  		//console.log(name);
     },
 
@@ -246,7 +231,7 @@ game.PlayerEntity = me.Entity.extend({
 
 		//if player hp drops to 0
 		if (game.data.hp < 0){
-			game.reset();
+			me.state.change(me.state.GAME_END);
 		}
         // apply physics to the body (this moves the entity)
         this.body.update(dt);
