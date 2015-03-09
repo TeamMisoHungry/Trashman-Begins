@@ -16,7 +16,7 @@
     <property name="to" value="toCity1b"/>
    </properties>
   </object>
-  <object id="13" name="mainPlayer" x="1202" y="126" width="32" height="32">
+  <object id="13" name="mainPlayer" x="76" y="104" width="32" height="32">
    <properties>
     <property name="image" value="hero"/>
     <property name="spritewidth" value="24"/>
@@ -57,7 +57,7 @@
   </object>
  </objectgroup>
  <objectgroup name="EnemyEntities">
-  <object id="18" name="EnemyEntity" x="128" y="144" width="192" height="36">
+  <object id="18" name="EnemyEntity" x="212" y="144" width="192" height="36">
    <properties>
     <property name="spritewidth" value="40"/>
    </properties>

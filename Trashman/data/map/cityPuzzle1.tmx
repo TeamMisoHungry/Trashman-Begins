@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="10" height="40" tilewidth="16" tileheight="16" nextobjectid="57">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="10" height="40" tilewidth="16" tileheight="16" nextobjectid="77">
  <tileset firstgid="1" name="cityPuzzle1" tilewidth="16" tileheight="16">
   <image source="cityPuzzle1.png" trans="ff00ff" width="160" height="640"/>
  </tileset>
@@ -11,6 +11,15 @@
  <objectgroup name="collision">
   <object id="56" x="16" y="16">
    <polyline points="0,0 0,592 36,592 36,584 24,576 24,564 40,564 40,576 44,584 44,604 40,616 84,616 84,584 84,580 92,576 88,564 104,564 104,572 92,584 96,592 128,592 128,0 92,0 92,32 84,32 84,-12 44,-12 44,32 36,32 36,0 0,0"/>
+  </object>
+  <object id="70" x="16" y="180">
+   <polyline points="0,0 32,0 32,8 4,8 0,8"/>
+  </object>
+  <object id="75" x="16" y="288">
+   <polyline points="0,0 32,0 32,8 0,8"/>
+  </object>
+  <object id="76" x="16" y="396">
+   <polyline points="0,0 32,0 32,24 0,24"/>
   </object>
  </objectgroup>
  <objectgroup name="Entities">
@@ -35,5 +44,34 @@
     <property name="to" value="city"/>
    </properties>
   </object>
+ </objectgroup>
+ <objectgroup name="EnemyEntities">
+  <object id="58" name="TurretEntity" x="32" y="176" width="16" height="14">
+   <properties>
+    <property name="duration" value="2"/>
+    <property name="image" value="turret"/>
+    <property name="spritewidth" value="16"/>
+   </properties>
+  </object>
+  <object id="60" name="TurretEntity" x="32" y="284" width="16" height="14">
+   <properties>
+    <property name="image" value="turret"/>
+    <property name="spritewidth" value="16"/>
+   </properties>
+  </object>
+  <object id="62" name="TurretEntity" x="32" y="392" width="16" height="14">
+   <properties>
+    <property name="image" value="turret"/>
+    <property name="spritewidth" value="16"/>
+   </properties>
+  </object>
+  <object id="63" name="TurretEntity" x="32" y="408" width="16" height="14">
+   <properties>
+    <property name="image" value="turret"/>
+    <property name="spritewidth" value="16"/>
+   </properties>
+  </object>
+  <object id="64" name="EnemyEntity" x="32" y="332" width="100" height="20"/>
+  <object id="66" name="EnemyEntity2" x="92" y="372" width="24" height="104"/>
  </objectgroup>
 </map>

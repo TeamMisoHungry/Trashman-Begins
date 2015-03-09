@@ -65,6 +65,9 @@ game.resources = [
     {name: "toCity1", type: "tmx", src: "data/map/toCity1.tmx"},
 	{name: "toCity2", type: "tmx", src: "data/map/toCity2.tmx"},
 	{name: "toCity3", type: "tmx", src: "data/map/toCity3.tmx"},
+	{name: "toCity1b", type: "tmx", src: "data/map/toCity1b.tmx"},
+	{name: "toCity2b", type: "tmx", src: "data/map/toCity2b.tmx"},
+	{name: "toCity3b", type: "tmx", src: "data/map/toCity3b.tmx"},
 	{name: "toDesert1", type: "tmx", src: "data/map/toDesert1.tmx"},
 	{name: "toDesert2", type: "tmx", src: "data/map/toDesert2.tmx"},
 	{name: "toDesert3", type: "tmx", src: "data/map/toDesert3.tmx"},
@@ -73,12 +76,14 @@ game.resources = [
 	{name: "turbineMap", type: "tmx", src: "data/map/turbineMap.tmx"},
 	{name: "antarlevel1", type: "tmx", src: "data/map/antarlevel1.tmx"},
     {name: "antarlevel2a", type: "tmx", src: "data/map/antarlevel2a.tmx"},
+    {name: "antarlevel2b", type: "tmx", src: "data/map/antarlevel2b.tmx"},
     {name: "antarlevel2", type: "tmx", src: "data/map/antarlevel2.tmx"},
 
-    /*
-     * BGM
+    
+     //BGM
     
 	{name: "main", type: "audio", src: "data/bgm/"},
+	/*
 	{name: "hq", type: "audio", src: "data/bgm/"},
 	{name: "city", type: "audio", src: "data/bgm/"},
 	{name: "ice", type: "audio", src: "data/bgm/"},

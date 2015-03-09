@@ -39,7 +39,8 @@ game.PlayerEntity = me.Entity.extend({
  		this.up = false;
  		this.down = true; 	
 
- 	/*	var track = me.audio.getCurrentTrack();
+ 		/*
+ 		var track = me.audio.getCurrentTrack();
  		var name = me.game.currentLevel.name;
  	
  		if(name == "headquarter"){
@@ -47,7 +48,7 @@ game.PlayerEntity = me.Entity.extend({
  			me.audio.stopTrack();
  			me.audio.playTrack("hq", true);
  		}
- 		else if (name == "tocity1" || name == "todesert1" || name == "todesert2"
+ 			else if (name == "tocity1" || name == "todesert1" || name == "todesert2"
  				|| name == "toantar1"){
  			if (track == "forest") return;
  			me.audio.stopTrack();
@@ -97,7 +98,7 @@ game.PlayerEntity = me.Entity.extend({
 			me.state.change(me.state.GAME_END);
 		}
 
-		//************CHECK FOR KEY INPUT ****************
+		//************CHECK FOR KEY INPUT ****************/
 
  		//pause button, hit P to pause, ESC to unpause
  		if(me.input.isKeyPressed('pause') && !me.state.isPaused()){
@@ -114,12 +115,36 @@ game.PlayerEntity = me.Entity.extend({
  			}, 100);
  		}
 
+ 		//if "ESC" is pressed
  		if(me.input.isKeyPressed('quit')){
  			me.state.change(me.state.GAME_END);
+ 		}	
+		
+		//throwing
+		if(me.input.isKeyPressed('throw')){
+			if(game.item.garbage >= 1){
+				var shot = me.pool.pull("BulletEntity", this.pos.x+5, this.pos.y+5, {
+					image: 'garbage', 
+					spritewidth: 16, 
+					spriteheight:14, 
+					width:16, 
+					height:14
+				}, [this.up, this.down, this.left1, this.right1]);
+				me.game.world.addChild(shot, this.z);
+				game.item.garbage--;
+				game.data.score -= 150;
+				me.audio.play("hit");
+			}
+		}
+        
+		/************ BELOW are for ice puzzle levels *********/
+
+ 		//set score of penguin to 0 if failed antarlvl2
+ 		if(me.game.currentLevel.name == "antarlevel2b" ){
+ 			game.data.penguin = 0;
  		}
 
-		//ice level
-		
+		//ice level movements/sprites changes
 		if(me.game.currentLevel.name == "antarlevel1" 
 		|| me.game.currentLevel.name == "antarlevel2" ){
 			//|| me.game.currentLevel.name == "antarlevel2"
@@ -149,8 +174,8 @@ game.PlayerEntity = me.Entity.extend({
 				}
 			}
 		}		
-		//adding movement/changing main character's sprite based on up, down, left, right arrows
 
+		//adding movement/changing main character's sprite based on up, down, left, right arrows
 		if(me.game.currentLevel.name != "antarlevel1"
 		&& me.game.currentLevel.name != "antarlevel2" ){	
 			if(me.input.isKeyPressed('left')){
@@ -199,27 +224,11 @@ game.PlayerEntity = me.Entity.extend({
 					this.renderable.setCurrentAnimation("standDown");
 				}
 			}
-		}	
-		
-		//throwing
-		if(me.input.isKeyPressed('throw')){
-			if(game.item.garbage >= 1){
-				var shot = me.pool.pull("BulletEntity", this.pos.x+5, this.pos.y+5, {
-					image: 'garbage', 
-					spritewidth: 16, 
-					spriteheight:14, 
-					width:16, 
-					height:14
-				}, [this.up, this.down, this.left1, this.right1]);
-				me.game.world.addChild(shot, this.z);
-				game.item.garbage--;
-				game.data.score -= 150;
-				me.audio.play("hit");
-			}
 		}
-        
+
         // apply physics to the body (this moves the entity)
         this.body.update(dt);
+        
         // handle collisions against other shapes
         me.collision.check(this);
 
