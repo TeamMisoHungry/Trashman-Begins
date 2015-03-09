@@ -11,7 +11,7 @@ game.PlayerEntity = me.Entity.extend({
     	this._super(me.Entity, 'init', [x, y , settings]);
 
 		//setting deafauly horizontal & vertical speed
-		this.body.setVelocity(5, 5);
+		this.body.setVelocity(2, 2);
 		
 		//reset time limit
 		game.time.limit = 300;
@@ -38,6 +38,23 @@ game.PlayerEntity = me.Entity.extend({
  		this.right1 = false;
  		this.up = false;
  		this.down = true; 	
+
+
+ 		/*** MUSIC ***/
+
+ 		if(me.game.currentLevel.name == "headquarter"){
+ 			me.audio.stopTrack();
+ 			me.audio.playTrack("hq2", true);
+ 		}
+
+		/*var track = me.audio.getCurrentTrack();
+ 		var name = me.game.currentLevel.name;
+ 	
+ 		if(name == "headquarter"){
+ 			if(track == "hq") return;
+ 			//me.audio.stopTrack();
+ 			me.audio.playTrack("hq", true);
+ 		}*/
 
  		/*
  		var track = me.audio.getCurrentTrack();
@@ -132,10 +149,11 @@ game.PlayerEntity = me.Entity.extend({
 				}, [this.up, this.down, this.left1, this.right1]);
 				me.game.world.addChild(shot, this.z);
 				game.item.garbage--;
-				game.data.score -= 150;
+				game.data.score -= 50;
 				me.audio.play("hit");
 			}
 		}
+		
         
 		/************ BELOW are for ice puzzle levels *********/
 
@@ -226,6 +244,10 @@ game.PlayerEntity = me.Entity.extend({
 			}
 		}
 
+		//if player hp drops to 0
+		if (game.data.hp < 0){
+			game.reset();
+		}
         // apply physics to the body (this moves the entity)
         this.body.update(dt);
         

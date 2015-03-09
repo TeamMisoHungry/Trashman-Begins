@@ -2,6 +2,10 @@
  *	NPC Entities
  */
 
+/* NPC Miku appears after Ice Level Puzzle 1
+ * she collects penguins after Hero saves then
+ * 1 penguin = 100 pts
+ */
 game.MikuEntity = me.Entity.extend({	
 
 	init: function(x, y, settings){

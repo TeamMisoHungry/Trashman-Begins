@@ -101,10 +101,10 @@ game.resources = [
     
      //BGM
     
-	{name: "main", type: "audio", src: "data/bgm/"},
-	/*
+	{name: "title", type: "audio", src: "data/bgm/"},
+	{name: "hq2", type: "audio", src: "data/bgm/"},
 	{name: "hq", type: "audio", src: "data/bgm/"},
-	{name: "city", type: "audio", src: "data/bgm/"},
+	/*{name: "city", type: "audio", src: "data/bgm/"},
 	{name: "ice", type: "audio", src: "data/bgm/"},
 	{name: "desert", type: "audio", src: "data/bgm/"},
 	{name: "tocity", type: "audio", src: "data/bgm/"},
