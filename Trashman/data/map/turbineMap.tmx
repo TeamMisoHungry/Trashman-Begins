@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-up" width="90" height="60" tilewidth="16" tileheight="16" nextobjectid="75">
+<map version="1.0" orientation="orthogonal" renderorder="right-up" width="90" height="60" tilewidth="16" tileheight="16" nextobjectid="85">
  <tileset firstgid="1" name="turbineMap" tilewidth="16" tileheight="16">
   <image source="turbineMap.png" width="1440" height="960"/>
  </tileset>
@@ -104,6 +104,44 @@
   </object>
  </objectgroup>
  <objectgroup name="EnemyEntities">
-  <object id="74" name="EnemyEntity" x="514.667" y="748" width="37.3333" height="30.6667"/>
+  <object id="74" name="EnemyEntity" x="393.333" y="749.333" width="380" height="32">
+   <properties>
+    <property name="spritewidth" value="40"/>
+   </properties>
+  </object>
+  <object id="79" name="EnemyEntity" x="37.3333" y="232" width="380" height="32">
+   <properties>
+    <property name="spritewidth" value="40"/>
+   </properties>
+  </object>
+  <object id="80" name="EnemyEntity2" x="106.667" y="358.667" width="53.3333" height="317.333">
+   <properties>
+    <property name="spriteheight" value="32"/>
+    <property name="spritewidth" value="40"/>
+   </properties>
+  </object>
+  <object id="81" name="EnemyEntity2" x="304" y="473.333" width="54.6667" height="152">
+   <properties>
+    <property name="spriteheight" value="32"/>
+    <property name="spritewidth" value="40"/>
+   </properties>
+  </object>
+  <object id="82" name="EnemyEntity2" x="869.333" y="558.667" width="53.3333" height="317.333">
+   <properties>
+    <property name="spriteheight" value="32"/>
+    <property name="spritewidth" value="40"/>
+   </properties>
+  </object>
+  <object id="83" name="EnemyEntity" x="462.667" y="469.333" width="380" height="32">
+   <properties>
+    <property name="spritewidth" value="40"/>
+   </properties>
+  </object>
+  <object id="84" name="EnemyEntity2" x="308" y="681.333" width="54.6667" height="201.333">
+   <properties>
+    <property name="spriteheight" value="32"/>
+    <property name="spritewidth" value="40"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>
