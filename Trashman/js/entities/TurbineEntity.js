@@ -1,8 +1,8 @@
 game.TurbineEntity = me.Entity.extend({
 	init: function(x, y, settings){
 		settings.image = "turbineBlade";
-		settings.width = 30;
-		settings.height = 65;
+		settings.width = 55;
+		settings.height = 110;
 		settings.name = "turbineBlade";
 		this._super(me.Entity, 'init', [x, y, settings]);
 		this.time = 0;

@@ -26,6 +26,8 @@ game.resources = [
 	{name: "hero", type: "image", src: "data/img/sprites/trashman3.png"},
 	{name: "book", type: "image", src: "data/img/sprites/throwBook.png"},
 	{name: "badGuy", type: "image", src: "data/img/sprites/badGuy.png"},
+	{name: "badGuy2", type: "image", src: "data/img/sprites/walkUp&Down.png"},
+	{name: "badGuyHurt", type: "image", src: "data/img/sprites/badGuyHurt.png"},
 	{name: "garbage", type: "image", src: "data/img/sprites/garbage.png"},
 	{name: "bullet", type: "image", src: "data/img/sprites/bullet.png"},
 	{name: "turbineBlade", type: "image", src: "data/img/sprites/turbineBlade.png"},
@@ -76,7 +78,7 @@ game.resources = [
 
     /*
      * BGM
-     */
+    
 	{name: "main", type: "audio", src: "data/bgm/"},
 	{name: "hq", type: "audio", src: "data/bgm/"},
 	{name: "city", type: "audio", src: "data/bgm/"},
@@ -84,10 +86,10 @@ game.resources = [
 	{name: "desert", type: "audio", src: "data/bgm/"},
 	{name: "tocity", type: "audio", src: "data/bgm/"},
 	{name: "forest", type: "audio", src: "data/bgm/"},
-	{name: "icelevel", type: "audio", src: "data/bgm/"},
+	{name: "icelevel", type: "audio", src: "data/bgm/"}, */
 
 	/*
 	 * SFX
 	 */
-	{name: "hit", type: "audio", src: "data/sfx/"},
+	//{name: "hit", type: "audio", src: "data/sfx/"},
 ];

@@ -6,7 +6,6 @@ var game = {
         // score
         score : 0,
         hp : 100,
-        //fps : 30,
         penguin : 0
     },
 
@@ -78,6 +77,7 @@ var game = {
         me.pool.register("PenguinEntity", game.PenguinEntity);
         me.pool.register("MikuEntity", game.MikuEntity);
         me.pool.register("TurbineEntity", game.SignEntity);
+        me.pool.register("DeadEntity", game.DeadEntity);
 		
 		//enable the keyboard
 		me.input.bindKey(me.input.KEY.A, "left");

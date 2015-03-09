@@ -2,9 +2,6 @@ game.TitleScreen = me.ScreenObject.extend({
   /**    
    *  action to perform on state change
    */
-  init:function(){
-  	
-  },
   
   onResetEvent : function() {       
     // title screen
