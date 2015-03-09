@@ -20,7 +20,7 @@
    <properties>
     <property name="duration" value="250"/>
     <property name="fade" value="#000000"/>
-    <property name="to" value="headquarter"/>
+    <property name="to" value="headquartera"/>
    </properties>
   </object>
   <object id="13" name="mainPlayer" x="40" y="184" width="32" height="32">

@@ -27,7 +27,7 @@
    <properties>
     <property name="duration" value="250"/>
     <property name="fade" value="#000000"/>
-    <property name="to" value="city"/>
+    <property name="to" value="cityb"/>
    </properties>
    <polyline points="0,0 0,20 16,20 16,0 0,0"/>
   </object>
@@ -41,7 +41,7 @@
    <properties>
     <property name="duration" value="250"/>
     <property name="fade" value="#000000"/>
-    <property name="to" value="city"/>
+    <property name="to" value="cityb"/>
    </properties>
   </object>
  </objectgroup>

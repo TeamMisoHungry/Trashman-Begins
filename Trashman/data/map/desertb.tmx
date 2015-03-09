@@ -150,7 +150,7 @@
     <property name="to" value="turbineMap"/>
    </properties>
   </object>
-  <object id="24" name="mainPlayer" x="76" y="340" width="32" height="32">
+  <object id="24" name="mainPlayer" x="860" y="44" width="32" height="32">
    <properties>
     <property name="image" value="hero"/>
     <property name="spritewidth" value="24"/>

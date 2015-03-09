@@ -23,7 +23,7 @@
     <property name="to" value="desert"/>
    </properties>
   </object>
-  <object id="10" name="mainPlayer" x="148" y="879" width="32" height="32">
+  <object id="10" name="mainPlayer" x="144" y="76" width="32" height="32">
    <properties>
     <property name="image" value="hero"/>
     <property name="spritewidth" value="24"/>
@@ -43,7 +43,7 @@
  </objectgroup>
  <objectgroup name="EnemyEntities">
   <object id="12" name="EnemyEntity2" x="84" y="236" width="40" height="148"/>
-  <object id="14" name="EnemyEntity2" x="176" y="336" width="44" height="156"/>
-  <object id="16" name="EnemyEntity" x="84" y="580" width="172" height="36"/>
+  <object id="14" name="EnemyEntity2" x="164" y="440" width="44" height="156"/>
+  <object id="16" name="EnemyEntity" x="80" y="724" width="172" height="36"/>
  </objectgroup>
 </map>

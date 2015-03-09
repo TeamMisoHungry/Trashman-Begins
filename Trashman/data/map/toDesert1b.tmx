@@ -23,7 +23,7 @@
     <property name="to" value="toDesert2"/>
    </properties>
   </object>
-  <object id="18" name="mainPlayer" x="37" y="502" width="32" height="32">
+  <object id="18" name="mainPlayer" x="1204" y="492" width="32" height="32">
    <properties>
     <property name="image" value="hero"/>
     <property name="spritewidth" value="24"/>
