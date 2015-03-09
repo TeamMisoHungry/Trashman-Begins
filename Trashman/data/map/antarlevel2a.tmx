@@ -32,7 +32,7 @@
     <property name="spritewidth" value="32"/>
    </properties>
   </object>
-  <object id="8" name="mainPlayer" x="139" y="41" width="32" height="32">
+  <object id="8" name="mainPlayer" x="144" y="44" width="32" height="32">
    <properties>
     <property name="image" value="hero"/>
     <property name="spritewidth" value="24"/>
@@ -45,11 +45,11 @@
     <property name="to" value="antarlevel2"/>
    </properties>
   </object>
-  <object id="10" name="me.LevelEntity" x="257" y="41" width="14" height="13">
+  <object id="10" name="me.LevelEntity" x="128" y="8" width="56" height="12">
    <properties>
     <property name="duration" value="250"/>
     <property name="fade" value="#000000"/>
-    <property name="to" value="antarctica"/>
+    <property name="to" value="antarcticab"/>
    </properties>
   </object>
  </objectgroup>

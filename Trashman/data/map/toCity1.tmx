@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-up" width="80" height="40" tilewidth="16" tileheight="16" nextobjectid="15">
+<map version="1.0" orientation="orthogonal" renderorder="right-up" width="80" height="40" tilewidth="16" tileheight="16" nextobjectid="19">
  <tileset firstgid="1" name="toCity1" tilewidth="16" tileheight="16">
   <image source="toCity1.png" width="1280" height="640"/>
  </tileset>
@@ -20,7 +20,7 @@
    <properties>
     <property name="duration" value="250"/>
     <property name="fade" value="#000000"/>
-    <property name="to" value="headquarter"/>
+    <property name="to" value="headquartera"/>
    </properties>
   </object>
   <object id="13" name="mainPlayer" x="1208" y="175" width="32" height="32">
@@ -39,6 +39,14 @@
  <objectgroup name="collision">
   <object id="1" x="0" y="124">
    <polyline points="8,-22 4,192 126,191 144,162 163,189 316,191 329,158 349,174 366,157 381,172 398,162 410,125 433,144 446,127 464,137 464,163 478,174 489,156 516,179 542,182 561,204 575,189 593,208 604,190 626,191 759,192 782,162 816,200 958,198 972,157 1002,194 1106,195 1217,190 1216,166 1228,159 1246,173 1259,160 1275,175 1273,109 1272,20 1269,10 1263,9 1229,10 1228,9 1221,5 1217,-9 1212,-22 1185,-24 1167,-23 1171,-56 1102,-58 1072,-30 1055,-38 1077,-83 891,-83 869,-48 807,-51 791,-19 681,-22 674,-40 689,-51 688,-71 478,-68 483,-54 483,-33 462,-32 460,-12 383,-12 383,-28 379,-34 379,-86 317,-84 317,-51 209,-53 208,-25 191,-25 168,-25 161,-3 147,7 142,31 139,44 126,43 114,39 125,14 96,9 96,-7 113,-18 116,-38 99,-46 78,-33 77,-17 5,-21"/>
+  </object>
+ </objectgroup>
+ <objectgroup name="EnemyEntities">
+  <object id="15" name="EnemyEntity2" x="316" y="112" width="48" height="144">
+   <properties>
+    <property name="spriteheight" value="32"/>
+    <property name="spritewidth" value="40"/>
+   </properties>
   </object>
  </objectgroup>
 </map>

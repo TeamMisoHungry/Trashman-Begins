@@ -65,7 +65,8 @@ game.EnemyEntity = me.Entity.extend({
   onCollision : function (response, other) {
   	if(response.b.body.collisionType === me.collision.types.PROJECTILE_OBJECT){
   		var shot = me.pool.pull("DeadEntity", this.pos.x, this.pos.y, {});
- 		me.game.world.removeChild(this);
+ 		  me.game.world.removeChild(this);
+      game.data.score += 100;
   	}
   	return false;
   }
@@ -148,7 +149,9 @@ game.EnemyEntity2 = me.Entity.extend({
   onCollision : function (response, other) {
   	if(response.b.body.collisionType === me.collision.types.PROJECTILE_OBJECT){
   		var shot = me.pool.pull("DeadEntity", this.pos.x, this.pos.y, {});
- 		me.game.world.removeChild(this);
+ 		   me.game.world.removeChild(this);
+       game.data.score += 100;
+
   	}
   	return false;
   }

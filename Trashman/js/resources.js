@@ -57,30 +57,54 @@ game.resources = [
     /* 
 	*  Maps
 	*/
+
+	//*******  HQ  ***********
     {name: "headquarter", type: "tmx", src: "data/map/headquarter.tmx"},
-    {name: "cityPuzzle1", type: "tmx", src: "data/map/cityPuzzle1.tmx"},
-    {name: "antarctica", type: "tmx", src: "data/map/antarctica.tmx"},
-    {name: "desert", type: "tmx", src: "data/map/desert.tmx"},
+    {name: "headquartera", type: "tmx", src: "data/map/headquartera.tmx"},
+    {name: "headquarterb", type: "tmx", src: "data/map/headquarterb.tmx"},
+    {name: "headquarterc", type: "tmx", src: "data/map/headquarterc.tmx"},
+
+    //*******  CITY  ***********
     {name: "city", type: "tmx", src: "data/map/city.tmx"},
+    {name: "cityb", type: "tmx", src: "data/map/cityb.tmx"},
     {name: "toCity1", type: "tmx", src: "data/map/toCity1.tmx"},
 	{name: "toCity2", type: "tmx", src: "data/map/toCity2.tmx"},
 	{name: "toCity3", type: "tmx", src: "data/map/toCity3.tmx"},
+	{name: "toCity1b", type: "tmx", src: "data/map/toCity1b.tmx"},
+	{name: "toCity2b", type: "tmx", src: "data/map/toCity2b.tmx"},
+	{name: "toCity3b", type: "tmx", src: "data/map/toCity3b.tmx"},
+	{name: "cityPuzzle1", type: "tmx", src: "data/map/cityPuzzle1.tmx"},
+	
+	//*******  DESERT  **********
+	{name: "desert", type: "tmx", src: "data/map/desert.tmx"},
+	{name: "desertb", type: "tmx", src: "data/map/desertb.tmx"},
 	{name: "toDesert1", type: "tmx", src: "data/map/toDesert1.tmx"},
 	{name: "toDesert2", type: "tmx", src: "data/map/toDesert2.tmx"},
 	{name: "toDesert3", type: "tmx", src: "data/map/toDesert3.tmx"},
+	{name: "toDesert1b", type: "tmx", src: "data/map/toDesert1b.tmx"},
+	{name: "toDesert2b", type: "tmx", src: "data/map/toDesert2b.tmx"},
+	{name: "toDesert3b", type: "tmx", src: "data/map/toDesert3b.tmx"},
+	{name: "turbineMap", type: "tmx", src: "data/map/turbineMap.tmx"},
+	
+	//*******  ANTARCTICA  **********
+	{name: "antarctica", type: "tmx", src: "data/map/antarctica.tmx"},
+	{name: "antarcticab", type: "tmx", src: "data/map/antarcticab.tmx"},
 	{name: "toAntar1", type: "tmx", src: "data/map/toAntar1.tmx"},
 	{name: "toAntar2", type: "tmx", src: "data/map/toAntar2.tmx"},
-	{name: "turbineMap", type: "tmx", src: "data/map/turbineMap.tmx"},
+	{name: "toAntar1b", type: "tmx", src: "data/map/toAntar1b.tmx"},
+	{name: "toAntar2b", type: "tmx", src: "data/map/toAntar2b.tmx"},
 	{name: "antarlevel1", type: "tmx", src: "data/map/antarlevel1.tmx"},
     {name: "antarlevel2a", type: "tmx", src: "data/map/antarlevel2a.tmx"},
+    {name: "antarlevel2b", type: "tmx", src: "data/map/antarlevel2b.tmx"},
     {name: "antarlevel2", type: "tmx", src: "data/map/antarlevel2.tmx"},
 
-    /*
-     * BGM
     
-	{name: "main", type: "audio", src: "data/bgm/"},
+     //BGM
+    
+	{name: "title", type: "audio", src: "data/bgm/"},
+	{name: "hq2", type: "audio", src: "data/bgm/"},
 	{name: "hq", type: "audio", src: "data/bgm/"},
-	{name: "city", type: "audio", src: "data/bgm/"},
+	/*{name: "city", type: "audio", src: "data/bgm/"},
 	{name: "ice", type: "audio", src: "data/bgm/"},
 	{name: "desert", type: "audio", src: "data/bgm/"},
 	{name: "tocity", type: "audio", src: "data/bgm/"},

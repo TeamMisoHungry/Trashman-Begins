@@ -16,7 +16,7 @@
    <properties>
     <property name="duration" value="250"/>
     <property name="fade" value="#000000"/>
-    <property name="to" value="toAntar2"/>
+    <property name="to" value="toAntar2b"/>
    </properties>
   </object>
   <object id="39" name="me.LevelEntity" x="116" y="564" width="16" height="24">

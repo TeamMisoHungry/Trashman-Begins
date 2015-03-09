@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-up" width="80" height="20" tilewidth="16" tileheight="16" nextobjectid="16">
+<map version="1.0" orientation="orthogonal" renderorder="right-up" width="80" height="20" tilewidth="16" tileheight="16" nextobjectid="24">
  <tileset firstgid="1" name="toCity2" tilewidth="16" tileheight="16">
   <image source="toCity2.png" width="1280" height="320"/>
  </tileset>
@@ -13,7 +13,7 @@
    <properties>
     <property name="duration" value="250"/>
     <property name="fade" value="#000000"/>
-    <property name="to" value="toCity1"/>
+    <property name="to" value="toCity1b"/>
    </properties>
   </object>
   <object id="13" name="mainPlayer" x="1202" y="126" width="32" height="32">
@@ -35,6 +35,12 @@
     <property name="spritewidth" value="16"/>
    </properties>
   </object>
+  <object id="23" name="GarbageEntity" x="1152" y="104" width="16" height="14">
+   <properties>
+    <property name="image" value="garbage"/>
+    <property name="spritewidth" value="16"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup name="collision">
   <object id="4" x="1" y="142">
@@ -48,6 +54,23 @@
   </object>
   <object id="7" x="1189" y="211" width="8" height="10">
    <ellipse/>
+  </object>
+ </objectgroup>
+ <objectgroup name="EnemyEntities">
+  <object id="18" name="EnemyEntity" x="128" y="144" width="192" height="36">
+   <properties>
+    <property name="spritewidth" value="40"/>
+   </properties>
+  </object>
+  <object id="20" name="EnemyEntity" x="944" y="140" width="192" height="36">
+   <properties>
+    <property name="spritewidth" value="40"/>
+   </properties>
+  </object>
+  <object id="22" name="EnemyEntity2" x="596" y="92" width="36" height="96">
+   <properties>
+    <property name="spritewidth" value="40"/>
+   </properties>
   </object>
  </objectgroup>
 </map>

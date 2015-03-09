@@ -2,6 +2,10 @@
  *	NPC Entities
  */
 
+/* NPC Miku appears after Ice Level Puzzle 1
+ * she collects penguins after Hero saves then
+ * 1 penguin = 100 pts
+ */
 game.MikuEntity = me.Entity.extend({	
 
 	init: function(x, y, settings){
@@ -9,7 +13,11 @@ game.MikuEntity = me.Entity.extend({
 	},
 	
 	onCollision: function(response, other){
-		game.data.score += 300;
+
+		//Rescue penguins and then give them to Miku to get points.
+		var numPeng = game.data.penguin;
+		game.data.penguin = 0;
+		game.data.score +=  100 * numPeng;
 		this.body.setCollisionMask(me.collision.types.NO_OBJECT);
 		
 	}

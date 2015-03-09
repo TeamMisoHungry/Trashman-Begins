@@ -140,7 +140,7 @@
    <properties>
     <property name="duration" value="250"/>
     <property name="fade" value="#000000"/>
-    <property name="to" value="toDesert3"/>
+    <property name="to" value="toDesert3b"/>
    </properties>
   </object>
   <object id="22" name="me.LevelEntity" x="907.018" y="2.3171" width="14.0941" height="56.6252" rotation="90">
