@@ -6,7 +6,7 @@ var game = {
         // score
         score : 0,
         hp : 100,
-        fps : 30
+        penguin : 0
     },
 
     item : {
@@ -27,8 +27,6 @@ var game = {
         alert("Your browser does not support HTML5 canvas.");
         return;
     }
-
-    me.sys.fps = this.data.fps;
 
     // add "#debug" to the URL to enable the debug Panel
     if (document.location.hash === "#debug") {
@@ -74,7 +72,12 @@ var game = {
         me.pool.register("EnemyEntity2", game.EnemyEntity2);
         me.pool.register("GarbageEntity", game.GarbageEntity);
         me.pool.register("TurretEntity", game.TurretEntity);
-        me.pool.register("LaserEntity", game.LaserEntity);
+        me.pool.register("LaserEntity", game.LaserEntity);       
+        me.pool.register("SignEntity", game.SignEntity);
+        me.pool.register("PenguinEntity", game.PenguinEntity);
+        me.pool.register("MikuEntity", game.MikuEntity);
+        me.pool.register("TurbineEntity", game.SignEntity);
+        me.pool.register("DeadEntity", game.DeadEntity);
 		
 		//enable the keyboard
 		me.input.bindKey(me.input.KEY.A, "left");
@@ -90,7 +93,6 @@ var game = {
 
 		//turn gravity off since this is a top-down
 		me.sys.gravity = 0;
-		me.sys.fps = 50;
         // display the menu title
         me.state.change(me.state.MENU);
     },

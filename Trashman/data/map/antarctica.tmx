@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="left-down" width="60" height="40" tilewidth="16" tileheight="16" nextobjectid="72">
+<map version="1.0" orientation="orthogonal" renderorder="left-down" width="60" height="40" tilewidth="16" tileheight="16" nextobjectid="78">
  <tileset firstgid="1" name="antarctica" tilewidth="16" tileheight="16">
   <image source="antarctica.png" trans="ff00ff" width="960" height="640"/>
  </tileset>
@@ -16,10 +16,16 @@
    <properties>
     <property name="duration" value="250"/>
     <property name="fade" value="#000000"/>
-    <property name="to" value="headquarter"/>
+    <property name="to" value="toAntar2"/>
    </properties>
   </object>
-  <object id="39" name="me.LevelEntity" x="116" y="564" width="16" height="24"/>
+  <object id="39" name="me.LevelEntity" x="116" y="564" width="16" height="24">
+   <properties>
+    <property name="duration" value="250"/>
+    <property name="fade" value="#000000"/>
+    <property name="to" value="antarlevel1"/>
+   </properties>
+  </object>
   <object id="40" name="mainPlayer" x="836" y="504" width="32" height="32">
    <properties>
     <property name="image" value="hero"/>
@@ -32,65 +38,36 @@
     <property name="spritewidth" value="16"/>
    </properties>
   </object>
-  <object id="66" name="GarbageEntity" x="816" y="320" width="16" height="14">
-   <properties>
-    <property name="image" value="garbage"/>
-    <property name="spritewidth" value="16"/>
-   </properties>
-  </object>
-  <object id="67" name="GarbageEntity" x="832" y="144" width="16" height="14">
-   <properties>
-    <property name="image" value="garbage"/>
-    <property name="spritewidth" value="16"/>
-   </properties>
-  </object>
-  <object id="68" name="GarbageEntity" x="132" y="300" width="16" height="14">
-   <properties>
-    <property name="image" value="garbage"/>
-    <property name="spritewidth" value="16"/>
-   </properties>
-  </object>
-  <object id="69" name="GarbageEntity" x="108" y="112" width="16" height="14">
-   <properties>
-    <property name="image" value="garbage"/>
-    <property name="spritewidth" value="16"/>
-   </properties>
-  </object>
-  <object id="70" name="GarbageEntity" x="328" y="436" width="16" height="14">
-   <properties>
-    <property name="image" value="garbage"/>
-    <property name="spritewidth" value="16"/>
-   </properties>
-  </object>
-  <object id="71" name="GarbageEntity" x="244" y="520" width="16" height="14">
-   <properties>
-    <property name="image" value="garbage"/>
-    <property name="spritewidth" value="16"/>
-   </properties>
-  </object>
  </objectgroup>
  <objectgroup name="collision">
   <object id="1" x="960" y="476">
-   <polyline points="0,0 -64,0 -60,-16 -88,-16 -100,-32 -92,-40 -96,-48 -120,-48 -128,-60 -124,-76 -212,-76 -212,-48 -232,-48 -232,-92 -224,-92 -224,-108 -208,-108 -208,-96 -48,-96 -44,-104 -28,-104 -32,-136 -16,-148 -4,-148 -4,-192 -28,-192 -32,-208 -56,-208 -64,-220 -56,-244 -32,-244 -24,-260 0,-260 0,-272 -32,-272 -32,-292 -48,-288 -64,-296 -64,-328 -56,-344 -32,-344 -28,-368 -36,-388 -52,-384 -64,-392 -64,-400 -88,-400 -100,-416 -100,-424 -104,-432 -148,-428 -144,-416 -156,-400 -168,-400 -176,-412 -180,-424 -184,-416 -192,-412 -188,-396 -208,-384 -224,-396 -228,-400 -248,-400 -256,-396 -256,-308 -256,-316 -308,-316 -308,-332 -308,-336 -348,-336 -348,-400 -348,-416 -384,-416 -388,-316 -432,-316 -436,-332 -476,-332 -476,-400 -484,-376 -504,-368 -512,-388 -512,-392 -532,-388 -540,-396 -540,-412 -564,-408 -568,-364 -576,-348 -576,-392 -592,-392 -592,-384 -604,-384 -612,-392 -620,-396 -624,-412 -656,-412 -656,-364 -732,-364 -732,-412 -748,-412 -756,-416 -752,-364 -812,-364 -816,-416 -816,-460 -848,-460 -844,-424 -864,-416 -888,-424 -884,-460 -912,-456 -912,-388 -928,-380 -928,-328 -848,-328 -848,-252 -928,-252 -928,-216 -944,-204 -960,-204 -960,-156 -900,-152 -900,-120 -852,-116 -852,28 -820,28 -820,72 -820,84 -864,84 -864,112 -864,116 -824,116 -824,164 -808,136 -784,136 -776,120 -672,120 -672,112 -688,104 -684,64 -664,52 -652,64 -648,8 -592,-12 -584,-56 -564,-56 -556,-44 -532,-36 -512,-36 -504,-52 -464,-60 -456,-76 -508,-76 -512,-92 -544,-96 -548,-112 -580,-112 -576,-232 -576,-292 -564,-304 -568,-124 -536,-116 -528,-104 -508,-104 -496,-88 -448,-88 -300,-88 -300,-104 -288,-108 -288,-92 -288,-56 -300,-44 -304,-76 -352,-76 -368,-40 -372,-4 -364,60 -400,84 -376,120 -152,116 -84,144 -72,120 -60,100 0,92 0,4 0,0"/>
+   <polyline points="-13,-12 -40,-22 -57,-27 -81,-37 -100,-32 -92,-40 -96,-48 -111,-63 -120,-68 -121,-94 -215,-90 -212,-48 -232,-48 -232,-92 -224,-92 -224,-108 -208,-108 -208,-96 -48,-96 -44,-104 -28,-104 -32,-136 -16,-148 -4,-148 -4,-212 -25,-213 -33,-225 -57,-225 -64,-220 -56,-244 -32,-244 -24,-260 0,-260 -2,-290 -27,-293 -31,-308 -51,-307 -64,-313 -64,-328 -56,-344 -32,-344 -28,-368 -36,-388 -52,-384 -64,-392 -64,-400 -88,-400 -100,-416 -100,-424 -104,-432 -148,-428 -144,-416 -151,-418 -162,-417 -176,-412 -180,-424 -184,-416 -192,-412 -188,-396 -208,-400 -224,-396 -228,-400 -248,-400 -256,-396 -254,-337 -256,-338 -309,-337 -308,-332 -309,-352 -343,-352 -348,-400 -348,-416 -384,-416 -390,-336 -436,-334 -440,-349 -473,-348 -476,-400 -483,-392 -498,-387 -512,-388 -512,-392 -524,-402 -530,-405 -540,-412 -564,-408 -566,-366 -575,-361 -579,-401 -589,-409 -594,-404 -599,-404 -608,-402 -619,-406 -624,-412 -656,-412 -665,-382 -730,-382 -732,-412 -748,-412 -756,-416 -753,-385 -812,-383 -816,-416 -816,-460 -848,-460 -845,-437 -865,-439 -886,-438 -884,-460 -912,-456 -912,-388 -928,-380 -928,-328 -848,-328 -848,-272 -928,-271 -928,-216 -944,-204 -960,-204 -960,-156 -900,-152 -900,-120 -852,-116 -852,28 -820,28 -820,72 -821,68 -863,67 -864,112 -866,118 -821,118 -824,164 -808,136 -784,136 -776,120 -672,120 -672,112 -688,104 -684,64 -664,52 -652,64 -648,8 -592,-12 -584,-56 -564,-56 -556,-44 -532,-36 -512,-36 -504,-52 -464,-60 -450,-102 -497,-86 -509,-104 -537,-109 -548,-112 -568,-122 -566,-234 -576,-311 -564,-315 -568,-124 -536,-116 -528,-104 -508,-104 -496,-88 -442,-105 -352,-104 -326,-87 -297,-107 -288,-92 -288,-56 -300,-44 -299,-89 -358,-93 -373,-38 -395,-13 -382,39 -407,71 -376,120 -152,116 -84,144 -72,120 -60,100 -8,95 -10,3 -12,-13"/>
   </object>
-  <object id="2" x="296" y="176" width="64" height="76"/>
-  <object id="3" x="196" y="184" width="56" height="52"/>
-  <object id="7" x="436" y="200" width="56" height="68"/>
-  <object id="8" x="568" y="208" width="64" height="60"/>
-  <object id="9" x="708" y="204" width="72" height="64"/>
+  <object id="2" x="296" y="176" width="64" height="59"/>
+  <object id="3" x="196" y="184" width="56" height="41"/>
+  <object id="7" x="436" y="200" width="56" height="52"/>
+  <object id="8" x="566" y="196" width="64" height="56"/>
+  <object id="9" x="705" y="195" width="76" height="54"/>
   <object id="10" x="488" y="80" width="4"/>
-  <object id="14" x="184" y="368" width="60" height="80"/>
+  <object id="14" x="184" y="368" width="59" height="61"/>
   <object id="15" x="136" y="244" height="4"/>
-  <object id="17" x="132" y="248"/>
-  <object id="18" x="824" y="216"/>
-  <object id="20" x="776" y="168"/>
-  <object id="21" x="728" y="164"/>
-  <object id="22" x="784" y="104"/>
-  <object id="27" x="524" y="252" width="24" height="32"/>
   <object id="28" x="608" y="560"/>
   <object id="29" x="228" y="560"/>
-  <object id="30" x="68" y="112"/>
-  <object id="31" x="864" y="96"/>
   <object id="32" x="820" y="576"/>
+  <object id="72" x="726" y="149">
+   <polyline points="0,0 -12,11 15,12 1,-1"/>
+  </object>
+  <object id="73" x="760" y="158">
+   <polyline points="0,0 18,-11 30,7 0,8 -1,1"/>
+  </object>
+  <object id="74" x="806" y="211">
+   <polyline points="0,0 17,-15 32,1 0,1"/>
+  </object>
+  <object id="75" x="772" y="100">
+   <polyline points="0,0 11,-8 23,1 0,2"/>
+  </object>
+  <object id="76" x="522" y="258">
+   <polyline points="0,0 14,-16 27,0 -1,0"/>
+  </object>
  </objectgroup>
 </map>

@@ -38,21 +38,47 @@ game.PlayerEntity = me.Entity.extend({
  		this.right1 = false;
  		this.up = false;
  		this.down = true; 	
- 		
- 		me.audio.stopTrack();
- 		
- 		if(me.game.currentLevel.name == "headquarter"){
+
+ 	/*	var track = me.audio.getCurrentTrack();
+ 		var name = me.game.currentLevel.name;
+ 	
+ 		if(name == "headquarter"){
+ 			if(track == "hq") return;
+ 			me.audio.stopTrack();
  			me.audio.playTrack("hq", true);
  		}
- 		else if(me.game.currentLevel.name == "city1"){
+ 		else if (name == "tocity1" || name == "todesert1" || name == "todesert2"
+ 				|| name == "toantar1"){
+ 			if (track == "forest") return;
+ 			me.audio.stopTrack();
+ 			me.audio.playTrack("forest", true);
+ 		}
+ 		else if(name == "tocity2" || name == "tocity3"){
+ 			if(track == "tocity") return;
+ 			me.audio.stopTrack();
+ 			me.audio.playTrack("tocity", true);
+ 		}
+ 		else if(name == "city"){
+ 			if(track == "city") return;
+ 			me.audio.stopTrack();
  			me.audio.playTrack("city", true);
  		}
- 		else if(me.game.currentLevel.name == "antarctica"){
+ 		else if(name == "antarctica" || name == "toantar2" || name == "antarlevel2a"){
+ 			if(track == "ice") return;
+ 			me.audio.stopTrack();
  			me.audio.playTrack("ice", true);
  		}
- 		else if(me.game.currentLevel.name == "desert"){
- 			me.audio.playTrack("desert", true);
+ 		else if (name == "antarlevel1" || name == "antarlevel1" ){
+ 			if(track == "icelevel") return;
+			me.audio.stopTrack();
+ 			me.audio.playTrack("icelevel", true);
  		}
+ 		else if(name == "todesert3" || name == "desert" || name == "turbinemap"){
+ 			if(track == "desert") return;
+ 			me.audio.stopTrack();
+ 			me.audio.playTrack("desert", true);
+ 		}*/
+ 		//console.log(name);
     },
 
     /**
@@ -77,11 +103,13 @@ game.PlayerEntity = me.Entity.extend({
  		if(me.input.isKeyPressed('pause') && !me.state.isPaused()){
  			//me.game.world.addChild(new game.HUD.MenuBoxItem(10, 40));
  			me.state.pause(true);
+ 			console.log("paused");
  			var resume_loop = setInterval(function check_resume(){
  				if(me.input.isKeyPressed('unpause')){
  					clearInterval(resume_loop);
  					me.state.pause(false);
  					me.state.resume(true);
+ 					console.log("unpaused");
  				}
  			}, 100);
  		}
@@ -89,55 +117,90 @@ game.PlayerEntity = me.Entity.extend({
  		if(me.input.isKeyPressed('quit')){
  			me.state.change(me.state.GAME_END);
  		}
+
+		//ice level
 		
-		//adding movement/changing main character's sprite based on up, down, left, right arrows
-		if(me.input.isKeyPressed('left')){
+		if(me.game.currentLevel.name == "antarlevel1" 
+		|| me.game.currentLevel.name == "antarlevel2" ){
+			//|| me.game.currentLevel.name == "antarlevel2"
+			
+			this.body.setVelocity(2, 2);
+			this.body.vel.y += this.body.accel.y * me.timer.tick;
+			this.body.vel.x = 0;
+			this.down = true;
+			if(!this.renderable.isCurrentAnimation('walkDown')){
+				this.renderable.setCurrentAnimation("walkDown");
+			}
+			
+			if(me.input.isKeyPressed('left')){
 			this.body.vel.x -= this.body.accel.x * me.timer.tick;
-			this.body.vel.y = 0;
 			if(!this.renderable.isCurrentAnimation('walkLeft')){
 				this.renderable.setCurrentAnimation("walkLeft");
 				this.left1 = true;
-				this.right1 = this.up = this.down = false;
+				this.right1 = false;
+				}
 			}
-		}else if(me.input.isKeyPressed('right')){
-			this.body.vel.x += this.body.accel.x * me.timer.tick;
-			this.body.vel.y = 0;
-			if(!this.renderable.isCurrentAnimation('walkRight')){
-				this.renderable.setCurrentAnimation("walkRight");
-				this.right1 = true;
-				this.up = this.down = this.left1 = false;
+			else if(me.input.isKeyPressed('right')){
+				this.body.vel.x += this.body.accel.x * me.timer.tick;
+				if(!this.renderable.isCurrentAnimation('walkRight')){
+					this.renderable.setCurrentAnimation("walkRight");
+					this.right1 = true;
+					this.left1 = false;
+				}
 			}
-		}else if(me.input.isKeyPressed('up')){
-			this.body.vel.y -= this.body.accel.y * me.timer.tick;
-			this.body.vel.x = 0;
-			if(!this.renderable.isCurrentAnimation('walkUp')){
-				this.renderable.setCurrentAnimation("walkUp");
-				this.up = true;
-				this.right1 = this.left1 = this.down = false;
-			}
-		}else if(me.input.isKeyPressed('down')){
-			this.body.vel.y += this.body.accel.y * me.timer.tick;
-			this.body.vel.x = 0;
-			if(!this.renderable.isCurrentAnimation('walkDown')){
-				this.renderable.setCurrentAnimation("walkDown");
-				this.down = true;
-				this.up = this.left1 = this.right1 = false;
-			}
-		}else{
-			this.body.vel.x = 0;
-			this.body.vel.y = 0;
-			//change to the standing animation
-			if(this.up){
-				this.renderable.setCurrentAnimation("standUp");
-			}else if(this.left1){
-				 this.renderable.setCurrentAnimation("standLeft");
-			}else if(this.right1){ 
-				this.renderable.setCurrentAnimation("standRight");
-			}else if(this.down){
-				this.renderable.setCurrentAnimation("standDown");
-			}
-		}
+		}		
+		//adding movement/changing main character's sprite based on up, down, left, right arrows
 
+		if(me.game.currentLevel.name != "antarlevel1"
+		&& me.game.currentLevel.name != "antarlevel2" ){	
+			if(me.input.isKeyPressed('left')){
+				this.body.vel.x -= this.body.accel.x * me.timer.tick;
+				this.body.vel.y = 0;
+				if(!this.renderable.isCurrentAnimation('walkLeft')){
+					this.renderable.setCurrentAnimation("walkLeft");
+					this.left1 = true;
+					this.right1 = this.up = this.down = false;
+				}
+			}else if(me.input.isKeyPressed('right')){
+				this.body.vel.x += this.body.accel.x * me.timer.tick;
+				this.body.vel.y = 0;
+				if(!this.renderable.isCurrentAnimation('walkRight')){
+					this.renderable.setCurrentAnimation("walkRight");
+					this.right1 = true;
+					this.up = this.down = this.left1 = false;
+				}
+			}else if(me.input.isKeyPressed('up')){
+				this.body.vel.y -= this.body.accel.y * me.timer.tick;
+				this.body.vel.x = 0;
+				if(!this.renderable.isCurrentAnimation('walkUp')){
+					this.renderable.setCurrentAnimation("walkUp");
+					this.up = true;
+					this.right1 = this.left1 = this.down = false;
+				}
+			}else if(me.input.isKeyPressed('down')){
+				this.body.vel.y += this.body.accel.y * me.timer.tick;
+				this.body.vel.x = 0;
+				if(!this.renderable.isCurrentAnimation('walkDown')){
+					this.renderable.setCurrentAnimation("walkDown");
+					this.down = true;
+					this.up = this.left1 = this.right1 = false;
+				}
+			}else{
+				this.body.vel.x = 0;
+				this.body.vel.y = 0;
+				//change to the standing animation
+				if(this.up){
+					this.renderable.setCurrentAnimation("standUp");
+				}else if(this.left1){
+					 this.renderable.setCurrentAnimation("standLeft");
+				}else if(this.right1){ 
+					this.renderable.setCurrentAnimation("standRight");
+				}else if(this.down){
+					this.renderable.setCurrentAnimation("standDown");
+				}
+			}
+		}	
+		
 		//throwing
 		if(me.input.isKeyPressed('throw')){
 			if(game.item.garbage >= 1){
@@ -150,9 +213,9 @@ game.PlayerEntity = me.Entity.extend({
 				}, [this.up, this.down, this.left1, this.right1]);
 				me.game.world.addChild(shot, this.z);
 				game.item.garbage--;
+				game.data.score -= 150;
 				me.audio.play("hit");
 			}
-			//me.game.world.sort();
 		}
         
         // apply physics to the body (this moves the entity)
@@ -161,7 +224,7 @@ game.PlayerEntity = me.Entity.extend({
         me.collision.check(this);
 
         // return true if we moved or if the renderable was updated
-        return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0 || this.body.vel.y !== 0);
+        return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0 || this.body.vel.y !== 0 || this.body.vel.x === 0 || this.body.vel.y === 0);
     },
 
    /**
@@ -189,10 +252,7 @@ game.PlayerEntity = me.Entity.extend({
 				if(other.name != "laser"){
 		    		if(!this.renderable.isFlickering()){
 		    			this.renderable.flicker(750);
-		        		game.data.hp -= 1;
-		        		if(game.data.hp <= 0){
-			        		me.state.change(me.state.GAME_END);
-		        		}
+		        		game.data.hp -= 5;
 		        	}
 	        	}
 	        	if(other.name == "laser"){
