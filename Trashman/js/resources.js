@@ -104,15 +104,15 @@ game.resources = [
 	{name: "title", type: "audio", src: "data/bgm/"},
 	{name: "hq2", type: "audio", src: "data/bgm/"},
 	{name: "hq", type: "audio", src: "data/bgm/"},
-	/*{name: "city", type: "audio", src: "data/bgm/"},
+	{name: "city", type: "audio", src: "data/bgm/"},
 	{name: "ice", type: "audio", src: "data/bgm/"},
 	{name: "desert", type: "audio", src: "data/bgm/"},
 	{name: "tocity", type: "audio", src: "data/bgm/"},
 	{name: "forest", type: "audio", src: "data/bgm/"},
-	{name: "icelevel", type: "audio", src: "data/bgm/"}, */
+	{name: "icelevel", type: "audio", src: "data/bgm/"},
 
 	/*
 	 * SFX
 	 */
-	//{name: "hit", type: "audio", src: "data/sfx/"},
+	{name: "hit", type: "audio", src: "data/sfx/"},
 ];

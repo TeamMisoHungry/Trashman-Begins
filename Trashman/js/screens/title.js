@@ -8,9 +8,10 @@ game.TitleScreen = me.ScreenObject.extend({
   me.game.world.addChild(new me.Sprite(0, 0, me.loader.getImage('title_screen')), 1);
 	me.game.world.addChild(new game.startButton(100, 250));
 	me.game.world.addChild(new game.credit(180, 250));
-  me.audio.playTrack("title", true);
-  //me.audio.fade("title", 1, 0, 1000);
-	//me.audio.playTrack("main", true);
+	
+ if(me.audio.getCurrentTrack() == "title") return;
+ 	me.audio.stopTrack();
+ 	me.audio.playTrack("title", true);
 
   },
  

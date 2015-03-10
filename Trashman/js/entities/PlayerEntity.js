@@ -41,62 +41,46 @@ game.PlayerEntity = me.Entity.extend({
 
 
  		/*** MUSIC ***/
-
- 		if(me.game.currentLevel.name == "headquarter"){
- 			me.audio.stopTrack();
- 			me.audio.playTrack("hq2", true);
- 		}
-
-		/*var track = me.audio.getCurrentTrack();
- 		var name = me.game.currentLevel.name;
- 	
- 		if(name == "headquarter"){
- 			if(track == "hq") return;
- 			//me.audio.stopTrack();
- 			me.audio.playTrack("hq", true);
- 		}*/
-
- 		/*
+ 		
  		var track = me.audio.getCurrentTrack();
  		var name = me.game.currentLevel.name;
- 	
- 		if(name == "headquarter"){
+ 		
+ 		if(name == "headquarter" || name == "headquartera" || name == "headquarterb" || name == "headquarterc"){
  			if(track == "hq") return;
  			me.audio.stopTrack();
  			me.audio.playTrack("hq", true);
  		}
- 			else if (name == "tocity1" || name == "todesert1" || name == "todesert2"
- 				|| name == "toantar1"){
+ 		else if (name == "tocity1" || name == "todesert1" || name == "todesert2"
+ 				|| name == "toantar1" || name == "toantar1b" || name == "tocity1b" || name == "todesert1b" || name == "todesert2b"){
  			if (track == "forest") return;
  			me.audio.stopTrack();
  			me.audio.playTrack("forest", true);
  		}
- 		else if(name == "tocity2" || name == "tocity3"){
+ 		else if(name == "tocity2" || name == "tocity3" || name == "tocity2b" || name == "tocity3b"){
  			if(track == "tocity") return;
  			me.audio.stopTrack();
  			me.audio.playTrack("tocity", true);
  		}
- 		else if(name == "city"){
+ 		else if(name == "city" || name == "cityb" || name == "cityPuzzle1"){
  			if(track == "city") return;
  			me.audio.stopTrack();
  			me.audio.playTrack("city", true);
  		}
- 		else if(name == "antarctica" || name == "toantar2" || name == "antarlevel2a"){
+ 		else if(name == "antarctica" || name == "toantar2" || name == "antarlevel2a" || name == "toantar2b"){
  			if(track == "ice") return;
  			me.audio.stopTrack();
  			me.audio.playTrack("ice", true);
  		}
- 		else if (name == "antarlevel1" || name == "antarlevel1" ){
+ 		else if (name == "antarlevel1" || name == "antarlevel2"){
  			if(track == "icelevel") return;
 			me.audio.stopTrack();
  			me.audio.playTrack("icelevel", true);
  		}
- 		else if(name == "todesert3" || name == "desert" || name == "turbinemap"){
+ 		else if(name == "todesert3" || name == "desert" || name == "turbinemap" || name == "todesert3b" || name == "desertb"){
  			if(track == "desert") return;
  			me.audio.stopTrack();
  			me.audio.playTrack("desert", true);
- 		}*/
- 		//console.log(name);
+ 		}
     },
 
     /**
@@ -246,7 +230,7 @@ game.PlayerEntity = me.Entity.extend({
 
 		//if player hp drops to 0
 		if (game.data.hp < 0){
-			game.reset();
+			me.state.change(me.state.GAME_END);
 		}
         // apply physics to the body (this moves the entity)
         this.body.update(dt);
