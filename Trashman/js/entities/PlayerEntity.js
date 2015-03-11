@@ -43,7 +43,7 @@ game.PlayerEntity = me.Entity.extend({
 
  		/*** MUSIC ***/
  		
- 		var track = me.audio.getCurrentTrack();
+ 		/*var track = me.audio.getCurrentTrack();
  		var name = me.game.currentLevel.name;
  		
  		if(name == "headquarter" || name == "headquartera" || name == "headquarterb" || name == "headquarterc"){
@@ -81,7 +81,7 @@ game.PlayerEntity = me.Entity.extend({
  			if(track == "desert") return;
  			me.audio.stopTrack();
  			me.audio.playTrack("desert", true);
- 		}
+ 		}*/
  		
     },
 
@@ -105,7 +105,6 @@ game.PlayerEntity = me.Entity.extend({
 
  		//pause button, hit P to paus and showe option buttons
  		if(me.input.isKeyPressed('pause') && !me.state.isPaused()){
- 			//me.game.world.addChild(new game.HUD.MenuBoxItem(10, 40));
  			me.state.pause(true);
  			me.game.world.addChild(new game.continueButton(170, 400));
  			
