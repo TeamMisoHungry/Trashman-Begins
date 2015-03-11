@@ -41,7 +41,7 @@ game.PlayerEntity = me.Entity.extend({
 
 
  		/*** MUSIC ***/
- 		/*
+ 		
  		var track = me.audio.getCurrentTrack();
  		var name = me.game.currentLevel.name;
  		
@@ -81,7 +81,7 @@ game.PlayerEntity = me.Entity.extend({
  			me.audio.stopTrack();
  			me.audio.playTrack("desert", true);
  		}
- 		*/
+ 		
     },
 
     /**
