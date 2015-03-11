@@ -120,9 +120,6 @@ game.HUD.ChatBox = me.Renderable.extend)({
         this.font.set("right");
     },
 
-    update : function () {
-    },
-
     draw : function (renderer) {
         this.font.draw(renderer, "Talking to Miku!", this.pos.x, this.pos.y);
     }
