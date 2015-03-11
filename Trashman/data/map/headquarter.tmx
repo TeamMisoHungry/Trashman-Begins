@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="left-down" width="60" height="40" tilewidth="16" tileheight="16" nextobjectid="67">
+<map version="1.0" orientation="orthogonal" renderorder="left-down" width="60" height="40" tilewidth="16" tileheight="16" nextobjectid="68">
  <tileset firstgid="1" name="headquarter" tilewidth="16" tileheight="16">
   <image source="headquarter.png" trans="ff00ff" width="960" height="640"/>
  </tileset>
@@ -79,19 +79,6 @@
   <object id="55" x="292" y="263">
    <polyline points="0,0 -1,6 44,5 40,5 0,5"/>
   </object>
- </objectgroup>
- <objectgroup name="EnemyEntites">
-  <object id="64" name="TurretEntity2" x="525" y="314" width="16" height="14">
-   <properties>
-    <property name="image" value="turret"/>
-    <property name="spritewidth" value="16"/>
-   </properties>
-  </object>
-  <object id="66" name="TurretEntity" x="426" y="300" width="16" height="14">
-   <properties>
-    <property name="image" value="turret"/>
-    <property name="spritewidth" value="16"/>
-   </properties>
-  </object>
+  <object id="67" x="1021" y="114" height="1"/>
  </objectgroup>
 </map>

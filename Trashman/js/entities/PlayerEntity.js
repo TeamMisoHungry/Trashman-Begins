@@ -102,17 +102,13 @@ game.PlayerEntity = me.Entity.extend({
 
 		//************CHECK FOR KEY INPUT ****************/
 
- 		//pause button, hit P to pause, ESC to unpause
+ 		//pause button, hit P to paus and showe option buttons
  		if(me.input.isKeyPressed('pause') && !me.state.isPaused()){
  			//me.game.world.addChild(new game.HUD.MenuBoxItem(10, 40));
  			me.state.pause(true);
- 			me.game.world.addChild(new game.continueButton(100, 250));
+ 			me.game.world.addChild(new game.continueButton(170, 400));
+ 			
  		}
-
- 		//if "ESC" is pressed
- 		if(me.input.isKeyPressed('quit')){
- 			me.state.change(me.state.GAME_END);
- 		}	
 		
 		//throwing
 		if(me.input.isKeyPressed('throw')){
@@ -284,19 +280,21 @@ game.PlayerEntity = me.Entity.extend({
 game.continueButton = me.GUI_Object.extend({
 	init:function (x, y){
 		var settings = {};
-		settings.image = me.loader.getImage('beginGame');
-		settings.spritewidth = 75;
-		settings.spriteheight = 20;
+		settings.image = me.loader.getImage('continue');
+		settings.spritewidth = 150;
+		settings.spriteheight = 30;
 		// super constructor
-		this._super(me.GUI_Object, "init", [100, 250, settings]);
+		this._super(me.GUI_Object, "init", [x, y, settings]);
 		// define the object z order
 		this.z = Infinity;
 		this.updateWhenPaused = true;
 		this.color = new me.ColorLayer("black", "#000000", 4999);
 		this.pause = new me.ImageLayer("pause", 640, 400, "endScreen", 5000);
 		this.pause.repeat = "no-repeat";
+		this.quit = new game.quitButton(330, 400);
 		me.game.world.addChild(this.pause);
 		me.game.world.addChild(this.color);
+		me.game.world.addChild(this.quit);
 	},
 
 	onClick:function (event){
@@ -305,5 +303,26 @@ game.continueButton = me.GUI_Object.extend({
 		me.game.world.removeChild(this);
 		me.game.world.removeChild(this.pause);
 		me.game.world.removeChild(this.color);
+		me.game.world.removeChild(this.quit);
+	},
+});
+
+game.quitButton = me.GUI_Object.extend({
+	init:function (x, y){
+		var settings = {};
+		settings.image = me.loader.getImage('quit');
+		settings.spritewidth = 150;
+		settings.spriteheight = 30;
+		// super constructor
+		this._super(me.GUI_Object, "init", [x, y, settings]);
+		// define the object z order
+		this.z = Infinity;
+		this.updateWhenPaused = true;
+	},
+
+	onClick:function (event){
+		me.state.pause(false);
+		me.state.resume(true);
+		me.state.change(me.state.MENU);
 	},
 });
