@@ -9,11 +9,11 @@ game.TitleScreen = me.ScreenObject.extend({
 	me.game.world.addChild(new game.startButton(100, 250));
 	me.game.world.addChild(new game.credit(180, 250));
 	
-	/*if(me.audio.getCurrentTrack() == "title"){
+	if(me.audio.getCurrentTrack() == "title"){
 	  return;
 	 }
  	me.audio.stopTrack();
- 	me.audio.playTrack("title", true);*/
+ 	me.audio.playTrack("title", true);
 
   },
  
@@ -21,7 +21,7 @@ game.TitleScreen = me.ScreenObject.extend({
    *  action to perform when leaving this screen (state change)
    */
   onDestroyEvent : function() {
-  	//me.audio.fade("title", 1, 0, 1000);
+  	me.audio.fade("title", 1, 0, 1000);
    }
 });
 
