@@ -222,7 +222,7 @@ game.PlayerEntity = me.Entity.extend({
 		}
 
 		//if player hp drops to 0
-		if (game.data.hp < 0){
+		if (game.data.hp <= 0){
 			me.state.change(me.state.GAME_END);
 		}
         // apply physics to the body (this moves the entity)
