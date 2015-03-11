@@ -79,15 +79,8 @@
   <object id="55" x="292" y="263">
    <polyline points="0,0 -1,6 44,5 40,5 0,5"/>
   </object>
-  <object id="62" x="412" y="260" width="16" height="12"/>
  </objectgroup>
  <objectgroup name="EnemyEntities">
-  <object id="58" name="TurretEntity" x="412" y="260" width="16" height="14">
-   <properties>
-    <property name="image" value="turret"/>
-    <property name="spritewidth" value="16"/>
-   </properties>
-  </object>
   <object id="59" name="EnemyEntity" x="235.333" y="295.333" width="155.333" height="32">
    <properties>
     <property name="spritewidth" value="40"/>
