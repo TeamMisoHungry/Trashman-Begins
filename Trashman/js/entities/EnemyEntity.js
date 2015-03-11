@@ -63,12 +63,25 @@ game.EnemyEntity = me.Entity.extend({
    * (called when colliding with other objects)
    */
   onCollision : function (response, other) {
+<<<<<<< HEAD
     if(response.b.body.collisionType === me.collision.types.PROJECTILE_OBJECT){
       var shot = me.pool.pull("DeadEntity", this.pos.x, this.pos.y, {});
       me.game.world.removeChild(this);
       game.data.score += 100;
     }
     return false;
+=======
+  	//collision with trash
+  	if(response.b.body.collisionType === me.collision.types.PROJECTILE_OBJECT){
+  		var shot = me.pool.pull("DeadEntity", this.pos.x, this.pos.y, {});
+  		me.game.world.removeChild(other);
+  		var trash = me.pool.pull("GarbageEntity", other.pos.x, other.pos.y, {image: "garbage", width: 10, height: 10});
+  		me.game.world.addChild(trash);
+ 		me.game.world.removeChild(this);
+      	game.data.score += 100;
+  	}
+  	return false;
+>>>>>>> 366048cf5b89115499587dec59c277131cf8ecf2
   }
   
 });
@@ -147,6 +160,7 @@ game.EnemyEntity2 = me.Entity.extend({
    * (called when colliding with other objects)
    */
   onCollision : function (response, other) {
+<<<<<<< HEAD
     if(response.b.body.collisionType === me.collision.types.PROJECTILE_OBJECT){
       var shot = me.pool.pull("DeadEntity", this.pos.x, this.pos.y, {});
        me.game.world.removeChild(this);
@@ -154,6 +168,18 @@ game.EnemyEntity2 = me.Entity.extend({
 
     }
     return false;
+=======
+  	//collision with trash
+  	if(response.b.body.collisionType === me.collision.types.PROJECTILE_OBJECT){
+  		var shot = me.pool.pull("DeadEntity", this.pos.x, this.pos.y, {});
+  		me.game.world.removeChild(other);
+  		var trash = me.pool.pull("GarbageEntity", other.pos.x, other.pos.y, {image: "garbage", width: 10, height: 10});
+  		me.game.world.addChild(trash);
+ 		me.game.world.removeChild(this);
+        game.data.score += 100;	
+  	}
+  	return false;
+>>>>>>> 366048cf5b89115499587dec59c277131cf8ecf2
   }
 });
 
@@ -338,6 +364,7 @@ game.IceEnemyEntity2 = me.Entity.extend({
 /*******************************TURRET**********************************/
 
 game.TurretEntity = me.Entity.extend({
+<<<<<<< HEAD
   init: function(x, y, settings){
     settings.z = 4;
     this._super(me.Entity, 'init', [x, y, settings]);
@@ -384,4 +411,108 @@ game.TurretEntity = me.Entity.extend({
   onCollision: function(){
     return true;
   }
+=======
+	init: function(x, y, settings){
+		settings.z = 4;
+		this._super(me.Entity, 'init', [x, y, settings]);
+		this.renderable.addAnimation("safe", [1]);
+		this.renderable.addAnimation("prep", [0, 2]);
+		this.body.collisionType = me.collision.types.NO_OBJECT;
+		this.time = 0;
+		this.safe = true;
+		this.prep = false;
+		this.prep2 = false;
+		this.fire = false;
+		this.fireObject = false;
+		this.renderable.setCurrentAnimation("safe");
+	},
+	
+	update: function(dt){
+		this.time++;
+		
+		if(this.time % 150 === 0 && this.safe){
+			this.fireObject = false;
+			this.safe = false;
+			this.prep = true;
+		}else if(this.time % 150 === 0 && this.prep){
+			this.prep = false;
+			this.fire = true;
+		}else if(this.time % 150 === 0 && this.fire){
+			this.fire = false;
+			this.safe = true;
+		}
+		
+		if(this.safe){
+			this.renderable.setCurrentAnimation("safe");
+		}else if(this.prep && !this.prep2){
+			this.renderable.setCurrentAnimation("prep");
+			this.prep2 = true;
+		}else if(this.fire){
+			if(!this.fireObject){
+				this.renderable.setCurrentAnimation("safe");
+				this.fireObject = true;
+				this.prep2 = false;
+				var myLaser = new game.LaserEntity(this.pos.x + 10, this.pos.y + 3, {});
+			}
+		}
+		return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x === 0 || this.body.vel.y === 0);
+	},	
+	
+	onCollision: function(){
+		return true;
+	}
+});
+
+game.TurretEntity2 = me.Entity.extend({
+	init: function(x, y, settings){
+		settings.z = 4;
+		this._super(me.Entity, 'init', [x, y, settings]);
+		this.renderable.addAnimation("safe", [1]);
+		this.renderable.addAnimation("prep", [0, 2]);
+		this.body.collisionType = me.collision.types.NO_OBJECT;
+		this.time = 0;
+		this.safe = true;
+		this.prep = false;
+		this.prep2 = false;
+		this.fire = false;
+		this.fireObject = false;
+		this.renderable.setCurrentAnimation("safe");
+		this.renderable.flipX(true);
+	},
+	
+	update: function(dt){
+		this.time++;
+		
+		if(this.time % 100 === 0 && this.safe){
+			this.fireObject = false;
+			this.safe = false;
+			this.prep = true;
+		}else if(this.time % 100 === 0 && this.prep){
+			this.prep = false;
+			this.fire = true;
+		}else if(this.time % 100 === 0 && this.fire){
+			this.fire = false;
+			this.safe = true;
+		}
+		
+		if(this.safe){
+			this.renderable.setCurrentAnimation("safe");
+		}else if(this.prep && !this.prep2){
+			this.renderable.setCurrentAnimation("prep");
+			this.prep2 = true;
+		}else if(this.fire){
+			if(!this.fireObject){
+				this.renderable.setCurrentAnimation("safe");
+				this.fireObject = true;
+				this.prep2 = false;
+				var myLaser = new game.LaserEntity2(this.pos.x, this.pos.y + 3, {});
+			}
+		}
+		return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x === 0 || this.body.vel.y === 0);
+	},	
+	
+	onCollision: function(){
+		return true;
+	}
+>>>>>>> 366048cf5b89115499587dec59c277131cf8ecf2
 });

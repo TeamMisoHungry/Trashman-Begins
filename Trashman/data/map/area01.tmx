@@ -29,28 +29,28 @@
     <property name="spritewidth" value="24"/>
    </properties>
   </object>
-  <object id="28" name="GarbageEntity" x="420" y="320" width="16" height="14">
+  <object id="28" name="GarbageEntity" x="420" y="320" width="10" height="10">
    <properties>
     <property name="image" value="garbage"/>
-    <property name="spritewidth" value="16"/>
+    <property name="spritewidth" value="10"/>
    </properties>
   </object>
-  <object id="29" name="GarbageEntity" x="644" y="500" width="16" height="14">
+  <object id="29" name="GarbageEntity" x="644" y="500" width="10" height="10">
    <properties>
     <property name="image" value="garbage"/>
-    <property name="spritewidth" value="16"/>
+    <property name="spritewidth" value="10"/>
    </properties>
   </object>
-  <object id="30" name="GarbageEntity" x="328" y="560" width="16" height="14">
+  <object id="30" name="GarbageEntity" x="328" y="560" width="10" height="10">
    <properties>
     <property name="image" value="garbage"/>
-    <property name="spritewidth" value="16"/>
+    <property name="spritewidth" value="10"/>
    </properties>
   </object>
-  <object id="31" name="GarbageEntity" x="796" y="488" width="16" height="14">
+  <object id="31" name="GarbageEntity" x="796" y="488" width="10" height="10">
    <properties>
     <property name="image" value="garbage"/>
-    <property name="spritewidth" value="16"/>
+    <property name="spritewidth" value="10"/>
    </properties>
   </object>
   <object id="47" name="me.LevelEntity" x="880" y="580">

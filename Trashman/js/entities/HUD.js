@@ -4,7 +4,6 @@
 
 game.HUD = game.HUD || {};
 
-
 game.HUD.Container = me.Container.extend({
 
     init: function() {
@@ -18,7 +17,7 @@ game.HUD.Container = me.Container.extend({
         this.floating = true;
 
         // make sure our object is always draw first
-        this.z = Infinity;
+        this.z = 4998;
 
         // give a name
         this.name = "HUD";
@@ -105,8 +104,23 @@ game.HUD.TimeItem = me.Renderable.extend({
 	draw: function(renderer){
 		this.font.draw(renderer, game.time.limit, this.pos.x, this.pos.y);
 		this.font.draw(renderer, "HP: " + Math.trunc(game.data.hp), this.pos.x, this.pos.y + 15);
-		this.font.draw(renderer,"GARBAGE X" + game.item.garbage, this.pos.x, this.pos.y + 30);	
-        this.font.draw(renderer,"PENGUIN X" + game.data.penguin, this.pos.x, this.pos.y + 45);	
+		this.font.draw(renderer,"GARBAGE X" + game.item.garbage, this.pos.x, this.pos.y + 30);
+		if (me.game.currentLevel.name == "antarlevel1" || me.game.currentLevel.name == "antarlevel2" || me.game.currentLevel.name == "antarlevel2a" || me.game.currentLevel.name == "antarlevel2b"){	
+        	this.font.draw(renderer,"PENGUIN X" + game.data.penguin, this.pos.x, this.pos.y + 45);
+        	}	
 	}
 	
 });
+/*
+game.HUD.ChatBox = me.Renderable.extend)({
+    init: function(x, y) {
+        this._super(me.Renderable, 'init', [x, y, 10, 10]);
+        this.font = new me.BitmapFont("32x32Size8", 12);
+        this.font.set("right");
+    },
+
+    draw : function (renderer) {
+        this.font.draw(renderer, "Talking to Miku!", this.pos.x, this.pos.y);
+    }
+});
+*/

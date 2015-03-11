@@ -51,6 +51,7 @@ var game = {
     // Run on game resources loaded.
     "loaded" : function () {
     	
+    	var INFO_STATE = me.state.USER + 1;
     	//set ingame screen object, title screen
         me.state.set(me.state.MENU, new game.TitleScreen());
         
@@ -61,6 +62,8 @@ var game = {
         me.state.set(me.state.GAME_END, new game.EndScreen());
         
         me.state.set(me.state.CREDITS, new game.CreditsScreen());
+        
+        me.state.set(me.state.USER, new game.IntroScreen());
         
         me.state.transition("fade", "#FFFFFF", 250);
 
@@ -76,10 +79,17 @@ var game = {
         me.pool.register("IceEnemyEntity2", game.IceEnemyEntity2);
         me.pool.register("DeadEntity", game.DeadEntity);
         me.pool.register("TurretEntity", game.TurretEntity);
+<<<<<<< HEAD
         me.pool.register("LaserEntity", game.LaserEntity); 
 
         /*** COLLECTIBLES ***/
         me.pool.register("GarbageEntity", game.GarbageEntity);
+=======
+        me.pool.register("TurretEntity2", game.TurretEntity2);
+        me.pool.register("LaserEntity", game.LaserEntity);
+        me.pool.register("LaserEntity2", game.LaserEntity2);
+        me.pool.register("SignEntity", game.SignEntity);
+>>>>>>> 366048cf5b89115499587dec59c277131cf8ecf2
         me.pool.register("PenguinEntity", game.PenguinEntity);
         me.pool.register("TurbineEntity", game.SignEntity);
 
@@ -94,9 +104,7 @@ var game = {
 		me.input.bindKey(me.input.KEY.S, "down");	
 		me.input.bindKey(me.input.KEY.P, "pause");
 		me.input.bindKey(me.input.KEY.R, "read");	
-		me.input.bindKey(me.input.KEY.ESC, "unpause");	
 		me.input.bindKey(me.input.KEY.SPACE, "throw", true);
-		me.input.bindKey(me.input.KEY.T, "quit");
         me.input.bindKey(me.input.KEY.I, "inventory");
 
 		//turn gravity off since this is a top-down

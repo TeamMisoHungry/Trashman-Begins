@@ -40,6 +40,18 @@ game.resources = [
 	//{name: "sign", type: "image", src: "data/img/sprites/sign.png"},
 	{name: "brokenTurbine", type: "image", src: "data/img/sprites/brokenTurbine.png"},
 	{name: "fixedTurbine", type: "image", src: "data/img/sprites/fixedTurbine.png"},
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+	//{name: "Miku", type: "image", src: "data/img/sprites/NPCs/Miku.png"},
+	{name: "Miku", type: "image", src: "data/img/sprites/ArmorDeath.png"},
+=======
+	{name: "Miku", type: "image", src: "data/img/sprites/Miku.gif"},
+	{name: "MikuAntarc", type: "image", src: "data/img/sprites/MikuAntarc.gif"},
+	{name: "Miku", type: "image", src: "data/img/sprites/NPCs/Miku.gif"},
+>>>>>>> 3a84845d076e9f3fe463aab6ef2533fe3512b022
+	{name: "MikuAntarc", type: "image", src: "data/img/sprites/NPCs/MikuAntarc.gif"},
+>>>>>>> 366048cf5b89115499587dec59c277131cf8ecf2
 	{name: "penguin", type: "image", src: "data/img/sprites/penguin.png"},
 	{name: "bear", type: "image", src: "data/img/sprites/bear.png"},
 
@@ -59,6 +71,8 @@ game.resources = [
 	{name: "creditScreen", type:"image", src:"data/img/gui/creditb.png"},
 	{name: "endScreen", type:"image", src:"data/img/gui/endScreen.png"},
 	{name: "credits", type:"image", src:"data/img/gui/credits.png"},
+	{name: "continue", type:"image", src:"data/img/gui/continue.png"},
+	{name: "quit", type:"image", src:"data/img/gui/quit.png"},
     
     /* 
 	*  Maps
@@ -111,14 +125,14 @@ game.resources = [
     
      //BGM
     
-	{name: "title", type: "audio", src: "data/bgm/"},
+	//{name: "title", type: "audio", src: "data/bgm/"},
 	{name: "hq2", type: "audio", src: "data/bgm/"},
 	{name: "hq", type: "audio", src: "data/bgm/"},
 	{name: "city", type: "audio", src: "data/bgm/"},
 	{name: "ice", type: "audio", src: "data/bgm/"},
 	{name: "desert", type: "audio", src: "data/bgm/"},
 	{name: "tocity", type: "audio", src: "data/bgm/"},
-	{name: "forest", type: "audio", src: "data/bgm/"},
+	//{name: "forest", type: "audio", src: "data/bgm/"},
 	{name: "icelevel", type: "audio", src: "data/bgm/"},
 
 	/*

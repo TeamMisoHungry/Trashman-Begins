@@ -32,10 +32,10 @@
     <property name="spritewidth" value="24"/>
    </properties>
   </object>
-  <object id="28" name="GarbageEntity" x="420" y="320" width="16" height="14">
+  <object id="28" name="GarbageEntity" x="420" y="320" width="10" height="10">
    <properties>
     <property name="image" value="garbage"/>
-    <property name="spritewidth" value="16"/>
+    <property name="spritewidth" value="10"/>
    </properties>
   </object>
   <object id="47" name="me.LevelEntity" x="880" y="580">
@@ -79,5 +79,16 @@
   <object id="55" x="292" y="263">
    <polyline points="0,0 -1,6 44,5 40,5 0,5"/>
   </object>
+<<<<<<< HEAD
+=======
+ </objectgroup>
+ <objectgroup name="EnemyEntities">
+  <object id="59" name="EnemyEntity" x="235.333" y="295.333" width="155.333" height="32">
+   <properties>
+    <property name="spritewidth" value="40"/>
+   </properties>
+  </object>
+  <object id="61" name="EnemyEntity2" x="353.667" y="360.667" width="33" height="176.667"/>
+>>>>>>> 366048cf5b89115499587dec59c277131cf8ecf2
  </objectgroup>
 </map>

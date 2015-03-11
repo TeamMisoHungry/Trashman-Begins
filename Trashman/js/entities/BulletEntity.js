@@ -46,6 +46,7 @@ game.BulletEntity = me.Entity.extend({
 		}
         // update the body movement
         this.body.update(dt);
+        me.collision.check(this);
         // return true if we moved or if the renderable was updated
         return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0 || this.body.vel.y !== 0); 
         
@@ -56,9 +57,10 @@ game.BulletEntity = me.Entity.extend({
      * (called when colliding with other objects)
      */
     onCollision : function (response, other) { 
-    	//if (response.b.body.collisionType === me.collision.types.PLAYER_OBJECT) return false;
+    	if (response.b.body.collisionType === me.collision.types.WORLD_SHAPE){
+ 			me.game.world.removeChild(this);
+ 			return false;
+    	}
         return false;
     }
-     
-    
 });

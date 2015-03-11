@@ -29,10 +29,10 @@
     <property name="spritewidth" value="24"/>
    </properties>
   </object>
-  <object id="35" name="GarbageEntity" x="505" y="464">
+  <object id="35" name="GarbageEntity" x="505" y="464" width="10" height="10">
    <properties>
     <property name="image" value="garbage"/>
-    <property name="spritewidth" value="16"/>
+    <property name="spritewidth" value="10"/>
    </properties>
   </object>
  </objectgroup>
