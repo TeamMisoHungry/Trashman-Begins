@@ -42,7 +42,7 @@
    <properties>
     <property name="duration" value="250"/>
     <property name="fade" value="#000000"/>
-    <property name="to" value="antarlevel3"/>
+    <property name="to" value="antarlevel2"/>
    </properties>
   </object>
  </objectgroup>

@@ -32,7 +32,7 @@
     <property name="spritewidth" value="32"/>
    </properties>
   </object>
-  <object id="8" name="mainPlayer" x="144" y="40" width="32" height="32">
+  <object id="8" name="mainPlayer" x="144" y="40" width="24" height="32">
    <properties>
     <property name="image" value="hero"/>
     <property name="spritewidth" value="24"/>
@@ -42,7 +42,7 @@
    <properties>
     <property name="duration" value="250"/>
     <property name="fade" value="#000000"/>
-    <property name="to" value="antarlevel3"/>
+    <property name="to" value="antarcticab"/>
    </properties>
   </object>
  </objectgroup>
