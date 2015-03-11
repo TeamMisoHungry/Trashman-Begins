@@ -35,8 +35,8 @@ game.resources = [
 	//{name: "sign", type: "image", src: "data/img/sprites/sign.png"},
 	{name: "brokenTurbine", type: "image", src: "data/img/sprites/brokenTurbine.png"},
 	{name: "fixedTurbine", type: "image", src: "data/img/sprites/fixedTurbine.png"},
-	{name: "Miku", type: "image", src: "data/img/sprites/Miku.gif"},
-	{name: "MikuAntarc", type: "image", src: "data/img/sprites/MikuAntarc.gif"},
+	{name: "Miku", type: "image", src: "data/img/sprites/NPCs/Miku.gif"},
+	{name: "MikuAntarc", type: "image", src: "data/img/sprites/NPCs/MikuAntarc.gif"},
 	{name: "penguin", type: "image", src: "data/img/sprites/penguin.png"},
 	{name: "bear", type: "image", src: "data/img/sprites/bear.png"},
 
