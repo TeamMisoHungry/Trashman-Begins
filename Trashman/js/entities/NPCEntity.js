@@ -34,6 +34,8 @@ game.chatbox = me.GUI_Object.extend({
 	    this._super(me.GUI_Object, "init", [x, y, settings]);
       		// define the object z order
       		this.z = Infinity;
-
-	}
+	},
+	onClick:function (event){
+ 		me.game.world.removeChild(this);
+    }
 });

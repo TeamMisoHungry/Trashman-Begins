@@ -112,7 +112,7 @@ game.HUD.TimeItem = me.Renderable.extend({
 	}
 	
 });
-
+/*
 game.HUD.ChatBox = me.Renderable.extend)({
     init: function(x, y) {
         this._super(me.Renderable, 'init', [x, y, 10, 10]);
@@ -127,3 +127,4 @@ game.HUD.ChatBox = me.Renderable.extend)({
         this.font.draw(renderer, "Talking to Miku!", this.pos.x, this.pos.y);
     }
 });
+*/
