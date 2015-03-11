@@ -84,10 +84,10 @@
     <property name="spritewidth" value="24"/>
    </properties>
   </object>
-  <object id="24" name="GarbageEntity" x="260" y="374" width="16" height="14">
+  <object id="24" name="GarbageEntity" x="260" y="374" width="10" height="10">
    <properties>
     <property name="image" value="garbage"/>
-    <property name="spritewidth" value="16"/>
+    <property name="spritewidth" value="10"/>
    </properties>
   </object>
   <object id="25" name="me.LevelEntity" x="14" y="600" width="51" height="26">
