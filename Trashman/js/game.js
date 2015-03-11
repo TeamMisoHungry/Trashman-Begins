@@ -71,18 +71,28 @@ var game = {
 
         me.pool.register("BulletEntity", game.BulletEntity);
         me.pool.register("mainPlayer", game.PlayerEntity);
+
+        /*** ENEMY ***/
         me.pool.register("EnemyEntity", game.EnemyEntity);
         me.pool.register("EnemyEntity2", game.EnemyEntity2);
-        me.pool.register("GarbageEntity", game.GarbageEntity);
+        me.pool.register("IceEnemyEntity", game.IceEnemyEntity);
+        me.pool.register("IceEnemyEntity2", game.IceEnemyEntity2);
+        me.pool.register("DeadEntity", game.DeadEntity);
         me.pool.register("TurretEntity", game.TurretEntity);
+        me.pool.register("LaserEntity", game.LaserEntity); 
+
+        /*** COLLECTIBLES ***/
+        me.pool.register("GarbageEntity", game.GarbageEntity);
         me.pool.register("TurretEntity2", game.TurretEntity2);
         me.pool.register("LaserEntity", game.LaserEntity);
         me.pool.register("LaserEntity2", game.LaserEntity2);
         me.pool.register("SignEntity", game.SignEntity);
         me.pool.register("PenguinEntity", game.PenguinEntity);
-        me.pool.register("MikuEntity", game.MikuEntity);
         me.pool.register("TurbineEntity", game.SignEntity);
-        me.pool.register("DeadEntity", game.DeadEntity);
+
+        /*** NPC ***/
+        me.pool.register("SignEntity", game.SignEntity);
+        me.pool.register("MikuEntity", game.MikuEntity);
 		
 		//enable the keyboard
 		me.input.bindKey(me.input.KEY.A, "left");

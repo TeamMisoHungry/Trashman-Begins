@@ -11,7 +11,9 @@ game.PlayerEntity = me.Entity.extend({
     	this._super(me.Entity, 'init', [x, y , settings]);
 
 		//setting deafauly horizontal & vertical speed
+
 		this.body.setVelocity(2.5, 2.5);
+
 		
 		//reset time limit
 		game.time.limit = 300;
@@ -131,13 +133,16 @@ game.PlayerEntity = me.Entity.extend({
 		/************ BELOW are for ice puzzle levels *********/
 
  		//set score of penguin to 0 if failed antarlvl2
- 		if(me.game.currentLevel.name == "antarlevel2b" ){
+ 		if (me.game.currentLevel.name == "antarlevelBegin"
+ 		|| me.game.currentLevel.name == "antarlevel2a" 
+ 		|| me.game.currentLevel.name == "antarlevel3a"){
  			game.data.penguin = 0;
  		}
 
 		//ice level movements/sprites changes
 		if(me.game.currentLevel.name == "antarlevel1" 
-		|| me.game.currentLevel.name == "antarlevel2" ){
+		|| me.game.currentLevel.name == "antarlevel2"
+		|| me.game.currentLevel.name == "antarlevel3" ){
 			//|| me.game.currentLevel.name == "antarlevel2"
 			
 			this.body.setVelocity(2, 2);
@@ -168,7 +173,8 @@ game.PlayerEntity = me.Entity.extend({
 
 		//adding movement/changing main character's sprite based on up, down, left, right arrows
 		if(me.game.currentLevel.name != "antarlevel1"
-		&& me.game.currentLevel.name != "antarlevel2" ){	
+		&& me.game.currentLevel.name != "antarlevel2"
+		&& me.game.currentLevel.name != "antarlevel3" ){	
 			if(me.input.isKeyPressed('left')){
 				this.body.vel.x -= this.body.accel.x * me.timer.tick;
 				this.body.vel.y = 0;
@@ -253,20 +259,51 @@ game.PlayerEntity = me.Entity.extend({
 		    case me.collision.types.ENEMY_OBJECT:
 				//flicker in case we touched an enemy
 				//if flickering, don't deduct hp until done flickering'
-				if(other.name != "laser"){
+				/*if(other.name != "laser"){
 		    		if(!this.renderable.isFlickering()){
 		    			this.renderable.flicker(750);
 		        		game.data.hp -= 5;
 		        	}
+	        	}*/
+
+	        	if (other.name == "badGuy"){
+	        		if(!this.renderable.isFlickering()){
+	        			this.renderable.flicker(750);
+	        			game.data.hp -= 5;
+	        		}
 	        	}
+
+	        	if (other.name == "badBuy2"){
+	        		if(!this.renderable.isFlickering()){
+	        			this.renderable.flicker(750);
+	        			game.data.hp -= 5;
+	        		}
+	        	}
+
+	        	if (other.name == "badRobot"){
+	        		if(!this.renderable.isFlickering()){
+	        			this.renderable.flicker(750);
+	        			game.data.hp -= 15;
+	        		}
+	        	}
+
+	        	if (other.name == "badRobot2"){
+	        		if(!this.renderable.isFlickering()){
+	        			this.renderable.flicker(750);
+	        			game.data.hp -= 15;
+	        		}
+	        	}
+
 	        	if(other.name == "laser"){
 	        		if(!this.renderable.isFlickering()){
 	        			this.renderable.flicker(750);
 	        			game.data.hp -= 10;
 	        		}
 	        	}
+
 		      	return false;
 		      	break;
+
 		    default:
 		    	// Do not respond to other objects (e.g. coins)
 		      	return false;

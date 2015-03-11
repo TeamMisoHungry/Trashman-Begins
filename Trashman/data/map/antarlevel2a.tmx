@@ -28,11 +28,11 @@
  <objectgroup name="Entities">
   <object id="6" name="MikuEntity" x="181" y="111" width="32" height="32">
    <properties>
-    <property name="image" value="MikuAntarc"/>
+    <property name="image" value="Miku"/>
     <property name="spritewidth" value="32"/>
    </properties>
   </object>
-  <object id="8" name="mainPlayer" x="144" y="44" width="32" height="32">
+  <object id="8" name="mainPlayer" x="144" y="208" width="32" height="32">
    <properties>
     <property name="image" value="hero"/>
     <property name="spritewidth" value="24"/>
@@ -43,13 +43,6 @@
     <property name="duration" value="250"/>
     <property name="fade" value="#000000"/>
     <property name="to" value="antarlevel2"/>
-   </properties>
-  </object>
-  <object id="10" name="me.LevelEntity" x="128" y="8" width="56" height="12">
-   <properties>
-    <property name="duration" value="250"/>
-    <property name="fade" value="#000000"/>
-    <property name="to" value="antarcticab"/>
    </properties>
   </object>
  </objectgroup>

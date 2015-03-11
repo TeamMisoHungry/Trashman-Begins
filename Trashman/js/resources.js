@@ -20,6 +20,7 @@ game.resources = [
 	{name: "antarlevel1", type: "image", src: "data/map/antarlevel1.png"},
 	{name: "antarlevel2a", type: "image", src: "data/map/antarlevel2a.png"},
 	{name: "antarlevel2", type: "image", src: "data/map/antarlevel2.png"},
+	{name: "antarlevel3", type: "image", src: "data/map/antarlevel3.png"},
 	/*
 	 * sprite's
 	 */ 
@@ -27,6 +28,10 @@ game.resources = [
 	{name: "book", type: "image", src: "data/img/sprites/throwBook.png"},
 	{name: "badGuy", type: "image", src: "data/img/sprites/badGuy.png"},
 	{name: "badGuy2", type: "image", src: "data/img/sprites/walkUp&Down.png"},
+	{name: "badSoldier", type: "image", src: "data/img/sprites/badSoldier.png"},
+	{name: "badSoldier2", type: "image", src: "data/img/sprites/badSoldierUpDown.png"},
+	{name: "badRobot", type: "image", src: "data/img/sprites/badRobot.png"},
+	{name: "badRobot2", type: "image", src: "data/img/sprites/badRobotUpDown.png"},
 	{name: "garbage", type: "image", src: "data/img/sprites/garbage.png"},
 	{name: "bullet", type: "image", src: "data/img/sprites/bullet.png"},
 	{name: "turbineBlade", type: "image", src: "data/img/sprites/turbineBlade.png"},
@@ -37,11 +42,12 @@ game.resources = [
 	{name: "fixedTurbine", type: "image", src: "data/img/sprites/fixedTurbine.png"},
 	//{name: "Miku", type: "image", src: "data/img/sprites/Miku.gif"},
 	//{name: "MikuAntarc", type: "image", src: "data/img/sprites/MikuAntarc.gif"},
-	{name: "Miku", type: "image", src: "data/img/sprites/NPCs/Miku.gif"},
-	{name: "MikuAntarc", type: "image", src: "data/img/sprites/NPCs/MikuAntarc.gif"},
 	{name: "penguin", type: "image", src: "data/img/sprites/penguin.png"},
 	{name: "bear", type: "image", src: "data/img/sprites/bear.png"},
 
+	//NPC
+	{name: "Miku", type: "image", src: "data/img/sprites/NPCs/Miku.png"},
+	//{name: "MikuAntarc", type: "image", src: "data/img/sprites/MikuAntarc.gif"},
 	
 	//font
     {name: "32x32_font", type: "image", src: "data/img/font/32x32_font.png"},
@@ -97,11 +103,15 @@ game.resources = [
 	{name: "toAntar2", type: "tmx", src: "data/map/toAntar2.tmx"},
 	{name: "toAntar1b", type: "tmx", src: "data/map/toAntar1b.tmx"},
 	{name: "toAntar2b", type: "tmx", src: "data/map/toAntar2b.tmx"},
+	{name: "antarlevelBegin", type: "tmx", src: "data/map/antarlevelBegin.tmx"},
 	{name: "antarlevel1", type: "tmx", src: "data/map/antarlevel1.tmx"},
+	{name: "antarlevel1b", type: "tmx", src: "data/map/antarlevel1b.tmx"},
+    {name: "antarlevel2", type: "tmx", src: "data/map/antarlevel2.tmx"},
     {name: "antarlevel2a", type: "tmx", src: "data/map/antarlevel2a.tmx"},
     {name: "antarlevel2b", type: "tmx", src: "data/map/antarlevel2b.tmx"},
-    {name: "antarlevel2", type: "tmx", src: "data/map/antarlevel2.tmx"},
-
+	{name: "antarlevel3", type: "tmx", src: "data/map/antarlevel3.tmx"},
+	{name: "antarlevel3a", type: "tmx", src: "data/map/antarlevel3a.tmx"},
+	{name: "antarlevelEnd", type: "tmx", src: "data/map/antarlevelEnd.tmx"},
     
      //BGM
     /*
@@ -115,8 +125,8 @@ game.resources = [
 	//{name: "forest", type: "audio", src: "data/bgm/"},
 	{name: "icelevel", type: "audio", src: "data/bgm/"},
 
-	//
+	
 	 * SFX
-	 ///
+	 
 	{name: "hit", type: "audio", src: "data/sfx/"},*/
 ];

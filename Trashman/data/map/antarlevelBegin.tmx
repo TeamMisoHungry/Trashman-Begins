@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-up" width="20" height="20" tilewidth="16" tileheight="16" nextobjectid="12">
+<map version="1.0" orientation="orthogonal" renderorder="right-up" width="20" height="20" tilewidth="16" tileheight="16" nextobjectid="11">
  <tileset firstgid="1" name="antarlevel2a" tilewidth="16" tileheight="16">
   <image source="antarlevel2a.png" width="320" height="320"/>
  </tileset>
@@ -24,7 +24,6 @@
   <object id="5" x="206" y="175">
    <polyline points="0,0 66,0 66,54 1,54 1,1"/>
   </object>
-  <object id="11" x="184" y="116" width="26" height="21"/>
  </objectgroup>
  <objectgroup name="Entities">
   <object id="6" name="MikuEntity" x="181" y="111" width="32" height="32">
@@ -33,7 +32,7 @@
     <property name="spritewidth" value="32"/>
    </properties>
   </object>
-  <object id="8" name="mainPlayer" x="144" y="40" width="32" height="32">
+  <object id="8" name="mainPlayer" x="136" y="112" width="32" height="32">
    <properties>
     <property name="image" value="hero"/>
     <property name="spritewidth" value="24"/>
@@ -43,7 +42,14 @@
    <properties>
     <property name="duration" value="250"/>
     <property name="fade" value="#000000"/>
-    <property name="to" value="antarlevel3"/>
+    <property name="to" value="antarlevel1"/>
+   </properties>
+  </object>
+  <object id="10" name="me.LevelEntity" x="128" y="8" width="56" height="12">
+   <properties>
+    <property name="duration" value="250"/>
+    <property name="fade" value="#000000"/>
+    <property name="to" value="antarcticab"/>
    </properties>
   </object>
  </objectgroup>
