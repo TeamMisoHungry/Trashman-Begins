@@ -100,7 +100,7 @@ game.resources = [
 
     
      //BGM
-    
+    /*
 	{name: "title", type: "audio", src: "data/bgm/"},
 	{name: "hq2", type: "audio", src: "data/bgm/"},
 	{name: "hq", type: "audio", src: "data/bgm/"},
@@ -111,8 +111,8 @@ game.resources = [
 	{name: "forest", type: "audio", src: "data/bgm/"},
 	{name: "icelevel", type: "audio", src: "data/bgm/"},
 
-	/*
+	
 	 * SFX
-	 */
-	{name: "hit", type: "audio", src: "data/sfx/"},
+	 
+	{name: "hit", type: "audio", src: "data/sfx/"},*/
 ];

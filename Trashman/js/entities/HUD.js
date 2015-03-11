@@ -18,7 +18,7 @@ game.HUD.Container = me.Container.extend({
         this.floating = true;
 
         // make sure our object is always draw first
-        this.z = Infinity;
+        this.z = 4998;
 
         // give a name
         this.name = "HUD";

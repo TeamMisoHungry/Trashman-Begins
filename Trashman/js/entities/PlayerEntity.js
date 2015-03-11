@@ -11,7 +11,7 @@ game.PlayerEntity = me.Entity.extend({
     	this._super(me.Entity, 'init', [x, y , settings]);
 
 		//setting deafauly horizontal & vertical speed
-		this.body.setVelocity(2, 2);
+		this.body.setVelocity(2.5, 2.5);
 		
 		//reset time limit
 		game.time.limit = 300;
@@ -32,6 +32,7 @@ game.PlayerEntity = me.Entity.extend({
 		this.renderable.addAnimation("standUp", [16]);
 		this.renderable.addAnimation("standLeft", [8]);
 		this.renderable.addAnimation("standRight", [12]);
+		this.isPaused = true;
 
 		this.time = 0;
 		this.left1 = false;
@@ -42,7 +43,7 @@ game.PlayerEntity = me.Entity.extend({
 
  		/*** MUSIC ***/
  		
- 		var track = me.audio.getCurrentTrack();
+ 		/*var track = me.audio.getCurrentTrack();
  		var name = me.game.currentLevel.name;
  		
  		if(name == "headquarter" || name == "headquartera" || name == "headquarterb" || name == "headquarterc"){
@@ -80,7 +81,7 @@ game.PlayerEntity = me.Entity.extend({
  			if(track == "desert") return;
  			me.audio.stopTrack();
  			me.audio.playTrack("desert", true);
- 		}
+ 		}*/
     },
 
     /**
@@ -105,15 +106,7 @@ game.PlayerEntity = me.Entity.extend({
  		if(me.input.isKeyPressed('pause') && !me.state.isPaused()){
  			//me.game.world.addChild(new game.HUD.MenuBoxItem(10, 40));
  			me.state.pause(true);
- 			console.log("paused");
- 			var resume_loop = setInterval(function check_resume(){
- 				if(me.input.isKeyPressed('unpause')){
- 					clearInterval(resume_loop);
- 					me.state.pause(false);
- 					me.state.resume(true);
- 					console.log("unpaused");
- 				}
- 			}, 100);
+ 			me.game.world.addChild(new game.continueButton(100, 250));
  		}
 
  		//if "ESC" is pressed
@@ -126,14 +119,14 @@ game.PlayerEntity = me.Entity.extend({
 			if(game.item.garbage >= 1){
 				var shot = me.pool.pull("BulletEntity", this.pos.x+5, this.pos.y+5, {
 					image: 'garbage', 
-					spritewidth: 16, 
-					spriteheight:14, 
-					width:16, 
-					height:14
+					spritewidth: 10, 
+					spriteheight:10, 
+					width:10, 
+					height:10
 				}, [this.up, this.down, this.left1, this.right1]);
 				me.game.world.addChild(shot, this.z);
 				game.item.garbage--;
-				game.data.score -= 50;
+				game.data.score -= 150;
 				me.audio.play("hit");
 			}
 		}
@@ -288,3 +281,29 @@ game.PlayerEntity = me.Entity.extend({
 	},
 });
 
+game.continueButton = me.GUI_Object.extend({
+	init:function (x, y){
+		var settings = {};
+		settings.image = me.loader.getImage('beginGame');
+		settings.spritewidth = 75;
+		settings.spriteheight = 20;
+		// super constructor
+		this._super(me.GUI_Object, "init", [100, 250, settings]);
+		// define the object z order
+		this.z = Infinity;
+		this.updateWhenPaused = true;
+		this.color = new me.ColorLayer("black", "#000000", 4999);
+		this.pause = new me.ImageLayer("pause", 640, 400, "endScreen", 5000);
+		this.pause.repeat = "no-repeat";
+		me.game.world.addChild(this.pause);
+		me.game.world.addChild(this.color);
+	},
+
+	onClick:function (event){
+		me.state.pause(false);
+		me.state.resume(true);
+		me.game.world.removeChild(this);
+		me.game.world.removeChild(this.pause);
+		me.game.world.removeChild(this.color);
+	},
+});

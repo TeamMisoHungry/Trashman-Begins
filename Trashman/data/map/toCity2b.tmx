@@ -29,16 +29,16 @@
     <property name="to" value="toCity3"/>
    </properties>
   </object>
-  <object id="15" name="GarbageEntity" x="499" y="137" width="16" height="14">
+  <object id="15" name="GarbageEntity" x="499" y="137" width="10" height="10">
    <properties>
     <property name="image" value="garbage"/>
-    <property name="spritewidth" value="16"/>
+    <property name="spritewidth" value="10"/>
    </properties>
   </object>
-  <object id="23" name="GarbageEntity" x="1152" y="104" width="16" height="14">
+  <object id="23" name="GarbageEntity" x="1152" y="104" width="10" height="10">
    <properties>
     <property name="image" value="garbage"/>
-    <property name="spritewidth" value="16"/>
+    <property name="spritewidth" value="10"/>
    </properties>
   </object>
  </objectgroup>

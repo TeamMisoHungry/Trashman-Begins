@@ -96,10 +96,10 @@
     <property name="to" value="desertb"/>
    </properties>
   </object>
-  <object id="65" name="GarbageEntity" x="273.75" y="720" width="16" height="14">
+  <object id="65" name="GarbageEntity" x="273.75" y="720" width="10" height="10">
    <properties>
     <property name="image" value="garbage"/>
-    <property name="spritewidth" value="16"/>
+    <property name="spritewidth" value="10"/>
    </properties>
   </object>
  </objectgroup>
