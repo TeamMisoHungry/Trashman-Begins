@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
+<map version="1.0" orientation="orthogonal" renderorder="left-down" width="60" height="40" tilewidth="16" tileheight="16" nextobjectid="65">
+=======
 <map version="1.0" orientation="orthogonal" renderorder="left-down" width="60" height="40" tilewidth="16" tileheight="16" nextobjectid="67">
+>>>>>>> d8ad707d7e1fc629df932638439b1e9ebd8ecc8f
  <tileset firstgid="1" name="headquarter" tilewidth="16" tileheight="16">
   <image source="headquarter.png" trans="ff00ff" width="960" height="640"/>
  </tileset>
@@ -45,12 +49,16 @@
     <property name="to" value="toAntar1"/>
    </properties>
   </object>
+<<<<<<< HEAD
+  <object id="64" name="MikuEntity" x="510" y="262" width="32" height="32"/>
+=======
   <object id="66" name="MikuEntity" x="346" y="496" width="32" height="32">
    <properties>
     <property name="image" value="MikuAntarc"/>
     <property name="spritewidth" value="32"/>
    </properties>
   </object>
+>>>>>>> d8ad707d7e1fc629df932638439b1e9ebd8ecc8f
  </objectgroup>
  <objectgroup name="collision">
   <object id="3" x="4" y="396">
