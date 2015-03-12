@@ -47,7 +47,8 @@ game.resources = [
 	{name: "bear", type: "image", src: "data/img/sprites/bear.png"},
 
 	//NPC
-	{name: "Miku", type: "image", src: "data/img/sprites/NPCs/Miku.png"},
+	//{name: "Miku", type: "image", src: "data/img/sprites/NPCs/Miku.png"},
+	{name: "Miku", type: "image", src: "data/img/sprites/ArmorDeath.png"},
 	//{name: "MikuAntarc", type: "image", src: "data/img/sprites/MikuAntarc.gif"},
 	
 	//font
@@ -66,6 +67,7 @@ game.resources = [
 	{name: "quit", type:"image", src:"data/img/gui/quit.png"},
 	{name: "instruc", type:"image", src:"data/img/gui/instructions.png"},
 	{name: "menu", type:"image", src:"data/img/gui/main.png"},
+	{name: "sampleChatBox", type:"image", src:"data/img/sprites/chatbox.png"},
     
     /* 
 	*  Maps
@@ -137,7 +139,6 @@ game.resources = [
 	{name: "tocity", type: "audio", src: "data/bgm/"},
 	//{name: "forest", type: "audio", src: "data/bgm/"},
 	{name: "icelevel", type: "audio", src: "data/bgm/"},
-
 	
 	 * SFX
 	 

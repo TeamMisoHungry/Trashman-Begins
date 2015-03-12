@@ -6,7 +6,9 @@ var game = {
         // score
         score : 0,
         hp : 100,
-        penguin : 0
+        penguin : 0,
+        talking : false,
+        notTalking : true
     },
 
     item : {
