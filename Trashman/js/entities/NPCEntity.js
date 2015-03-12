@@ -10,7 +10,7 @@ game.MikuEntity = me.Entity.extend({
 
 	init: function(x, y, settings){
 		this._super(me.Entity, 'init', [x, y, settings]);
-		this.renderable.addAnimation("idle", [0, 1, 2, 3, 4, 5],200);
+		this.renderable.addAnimation("idle", [0, 1, 2, 3, 4, 5, 6],200);
 		this.renderable.setCurrentAnimation("idle");
 	},
 
