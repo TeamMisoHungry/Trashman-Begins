@@ -26,6 +26,7 @@ game.HUD.Container = me.Container.extend({
         this.addChild(new game.HUD.ScoreItem(630, 460));
         this.addChild(new game.HUD.TimeItem(10, 10));
         this.addChild(new game.HUD.Dialog(10, 90));
+        this.addChild(new game.HUD.ChatBox(10, 450));
     }
 });
 

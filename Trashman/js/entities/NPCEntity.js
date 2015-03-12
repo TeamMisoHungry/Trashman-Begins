@@ -21,7 +21,7 @@ game.MikuEntity = me.Entity.extend({
 		var numPeng = game.data.penguin;
 		game.data.penguin = 0;
 		game.data.score +=  100 * numPeng;
-		this.body.setCollisionMask(me.collision.types.WORLD_SHAPE);
+		this.body.setCollisionMask(me.collision.types.NPC_OBJECT);
 	}
 });
 

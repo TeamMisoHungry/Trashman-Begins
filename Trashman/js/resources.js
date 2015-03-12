@@ -126,7 +126,6 @@ game.resources = [
 	{name: "tocity", type: "audio", src: "data/bgm/"},
 	//{name: "forest", type: "audio", src: "data/bgm/"},
 	{name: "icelevel", type: "audio", src: "data/bgm/"},
-
 	
 	 * SFX
 	 
