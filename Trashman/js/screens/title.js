@@ -8,6 +8,7 @@ game.TitleScreen = me.ScreenObject.extend({
   	me.game.world.addChild(new me.Sprite(0, 0, me.loader.getImage('title_screen')), 1);
 	me.game.world.addChild(new game.startButton(100, 250));
 	me.game.world.addChild(new game.credit(180, 250));
+	me.game.world.addChild(new game.instrucButton(560, 335));
 
 /*	 if(me.audio.getCurrentTrack() == "title") return;
  	 me.audio.stopTrack();
@@ -35,7 +36,7 @@ game.startButton = me.GUI_Object.extend({
    	},
 	
     onClick:function (event){
-      	me.state.change(me.state.PLAY);
+      	me.state.change(me.state.INTRO);
     }
 });
 
@@ -53,5 +54,22 @@ game.credit = me.GUI_Object.extend({
 	
     onClick:function (event){
  		me.state.change(me.state.CREDITS);
+    }
+});
+
+game.instrucButton = me.GUI_Object.extend({
+	init:function (x, y){
+    	var settings = {};
+      	settings.image = me.loader.getImage('instruc');
+      	settings.spritewidth = 75;
+      	settings.spriteheight = 15;
+      	// super constructor
+	    this._super(me.GUI_Object, "init", [x, y, settings]);
+      	// define the object z order
+      	this.z = Infinity;
+   	},
+	
+    onClick:function (event){
+      	me.state.change(me.state.USER);
     }
 });

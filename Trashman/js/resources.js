@@ -33,6 +33,7 @@ game.resources = [
 	{name: "badRobot", type: "image", src: "data/img/sprites/badRobot.png"},
 	{name: "badRobot2", type: "image", src: "data/img/sprites/badRobotUpDown.png"},
 	{name: "garbage", type: "image", src: "data/img/sprites/garbage.png"},
+	{name: "garbageThrow", type: "image", src: "data/img/sprites/garbageThrow.png"},
 	{name: "bullet", type: "image", src: "data/img/sprites/bullet.png"},
 	{name: "turbineBlade", type: "image", src: "data/img/sprites/turbineBlade.png"},
 	{name: "turret", type: "image", src: "data/img/sprites/TurretSheet.png"},
@@ -63,6 +64,8 @@ game.resources = [
 	{name: "credits", type:"image", src:"data/img/gui/credits.png"},
 	{name: "continue", type:"image", src:"data/img/gui/continue.png"},
 	{name: "quit", type:"image", src:"data/img/gui/quit.png"},
+	{name: "instruc", type:"image", src:"data/img/gui/instructions.png"},
+	{name: "menu", type:"image", src:"data/img/gui/main.png"},
     
     /* 
 	*  Maps
@@ -112,6 +115,16 @@ game.resources = [
 	{name: "antarlevel3", type: "tmx", src: "data/map/antarlevel3.tmx"},
 	{name: "antarlevel3a", type: "tmx", src: "data/map/antarlevel3a.tmx"},
 	{name: "antarlevelEnd", type: "tmx", src: "data/map/antarlevelEnd.tmx"},
+	
+	//******** Intro and instructions ********
+	{name: "intro1", type: "image", src: "data/instructions/intro1.png"},
+	{name: "intro2", type: "image", src: "data/instructions/intro2.png"},
+	{name: "intro3", type: "image", src: "data/instructions/map.png"},
+	{name: "intro4", type: "image", src: "data/instructions/final.png"},
+	{name: "final", type: "image", src: "data/instructions/instructions.png"},
+    {name: "begin1", type: "image", src: "data/intro/intro.png"},
+    {name: "begin2", type: "image", src: "data/intro/intro2.png"},
+    {name: "begin3", type: "image", src: "data/intro/intro3.png"},
     
      //BGM
     /*
