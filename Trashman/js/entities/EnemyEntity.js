@@ -5,6 +5,7 @@ game.EnemyEntity = me.Entity.extend({
   init: function(x, y, settings) {
     // define this here instead of tiled
     settings.image = "badGuy";
+    settings.name = "badGuy";
      
     // save the area size defined in Tiled
     var width = settings.width;
@@ -86,6 +87,7 @@ game.EnemyEntity2 = me.Entity.extend({
   init: function(x, y, settings) {
     // define this here instead of tiled
     settings.image = "badGuy2";
+    settings.name = "badGuy2";
      
     // save the area size defined in Tiled
     var width = settings.width;
@@ -190,6 +192,7 @@ game.IceEnemyEntity = me.Entity.extend({
   init: function(x, y, settings) {
     // define this here instead of tiled
     settings.image = "badRobot";
+    settings.name = "badRobot";
      
     // save the area size defined in Tiled
     var width = settings.width;
@@ -264,6 +267,7 @@ game.IceEnemyEntity2 = me.Entity.extend({
   init: function(x, y, settings) {
     // define this here instead of tiled
     settings.image = "badRobot2";
+    settings.name = "badRobot2";
      
     // save the area size defined in Tiled
     var width = settings.width;
