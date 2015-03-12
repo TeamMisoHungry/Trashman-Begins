@@ -25,6 +25,7 @@ game.HUD.Container = me.Container.extend({
         // add our child score object at the top left corner
         this.addChild(new game.HUD.ScoreItem(630, 460));
         this.addChild(new game.HUD.TimeItem(10, 10));
+        this.addChild(new game.HUD.ChatBox(10, 450));
     }
 });
 
@@ -111,16 +112,16 @@ game.HUD.TimeItem = me.Renderable.extend({
 	}
 	
 });
-/*
-game.HUD.ChatBox = me.Renderable.extend)({
+
+game.HUD.ChatBox = me.Renderable.extend({
     init: function(x, y) {
         this._super(me.Renderable, 'init', [x, y, 10, 10]);
         this.font = new me.BitmapFont("32x32Size8", 12);
-        this.font.set("right");
+        this.font.set("left");
     },
 
     draw : function (renderer) {
-        this.font.draw(renderer, "Talking to Miku!", this.pos.x, this.pos.y);
+        this.font.draw(renderer, "TALKING TO MIKU!", this.pos.x, this.pos.y);
     }
 });
-*/
+

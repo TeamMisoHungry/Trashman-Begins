@@ -5,12 +5,13 @@ game.EnemyEntity = me.Entity.extend({
   init: function(x, y, settings) {
     // define this here instead of tiled
     settings.image = "badGuy";
+    settings.name = "badGuy";
      
     // save the area size defined in Tiled
     var width = settings.width;
     var height = settings.height;
 
-  this.alwaysUpdate = true;
+    this.alwaysUpdate = true;
     // adjust the size setting information to match the sprite size
     // so that the entity object is created with the right size
     settings.spritewidth = settings.width = 40;
@@ -63,14 +64,12 @@ game.EnemyEntity = me.Entity.extend({
    * (called when colliding with other objects)
    */
   onCollision : function (response, other) {
-<<<<<<< HEAD
     if(response.b.body.collisionType === me.collision.types.PROJECTILE_OBJECT){
       var shot = me.pool.pull("DeadEntity", this.pos.x, this.pos.y, {});
       me.game.world.removeChild(this);
       game.data.score += 100;
     }
     return false;
-=======
   	//collision with trash
   	if(response.b.body.collisionType === me.collision.types.PROJECTILE_OBJECT){
   		var shot = me.pool.pull("DeadEntity", this.pos.x, this.pos.y, {});
@@ -81,7 +80,6 @@ game.EnemyEntity = me.Entity.extend({
       	game.data.score += 100;
   	}
   	return false;
->>>>>>> 366048cf5b89115499587dec59c277131cf8ecf2
   }
   
 });
@@ -89,6 +87,7 @@ game.EnemyEntity = me.Entity.extend({
 game.EnemyEntity2 = me.Entity.extend({
   init: function(x, y, settings) {
     // define this here instead of tiled
+    settings.name = "badGuy2";
     settings.image = "badGuy2";
      
     // save the area size defined in Tiled
@@ -160,7 +159,6 @@ game.EnemyEntity2 = me.Entity.extend({
    * (called when colliding with other objects)
    */
   onCollision : function (response, other) {
-<<<<<<< HEAD
     if(response.b.body.collisionType === me.collision.types.PROJECTILE_OBJECT){
       var shot = me.pool.pull("DeadEntity", this.pos.x, this.pos.y, {});
        me.game.world.removeChild(this);
@@ -168,7 +166,6 @@ game.EnemyEntity2 = me.Entity.extend({
 
     }
     return false;
-=======
   	//collision with trash
   	if(response.b.body.collisionType === me.collision.types.PROJECTILE_OBJECT){
   		var shot = me.pool.pull("DeadEntity", this.pos.x, this.pos.y, {});
@@ -179,7 +176,6 @@ game.EnemyEntity2 = me.Entity.extend({
         game.data.score += 100;	
   	}
   	return false;
->>>>>>> 366048cf5b89115499587dec59c277131cf8ecf2
   }
 });
 
@@ -207,6 +203,7 @@ game.IceEnemyEntity = me.Entity.extend({
   init: function(x, y, settings) {
     // define this here instead of tiled
     settings.image = "badRobot";
+    settings.name = "badRobot";
      
     // save the area size defined in Tiled
     var width = settings.width;
@@ -280,6 +277,7 @@ game.IceEnemyEntity = me.Entity.extend({
 game.IceEnemyEntity2 = me.Entity.extend({
   init: function(x, y, settings) {
     // define this here instead of tiled
+    settings.name = "badRobot2";
     settings.image = "badRobot2";
      
     // save the area size defined in Tiled
@@ -364,7 +362,6 @@ game.IceEnemyEntity2 = me.Entity.extend({
 /*******************************TURRET**********************************/
 
 game.TurretEntity = me.Entity.extend({
-<<<<<<< HEAD
   init: function(x, y, settings){
     settings.z = 4;
     this._super(me.Entity, 'init', [x, y, settings]);
@@ -411,8 +408,7 @@ game.TurretEntity = me.Entity.extend({
   onCollision: function(){
     return true;
   }
-=======
-	init: function(x, y, settings){
+	/*init: function(x, y, settings){
 		settings.z = 4;
 		this._super(me.Entity, 'init', [x, y, settings]);
 		this.renderable.addAnimation("safe", [1]);
@@ -460,7 +456,7 @@ game.TurretEntity = me.Entity.extend({
 	
 	onCollision: function(){
 		return true;
-	}
+	}*/
 });
 
 game.TurretEntity2 = me.Entity.extend({
@@ -514,5 +510,4 @@ game.TurretEntity2 = me.Entity.extend({
 	onCollision: function(){
 		return true;
 	}
->>>>>>> 366048cf5b89115499587dec59c277131cf8ecf2
 });

@@ -11,11 +11,7 @@ game.PlayerEntity = me.Entity.extend({
     	this._super(me.Entity, 'init', [x, y , settings]);
 
 		//setting deafauly horizontal & vertical speed
-<<<<<<< HEAD
 		this.body.setVelocity(3, 3);
-=======
-		this.body.setVelocity(2.5, 2.5);
->>>>>>> 366048cf5b89115499587dec59c277131cf8ecf2
 		
 		//reset time limit
 		game.time.limit = 300;
@@ -36,7 +32,6 @@ game.PlayerEntity = me.Entity.extend({
 		this.renderable.addAnimation("standUp", [16]);
 		this.renderable.addAnimation("standLeft", [8]);
 		this.renderable.addAnimation("standRight", [12]);
-		this.isPaused = true;
 
 		this.time = 0;
 		this.left1 = false;
@@ -86,7 +81,6 @@ game.PlayerEntity = me.Entity.extend({
  			me.audio.stopTrack();
  			me.audio.playTrack("desert", true);
  		}
- 		
     },
 
     /**
@@ -107,27 +101,39 @@ game.PlayerEntity = me.Entity.extend({
 
 		//************CHECK FOR KEY INPUT ****************/
 
- 		//pause button, hit P to paus and showe option buttons
+ 		//pause button, hit P to pause, ESC to unpause
  		if(me.input.isKeyPressed('pause') && !me.state.isPaused()){
  			//me.game.world.addChild(new game.HUD.MenuBoxItem(10, 40));
  			me.state.pause(true);
- 			me.game.world.addChild(new game.continueButton(170, 400));
- 			
+ 			console.log("paused");
+ 			var resume_loop = setInterval(function check_resume(){
+ 				if(me.input.isKeyPressed('unpause')){
+ 					clearInterval(resume_loop);
+ 					me.state.pause(false);
+ 					me.state.resume(true);
+ 					console.log("unpaused");
+ 				}
+ 			}, 100);
  		}
+
+ 		//if "ESC" is pressed
+ 		if(me.input.isKeyPressed('quit')){
+ 			me.state.change(me.state.GAME_END);
+ 		}	
 		
 		//throwing
 		if(me.input.isKeyPressed('throw')){
 			if(game.item.garbage >= 1){
 				var shot = me.pool.pull("BulletEntity", this.pos.x+5, this.pos.y+5, {
 					image: 'garbage', 
-					spritewidth: 10, 
-					spriteheight:10, 
-					width:10, 
-					height:10
+					spritewidth: 16, 
+					spriteheight:14, 
+					width:16, 
+					height:14
 				}, [this.up, this.down, this.left1, this.right1]);
 				me.game.world.addChild(shot, this.z);
 				game.item.garbage--;
-				game.data.score -= 150;
+				game.data.score -= 50;
 				me.audio.play("hit");
 			}
 		}
@@ -227,7 +233,7 @@ game.PlayerEntity = me.Entity.extend({
 		}
 
 		//if player hp drops to 0
-		if (game.data.hp <= 0){
+		if (game.data.hp < 0){
 			me.state.change(me.state.GAME_END);
 		}
         // apply physics to the body (this moves the entity)
@@ -314,55 +320,5 @@ game.PlayerEntity = me.Entity.extend({
 	
 	 	  // Make the object solid
 	  	  return true;
-	},
-});
-
-game.continueButton = me.GUI_Object.extend({
-	init:function (x, y){
-		var settings = {};
-		settings.image = me.loader.getImage('continue');
-		settings.spritewidth = 150;
-		settings.spriteheight = 30;
-		// super constructor
-		this._super(me.GUI_Object, "init", [x, y, settings]);
-		// define the object z order
-		this.z = Infinity;
-		this.updateWhenPaused = true;
-		this.color = new me.ColorLayer("black", "#000000", 4999);
-		this.pause = new me.ImageLayer("pause", 640, 400, "endScreen", 5000);
-		this.pause.repeat = "no-repeat";
-		this.quit = new game.quitButton(330, 400);
-		me.game.world.addChild(this.pause);
-		me.game.world.addChild(this.color);
-		me.game.world.addChild(this.quit);
-	},
-
-	onClick:function (event){
-		me.state.pause(false);
-		me.state.resume(true);
-		me.game.world.removeChild(this);
-		me.game.world.removeChild(this.pause);
-		me.game.world.removeChild(this.color);
-		me.game.world.removeChild(this.quit);
-	},
-});
-
-game.quitButton = me.GUI_Object.extend({
-	init:function (x, y){
-		var settings = {};
-		settings.image = me.loader.getImage('quit');
-		settings.spritewidth = 150;
-		settings.spriteheight = 30;
-		// super constructor
-		this._super(me.GUI_Object, "init", [x, y, settings]);
-		// define the object z order
-		this.z = Infinity;
-		this.updateWhenPaused = true;
-	},
-
-	onClick:function (event){
-		me.state.pause(false);
-		me.state.resume(true);
-		me.state.change(me.state.MENU);
 	},
 });
