@@ -27,7 +27,7 @@ game.MikuEntity = me.Entity.extend({
 
 	init: function(x, y, settings){
 		this._super(me.Entity, 'init', [x, y, settings]);
-		this.renderable.addAnimation("idle", [0, 1, 2, 3, 4, 5, 6],200);
+		this.renderable.addAnimation("idle", [0, 1, 2, 3, 4, 5],200);
 		this.renderable.setCurrentAnimation("idle");
 	},
 
@@ -39,6 +39,108 @@ game.MikuEntity = me.Entity.extend({
 		var numPeng = game.data.penguin;
 		game.data.penguin = 0;
 		game.data.score +=  100 * numPeng;
+		this.body.setCollisionMask(me.collision.types.NPC_OBJECT);
+	}
+});
+
+game.SakuraEntity = me.Entity.extend({	
+
+	init: function(x, y, settings){
+		this._super(me.Entity, 'init', [x, y, settings]);
+		this.renderable.addAnimation("idle", [0, 1, 2, 3, 4, 5, 6],200);
+		this.renderable.setCurrentAnimation("idle");
+	},
+
+	onCollision: function(response, other){
+		//Rescue penguins and then give them to Miku to get points.
+		//game.data.talking_to_miku = true;
+		//game.data.notTalking = false;
+		me.game.world.addChild(new game.chatbox(10, 80));
+		this.body.setCollisionMask(me.collision.types.NPC_OBJECT);
+	}
+});
+
+game.AliceEntity = me.Entity.extend({	
+
+	init: function(x, y, settings){
+		this._super(me.Entity, 'init', [x, y, settings]);
+		this.renderable.addAnimation("idle", [0, 1, 2, 3, 4],200);
+		this.renderable.setCurrentAnimation("idle");
+	},
+
+	onCollision: function(response, other){
+		//Rescue penguins and then give them to Miku to get points.
+		//game.data.talking_to_miku = true;
+		//game.data.notTalking = false;
+		me.game.world.addChild(new game.chatbox(10, 80));
+		this.body.setCollisionMask(me.collision.types.NPC_OBJECT);
+	}
+});
+
+game.MimiEntity = me.Entity.extend({	
+
+	init: function(x, y, settings){
+		this._super(me.Entity, 'init', [x, y, settings]);
+		this.renderable.addAnimation("idle", [0, 1, 2, 3, 4, 5, 6],200);
+		this.renderable.setCurrentAnimation("idle");
+	},
+
+	onCollision: function(response, other){
+		//Rescue penguins and then give them to Miku to get points.
+		//game.data.talking_to_miku = true;
+		//game.data.notTalking = false;
+		me.game.world.addChild(new game.chatbox(10, 80));
+		this.body.setCollisionMask(me.collision.types.NPC_OBJECT);
+	}
+});
+
+game.GumiEntity = me.Entity.extend({	
+
+	init: function(x, y, settings){
+		this._super(me.Entity, 'init', [x, y, settings]);
+		this.renderable.addAnimation("idle", [0, 1, 2, 3, 4],200);
+		this.renderable.setCurrentAnimation("idle");
+	},
+
+	onCollision: function(response, other){
+		//Rescue penguins and then give them to Miku to get points.
+		//game.data.talking_to_miku = true;
+		//game.data.notTalking = false;
+		me.game.world.addChild(new game.chatbox(10, 80));
+		this.body.setCollisionMask(me.collision.types.NPC_OBJECT);
+	}
+});
+
+game.ArielEntity = me.Entity.extend({	
+
+	init: function(x, y, settings){
+		this._super(me.Entity, 'init', [x, y, settings]);
+		this.renderable.addAnimation("idle", [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],200);
+		this.renderable.setCurrentAnimation("idle");
+	},
+
+	onCollision: function(response, other){
+		//Rescue penguins and then give them to Miku to get points.
+		//game.data.talking_to_miku = true;
+		//game.data.notTalking = false;
+		me.game.world.addChild(new game.chatbox(10, 80));
+		this.body.setCollisionMask(me.collision.types.NPC_OBJECT);
+	}
+});
+
+game.RekiEntity = me.Entity.extend({	
+
+	init: function(x, y, settings){
+		this._super(me.Entity, 'init', [x, y, settings]);
+		this.renderable.addAnimation("idle", [0, 1, 2, 3, 4, 5, 6],200);
+		this.renderable.setCurrentAnimation("idle");
+	},
+
+	onCollision: function(response, other){
+		//Rescue penguins and then give them to Miku to get points.
+		//game.data.talking_to_miku = true;
+		//game.data.notTalking = false;
+		me.game.world.addChild(new game.chatbox(10, 80));
 		this.body.setCollisionMask(me.collision.types.NPC_OBJECT);
 	}
 });

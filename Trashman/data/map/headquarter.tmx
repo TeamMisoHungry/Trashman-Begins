@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="left-down" width="60" height="40" tilewidth="16" tileheight="16" nextobjectid="76">
+<map version="1.0" orientation="orthogonal" renderorder="left-down" width="60" height="40" tilewidth="16" tileheight="16" nextobjectid="82">
  <tileset firstgid="1" name="headquarter" tilewidth="16" tileheight="16">
   <image source="headquarter.png" trans="ff00ff" width="960" height="640"/>
  </tileset>
@@ -26,7 +26,7 @@
     <property name="to" value="toDesert1"/>
    </properties>
   </object>
-  <object id="27" name="mainPlayer" x="449" y="244" width="32" height="32">
+  <object id="27" name="mainPlayer" x="449" y="244" width="24" height="32">
    <properties>
     <property name="image" value="hero"/>
     <property name="spritewidth" value="24"/>
@@ -45,9 +45,9 @@
     <property name="to" value="toAntar1"/>
    </properties>
   </object>
-  <object id="67" name="MikuEntity" x="508" y="301" width="32" height="32">
+  <object id="67" name="AliceEntity" x="508" y="301" width="32" height="32">
    <properties>
-    <property name="image" value="Miku"/>
+    <property name="image" value="Alice"/>
     <property name="spritewidth" value="32"/>
    </properties>
   </object>
@@ -55,6 +55,11 @@
    <properties>
     <property name="image" value="Jelly"/>
     <property name="spritewidth" value="50"/>
+   </properties>
+  </object>
+  <object id="80" name="SakuraEntity" x="804" y="440" width="32" height="32">
+   <properties>
+    <property name="image" value="Sakura"/>
    </properties>
   </object>
  </objectgroup>
@@ -94,6 +99,7 @@
   <object id="62" x="412" y="260" width="16" height="12"/>
   <object id="69" x="513" y="306" width="21" height="21"/>
   <object id="75" x="521" y="236" width="26" height="38"/>
+  <object id="81" x="812" y="448" width="16" height="16"/>
  </objectgroup>
  <objectgroup name="EnemyEntities">
   <object id="58" name="TurretEntity" x="412" y="260" width="16" height="14">

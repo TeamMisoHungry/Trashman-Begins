@@ -97,7 +97,15 @@ var game = {
         /*** NPC ***/
         me.pool.register("SignEntity", game.SignEntity);
         me.pool.register("MikuEntity", game.MikuEntity);
+        me.pool.register("SakuraEntity", game.SakuraEntity);
+        me.pool.register("MimiEntity", game.MimiEntity);
+        me.pool.register("GumiEntity", game.GumiEntity);
+        me.pool.register("ArielEntity", game.ArielEntity);
+        me.pool.register("RekiEntity", game.RekiEntity);
+        me.pool.register("AliceEntity", game.AliceEntity);
+
         me.pool.register("JellyEntity", game.JellyEntity);
+
 		
 		//enable the keyboard
 		me.input.bindKey(me.input.KEY.A, "left");

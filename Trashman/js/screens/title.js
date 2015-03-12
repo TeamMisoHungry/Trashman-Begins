@@ -5,10 +5,10 @@ game.TitleScreen = me.ScreenObject.extend({
   
   onResetEvent : function() {       
     // title screen
-  	me.game.world.addChild(new me.Sprite(0, 0, me.loader.getImage('title_screen')), 1);
-	me.game.world.addChild(new game.startButton(100, 250));
-	me.game.world.addChild(new game.credit(180, 250));
-	me.game.world.addChild(new game.instrucButton(560, 335));
+     me.game.world.addChild(new me.Sprite(0, 0, me.loader.getImage('title_screen')), 1);
+	   me.game.world.addChild(new game.startButton(20, 250));
+	   me.game.world.addChild(new game.credit(100, 250));
+	   me.game.world.addChild(new game.instrucButton(400, 250));
 
 /*	 if(me.audio.getCurrentTrack() == "title") return;
  	 me.audio.stopTrack();

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="60" tilewidth="16" tileheight="16" nextobjectid="19">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="60" tilewidth="16" tileheight="16" nextobjectid="29">
  <tileset firstgid="1" name="toDesert2" tilewidth="16" tileheight="16">
   <image source="toDesert2.png" width="640" height="960"/>
  </tileset>
@@ -12,6 +12,7 @@
   <object id="1" x="0" y="784">
    <polyline points="4,-16 260,-16 268,-28 280,-36 284,-64 312,-64 312,-152 328,-160 331,-342 301,-368 296,-512 312,-516 317,-549 303,-560 304,-776 600,-776 598,-639 582,-641 580,-626 566,-621 561,-591 546,-588 545,-573 582,-572 583,-531 574,-525 545,-524 547,-501 600,-472 610,-445 636,-436 638,-412 619,-417 600,-391 601,70 592,64 573,75 555,98 537,96 514,127 483,94 448,125 413,93 384,129 351,96 322,128 288,95 259,128 221,95 194,126 181,125 157,97 131,125 122,125 97,99 68,126 57,126 31,95 5,128 8,132 8,-20"/>
   </object>
+  <object id="25" x="556" y="224" width="16" height="24"/>
  </objectgroup>
  <objectgroup name="Entities">
   <object id="3" name="me.LevelEntity" x="10" y="795" width="9" height="73">
@@ -28,13 +29,18 @@
     <property name="to" value="toDesert3"/>
    </properties>
   </object>
-  <object id="5" name="mainPlayer" x="432" y="48" width="32" height="32">
+  <object id="5" name="mainPlayer" x="444" y="60" width="32" height="32">
    <properties>
     <property name="image" value="hero"/>
     <property name="spritewidth" value="24"/>
    </properties>
   </object>
-  <object id="8" name="GarbageEntity" x="436" y="459" width="10" height="10">
+  <object id="19" name="ArielEntity" x="551" y="221" width="28" height="28">
+   <properties>
+    <property name="image" value="Ariel"/>
+   </properties>
+  </object>
+  <object id="27" name="GarbageEntity" x="424" y="784" width="10" height="10">
    <properties>
     <property name="image" value="garbage"/>
     <property name="spritewidth" value="10"/>

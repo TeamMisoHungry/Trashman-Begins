@@ -21,6 +21,8 @@ game.resources = [
 	{name: "antarlevel2a", type: "image", src: "data/map/antarlevel2a.png"},
 	{name: "antarlevel2", type: "image", src: "data/map/antarlevel2.png"},
 	{name: "antarlevel3", type: "image", src: "data/map/antarlevel3.png"},
+	
+
 	/*
 	 * sprites
 	 */ 
@@ -41,21 +43,23 @@ game.resources = [
 	//{name: "sign", type: "image", src: "data/img/sprites/sign.png"},
 	{name: "brokenTurbine", type: "image", src: "data/img/sprites/brokenTurbine.png"},
 	{name: "fixedTurbine", type: "image", src: "data/img/sprites/fixedTurbine.png"},
-	//{name: "Miku", type: "image", src: "data/img/sprites/Miku.gif"},
-	//{name: "MikuAntarc", type: "image", src: "data/img/sprites/MikuAntarc.gif"},
 	{name: "penguin", type: "image", src: "data/img/sprites/penguin.png"},
 	{name: "bear", type: "image", src: "data/img/sprites/bear.png"},
-
 	//NPC
-	//{name: "Miku", type: "image", src: "data/img/sprites/NPCs/Miku.png"},
 	{name: "Miku", type: "image", src: "data/img/sprites/NPCs/Miku.png"},
+	{name: "Sakura", type: "image", src: "data/img/sprites/NPCs/Sakura.png"},
+	{name: "Alice", type: "image", src: "data/img/sprites/NPCs/Alice.png"},
+	{name: "Ariel", type: "image", src: "data/img/sprites/NPCs/Ariel.png"},
+	{name: "Mimi", type: "image", src: "data/img/sprites/NPCs/Mimi.png"},
+	{name: "Gumi", type: "image", src: "data/img/sprites/NPCs/Gumi.png"},
+	{name: "Reki", type: "image", src: "data/img/sprites/NPCs/Reki.png"},
 	{name: "Jelly", type: "image", src: "data/img/sprites/NPCs/Jelly.gif"},
-	//{name: "MikuAntarc", type: "image", src: "data/img/sprites/MikuAntarc.gif"},
 	
 	//font
     {name: "32x32_font", type: "image", src: "data/img/font/32x32_font.png"},
     {name: "32x32Size8", type: "image", src: "data/img/font/32x32Size8.png"},  
 	
+
 	/*
 	 * Screen's
 	 */
@@ -63,6 +67,7 @@ game.resources = [
 	{name: "beginGame", type:"image", src:"data/img/gui/startButton.png"},
 	{name: "creditScreen", type:"image", src:"data/img/gui/creditb.png"},
 	{name: "endScreen", type:"image", src:"data/img/gui/endScreen.png"},
+	{name: "pauseScreen", type:"image", src:"data/img/gui/pauseScreen.png"},
 	{name: "credits", type:"image", src:"data/img/gui/credits.png"},
 	{name: "continue", type:"image", src:"data/img/gui/continue.png"},
 	{name: "quit", type:"image", src:"data/img/gui/quit.png"},
@@ -70,6 +75,7 @@ game.resources = [
 	{name: "menu", type:"image", src:"data/img/gui/main.png"},
 	{name: "sampleChatBox", type:"image", src:"data/img/sprites/chatbox.png"},
     
+
     /* 
 	*  Maps
 	*/
