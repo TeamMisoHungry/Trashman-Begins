@@ -57,8 +57,7 @@ game.resources = [
 	
 	//font
     {name: "32x32_font", type: "image", src: "data/img/font/32x32_font.png"},
-    {name: "32x32Size8", type: "image", src: "data/img/font/32x32Size8.png"},  
-	
+    {name: "32x32Size8", type: "image", src: "data/img/font/32x32Size8.png"},	
 
 	/*
 	 * Screens

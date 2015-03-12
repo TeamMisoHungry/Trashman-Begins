@@ -10,7 +10,7 @@ game.IntroScreen = me.ScreenObject.extend({
     	begin3 = new me.ImageLayer("begin3", 640, 480, "begin3", 5000);
     	array.push(begin1, begin2, begin3);
     	var i = 0;
-    	
+
     	me.input.bindKey(me.input.KEY.ENTER, "enter", true);
     	me.game.world.addChild(array[i]);
     	this.handler = me.event.subscribe(me.event.KEYDOWN, function (action, keyCode, edge) {

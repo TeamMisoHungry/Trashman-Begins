@@ -17,8 +17,6 @@ var game = {
     },
 	
 	time : {
-		time : 0,
-		limit : 300,
 		overallTime : 0
 	},
 

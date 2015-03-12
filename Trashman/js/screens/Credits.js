@@ -43,6 +43,7 @@ game.CreditsScreen = me.ScreenObject.extend({
    *  action to perform when leaving this screen (state change)
    */
   onDestroyEvent : function() {
-  	//me.audio.fade("main", 1, 0, 1000);
-   }
+  	me.input.unbindKey(me.input.KEY.ENTER);
+    me.event.unsubscribe(this.handler);
+  }
 });
