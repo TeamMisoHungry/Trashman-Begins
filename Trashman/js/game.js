@@ -93,7 +93,7 @@ var game = {
         me.pool.register("LaserEntity2", game.LaserEntity2);
         me.pool.register("SignEntity", game.SignEntity);
         me.pool.register("PenguinEntity", game.PenguinEntity);
-        me.pool.register("TurbineEntity", game.TurbineEntity);
+        me.pool.register("FixedTurbineEntity", game.FixedTurbineEntity);
         me.pool.register("BrokenTurbineEntity", game.BrokenTurbineEntity);
         me.pool.register("BladeEntity", game.BladeEntity);
 
