@@ -43,5 +43,3 @@ game.chatbox = me.GUI_Object.extend({
  		game.data.notTalking = true;
     }
 });
-
-

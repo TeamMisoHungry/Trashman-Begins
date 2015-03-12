@@ -252,7 +252,7 @@ game.IceEnemyEntity = me.Entity.extend({
       //var shot = me.pool.pull("DeadEntity", this.pos.x, this.pos.y, {});
       //me.game.world.removeChild(this);
       //game.data.score += 100;
-      game.data.hp -= 1;
+      game.data.hp -= 0.01;
       //me.levelDirector.loadLevel("antarlevel1");
     }
     return false;
