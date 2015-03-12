@@ -109,7 +109,6 @@ game.PlayerEntity = me.Entity.extend({
  		if(me.input.isKeyPressed('pause') && !me.state.isPaused()){
  			me.state.pause(true);
  			me.game.world.addChild(new game.continueButton(170, 400));
- 			
  		}
 		
 		//throwing
