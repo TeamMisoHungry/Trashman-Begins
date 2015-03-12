@@ -22,7 +22,7 @@ game.resources = [
 	{name: "antarlevel2", type: "image", src: "data/map/antarlevel2.png"},
 	{name: "antarlevel3", type: "image", src: "data/map/antarlevel3.png"},
 	/*
-	 * sprite's
+	 * sprites
 	 */ 
 	{name: "hero", type: "image", src: "data/img/sprites/trashman3.png"},
 	{name: "book", type: "image", src: "data/img/sprites/throwBook.png"},
@@ -49,6 +49,7 @@ game.resources = [
 	//NPC
 	//{name: "Miku", type: "image", src: "data/img/sprites/NPCs/Miku.png"},
 	{name: "Miku", type: "image", src: "data/img/sprites/NPCs/Miku.png"},
+	{name: "Jelly", type: "image", src: "data/img/sprites/NPCs/Jelly.gif"},
 	//{name: "MikuAntarc", type: "image", src: "data/img/sprites/MikuAntarc.gif"},
 	
 	//font

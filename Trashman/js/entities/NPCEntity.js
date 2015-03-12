@@ -6,6 +6,23 @@
  * she collects penguins after Hero saves then
  * 1 penguin = 100 pts
  */
+
+game.JellyEntity = me.Entity.extend({	
+
+	init: function(x, y, settings){
+		this._super(me.Entity, 'init', [x, y, settings]);
+		this.renderable.addAnimation("idle", [0],200);
+		this.renderable.setCurrentAnimation("idle");
+	},
+
+	onCollision: function(response, other){
+		game.data.talking_to_jelly = true;
+		game.data.notTalking = false;
+		me.game.world.addChild(new game.chatbox(10, 80));
+		this.body.setCollisionMask(me.collision.types.NPC_OBJECT);
+	}
+});
+
 game.MikuEntity = me.Entity.extend({	
 
 	init: function(x, y, settings){
@@ -16,7 +33,7 @@ game.MikuEntity = me.Entity.extend({
 
 	onCollision: function(response, other){
 		//Rescue penguins and then give them to Miku to get points.
-		game.data.talking = true;
+		game.data.talking_to_miku = true;
 		game.data.notTalking = false;
 		me.game.world.addChild(new game.chatbox(10, 80));
 		var numPeng = game.data.penguin;
@@ -39,7 +56,8 @@ game.chatbox = me.GUI_Object.extend({
 	},
 	onClick:function (event){
  		me.game.world.removeChild(this);
- 		game.data.talking = false;
+ 		game.data.talking_to_miku = false;
+ 		game.data.talking_to_jelly = false;
  		game.data.notTalking = true;
     }
 });

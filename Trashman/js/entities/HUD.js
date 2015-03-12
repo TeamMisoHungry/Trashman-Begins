@@ -122,9 +122,25 @@ game.HUD.Dialog = me.Renderable.extend({
     },
     
     update : function () {
-        if (game.data.talking) {
-            game.data.dialog = "TALKING\nTO\nNPC";
+        if (game.data.talking_to_miku) {
+            game.data.dialog = "THANK YOU FOR SAVING THE PENGUINS!";
             return true;
+        }
+        if(game.data.talking_to_jelly){
+        	//if(!antar_complete){
+        		game.data.dialog = "WELCOME TO THE HEADQUARTERS! HEAD SOUTH FOR YOUR \nFIRST MISSION AND REPORT TO ME AFTER YOU FINISH!";
+        	/*}
+        	else if(!desert_complete){
+        		game.data.dialog = "GOOD WORK SAVING THE PENGUINS! NOW HEAD EAST FOR \nYOUR NEXT MISSION!";
+        	}
+        	else if(!city_complete){
+        		game.data.dialog = "THANK YOU FOR FIXING THE WIND TURBINES! ALL THAT \nIS LEFT IS TO DEFEAT THE EVIL CORPORATION. \nHEAD WEST FOR YOUR LAST MISSION!";
+        	}
+        	else {
+        		game.data.dialog = "YOU DID IT! YOU SAVED THE WORLD FROM DESTRUCTION!\n THE EVIL CORPORATION HAS REFORMED THEIR WAYS AND ARE WORKING TO UNDO THE HARM THEY HAVE DONE";
+        	}
+        	*/
+        	return true;
         }
         if (game.data.notTalking) {
             game.data.dialog = "";

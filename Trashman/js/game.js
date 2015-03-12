@@ -97,6 +97,7 @@ var game = {
         /*** NPC ***/
         me.pool.register("SignEntity", game.SignEntity);
         me.pool.register("MikuEntity", game.MikuEntity);
+        me.pool.register("JellyEntity", game.JellyEntity);
 		
 		//enable the keyboard
 		me.input.bindKey(me.input.KEY.A, "left");
