@@ -5,11 +5,7 @@ game.EnemyEntity = me.Entity.extend({
   init: function(x, y, settings) {
     // define this here instead of tiled
     settings.image = "badGuy";
-<<<<<<< HEAD
     settings.name = "badGuy";
-=======
-    settings.name ="badGuy";
->>>>>>> 5f3bb9796b2135e2b6b5a5247c13938810fd7ff6
      
     // save the area size defined in Tiled
     var width = settings.width;
