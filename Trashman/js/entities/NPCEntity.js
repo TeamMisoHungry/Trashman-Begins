@@ -57,7 +57,8 @@ game.chatbox = me.GUI_Object.extend({
 	},
 	onClick:function (event){
  		me.game.world.removeChild(this);
- 		game.data.talking = false;
+ 		game.data.talking_to_miku = false;
+ 		game.data.talking_to_jelly = false;
  		game.data.notTalking = true;
     }
 });
