@@ -5,6 +5,7 @@ game.EnemyEntity = me.Entity.extend({
   init: function(x, y, settings) {
     // define this here instead of tiled
     settings.image = "badGuy";
+    settings.name ="badGuy";
      
     // save the area size defined in Tiled
     var width = settings.width;
@@ -62,13 +63,7 @@ game.EnemyEntity = me.Entity.extend({
    * colision handler
    * (called when colliding with other objects)
    */
-  onCollision : function (response, other) {
-    if(response.b.body.collisionType === me.collision.types.PROJECTILE_OBJECT){
-      var shot = me.pool.pull("DeadEntity", this.pos.x, this.pos.y, {});
-      me.game.world.removeChild(this);
-      game.data.score += 100;
-    }
-    return false;
+  onCollision : function (response, other) {    
   	//collision with trash
   	if(response.b.body.collisionType === me.collision.types.PROJECTILE_OBJECT){
   		var shot = me.pool.pull("DeadEntity", this.pos.x, this.pos.y, {});
@@ -86,6 +81,7 @@ game.EnemyEntity2 = me.Entity.extend({
   init: function(x, y, settings) {
     // define this here instead of tiled
     settings.image = "badGuy2";
+    settings.name = "badGuy2";
      
     // save the area size defined in Tiled
     var width = settings.width;
@@ -156,13 +152,16 @@ game.EnemyEntity2 = me.Entity.extend({
    * (called when colliding with other objects)
    */
   onCollision : function (response, other) {
-    if(response.b.body.collisionType === me.collision.types.PROJECTILE_OBJECT){
-      var shot = me.pool.pull("DeadEntity", this.pos.x, this.pos.y, {});
-       me.game.world.removeChild(this);
-       game.data.score += 100;
-
-    }
-    return false;
+  	//collision with trash
+  	if(response.b.body.collisionType === me.collision.types.PROJECTILE_OBJECT){
+  		var shot = me.pool.pull("DeadEntity", this.pos.x, this.pos.y, {});
+  		me.game.world.removeChild(other);
+  		var trash = me.pool.pull("GarbageEntity", other.pos.x, other.pos.y, {image: "garbage", width: 10, height: 10});
+  		me.game.world.addChild(trash);
+ 		me.game.world.removeChild(this);
+      	game.data.score += 100;
+  	}
+  	return false;
   }
 });
 
@@ -175,7 +174,7 @@ game.DeadEntity = me.Entity.extend({
     this.renderable.addAnimation("die", [18, 19, 20, 21, 22, 23]);
     this.renderable.setCurrentAnimation("die", (function () {
         me.game.world.removeChild(this);
-        return false; // do not reset to first frame
+        return false; // do not reset to first frame, remove from world when done
     }).bind(this));
     me.game.world.addChild(this, Infinity);
     this.body.setCollisionType = me.collision.types.NO_OBJECT;
@@ -190,6 +189,7 @@ game.IceEnemyEntity = me.Entity.extend({
   init: function(x, y, settings) {
     // define this here instead of tiled
     settings.image = "badRobot";
+    settings.name = "badRobot";
      
     // save the area size defined in Tiled
     var width = settings.width;
@@ -248,14 +248,16 @@ game.IceEnemyEntity = me.Entity.extend({
    * (called when colliding with other objects)
    */
   onCollision : function (response, other) {
-    if(response.b.body.collisionType === me.collision.types.PLAYER_OBJECT){
-      //var shot = me.pool.pull("DeadEntity", this.pos.x, this.pos.y, {});
-      //me.game.world.removeChild(this);
-      //game.data.score += 100;
-      game.data.hp -= 1;
-      //me.levelDirector.loadLevel("antarlevel1");
-    }
-    return false;
+  	//collision with trash
+  	if(response.b.body.collisionType === me.collision.types.PROJECTILE_OBJECT){
+  		var shot = me.pool.pull("DeadEntity", this.pos.x, this.pos.y, {});
+  		me.game.world.removeChild(other);
+  		var trash = me.pool.pull("GarbageEntity", other.pos.x, other.pos.y, {image: "garbage", width: 10, height: 10});
+  		me.game.world.addChild(trash);
+ 		me.game.world.removeChild(this);
+      	game.data.score += 100;
+  	}
+  	return false;
   }
   
 });
@@ -264,6 +266,7 @@ game.IceEnemyEntity2 = me.Entity.extend({
   init: function(x, y, settings) {
     // define this here instead of tiled
     settings.image = "badRobot2";
+    settings.name = "badRobot2";
      
     // save the area size defined in Tiled
     var width = settings.width;
@@ -334,13 +337,16 @@ game.IceEnemyEntity2 = me.Entity.extend({
    * (called when colliding with other objects)
    */
   onCollision : function (response, other) {
-    if(response.b.body.collisionType === me.collision.types.PROJECTILE_OBJECT){
-      var shot = me.pool.pull("DeadEntity", this.pos.x, this.pos.y, {});
-       me.game.world.removeChild(this);
-       game.data.score += 100;
-
-    }
-    return false;
+  	//collision with trash
+  	if(response.b.body.collisionType === me.collision.types.PROJECTILE_OBJECT){
+  		var shot = me.pool.pull("DeadEntity", this.pos.x, this.pos.y, {});
+  		me.game.world.removeChild(other);
+  		var trash = me.pool.pull("GarbageEntity", other.pos.x, other.pos.y, {image: "garbage", width: 10, height: 10});
+  		me.game.world.addChild(trash);
+ 		me.game.world.removeChild(this);
+      	game.data.score += 100;
+  	}
+  	return false;
   }
 });
 
