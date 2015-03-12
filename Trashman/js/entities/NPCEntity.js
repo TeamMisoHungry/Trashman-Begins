@@ -43,7 +43,6 @@ game.MikuEntity = me.Entity.extend({
 	}
 });
 
-<<<<<<< HEAD
 game.SakuraEntity = me.Entity.extend({	
 
 	init: function(x, y, settings){
@@ -145,7 +144,7 @@ game.RekiEntity = me.Entity.extend({
 		this.body.setCollisionMask(me.collision.types.NPC_OBJECT);
 	}
 });
-=======
+
 game.BrokenTurbineEntity = me.Entity.extend({	
 	init: function(x, y, settings){
 		this._super(me.Entity, 'init', [x, y, settings]);
@@ -194,7 +193,6 @@ game.FixedTurbineEntity = me.Entity.extend({
 	},
 });
 
->>>>>>> 2cec2a9ea26710d0580ee48379516ef2a92e4b82
 
 game.chatbox = me.GUI_Object.extend({
 	init:function (x, y){
