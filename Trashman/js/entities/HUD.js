@@ -104,6 +104,7 @@ game.HUD.TimeItem = me.Renderable.extend({
     
     draw: function(renderer){
         this.font.draw(renderer, game.time.limit, this.pos.x, this.pos.y);
+        
         this.font.draw(renderer, "HP: " + Math.trunc(game.data.hp), this.pos.x, this.pos.y + 15);
         this.font.draw(renderer,"GARBAGE X" + game.item.garbage, this.pos.x, this.pos.y + 30);
         if (me.game.currentLevel.name == "antarlevel1" || me.game.currentLevel.name == "antarlevel2" || me.game.currentLevel.name == "antarlevel2a" || me.game.currentLevel.name == "antarlevel2b"){    

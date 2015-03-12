@@ -53,7 +53,7 @@ var game = {
     // Run on game resources loaded.
     "loaded" : function () {
     	
-    	var INTRO= me.state.USER + 1;
+    	var INTRO = me.state.USER + 1;
     	//set ingame screen object, title screen
         me.state.set(me.state.MENU, new game.TitleScreen());
         

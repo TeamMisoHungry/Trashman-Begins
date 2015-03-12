@@ -256,7 +256,6 @@ game.PlayerEntity = me.Entity.extend({
 		      	break;
 	 
 		    case me.collision.types.ENEMY_OBJECT:
-		    console.log(other.name);
 				//flicker in case we touched an enemy
 				//if flickering, don't deduct hp until done flickering
 	        	if (other.name == "badguy"){
@@ -285,7 +284,6 @@ game.PlayerEntity = me.Entity.extend({
 	        			game.data.hp -= 10;
 	        		}
 	        	}
-
 		      	return false;
 		      	break;
 
