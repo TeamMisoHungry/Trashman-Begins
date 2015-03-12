@@ -174,7 +174,7 @@ game.PlayerEntity = me.Entity.extend({
 		if(me.game.currentLevel.name != "antarlevel1"
 		&& me.game.currentLevel.name != "antarlevel2"
 		&& me.game.currentLevel.name != "antarlevel3" ){	
-			if(me.input.isKeyPressed('left')){
+			if(me.input.isKeyPressed('left') && game.data.notTalking){
 				this.body.vel.x -= this.body.accel.x * me.timer.tick;
 				this.body.vel.y = 0;
 				if(!this.renderable.isCurrentAnimation('walkLeft')){
@@ -182,7 +182,7 @@ game.PlayerEntity = me.Entity.extend({
 					this.left1 = true;
 					this.right1 = this.up = this.down = false;
 				}
-			}else if(me.input.isKeyPressed('right')){
+			}else if(me.input.isKeyPressed('right') && game.data.notTalking){
 				this.body.vel.x += this.body.accel.x * me.timer.tick;
 				this.body.vel.y = 0;
 				if(!this.renderable.isCurrentAnimation('walkRight')){
@@ -190,7 +190,7 @@ game.PlayerEntity = me.Entity.extend({
 					this.right1 = true;
 					this.up = this.down = this.left1 = false;
 				}
-			}else if(me.input.isKeyPressed('up')){
+			}else if(me.input.isKeyPressed('up') && game.data.notTalking){
 				this.body.vel.y -= this.body.accel.y * me.timer.tick;
 				this.body.vel.x = 0;
 				if(!this.renderable.isCurrentAnimation('walkUp')){
@@ -198,7 +198,7 @@ game.PlayerEntity = me.Entity.extend({
 					this.up = true;
 					this.right1 = this.left1 = this.down = false;
 				}
-			}else if(me.input.isKeyPressed('down')){
+			}else if(me.input.isKeyPressed('down') && game.data.notTalking){
 				this.body.vel.y += this.body.accel.y * me.timer.tick;
 				this.body.vel.x = 0;
 				if(!this.renderable.isCurrentAnimation('walkDown')){

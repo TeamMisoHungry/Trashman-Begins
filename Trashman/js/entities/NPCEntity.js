@@ -17,6 +17,7 @@ game.MikuEntity = me.Entity.extend({
 	onCollision: function(response, other){
 		//Rescue penguins and then give them to Miku to get points.
 		game.data.talking = true;
+		game.data.notTalking = false;
 		me.game.world.addChild(new game.chatbox(10, 80));
 		var numPeng = game.data.penguin;
 		game.data.penguin = 0;
@@ -39,6 +40,7 @@ game.chatbox = me.GUI_Object.extend({
 	onClick:function (event){
  		me.game.world.removeChild(this);
  		game.data.talking = false;
+ 		game.data.notTalking = true;
     }
 });
 

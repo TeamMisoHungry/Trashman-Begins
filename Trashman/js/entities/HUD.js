@@ -122,10 +122,10 @@ game.HUD.Dialog = me.Renderable.extend({
     
     update : function () {
         if (game.data.talking) {
-            game.data.dialog = "TALKING";
+            game.data.dialog = "TALKING\nTO\nNPC";
             return true;
         }
-        if (!game.data.talking) {
+        if (game.data.notTalking) {
             game.data.dialog = "";
             return true;
         }
