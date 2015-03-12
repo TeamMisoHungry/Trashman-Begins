@@ -43,10 +43,6 @@ game.MikuEntity = me.Entity.extend({
 	}
 });
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 1f2d1be59650ee61fea7ff90d7034eb2827bb164
 game.SakuraEntity = me.Entity.extend({	
 
 	init: function(x, y, settings){
@@ -196,11 +192,6 @@ game.FixedTurbineEntity = me.Entity.extend({
     me.game.world.addChild(this, Infinity);
 	},
 });
-
-<<<<<<< HEAD
-
-=======
->>>>>>> 1f2d1be59650ee61fea7ff90d7034eb2827bb164
 
 game.chatbox = me.GUI_Object.extend({
 	init:function (x, y){
