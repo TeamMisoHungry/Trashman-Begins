@@ -79,16 +79,5 @@
   <object id="55" x="292" y="263">
    <polyline points="0,0 -1,6 44,5 40,5 0,5"/>
   </object>
-<<<<<<< HEAD
-=======
- </objectgroup>
- <objectgroup name="EnemyEntities">
-  <object id="59" name="EnemyEntity" x="235.333" y="295.333" width="155.333" height="32">
-   <properties>
-    <property name="spritewidth" value="40"/>
-   </properties>
-  </object>
-  <object id="61" name="EnemyEntity2" x="353.667" y="360.667" width="33" height="176.667"/>
->>>>>>> 366048cf5b89115499587dec59c277131cf8ecf2
  </objectgroup>
 </map>

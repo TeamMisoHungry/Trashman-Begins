@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
 <map version="1.0" orientation="orthogonal" renderorder="left-down" width="60" height="40" tilewidth="16" tileheight="16" nextobjectid="67">
-=======
-<map version="1.0" orientation="orthogonal" renderorder="left-down" width="60" height="40" tilewidth="16" tileheight="16" nextobjectid="65">
->>>>>>> 366048cf5b89115499587dec59c277131cf8ecf2
  <tileset firstgid="1" name="headquarter" tilewidth="16" tileheight="16">
   <image source="headquarter.png" trans="ff00ff" width="960" height="640"/>
  </tileset>
@@ -36,10 +32,10 @@
     <property name="spritewidth" value="24"/>
    </properties>
   </object>
-  <object id="28" name="GarbageEntity" x="420" y="320" width="16" height="14">
+  <object id="28" name="GarbageEntity" x="420" y="320" width="10" height="10">
    <properties>
     <property name="image" value="garbage"/>
-    <property name="spritewidth" value="16"/>
+    <property name="spritewidth" value="10"/>
    </properties>
   </object>
   <object id="47" name="me.LevelEntity" x="880" y="580">
@@ -49,16 +45,6 @@
     <property name="to" value="toAntar1"/>
    </properties>
   </object>
-<<<<<<< HEAD
-  <object id="64" name="MikuEntity" x="536" y="300" width="36" height="32"/>
-=======
-  <object id="64" name="MikuEntity" x="313" y="311" width="32" height="32">
-   <properties>
-    <property name="image" value="Miku"/>
-    <property name="spritewidth" value="32"/>
-   </properties>
-  </object>
->>>>>>> 366048cf5b89115499587dec59c277131cf8ecf2
  </objectgroup>
  <objectgroup name="collision">
   <object id="3" x="4" y="396">
@@ -109,5 +95,4 @@
   </object>
   <object id="61" name="IceEnemyEntity2" x="344.667" y="362.667" width="40" height="176.667"/>
  </objectgroup>
- <objectgroup name="EnemyEntities"/>
 </map>
