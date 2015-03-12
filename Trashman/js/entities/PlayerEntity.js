@@ -256,44 +256,30 @@ game.PlayerEntity = me.Entity.extend({
 		      	break;
 	 
 		    case me.collision.types.ENEMY_OBJECT:
+		    console.log(other.name);
 				//flicker in case we touched an enemy
-				//if flickering, don't deduct hp until done flickering'
-				/*if(other.name != "laser"){
-		    		if(!this.renderable.isFlickering()){
-		    			this.renderable.flicker(750);
-		        		game.data.hp -= 5;
-		        	}
-	        	}*/
-
-	        	if (other.name == "badGuy"){
+				//if flickering, don't deduct hp until done flickering
+	        	if (other.name == "badguy"){
 	        		if(!this.renderable.isFlickering()){
 	        			this.renderable.flicker(750);
 	        			game.data.hp -= 5;
 	        		}
-	        	}
-
-	        	if (other.name == "badBuy2"){
+	        	}else if (other.name == "badguy2"){
 	        		if(!this.renderable.isFlickering()){
 	        			this.renderable.flicker(750);
 	        			game.data.hp -= 5;
 	        		}
-	        	}
-
-	        	if (other.name == "badRobot"){
+	        	}else if (other.name == "badrobot"){
 	        		if(!this.renderable.isFlickering()){
 	        			this.renderable.flicker(750);
 	        			game.data.hp -= 15;
 	        		}
-	        	}
-
-	        	if (other.name == "badRobot2"){
+	        	}else if (other.name == "badrobot2"){
 	        		if(!this.renderable.isFlickering()){
 	        			this.renderable.flicker(750);
 	        			game.data.hp -= 15;
 	        		}
-	        	}
-
-	        	if(other.name == "laser"){
+	        	}else if(other.name == "laser"){
 	        		if(!this.renderable.isFlickering()){
 	        			this.renderable.flicker(750);
 	        			game.data.hp -= 10;
