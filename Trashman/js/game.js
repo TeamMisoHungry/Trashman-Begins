@@ -7,6 +7,7 @@ var game = {
         score : 0,
         hp : 100,
         penguin : 0,
+        blade : 0,
         talking : false,
         notTalking : true
     },
@@ -53,7 +54,7 @@ var game = {
     // Run on game resources loaded.
     "loaded" : function () {
     	
-    	var INTRO= me.state.USER + 1;
+    	var INTRO = me.state.USER + 1;
     	//set ingame screen object, title screen
         me.state.set(me.state.MENU, new game.TitleScreen());
         
@@ -92,11 +93,22 @@ var game = {
         me.pool.register("LaserEntity2", game.LaserEntity2);
         me.pool.register("SignEntity", game.SignEntity);
         me.pool.register("PenguinEntity", game.PenguinEntity);
-        me.pool.register("TurbineEntity", game.SignEntity);
+        me.pool.register("FixedTurbineEntity", game.FixedTurbineEntity);
+        me.pool.register("BrokenTurbineEntity", game.BrokenTurbineEntity);
+        me.pool.register("BladeEntity", game.BladeEntity);
 
         /*** NPC ***/
         me.pool.register("SignEntity", game.SignEntity);
         me.pool.register("MikuEntity", game.MikuEntity);
+        me.pool.register("SakuraEntity", game.SakuraEntity);
+        me.pool.register("MimiEntity", game.MimiEntity);
+        me.pool.register("GumiEntity", game.GumiEntity);
+        me.pool.register("ArielEntity", game.ArielEntity);
+        me.pool.register("RekiEntity", game.RekiEntity);
+        me.pool.register("AliceEntity", game.AliceEntity);
+
+        me.pool.register("JellyEntity", game.JellyEntity);
+
 		
 		//enable the keyboard
 		me.input.bindKey(me.input.KEY.A, "left");

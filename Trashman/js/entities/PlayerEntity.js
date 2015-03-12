@@ -105,10 +105,10 @@ game.PlayerEntity = me.Entity.extend({
 
 		//************CHECK FOR KEY INPUT ****************/
 
- 		//pause button, hit P to paus and showe option buttons
+ 		//pause button, hit P to pause and show option buttons
  		if(me.input.isKeyPressed('pause') && !me.state.isPaused()){
  			me.state.pause(true);
- 			me.game.world.addChild(new game.continueButton(170, 400));
+ 			me.game.world.addChild(new game.continueButton(75, 212));
  		}
 		
 		//throwing
@@ -256,7 +256,6 @@ game.PlayerEntity = me.Entity.extend({
 		      	break;
 	 
 		    case me.collision.types.ENEMY_OBJECT:
-		    console.log(other.name);
 				//flicker in case we touched an enemy
 				//if flickering, don't deduct hp until done flickering
 	        	if (other.name == "badguy"){
@@ -285,7 +284,6 @@ game.PlayerEntity = me.Entity.extend({
 	        			game.data.hp -= 10;
 	        		}
 	        	}
-
 		      	return false;
 		      	break;
 
@@ -303,20 +301,22 @@ game.continueButton = me.GUI_Object.extend({
 	init:function (x, y){
 		var settings = {};
 		settings.image = me.loader.getImage('continue');
-		settings.spritewidth = 150;
-		settings.spriteheight = 30;
+		settings.spritewidth = 181;
+		settings.spriteheight = 48;
 		// super constructor
 		this._super(me.GUI_Object, "init", [x, y, settings]);
 		// define the object z order
 		this.z = Infinity;
 		this.updateWhenPaused = true;
 		this.color = new me.ColorLayer("black", "#000000", 4999);
-		this.pause = new me.ImageLayer("pause", 640, 400, "endScreen", 5000);
+		this.pause = new me.ImageLayer("pause", 640, 470, "pauseScreen", 5000);
 		this.pause.repeat = "no-repeat";
-		this.quit = new game.quitButton(330, 400);
+		this.quit = new game.quitButton(75, 270);
+
 		me.game.world.addChild(this.pause);
 		me.game.world.addChild(this.color);
 		me.game.world.addChild(this.quit);
+
 	},
 
 	onClick:function (event){
@@ -326,6 +326,7 @@ game.continueButton = me.GUI_Object.extend({
 		me.game.world.removeChild(this.pause);
 		me.game.world.removeChild(this.color);
 		me.game.world.removeChild(this.quit);
+
 	},
 });
 
@@ -333,8 +334,8 @@ game.quitButton = me.GUI_Object.extend({
 	init:function (x, y){
 		var settings = {};
 		settings.image = me.loader.getImage('quit');
-		settings.spritewidth = 150;
-		settings.spriteheight = 30;
+		settings.spritewidth = 117;
+		settings.spriteheight = 48;
 		// super constructor
 		this._super(me.GUI_Object, "init", [x, y, settings]);
 		// define the object z order
