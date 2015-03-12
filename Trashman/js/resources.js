@@ -48,7 +48,7 @@ game.resources = [
 
 	//NPC
 	//{name: "Miku", type: "image", src: "data/img/sprites/NPCs/Miku.png"},
-	{name: "Miku", type: "image", src: "data/img/sprites/ArmorDeath.png"},
+	{name: "Miku", type: "image", src: "data/img/sprites/NPCs/Miku.png"},
 	//{name: "MikuAntarc", type: "image", src: "data/img/sprites/MikuAntarc.gif"},
 	
 	//font
