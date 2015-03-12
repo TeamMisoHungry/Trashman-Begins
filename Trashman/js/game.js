@@ -53,7 +53,7 @@ var game = {
     // Run on game resources loaded.
     "loaded" : function () {
     	
-    	var INFO_STATE = me.state.USER + 1;
+    	var INTRO = me.state.USER + 1;
     	//set ingame screen object, title screen
         me.state.set(me.state.MENU, new game.TitleScreen());
         
@@ -65,7 +65,9 @@ var game = {
         
         me.state.set(me.state.CREDITS, new game.CreditsScreen());
         
-        me.state.set(me.state.USER, new game.IntroScreen());
+        me.state.set(me.state.USER, new game.InstrucScreen());
+        
+        me.state.set(me.state.INTRO, new game.IntroScreen());
         
         me.state.transition("fade", "#FFFFFF", 250);
 
