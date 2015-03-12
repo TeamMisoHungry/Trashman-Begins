@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <map version="1.0" orientation="orthogonal" renderorder="left-down" width="60" height="40" tilewidth="16" tileheight="16" nextobjectid="82">
+=======
+<map version="1.0" orientation="orthogonal" renderorder="left-down" width="60" height="40" tilewidth="16" tileheight="16" nextobjectid="80">
+>>>>>>> 2cec2a9ea26710d0580ee48379516ef2a92e4b82
  <tileset firstgid="1" name="headquarter" tilewidth="16" tileheight="16">
   <image source="headquarter.png" trans="ff00ff" width="960" height="640"/>
  </tileset>
@@ -57,9 +61,22 @@
     <property name="spritewidth" value="50"/>
    </properties>
   </object>
+<<<<<<< HEAD
   <object id="80" name="SakuraEntity" x="804" y="440" width="32" height="32">
    <properties>
     <property name="image" value="Sakura"/>
+=======
+  <object id="76" name="BladeEntity" x="591" y="237" width="30" height="65">
+   <properties>
+    <property name="image" value="blade"/>
+    <property name="spritewidth" value="30"/>
+   </properties>
+  </object>
+  <object id="77" name="BrokenTurbineEntity" x="668" y="207" width="55" height="110">
+   <properties>
+    <property name="image" value="brokenTurbine"/>
+    <property name="spritewidth" value="55"/>
+>>>>>>> 2cec2a9ea26710d0580ee48379516ef2a92e4b82
    </properties>
   </object>
  </objectgroup>
@@ -99,7 +116,11 @@
   <object id="62" x="412" y="260" width="16" height="12"/>
   <object id="69" x="513" y="306" width="21" height="21"/>
   <object id="75" x="521" y="236" width="26" height="38"/>
+<<<<<<< HEAD
   <object id="81" x="812" y="448" width="16" height="16"/>
+=======
+  <object id="79" x="676" y="209" width="41" height="106"/>
+>>>>>>> 2cec2a9ea26710d0580ee48379516ef2a92e4b82
  </objectgroup>
  <objectgroup name="EnemyEntities">
   <object id="58" name="TurretEntity" x="412" y="260" width="16" height="14">

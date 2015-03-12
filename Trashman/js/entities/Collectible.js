@@ -19,7 +19,7 @@ game.GarbageEntity = me.CollectableEntity.extend({
 	}
 });
 
-//Collectable in Ice Puzzle Map
+//Collectible in Ice Puzzle Map
 game.PenguinEntity = me.CollectableEntity.extend({
 	init: function(x, y, settings){
 		this._super(me.CollectableEntity, 'init', [x, y, settings]);
@@ -27,6 +27,19 @@ game.PenguinEntity = me.CollectableEntity.extend({
 	
 	onCollision: function(response, other){
 		game.data.penguin += 1;
+		this.body.setCollisionMask(me.collision.types.NO_OBJECT);
+		me.game.world.removeChild(this);
+	}
+
+});
+
+game.BladeEntity = me.CollectableEntity.extend({
+	init: function(x, y, settings){
+		this._super(me.CollectableEntity, 'init', [x, y, settings]);
+	},
+	
+	onCollision: function(response, other){
+		game.data.blade += 1;
 		this.body.setCollisionMask(me.collision.types.NO_OBJECT);
 		me.game.world.removeChild(this);
 	}

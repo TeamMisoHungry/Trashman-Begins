@@ -37,7 +37,7 @@ game.resources = [
 	{name: "garbage", type: "image", src: "data/img/sprites/garbage.png"},
 	{name: "garbageThrow", type: "image", src: "data/img/sprites/garbageThrow.png"},
 	{name: "bullet", type: "image", src: "data/img/sprites/bullet.png"},
-	{name: "turbineBlade", type: "image", src: "data/img/sprites/turbineBlade.png"},
+	{name: "blade", type: "image", src: "data/img/sprites/turbineBlade.png"},
 	{name: "turret", type: "image", src: "data/img/sprites/TurretSheet.png"},
 	{name: "fire", type: "image", src: "data/img/sprites/laserBeam.png"},
 	//{name: "sign", type: "image", src: "data/img/sprites/sign.png"},
@@ -61,7 +61,7 @@ game.resources = [
 	
 
 	/*
-	 * Screen's
+	 * Screens
 	 */
 	{name: "title_screen", type:"image", src:"data/img/gui/title_screen.png"},
 	{name: "beginGame", type:"image", src:"data/img/gui/startButton.png"},

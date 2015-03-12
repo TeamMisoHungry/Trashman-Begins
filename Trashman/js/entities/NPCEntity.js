@@ -43,6 +43,7 @@ game.MikuEntity = me.Entity.extend({
 	}
 });
 
+<<<<<<< HEAD
 game.SakuraEntity = me.Entity.extend({	
 
 	init: function(x, y, settings){
@@ -144,6 +145,56 @@ game.RekiEntity = me.Entity.extend({
 		this.body.setCollisionMask(me.collision.types.NPC_OBJECT);
 	}
 });
+=======
+game.BrokenTurbineEntity = me.Entity.extend({	
+	init: function(x, y, settings){
+		this._super(me.Entity, 'init', [x, y, settings]);
+		settings.image = "brokenTurbine";
+		settings.name = "brokenTurbine";
+	},
+
+	onCollision: function(response, other){
+		game.data.fixing_turbine = true;
+		game.data.notTalking = false;
+		me.game.world.addChild(new game.chatbox(10, 80));
+		this.body.setCollisionMask(me.collision.types.NPC_OBJECT);
+		game.data.blade -= 1;
+  		var new_turbine = me.pool.pull("FixedTurbineEntity", this.pos.x, this.pos.y, {});
+ 		me.game.world.removeChild(this);
+ 		return false;
+	}
+	
+});
+
+game.DeadEntity = me.Entity.extend({
+  init : function(x, y, settings){
+    settings.image = "badGuy2";
+    settings.width = 40;
+    settings.height = 32;
+    this._super(me.Entity, 'init', [x, y, settings]);
+    this.renderable.addAnimation("die", [18, 19, 20, 21, 22, 23]);
+    this.renderable.setCurrentAnimation("die", (function () {
+        me.game.world.removeChild(this);
+        return false; // do not reset to first frame, remove from world when done
+    }).bind(this));
+    me.game.world.addChild(this, Infinity);
+    this.body.setCollisionType = me.collision.types.NO_OBJECT;
+  }
+  
+});
+
+game.FixedTurbineEntity = me.Entity.extend({	
+	init: function(x, y, settings){
+		settings.image = "fixedTurbine";
+		settings.width = 55;
+      	settings.height = 110;
+		this._super(me.Entity, 'init', [x, y, settings]);
+		
+    me.game.world.addChild(this, Infinity);
+	},
+});
+
+>>>>>>> 2cec2a9ea26710d0580ee48379516ef2a92e4b82
 
 game.chatbox = me.GUI_Object.extend({
 	init:function (x, y){
@@ -158,6 +209,7 @@ game.chatbox = me.GUI_Object.extend({
 	},
 	onClick:function (event){
  		me.game.world.removeChild(this);
+ 		game.data.fixing_turbine = false;
  		game.data.talking_to_miku = false;
  		game.data.talking_to_jelly = false;
  		game.data.notTalking = true;
