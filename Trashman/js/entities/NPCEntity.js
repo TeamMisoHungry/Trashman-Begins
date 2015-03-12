@@ -7,7 +7,7 @@
  * 1 penguin = 100 pts
  */
 
-game.HQInstructionsEntity = me.Entity.extend({	
+game.JellyEntity = me.Entity.extend({	
 
 	init: function(x, y, settings){
 		this._super(me.Entity, 'init', [x, y, settings]);
@@ -16,7 +16,6 @@ game.HQInstructionsEntity = me.Entity.extend({
 	},
 
 	onCollision: function(response, other){
-		//Rescue penguins and then give them to Miku to get points.
 		game.data.talking_to_jelly = true;
 		game.data.notTalking = false;
 		me.game.world.addChild(new game.chatbox(10, 80));
