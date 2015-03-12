@@ -25,7 +25,7 @@ game.HUD.Container = me.Container.extend({
         // add our child score object at the top left corner
         this.addChild(new game.HUD.ScoreItem(630, 460));
         this.addChild(new game.HUD.TimeItem(10, 10));
-        this.addChild(new game.HUD.Dialog(10, 460));
+        this.addChild(new game.HUD.Dialog(10, 90));
     }
 });
 
@@ -122,10 +122,10 @@ game.HUD.Dialog = me.Renderable.extend({
     
     update : function () {
         if (game.data.talking) {
-            game.data.dialog = "TALKING";
+            game.data.dialog = "TALKING\nTO\nNPC";
             return true;
         }
-        if (!game.data.talking) {
+        if (game.data.notTalking) {
             game.data.dialog = "";
             return true;
         }
