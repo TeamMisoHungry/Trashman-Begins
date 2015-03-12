@@ -7,6 +7,7 @@ var game = {
         score : 0,
         hp : 100,
         penguin : 0,
+        blade : 0,
         talking : false,
         notTalking : true
     },
@@ -92,7 +93,9 @@ var game = {
         me.pool.register("LaserEntity2", game.LaserEntity2);
         me.pool.register("SignEntity", game.SignEntity);
         me.pool.register("PenguinEntity", game.PenguinEntity);
-        me.pool.register("TurbineEntity", game.SignEntity);
+        me.pool.register("TurbineEntity", game.TurbineEntity);
+        me.pool.register("BrokenTurbineEntity", game.BrokenTurbineEntity);
+        me.pool.register("BladeEntity", game.BladeEntity);
 
         /*** NPC ***/
         me.pool.register("SignEntity", game.SignEntity);

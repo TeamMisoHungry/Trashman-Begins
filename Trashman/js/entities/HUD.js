@@ -79,6 +79,7 @@ game.HUD.TimeItem = me.Renderable.extend({
         this.font.set("left");
         this.limit = -1;
         this.garbage = -1;
+        this.blade = -1;
         this.hp = -1;
     },
     
@@ -99,6 +100,10 @@ game.HUD.TimeItem = me.Renderable.extend({
             this.penguin = game.data.penguin;
             return true;
         }
+        if(this.blade !== game.data.blade){
+        	this.blade - game.data.blade;
+        	return true;
+        }
         return false;
     },
     
@@ -106,9 +111,10 @@ game.HUD.TimeItem = me.Renderable.extend({
         this.font.draw(renderer, game.time.limit, this.pos.x, this.pos.y);
         
         this.font.draw(renderer, "HP: " + Math.trunc(game.data.hp), this.pos.x, this.pos.y + 15);
-        this.font.draw(renderer,"GARBAGE X" + game.item.garbage, this.pos.x, this.pos.y + 30);
+        this.font.draw(renderer,"GARBAGE: " + game.item.garbage, this.pos.x, this.pos.y + 30);
+        this.font.draw(renderer,"BLADES: " + game.data.blade, this.pos.x, this.pos.y + 45);
         if (me.game.currentLevel.name == "antarlevel1" || me.game.currentLevel.name == "antarlevel2" || me.game.currentLevel.name == "antarlevel2a" || me.game.currentLevel.name == "antarlevel2b"){    
-            this.font.draw(renderer,"PENGUIN X" + game.data.penguin, this.pos.x, this.pos.y + 45);
+            this.font.draw(renderer,"PENGUIN: " + game.data.penguin, this.pos.x, this.pos.y + 60);
             }   
     }
     
@@ -141,6 +147,10 @@ game.HUD.Dialog = me.Renderable.extend({
         	}
         	*/
         	return true;
+        }
+        if (game.data.fixing_turbine) {
+            game.data.dialog = "YOU FIXED THE TURBINE!";
+            return true;
         }
         if (game.data.notTalking) {
             game.data.dialog = "";
