@@ -46,7 +46,8 @@ game.resources = [
 	{name: "bear", type: "image", src: "data/img/sprites/bear.png"},
 
 	//NPC
-	{name: "Miku", type: "image", src: "data/img/sprites/NPCs/Miku.png"},
+	//{name: "Miku", type: "image", src: "data/img/sprites/NPCs/Miku.png"},
+	{name: "Miku", type: "image", src: "data/img/sprites/ArmorDeath.png"},
 	//{name: "MikuAntarc", type: "image", src: "data/img/sprites/MikuAntarc.gif"},
 	
 	//font
@@ -63,6 +64,7 @@ game.resources = [
 	{name: "credits", type:"image", src:"data/img/gui/credits.png"},
 	{name: "continue", type:"image", src:"data/img/gui/continue.png"},
 	{name: "quit", type:"image", src:"data/img/gui/quit.png"},
+	{name: "sampleChatBox", type:"image", src:"data/img/sprites/chatbox.png"},
     
     /* 
 	*  Maps

@@ -25,6 +25,7 @@ game.HUD.Container = me.Container.extend({
         // add our child score object at the top left corner
         this.addChild(new game.HUD.ScoreItem(630, 460));
         this.addChild(new game.HUD.TimeItem(10, 10));
+        this.addChild(new game.HUD.Dialog(10, 90));
         this.addChild(new game.HUD.ChatBox(10, 450));
     }
 });
@@ -42,8 +43,8 @@ game.HUD.ScoreItem = me.Renderable.extend({
         // call the parent constructor
         // (size does not matter here)
         this._super(me.Renderable, 'init', [x, y, 10, 10]);
-		this.font = new me.BitmapFont("32x32Size8", 12);
-		this.font.set("right");
+        this.font = new me.BitmapFont("32x32Size8", 12);
+        this.font.set("right");
         // local copy of the global score
         this.score = -1;
     },
@@ -72,56 +73,68 @@ game.HUD.ScoreItem = me.Renderable.extend({
 
 //health, garbage ammo, and time HUD
 game.HUD.TimeItem = me.Renderable.extend({
-	
-	init: function(x, y){
-		this._super(me.Renderable, 'init', [x, y, 10, 10]);
-		this.font = new me.BitmapFont("32x32Size8", 12);
-		this.font.set("left");
-		this.limit = -1;
-		this.garbage = -1;
-		this.hp = -1;
-	},
-	
-	update: function(){
-		if(this.limit !== game.time.limit){
-			this.limit = game.time.limit;
-			return true;
-		}
-		if(this.hp !== game.data.hp){
-			this.hp = game.data.hp;
-			return true;
-		}
-		if(this.garbage !== game.item.garbage){
-			this.garbage = game.item.garbage;
-			return true;
-		}
+    
+    init: function(x, y){
+        this._super(me.Renderable, 'init', [x, y, 10, 10]);
+        this.font = new me.BitmapFont("32x32Size8", 12);
+        this.font.set("left");
+        this.limit = -1;
+        this.garbage = -1;
+        this.hp = -1;
+    },
+    
+    update: function(){
+        if(this.limit !== game.time.limit){
+            this.limit = game.time.limit;
+            return true;
+        }
+        if(this.hp !== game.data.hp){
+            this.hp = game.data.hp;
+            return true;
+        }
+        if(this.garbage !== game.item.garbage){
+            this.garbage = game.item.garbage;
+            return true;
+        }
         if(this.penguin !== game.data.penguin){
             this.penguin = game.data.penguin;
             return true;
         }
-		return false;
-	},
-	
-	draw: function(renderer){
-		this.font.draw(renderer, game.time.limit, this.pos.x, this.pos.y);
-		this.font.draw(renderer, "HP: " + Math.trunc(game.data.hp), this.pos.x, this.pos.y + 15);
-		this.font.draw(renderer,"GARBAGE X" + game.item.garbage, this.pos.x, this.pos.y + 30);
-		if (me.game.currentLevel.name == "antarlevel1" || me.game.currentLevel.name == "antarlevel2" || me.game.currentLevel.name == "antarlevel2a" || me.game.currentLevel.name == "antarlevel2b"){	
-        	this.font.draw(renderer,"PENGUIN X" + game.data.penguin, this.pos.x, this.pos.y + 45);
-        	}	
-	}
-	
+        return false;
+    },
+    
+    draw: function(renderer){
+        this.font.draw(renderer, game.time.limit, this.pos.x, this.pos.y);
+        this.font.draw(renderer, "HP: " + Math.trunc(game.data.hp), this.pos.x, this.pos.y + 15);
+        this.font.draw(renderer,"GARBAGE X" + game.item.garbage, this.pos.x, this.pos.y + 30);
+        if (me.game.currentLevel.name == "antarlevel1" || me.game.currentLevel.name == "antarlevel2" || me.game.currentLevel.name == "antarlevel2a" || me.game.currentLevel.name == "antarlevel2b"){    
+            this.font.draw(renderer,"PENGUIN X" + game.data.penguin, this.pos.x, this.pos.y + 45);
+            }   
+    }
+    
 });
 
-game.HUD.ChatBox = me.Renderable.extend({
+game.HUD.Dialog = me.Renderable.extend({
     init: function(x, y) {
         this._super(me.Renderable, 'init', [x, y, 10, 10]);
         this.font = new me.BitmapFont("32x32Size8", 12);
         this.font.set("left");
     },
-
+    
+    update : function () {
+        if (game.data.talking) {
+            game.data.dialog = "TALKING";
+            return true;
+        }
+        if (!game.data.talking) {
+            game.data.dialog = "";
+            return true;
+        }
+        return false;
+    },
+    
     draw : function (renderer) {
-        this.font.draw(renderer, "TALKING TO MIKU!", this.pos.x, this.pos.y);
+        this.font.draw(renderer, game.data.dialog, this.pos.x, this.pos.y);
     }
-});
 
+});
