@@ -139,7 +139,7 @@ game.HUD.Dialog = me.Renderable.extend({
             
             return true;
         }
-        if(game.data.talking_to_jelly){
+        if(game.data.talking_to_alice){
         	if(!game.data.iceDone){
         		game.data.dialog = "WELCOME TO THE HEADQUARTERS! HEAD SOUTH FOR YOUR \nFIRST MISSION AND REPORT TO ME AFTER YOU FINISH!";
         	}
@@ -158,18 +158,7 @@ game.HUD.Dialog = me.Renderable.extend({
             game.data.dialog = "YOU FIXED THE TURBINE!";
         }
         if(game.data.talking_to_gumi){
-        	if(!game.data.desertDone){
-  	      		game.data.dialog = "THE AREA AHEAD IS UNDER RECONSTRUCTION.\nSOME OF OUR WIND TURBINES BROKE ";
-        	}
-        	else{
-        		game.data.dialog = "THANK YOU FOR HELPING OUT! INVESTIGATORS FOUND OUT\nTHAT THE EVIL CORPORATION IS RESPONSIBLE FOR\nBREAKING OUR WIND TURBINES";
-        	}
-        }
-        if(game.data.talking_to_gumi_enter){
         	game.data.dialog = "YOU COLLECTED TURBINE BLADES TO HELP OUT? I'LL LET\nYOU THROUGH";
-        }
-        if(game.data.talking_to_gumi_exit){
-        	game.data.dialog = "THANK YOU FOR FIXING THE TURBINES!";
         }
         if(game.data.talking_to_gumi_noexit){
         	game.data.dialog = "THERE IS ANOTHER TURBINE BLADE LYING AROUND\nSOMEWHERE HERE...";
