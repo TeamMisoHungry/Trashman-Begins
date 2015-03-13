@@ -45,3 +45,15 @@ game.BladeEntity = me.CollectableEntity.extend({
 	}
 
 });
+
+game.PotionEntity = me. CollectableEntity.extend({
+	init: function(x, y, settings){
+		this._super(me.CollectableEntity, 'init', [x, y, settings]);
+	},
+	
+	onCollision: function(response, other){
+		game.data.hp += 25;
+		this.body.setCollisionMask(me.collision.types.NO_OBJECT);
+		me.game.world.removeChild(this);
+	}
+});
