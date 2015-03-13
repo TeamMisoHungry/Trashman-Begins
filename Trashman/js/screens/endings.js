@@ -11,7 +11,7 @@ game.EndingScreen = me.ScreenObject.extend({
 			//me.game.world.addChild(new game.ending("okText"));
 		}else if(game.time.overallTime <= 400  && game.data.score < 2000){
 			me.game.world.addChild(new me.ImageLayer("ok", 640, 480, "okImage", 5000));
-			me.game.world.addChild(new game.ending("okText", 410, 380, "badText", 5001));
+			me.game.world.addChild(new game.ending("okText", 410, 380, "okText", 5001));
 		}else if(game.time.overallTime > 600 && game.data.score < 2000){
 			me.game.world.addChild(new me.ImageLayer("bad", 640, 480, "badImage", 5000));
 			//me.game.world.addChild(new game.ending("badText"));
@@ -41,22 +41,27 @@ game.EndingScreen = me.ScreenObject.extend({
 game.ending = me.ImageLayer.extend({
 	
 	init: function(type, x, y, type, z){
-		console.log("here");
 		this._super(me.ImageLayer, 'init', [type, x, y, type, z, (0.0, 0.01)]);
 		this.repeat = "no-repeat";
 		this.pos.x = 0;
 		this.anchorPoint.x = 0.5;
 		this.anchorPoint.y = 0.0;
-		console.log(this.anchorPoint);
+		if(type == "badText"){
+			this.len = 740;
+		}else if(type == "goodText"){
+			this.len = 765;
+		}else{
+			this.len = 645;
+		}
 	},
 	
 	update: function(dt){
 		//console.log(this.pos.x, this.pos.y);
 		//console.log(this.height - this.pos.y);
-		if(this.pos.y > 530){
+		if(this.pos.y > this.len){
 			me.game.world.removeChild(this);
 		}
-		this.pos.y++;
+		this.pos.y += 0.75;
 		return(this._super(me.ImageLayer, 'update', [dt]) || this.pos.y !== 0);
 	}
 });
