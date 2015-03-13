@@ -162,7 +162,7 @@ game.HUD.Dialog = me.Renderable.extend({
   	      		game.data.dialog = "THE AREA AHEAD IS UNDER RECONSTRUCTION.\nSOME OF OUR WIND TURBINES BROKE ";
         	}
         	else{
-        		game.data.dialog = "THANK YOU FOR HELPING OUT! INVESTIGATORS FOUND OUT\nTHAT THE EVIL CORPORATION IS RESPONSIBLE FOR\nBREAKING OUR WIND TURBINES"
+        		game.data.dialog = "THANK YOU FOR HELPING OUT! INVESTIGATORS FOUND OUT\nTHAT THE EVIL CORPORATION IS RESPONSIBLE FOR\nBREAKING OUR WIND TURBINES";
         	}
         }
         if(game.data.talking_to_gumi_enter){

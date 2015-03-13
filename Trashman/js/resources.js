@@ -31,6 +31,7 @@ game.resources = [
 	 * sprites
 	 */ 
 	{name: "hero", type: "image", src: "data/img/sprites/trashman3.png"},
+	{name: "expo", type: "image", src: "data/img/sprites/Explosion.png"},
 	{name: "book", type: "image", src: "data/img/sprites/throwBook.png"},
 	{name: "badGuy", type: "image", src: "data/img/sprites/badGuy.png"},
 	{name: "badGuy2", type: "image", src: "data/img/sprites/walkUp&Down.png"},
