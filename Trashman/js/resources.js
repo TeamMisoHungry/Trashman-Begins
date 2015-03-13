@@ -73,8 +73,17 @@ game.resources = [
 	{name: "instruc", type:"image", src:"data/img/gui/instructions.png"},
 	{name: "menu", type:"image", src:"data/img/gui/main.png"},
 	{name: "sampleChatBox", type:"image", src:"data/img/sprites/chatbox.png"},
-    
 
+	/*
+	 * Endings
+	 */    
+	{name: "goodText", type:"image", src:"data/endings/goodText.png"},
+	{name: "okText", type:"image", src:"data/endings/okText.png"},
+	{name: "badText", type:"image", src:"data/endings/badText.png"},
+	{name: "goodImage", type:"image", src:"data/endings/goodImage.png"},
+	{name: "okImage", type:"image", src:"data/endings/okImage.png"},
+	{name: "badImage", type:"image", src:"data/endings/badImage.png"},
+	
     /* 
 	*  Maps
 	*/
