@@ -35,7 +35,6 @@ game.MikuEntity = me.Entity.extend({
 		//Rescue penguins and then give them to Miku to get points.
 		game.data.talking_to_miku = true;
 		game.data.notTalking = false;
-		me.game.world.addChild(new game.NPCimage(10, 320));
 		me.game.world.addChild(new game.chatbox(0, 0));
 		var numPeng = game.data.penguin;
 		game.data.penguin = 0;
@@ -53,9 +52,8 @@ game.SakuraEntity = me.Entity.extend({
 	},
 
 	onCollision: function(response, other){
-		//Rescue penguins and then give them to Miku to get points.
-		//game.data.talking_to_miku = true;
-		//game.data.notTalking = false;
+		game.data.talking_to_sakura = true;
+		game.data.notTalking = false;
 		me.game.world.addChild(new game.chatbox(0, 0));
 		this.body.setCollisionMask(me.collision.types.NPC_OBJECT);
 	}
@@ -70,9 +68,8 @@ game.AliceEntity = me.Entity.extend({
 	},
 
 	onCollision: function(response, other){
-		//Rescue penguins and then give them to Miku to get points.
-		//game.data.talking_to_miku = true;
-		//game.data.notTalking = false;
+		game.data.talking_to_alice = true;
+		game.data.notTalking = false;
 		me.game.world.addChild(new game.chatbox(0, 0));
 		this.body.setCollisionMask(me.collision.types.NPC_OBJECT);
 	}
@@ -87,9 +84,8 @@ game.MimiEntity = me.Entity.extend({
 	},
 
 	onCollision: function(response, other){
-		//Rescue penguins and then give them to Miku to get points.
-		//game.data.talking_to_miku = true;
-		//game.data.notTalking = false;
+		game.data.talking_to_mimi = true;
+		game.data.notTalking = false;
 		me.game.world.addChild(new game.chatbox(0, 0));
 		this.body.setCollisionMask(me.collision.types.NPC_OBJECT);
 	}
@@ -104,9 +100,8 @@ game.GumiEntity = me.Entity.extend({
 	},
 
 	onCollision: function(response, other){
-		//Rescue penguins and then give them to Miku to get points.
-		//game.data.talking_to_miku = true;
-		//game.data.notTalking = false;
+		game.data.talking_to_gumi = true;
+		game.data.notTalking = false;
 		me.game.world.addChild(new game.chatbox(0, 0));
 		this.body.setCollisionMask(me.collision.types.NPC_OBJECT);
 	}
@@ -121,9 +116,8 @@ game.ArielEntity = me.Entity.extend({
 	},
 
 	onCollision: function(response, other){
-		//Rescue penguins and then give them to Miku to get points.
-		//game.data.talking_to_miku = true;
-		//game.data.notTalking = false;
+		game.data.talking_to_ariel = true;
+		game.data.notTalking = false;
 		me.game.world.addChild(new game.chatbox(0, 0));
 		this.body.setCollisionMask(me.collision.types.NPC_OBJECT);
 	}
@@ -138,9 +132,8 @@ game.RekiEntity = me.Entity.extend({
 	},
 
 	onCollision: function(response, other){
-		//Rescue penguins and then give them to Miku to get points.
-		//game.data.talking_to_miku = true;
-		//game.data.notTalking = false;
+		game.data.talking_to_reki = true;
+		game.data.notTalking = false;
 		me.game.world.addChild(new game.chatbox(0, 0));
 		this.body.setCollisionMask(me.collision.types.NPC_OBJECT);
 	}
@@ -154,7 +147,7 @@ game.BrokenTurbineEntity = me.Entity.extend({
 	},
 
 	onCollision: function(response, other){
-		game.data.fixing_turbine = true;
+		game.data.talking_to_broken_turbine = true;
 		game.data.notTalking = false;
 		me.game.world.addChild(new game.chatbox(0, 0));
 		this.body.setCollisionMask(me.collision.types.NPC_OBJECT);
@@ -207,22 +200,16 @@ game.chatbox = me.GUI_Object.extend({
 	},
 	onClick:function (event){
  		me.game.world.removeChild(this);
- 		game.data.fixing_turbine = false;
+ 		game.data.talking_to_broken_turbine = false;
  		game.data.talking_to_miku = false;
  		game.data.talking_to_jelly = false;
+ 		game.data.talking_to_sakura = false,
+        game.data.talking_to_alice = false,
+        game.data.talking_to_mimi = false,
+        game.data.talking_to_gumi = false
+        game.data.talking_to_ariel = false,
+        game.data.talking_to_reki = false,
  		game.data.notTalking = true;
     }
 });
 
-game.NPCimage = me.GUI_Object.extend({
-	init:function (x, y){
-		var settings = {};
-			settings.image = me.loader.getImage('Miku');
-      		settings.spritewidth = 200;
-      		settings.spriteheight = 200;
-      		// super constructor
-	    this._super(me.GUI_Object, "init", [x, y, settings]);
-      		// define the object z order
-      		//this.z = 0;
-	}
-});

@@ -77,6 +77,7 @@ game.HUD.TimeItem = me.Renderable.extend({
         this._super(me.Renderable, 'init', [x, y, 10, 10]);
         this.font = new me.BitmapFont("32x32Size8", 12);
         this.font.set("left");
+        this.alwaysUpdate = true;
         this.limit = -1;
         this.garbage = -1;
         this.blade = -1;

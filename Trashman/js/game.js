@@ -95,6 +95,7 @@ var game = {
         me.pool.register("FixedTurbineEntity", game.FixedTurbineEntity);
         me.pool.register("BrokenTurbineEntity", game.BrokenTurbineEntity);
         me.pool.register("BladeEntity", game.BladeEntity);
+        me.pool.register("PotionEntity", game.PotionEntity);
 
         /*** NPC ***/
         me.pool.register("SignEntity", game.SignEntity);
