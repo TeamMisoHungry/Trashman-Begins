@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-up" width="90" height="60" tilewidth="16" tileheight="16" nextobjectid="91">
+<<<<<<< HEAD
+<map version="1.0" orientation="orthogonal" renderorder="right-up" width="90" height="60" tilewidth="16" tileheight="16" nextobjectid="118">
+=======
+<map version="1.0" orientation="orthogonal" renderorder="right-up" width="90" height="60" tilewidth="16" tileheight="16" nextobjectid="115">
+>>>>>>> e63779ff3faae8f62a1f8c20a425fe8a644abc0a
  <tileset firstgid="1" name="turbineMap" tilewidth="16" tileheight="16">
   <image source="turbineMap.png" width="1440" height="960"/>
  </tileset>
@@ -24,10 +28,10 @@
   <object id="10" x="218.75" y="428.75">
    <polyline points="0,0 -25,1.25 -26.25,-127.5 -26.25,-128.75 -27.5,-136.25 321.25,-132.5 322.5,-1.25 43.75,1.25"/>
   </object>
-  <object id="13" x="206.25" y="308.75">
+  <object id="13" x="206.25" y="322.75">
    <polyline points="0,0 323.75,1.25 322.5,65 -3.75,62.5 -2.5,1.25"/>
   </object>
-  <object id="15" x="420" y="563.75">
+  <object id="15" x="420" y="574.75">
    <polyline points="0,0 330,1.25 332.5,75 -2.5,75 -2.5,-1.25"/>
   </object>
   <object id="17" x="37.5" y="70">
@@ -84,6 +88,10 @@
   <object id="87" x="88" y="772" width="28" height="28"/>
  </objectgroup>
  <objectgroup name="Entities">
+  <properties>
+   <property name="image" value="potion"/>
+   <property name="imagewidth" value="30"/>
+  </properties>
   <object id="63" name="mainPlayer" x="75" y="855" width="32" height="32">
    <properties>
     <property name="image" value="hero"/>
@@ -94,7 +102,7 @@
    <properties>
     <property name="duration" value="250"/>
     <property name="fade" value="#000000"/>
-    <property name="to" value="desertb"/>
+    <property name="to" value="headquarterc"/>
    </properties>
   </object>
   <object id="85" name="GumiEntity" x="86" y="771" width="32" height="32">
@@ -108,6 +116,28 @@
     <property name="spritewidth" value="10"/>
    </properties>
   </object>
+  <object id="97" name="BrokenTurbineEntity" x="468" y="540" width="55" height="110"/>
+  <object id="98" name="BrokenTurbineEntity" x="573" y="540" width="55" height="110"/>
+  <object id="99" name="BrokenTurbineEntity" x="675" y="540" width="55" height="110"/>
+  <object id="100" name="BladeEntity" x="432" y="816" width="30" height="65">
+   <properties>
+    <property name="image" value="blade"/>
+    <property name="spritewidth" value="30"/>
+   </properties>
+  </object>
+<<<<<<< HEAD
+  <object id="114" name="PotionEntity" x="40" y="648" width="30" height="30">
+   <properties>
+    <property name="image" value="potion"/>
+    <property name="spritewidth" value="30"/>
+   </properties>
+  </object>
+  <object id="116" name="BrokenTurbineEntity" x="248" y="275" width="55" height="110"/>
+  <object id="117" name="BrokenTurbineEntity" x="436" y="275" width="55" height="110"/>
+=======
+  <object id="113" name="BrokenTurbineEntity" x="452" y="290" width="55" height="110"/>
+  <object id="114" name="BrokenTurbineEntity" x="236" y="287.333" width="55" height="110"/>
+>>>>>>> e63779ff3faae8f62a1f8c20a425fe8a644abc0a
  </objectgroup>
  <objectgroup name="EnemyEntities">
   <object id="74" name="EnemyEntity" x="393.333" y="749.333" width="380" height="32">
@@ -115,24 +145,24 @@
     <property name="spritewidth" value="40"/>
    </properties>
   </object>
-  <object id="79" name="EnemyEntity" x="37.3333" y="232" width="380" height="32">
+  <object id="79" name="EnemyEntity" x="37.3333" y="221" width="380" height="32">
    <properties>
     <property name="spritewidth" value="40"/>
    </properties>
   </object>
-  <object id="80" name="EnemyEntity2" x="106.667" y="358.667" width="53.3333" height="317.333">
-   <properties>
-    <property name="spriteheight" value="32"/>
-    <property name="spritewidth" value="40"/>
-   </properties>
-  </object>
-  <object id="81" name="EnemyEntity2" x="304" y="473.333" width="54.6667" height="152">
+  <object id="80" name="EnemyEntity2" x="106.667" y="358.667" width="40" height="316">
    <properties>
     <property name="spriteheight" value="32"/>
     <property name="spritewidth" value="40"/>
    </properties>
   </object>
-  <object id="82" name="EnemyEntity2" x="869.333" y="558.667" width="53.3333" height="317.333">
+  <object id="81" name="EnemyEntity2" x="304" y="473.333" width="32" height="152">
+   <properties>
+    <property name="spriteheight" value="32"/>
+    <property name="spritewidth" value="40"/>
+   </properties>
+  </object>
+  <object id="82" name="EnemyEntity2" x="869.333" y="558.667" width="36" height="320">
    <properties>
     <property name="spriteheight" value="32"/>
     <property name="spritewidth" value="40"/>
@@ -143,7 +173,7 @@
     <property name="spritewidth" value="40"/>
    </properties>
   </object>
-  <object id="84" name="EnemyEntity2" x="308" y="681.333" width="54.6667" height="201.333">
+  <object id="84" name="EnemyEntity2" x="308" y="681.333" width="36" height="204">
    <properties>
     <property name="spriteheight" value="32"/>
     <property name="spritewidth" value="40"/>

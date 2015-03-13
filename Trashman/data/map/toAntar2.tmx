@@ -28,13 +28,6 @@
     <property name="spritewidth" value="24"/>
    </properties>
   </object>
-  <object id="25" name="me.LevelEntity" x="582" y="14" width="110" height="11">
-   <properties>
-    <property name="duration" value="250"/>
-    <property name="fade" value="#000000"/>
-    <property name="to" value="toAntar1b"/>
-   </properties>
-  </object>
  </objectgroup>
  <objectgroup name="collision">
   <object id="5" x="711" y="3">

@@ -24,12 +24,14 @@ game.resources = [
 	{name: "antarlevel2a", type: "image", src: "data/map/antarlevel2a.png"},
 	{name: "antarlevel2", type: "image", src: "data/map/antarlevel2.png"},
 	{name: "antarlevel3", type: "image", src: "data/map/antarlevel3.png"},
+	{name: "black", type: "image", src: "data/img/map/black.png"},
 	
 
 	/*
 	 * sprites
 	 */ 
 	{name: "hero", type: "image", src: "data/img/sprites/trashman3.png"},
+	{name: "expo", type: "image", src: "data/img/sprites/Explosion.png"},
 	{name: "book", type: "image", src: "data/img/sprites/throwBook.png"},
 	{name: "badGuy", type: "image", src: "data/img/sprites/badGuy.png"},
 	{name: "badGuy2", type: "image", src: "data/img/sprites/walkUp&Down.png"},
@@ -44,11 +46,11 @@ game.resources = [
 	{name: "turret", type: "image", src: "data/img/sprites/TurretSheet.png"},
 	{name: "fire", type: "image", src: "data/img/sprites/laserBeam.png"},
 	{name: "potion", type: "image", src: "data/img/sprites/potion.png"},
+	{name: "boss", type: "image", src: "data/img/sprites/boss.png"},
 	//{name: "sign", type: "image", src: "data/img/sprites/sign.png"},
 	{name: "brokenTurbine", type: "image", src: "data/img/sprites/brokenTurbine.png"},
 	{name: "fixedTurbine", type: "image", src: "data/img/sprites/fixedTurbine.png"},
 	{name: "penguin", type: "image", src: "data/img/sprites/penguin.png"},
-	{name: "bear", type: "image", src: "data/img/sprites/bear.png"},
 	//NPC
 	{name: "Miku", type: "image", src: "data/img/sprites/NPCs/Miku.png"},
 	{name: "Sakura", type: "image", src: "data/img/sprites/NPCs/Sakura.png"},
@@ -59,7 +61,6 @@ game.resources = [
 	{name: "Reki", type: "image", src: "data/img/sprites/NPCs/Reki.png"},
 	{name: "Jelly", type: "image", src: "data/img/sprites/NPCs/Jelly.gif"},
 
-	{name: "BigMiku", type: "image", src: "data/img/sprites/NPCs/BigMiku.png"},
 	//font
     {name: "32x32_font", type: "image", src: "data/img/font/32x32_font.png"},
     {name: "32x32Size8", type: "image", src: "data/img/font/32x32Size8.png"},	
@@ -84,6 +85,9 @@ game.resources = [
 	 * Endings
 	 */    
 	{name: "goodText", type:"image", src:"data/endings/goodText.png"},
+	{name: "good", type:"image", src:"data/endings/good.png"},
+	{name: "meh", type:"image", src:"data/endings/meh.png"},
+	{name: "bad", type:"image", src:"data/endings/bad.png"},
 	{name: "okText", type:"image", src:"data/endings/okText.png"},
 	{name: "badText", type:"image", src:"data/endings/badText.png"},
 	{name: "goodImage", type:"image", src:"data/endings/goodImage.png"},

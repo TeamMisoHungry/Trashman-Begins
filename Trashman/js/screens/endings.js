@@ -56,8 +56,6 @@ game.ending = me.ImageLayer.extend({
 	},
 	
 	update: function(dt){
-		//console.log(this.pos.x, this.pos.y);
-		//console.log(this.height - this.pos.y);
 		if(this.pos.y > this.len){
 			me.game.world.removeChild(this);
 		}
