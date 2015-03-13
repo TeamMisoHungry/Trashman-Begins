@@ -12,13 +12,6 @@
   </data>
  </layer>
  <objectgroup name="Entities">
-  <object id="8" name="me.LevelEntity" x="1263" y="269" width="11" height="173">
-   <properties>
-    <property name="duration" value="250"/>
-    <property name="fade" value="#000000"/>
-    <property name="to" value="toCity1b"/>
-   </properties>
-  </object>
   <object id="13" name="mainPlayer" x="1202" y="334" width="32" height="32">
    <properties>
     <property name="image" value="hero"/>
@@ -60,7 +53,7 @@
   </object>
  </objectgroup>
  <objectgroup name="EnemyEntities">
-  <object id="18" name="EnemyEntity" x="128" y="352" width="192" height="32">
+  <object id="18" name="EnemyEntity" x="104" y="328" width="192" height="32">
    <properties>
     <property name="spritewidth" value="40"/>
    </properties>

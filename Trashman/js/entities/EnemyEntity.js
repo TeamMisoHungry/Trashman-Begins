@@ -182,6 +182,16 @@ game.DeadEntity = me.Entity.extend({
   
 });
 
+game.ExplosionEntity = me.Entity.extend({
+	init: function(x, y, settings){
+		settings.image = "expo";
+		settings. width = 128;
+		settings.height = 128;
+		this._super(me.Entity, 'init', [x, y, settings]);
+	}
+	
+});
+
 
 /*************************** ICE LEVEL ENEMIES **************************/
 
@@ -454,5 +464,22 @@ game.TurretEntity2 = me.Entity.extend({
 	
 	onCollision: function(){
 		return true;
+	}
+});
+
+game.bossEntity = me.Entity.extend({
+	init: function(x, y, settings){
+		settings.z = 4;
+		settings.name = "cityboss";
+		settings.width = 55;
+		settings.height = 60;
+		settings.image = "boss";
+		this._super(me.Entity, 'init', [x, y, settings]);
+		this.body.collisionType = me.collision.types.ACTION_OBJECT;
+
+	},	
+	
+	onCollision: function(){
+		return false;
 	}
 });

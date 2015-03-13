@@ -16,13 +16,6 @@
     <property name="to" value="toCity2"/>
    </properties>
   </object>
-  <object id="12" name="me.LevelEntity" x="1260" y="157" width="11" height="54">
-   <properties>
-    <property name="duration" value="250"/>
-    <property name="fade" value="#000000"/>
-    <property name="to" value="headquartera"/>
-   </properties>
-  </object>
   <object id="13" name="mainPlayer" x="1208" y="175" width="32" height="32">
    <properties>
     <property name="image" value="hero"/>
@@ -42,7 +35,7 @@
   </object>
  </objectgroup>
  <objectgroup name="EnemyEntities">
-  <object id="15" name="EnemyEntity2" x="316" y="112" width="48" height="144">
+  <object id="15" name="EnemyEntity2" x="316" y="94" width="36" height="176">
    <properties>
     <property name="spriteheight" value="32"/>
     <property name="spritewidth" value="40"/>

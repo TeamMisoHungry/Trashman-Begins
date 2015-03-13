@@ -11,14 +11,14 @@
  <objectgroup name="Entity">
   <object id="2" name="me.LevelEntity" x="568" y="780" width="112" height="12">
    <properties>
-    <property name="duration" value="1"/>
+    <property name="duration" value="250"/>
     <property name="fade" value="#000000"/>
     <property name="to" value="cityb"/>
    </properties>
   </object>
   <object id="6" name="me.LevelEntity" x="568" y="780" width="112" height="12">
    <properties>
-    <property name="duration" value="1"/>
+    <property name="duration" value="250"/>
     <property name="fade" value="#000000"/>
     <property name="to" value="cityPuzzleEnd"/>
    </properties>

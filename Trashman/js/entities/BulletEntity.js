@@ -41,7 +41,7 @@ game.BulletEntity = me.Entity.extend({
 			this.renderable.flipX(true);
 		}
 		
-		if(this.timer % 80 == 0){
+		if(this.timer % 40 == 0){
 			me.game.world.removeChild(this);
 		}
         // update the body movement
