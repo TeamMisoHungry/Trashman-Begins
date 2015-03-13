@@ -8,8 +8,16 @@ var game = {
         hp : 100,
         penguin : 0,
         blade : 0,
-        talking : false,
-        notTalking : true
+        notTalking : true,
+        talking_to_jelly : false,
+        talking_to_miku : false,
+        talking_to_sakura : false,
+        talking_to_alice : false,
+        talking_to_mimi : false,
+        talking_to_gumi : false
+        talking_to_ariel : false,
+        talking_to_reki : false,
+        talking_to_broken_turbine : false,
     },
 
     item : {
