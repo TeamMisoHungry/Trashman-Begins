@@ -12,7 +12,7 @@ game.TitleScreen = me.ScreenObject.extend({
 	/*me.input.bindKey(me.input.KEY.E, "enter", true);
 	this.handler = me.event.subscribe(me.event.KEYDOWN, function (action, keyCode, edge) {
       		if (action === "enter") {
-      			me.state.change(me.state.END);
+      			me.state.change(me.state.GAMEOVER);
 	        }
     	});
   */ 
@@ -44,7 +44,7 @@ game.startButton = me.GUI_Object.extend({
    	},
 	
     onClick:function (event){
-      	me.state.change(me.state.PLAY);
+      	me.state.change(me.state.SETTINGS);
     }
 });
 

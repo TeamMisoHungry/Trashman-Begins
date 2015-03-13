@@ -23,7 +23,7 @@ game.EndingScreen = me.ScreenObject.extend({
 			me.game.world.addChild(new game.ending("okText"));
 		}
 		
-		me.input.bindKey(me.input.KEY.ENTER, "enter", true);
+		me.input.bindKey(me.input.KEY.L, "enter", true);
     	this.handler = me.event.subscribe(me.event.KEYDOWN, function (action, keyCode, edge) {
       		if (action === "enter") {
 				me.state.change(me.state.MENU);
@@ -32,7 +32,7 @@ game.EndingScreen = me.ScreenObject.extend({
 	},
 	
 	onDestroyEvent: function(){
-		me.input.unbindKey(me.input.KEY.ENTER);
+		me.input.unbindKey(me.input.KEY.L);
     	me.event.unsubscribe(this.handler);
 	}
 	
