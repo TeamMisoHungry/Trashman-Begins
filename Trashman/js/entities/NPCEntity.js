@@ -105,7 +105,6 @@ game.GumiEntity = me.Entity.extend({
 		this.time++;
 		this.body.update(dt);
 		me.collision.check(this);
-		me.collsion.response.clear();
 		return (this._super(me.Entity, 'update', [dt]));
 	},
 	onCollision: function(response, other){
