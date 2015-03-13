@@ -7,6 +7,9 @@ game.resources = [
 	{name: "headquarter", type: "image", src: "data/map/headquarter.png"},
 	{name: "desert", type: "image", src: "data/map/desert.png"},
 	{name: "cityPuzzle1", type: "image", src: "data/map/cityPuzzle1.png"},
+	{name: "cityPuzzle2", type: "image", src: "data/map/cityPuzzle2.png"},
+	{name: "cityPuzzle3", type: "image", src: "data/map/cityPuzzle3.png"},
+	{name: "cityPuzzleBegin", type: "image", src: "data/map/cityPuzzleBegin.png"},
 	{name: "city", type: "image", src: "data/map/city.png"},
 	{name: "toCity1", type: "image", src: "data/map/toCity1.png"},
 	{name: "toCity2", type: "image", src: "data/map/toCity2.png"},
@@ -100,14 +103,19 @@ game.resources = [
     //*******  CITY  ***********
     {name: "city", type: "tmx", src: "data/map/city.tmx"},
     {name: "cityb", type: "tmx", src: "data/map/cityb.tmx"},
+    {name: "cityc", type: "tmx", src: "data/map/cityc.tmx"}, //after done with mission
     {name: "toCity1", type: "tmx", src: "data/map/toCity1.tmx"},
 	{name: "toCity2", type: "tmx", src: "data/map/toCity2.tmx"},
 	{name: "toCity3", type: "tmx", src: "data/map/toCity3.tmx"},
 	{name: "toCity1b", type: "tmx", src: "data/map/toCity1b.tmx"},
 	{name: "toCity2b", type: "tmx", src: "data/map/toCity2b.tmx"},
 	{name: "toCity3b", type: "tmx", src: "data/map/toCity3b.tmx"},
+	{name: "cityPuzzleBegin", type: "tmx", src: "data/map/cityPuzzleBegin.tmx"},
 	{name: "cityPuzzle1", type: "tmx", src: "data/map/cityPuzzle1.tmx"},
-	
+	{name: "cityPuzzle2", type: "tmx", src: "data/map/cityPuzzle2.tmx"},
+	{name: "cityPuzzle3", type: "tmx", src: "data/map/cityPuzzle3.tmx"},
+	{name: "cityPuzzleEnd", type: "tmx", src: "data/map/cityPuzzleEnd.tmx"},
+
 	//*******  DESERT  **********
 	{name: "desert", type: "tmx", src: "data/map/desert.tmx"},
 	{name: "desertb", type: "tmx", src: "data/map/desertb.tmx"},

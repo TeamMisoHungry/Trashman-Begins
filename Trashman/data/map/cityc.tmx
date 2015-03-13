@@ -176,7 +176,6 @@
   <object id="102" x="492" y="360">
    <polyline points="0,0 8,-12 12,-52 -28,-116"/>
   </object>
-  <object id="104" x="232" y="616" width="16" height="16"/>
  </objectgroup>
  <objectgroup name="Entity">
   <object id="76" name="me.LevelEntity" x="11.25" y="896.25" width="16.25" height="48.75">
@@ -186,28 +185,10 @@
     <property name="to" value="toCity3b"/>
    </properties>
   </object>
-  <object id="77" name="me.LevelEntity" x="511.25" y="17.5" width="55" height="17.5">
-   <properties>
-    <property name="duration" value="250"/>
-    <property name="fade" value="#000000"/>
-    <property name="to" value="cityPuzzleBegin"/>
-   </properties>
-  </object>
   <object id="81" name="mainPlayer" x="520" y="84" width="32" height="32">
    <properties>
     <property name="image" value="hero"/>
     <property name="spritewidth" value="24"/>
-   </properties>
-  </object>
-  <object id="85" name="GarbageEntity" x="504" y="716" width="10" height="10">
-   <properties>
-    <property name="image" value="garbage"/>
-    <property name="spritewidth" value="10"/>
-   </properties>
-  </object>
-  <object id="103" name="RekiEntity" x="224" y="608" width="30" height="30">
-   <properties>
-    <property name="image" value="Reki"/>
    </properties>
   </object>
   <object id="105" name="GarbageEntity" x="200" y="696" width="10" height="10">
