@@ -45,3 +45,23 @@ game.BladeEntity = me.CollectableEntity.extend({
 	}
 
 });
+
+game.PotionEntity = me.CollectableEntity.extend({
+	init: function(x, y, settings){
+		this._super(me.CollectableEntity, 'init', [x, y, settings]);
+		if (this.body.shapes.length === 0) {
+            this.body.addShape(new me.Rect(0, 0, this.width, this.height));
+        }
+	},
+	
+	onCollision: function(response, other){
+		if(game.data.hp < 100){
+			game.data.hp += 25;
+			if(game.data.hp > 100){
+				game.data.hp = 100;
+			}
+		}
+		this.body.setCollisionMask(me.collision.types.NO_OBJECT);
+		me.game.world.removeChild(this);
+	}
+});

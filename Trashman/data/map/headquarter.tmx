@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="left-down" width="60" height="40" tilewidth="16" tileheight="16" nextobjectid="82">
+<<<<<<< HEAD
+<map version="1.0" orientation="orthogonal" renderorder="left-down" width="60" height="40" tilewidth="16" tileheight="16" nextobjectid="83">
+=======
+<map version="1.0" orientation="orthogonal" renderorder="left-down" width="60" height="40" tilewidth="16" tileheight="16" nextobjectid="85">
+>>>>>>> b6a57ea416f92c47510ebcc78990896004355c22
  <tileset firstgid="1" name="headquarter" tilewidth="16" tileheight="16">
   <image source="headquarter.png" trans="ff00ff" width="960" height="640"/>
  </tileset>
@@ -69,6 +73,12 @@
     <property name="spritewidth" value="55"/>
    </properties>
   </object>
+  <object id="84" name="PotionEntity" x="661" y="458" width="30" height="30">
+   <properties>
+    <property name="image" value="potion"/>
+    <property name="spritewidth" value="30"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup name="collision">
   <object id="3" x="4" y="396">
@@ -103,13 +113,13 @@
   <object id="55" x="292" y="263">
    <polyline points="0,0 -1,6 44,5 40,5 0,5"/>
   </object>
-  <object id="62" x="412" y="260" width="16" height="12"/>
+  <object id="62" x="636" y="444" width="16" height="12"/>
   <object id="69" x="513" y="306" width="21" height="21"/>
   <object id="75" x="521" y="236" width="26" height="38"/>
   <object id="79" x="676" y="209" width="41" height="106"/>
  </objectgroup>
  <objectgroup name="EnemyEntities">
-  <object id="58" name="TurretEntity" x="412" y="260" width="16" height="14">
+  <object id="58" name="TurretEntity2" x="636" y="444" width="16" height="14">
    <properties>
     <property name="image" value="turret"/>
     <property name="spritewidth" value="16"/>
@@ -121,5 +131,6 @@
    </properties>
   </object>
   <object id="61" name="IceEnemyEntity2" x="344.667" y="362.667" width="40" height="176.667"/>
+  <object id="82" name="LaserEntity" x="408" y="268"/>
  </objectgroup>
 </map>

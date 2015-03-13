@@ -190,7 +190,7 @@
    <properties>
     <property name="duration" value="250"/>
     <property name="fade" value="#000000"/>
-    <property name="to" value="cityPuzzle1"/>
+    <property name="to" value="cityPuzzleBegin"/>
    </properties>
   </object>
   <object id="81" name="mainPlayer" x="520" y="84" width="32" height="32">
