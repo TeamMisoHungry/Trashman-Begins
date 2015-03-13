@@ -105,6 +105,7 @@ game.GumiEntity = me.Entity.extend({
 		this.time++;
 		this.body.update(dt);
 		me.collision.check(this);
+		me.collsion.response.clear();
 		return (this._super(me.Entity, 'update', [dt]));
 	},
 	onCollision: function(response, other){
@@ -130,6 +131,7 @@ game.GumiEntity = me.Entity.extend({
 		game.data.notTalking = false;
 		me.game.world.addChild(new game.chatbox(0, 0));
 		this.body.setCollisionMask(me.collision.types.NPC_OBJECT);
+		
 		return false;
 		}
 		return false;
