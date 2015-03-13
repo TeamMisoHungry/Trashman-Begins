@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <map version="1.0" orientation="orthogonal" renderorder="left-down" width="60" height="40" tilewidth="16" tileheight="16" nextobjectid="83">
+=======
+<map version="1.0" orientation="orthogonal" renderorder="left-down" width="60" height="40" tilewidth="16" tileheight="16" nextobjectid="85">
+>>>>>>> b6a57ea416f92c47510ebcc78990896004355c22
  <tileset firstgid="1" name="headquarter" tilewidth="16" tileheight="16">
   <image source="headquarter.png" trans="ff00ff" width="960" height="640"/>
  </tileset>
@@ -67,6 +71,12 @@
    <properties>
     <property name="image" value="brokenTurbine"/>
     <property name="spritewidth" value="55"/>
+   </properties>
+  </object>
+  <object id="84" name="PotionEntity" x="661" y="458" width="30" height="30">
+   <properties>
+    <property name="image" value="potion"/>
+    <property name="spritewidth" value="30"/>
    </properties>
   </object>
  </objectgroup>

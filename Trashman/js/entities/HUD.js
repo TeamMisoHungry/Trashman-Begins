@@ -23,9 +23,9 @@ game.HUD.Container = me.Container.extend({
         this.name = "HUD";
 
         // add our child score object at the top left corner
-        this.addChild(new game.HUD.ScoreItem(630, 460));
+        this.addChild(new game.HUD.ScoreItem(630, 10));
         this.addChild(new game.HUD.TimeItem(10, 10));
-        this.addChild(new game.HUD.Dialog(10, 90));
+        this.addChild(new game.HUD.Dialog(20, 350));
     }
 });
 
@@ -77,6 +77,7 @@ game.HUD.TimeItem = me.Renderable.extend({
         this._super(me.Renderable, 'init', [x, y, 10, 10]);
         this.font = new me.BitmapFont("32x32Size8", 12);
         this.font.set("left");
+        this.alwaysUpdate = true;
         this.limit = -1;
         this.garbage = -1;
         this.blade = -1;

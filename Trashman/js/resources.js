@@ -43,6 +43,7 @@ game.resources = [
 	{name: "blade", type: "image", src: "data/img/sprites/turbineBlade.png"},
 	{name: "turret", type: "image", src: "data/img/sprites/TurretSheet.png"},
 	{name: "fire", type: "image", src: "data/img/sprites/laserBeam.png"},
+	{name: "potion", type: "image", src: "data/img/sprites/potion.png"},
 	//{name: "sign", type: "image", src: "data/img/sprites/sign.png"},
 	{name: "brokenTurbine", type: "image", src: "data/img/sprites/brokenTurbine.png"},
 	{name: "fixedTurbine", type: "image", src: "data/img/sprites/fixedTurbine.png"},
@@ -57,7 +58,8 @@ game.resources = [
 	{name: "Gumi", type: "image", src: "data/img/sprites/NPCs/Gumi.png"},
 	{name: "Reki", type: "image", src: "data/img/sprites/NPCs/Reki.png"},
 	{name: "Jelly", type: "image", src: "data/img/sprites/NPCs/Jelly.gif"},
-	
+
+	{name: "BigMiku", type: "image", src: "data/img/sprites/NPCs/BigMiku.png"},
 	//font
     {name: "32x32_font", type: "image", src: "data/img/font/32x32_font.png"},
     {name: "32x32Size8", type: "image", src: "data/img/font/32x32Size8.png"},	
@@ -76,6 +78,7 @@ game.resources = [
 	{name: "instruc", type:"image", src:"data/img/gui/instructions.png"},
 	{name: "menu", type:"image", src:"data/img/gui/main.png"},
 	{name: "sampleChatBox", type:"image", src:"data/img/sprites/chatbox.png"},
+	{name: "TextBox", type:"image", src:"data/img/sprites/dialogueBox.png"},
 
 	/*
 	 * Endings
