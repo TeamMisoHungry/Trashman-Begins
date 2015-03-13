@@ -28,12 +28,6 @@
     <property name="spritewidth" value="10"/>
    </properties>
   </object>
-  <object id="42" name="BladeEntity" x="108" y="144" width="30" height="65">
-   <properties>
-    <property name="image" value="blade"/>
-    <property name="spritewidth" value="30"/>
-   </properties>
-  </object>
   <object id="43" name="PotionEntity" x="1148" y="196" width="30" height="30">
    <properties>
     <property name="image" value="potion"/>

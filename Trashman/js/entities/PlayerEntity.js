@@ -104,7 +104,7 @@ game.PlayerEntity = me.Entity.extend({
  		}
 		
 		//throwing
-		if(me.input.isKeyPressed('throw')){
+		if(me.input.isKeyPressed('throw') && game.data.notTalking){
 			if(game.item.garbage >= 1){
 				var shot = me.pool.pull("BulletEntity", this.pos.x+5, this.pos.y+5, {
 					image: 'garbageThrow', 
