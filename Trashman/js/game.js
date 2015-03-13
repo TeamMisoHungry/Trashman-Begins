@@ -11,6 +11,7 @@ var game = {
         talking : false,
         notTalking : true,
         iceDone : false,
+        desertDone : false,
         cityDone : false
 
     },

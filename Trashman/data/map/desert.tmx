@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="60" height="40" tilewidth="16" tileheight="16" nextobjectid="100">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="60" height="40" tilewidth="16" tileheight="16" nextobjectid="104">
  <tileset firstgid="1" name="desert" tilewidth="16" tileheight="16">
   <image source="desert.png" trans="ff00ff" width="960" height="640"/>
   <tile id="675">
@@ -135,6 +135,9 @@
   <object id="92" x="197" y="208" width="1" height="1"/>
   <object id="93" x="201" y="210"/>
   <object id="99" x="584" y="284" width="20" height="20"/>
+  <object id="102" x="822" y="53">
+   <polyline points="0,0 28,-25 27,-51 115,-50 122,-44"/>
+  </object>
  </objectgroup>
  <objectgroup name="Entities">
   <object id="19" name="me.LevelEntity" x="20" y="320" width="12" height="76">
@@ -166,6 +169,11 @@
   <object id="95" name="MimiEntity" x="582" y="283" width="24" height="24">
    <properties>
     <property name="image" value="Mimi"/>
+   </properties>
+  </object>
+  <object id="100" name="GumiEntity" x="864" y="18" width="32" height="32">
+   <properties>
+    <property name="image" value="Gumi"/>
    </properties>
   </object>
  </objectgroup>

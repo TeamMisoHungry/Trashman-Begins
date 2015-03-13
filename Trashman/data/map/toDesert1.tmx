@@ -35,12 +35,6 @@
     <property name="spritewidth" value="10"/>
    </properties>
   </object>
-  <object id="41" name="BladeEntity" x="1125.25" y="170.974" width="30" height="65">
-   <properties>
-    <property name="image" value="blade"/>
-    <property name="spritewidth" value="30"/>
-   </properties>
-  </object>
  </objectgroup>
  <objectgroup name="collision">
   <object id="20" x="2" y="569">

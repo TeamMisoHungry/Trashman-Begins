@@ -131,7 +131,7 @@ game.HUD.Dialog = me.Renderable.extend({
     },
     
     update : function () {
-        console.log(me.levelDirector.getCurrentLevelId());
+        //console.log(me.levelDirector.getCurrentLevelId());
         if (game.data.talking_to_miku) {
             if (me.game.iceDone) {
                 game.data.dialog = "THANK YOU FOR SAVING THE PENGUINS!";
@@ -140,24 +140,39 @@ game.HUD.Dialog = me.Renderable.extend({
             return true;
         }
         if(game.data.talking_to_jelly){
-        	//if(!antar_complete){
+        	if(!game.data.iceDone){
         		game.data.dialog = "WELCOME TO THE HEADQUARTERS! HEAD SOUTH FOR YOUR \nFIRST MISSION AND REPORT TO ME AFTER YOU FINISH!";
-        	/*}
-        	else if(!desert_complete){
+        	}
+        	else if(!game.data.desertDone){
         		game.data.dialog = "GOOD WORK SAVING THE PENGUINS! NOW HEAD EAST FOR \nYOUR NEXT MISSION!";
         	}
-        	else if(!city_complete){
+        	else if(!game.data.cityDone){
         		game.data.dialog = "THANK YOU FOR FIXING THE WIND TURBINES! ALL THAT \nIS LEFT IS TO DEFEAT THE EVIL CORPORATION. \nHEAD WEST FOR YOUR LAST MISSION!";
         	}
         	else {
         		game.data.dialog = "YOU DID IT! YOU SAVED THE WORLD FROM DESTRUCTION!\n THE EVIL CORPORATION HAS REFORMED THEIR WAYS AND ARE WORKING TO UNDO THE HARM THEY HAVE DONE";
         	}
-        	*/
         	return true;
         }
         if (game.data.fixing_turbine) {
             game.data.dialog = "YOU FIXED THE TURBINE!";
-            return true;
+        }
+        if(game.data.talking_to_gumi){
+        	if(!game.data.desertDone){
+  	      		game.data.dialog = "THE AREA AHEAD IS UNDER RECONSTRUCTION.\nSOME OF OUR WIND TURBINES BROKE ";
+        	}
+        	else{
+        		game.data.dialog = "THANK YOU FOR HELPING OUT! INVESTIGATORS FOUND OUT\nTHAT THE EVIL CORPORATION IS RESPONSIBLE FOR\nBREAKING OUR WIND TURBINES"
+        	}
+        }
+        if(game.data.talking_to_gumi_enter){
+        	game.data.dialog = "YOU COLLECTED TURBINE BLADES TO HELP OUT? I'LL LET\nYOU THROUGH";
+        }
+        if(game.data.talking_to_gumi_exit){
+        	game.data.dialog = "THANK YOU FOR FIXING THE TURBINES!";
+        }
+        if(game.data.talking_to_gumi_noexit){
+        	game.data.dialog = "THERE IS ANOTHER TURBINE BLADE LYING AROUND\nSOMEWHERE HERE...";
         }
         if (game.data.notTalking) {
             game.data.dialog = "";

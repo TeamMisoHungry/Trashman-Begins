@@ -97,7 +97,6 @@
     <property name="to" value="toAntar2"/>
    </properties>
   </object>
-  <object id="31" x="474" y="529" width="30" height="65"/>
  </objectgroup>
  <objectgroup name="EnemyEntities">
   <object id="26" name="EnemyEntity" x="168" y="320" width="160" height="28"/>

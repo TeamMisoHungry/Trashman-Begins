@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="60" height="40" tilewidth="16" tileheight="16" nextobjectid="100">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="60" height="40" tilewidth="16" tileheight="16" nextobjectid="107">
  <tileset firstgid="1" name="desert" tilewidth="16" tileheight="16">
   <image source="desert.png" trans="ff00ff" width="960" height="640"/>
   <tile id="675">
@@ -135,6 +135,13 @@
   <object id="92" x="197" y="208" width="1" height="1"/>
   <object id="93" x="201" y="210"/>
   <object id="99" x="532" y="180" width="20" height="20"/>
+  <object id="101" x="867" y="20" width="26" height="27"/>
+  <object id="104" x="818" y="53">
+   <polyline points="0,0 30,-24 32,-53"/>
+  </object>
+  <object id="106" x="853" y="2">
+   <polyline points="0,0 91,0"/>
+  </object>
  </objectgroup>
  <objectgroup name="Entities">
   <object id="19" name="me.LevelEntity" x="20" y="320" width="12" height="76">
@@ -142,13 +149,6 @@
     <property name="duration" value="250"/>
     <property name="fade" value="#000000"/>
     <property name="to" value="toDesert3b"/>
-   </properties>
-  </object>
-  <object id="22" name="me.LevelEntity" x="907.018" y="2.3171" width="14.0941" height="56.6252" rotation="90">
-   <properties>
-    <property name="duration" value="250"/>
-    <property name="fade" value="#000000"/>
-    <property name="to" value="turbineMap"/>
    </properties>
   </object>
   <object id="24" name="mainPlayer" x="860" y="68" width="32" height="32">
@@ -166,6 +166,11 @@
   <object id="95" name="MimiEntity" x="530" y="178" width="24" height="24">
    <properties>
     <property name="image" value="Mimi"/>
+   </properties>
+  </object>
+  <object id="100" name="GumiEntity" x="864" y="18" width="32" height="32">
+   <properties>
+    <property name="image" value="Gumi"/>
    </properties>
   </object>
  </objectgroup>
