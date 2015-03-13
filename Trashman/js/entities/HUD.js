@@ -131,7 +131,6 @@ game.HUD.Dialog = me.Renderable.extend({
     },
     
     update : function () {
-        //console.log(me.levelDirector.getCurrentLevelId());
         if (game.data.talking_to_miku) {
             if (me.game.iceDone) {
                 game.data.dialog = "THANK YOU FOR SAVING THE PENGUINS!";

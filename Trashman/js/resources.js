@@ -60,6 +60,8 @@ game.resources = [
 	{name: "Gumi", type: "image", src: "data/img/sprites/NPCs/Gumi.png"},
 	{name: "Reki", type: "image", src: "data/img/sprites/NPCs/Reki.png"},
 	{name: "Jelly", type: "image", src: "data/img/sprites/NPCs/Jelly.gif"},
+	
+	{name: "Alicetalk", type: "image", src: "data/img/sprites/NPCs/Alice.gif"},
 
 	//font
     {name: "32x32_font", type: "image", src: "data/img/font/32x32_font.png"},
