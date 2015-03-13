@@ -45,7 +45,7 @@ game.BladeEntity = me.CollectableEntity.extend({
 	}
 
 });
-
+/*
 game.PotionEntity = me. CollectableEntity.extend({
 	init: function(x, y, settings){
 		this._super(me.CollectableEntity, 'init', [x, y, settings]);
@@ -57,3 +57,4 @@ game.PotionEntity = me. CollectableEntity.extend({
 		me.game.world.removeChild(this);
 	}
 });
+*/

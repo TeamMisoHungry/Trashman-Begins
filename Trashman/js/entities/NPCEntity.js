@@ -35,7 +35,7 @@ game.MikuEntity = me.Entity.extend({
 		//Rescue penguins and then give them to Miku to get points.
 		game.data.talking_to_miku = true;
 		game.data.notTalking = false;
-		me.game.world.addChild(new game.chatbox(10, 80));
+		me.game.world.addChild(new game.chatbox(0, 0));
 		var numPeng = game.data.penguin;
 		game.data.penguin = 0;
 		game.data.score +=  100 * numPeng;
@@ -196,9 +196,9 @@ game.FixedTurbineEntity = me.Entity.extend({
 game.chatbox = me.GUI_Object.extend({
 	init:function (x, y){
 		var settings = {};
-			settings.image = me.loader.getImage('sampleChatBox');
-      		settings.spritewidth = 160;
-      		settings.spriteheight = 30;
+			settings.image = me.loader.getImage('TextBox');
+      		settings.spritewidth = 640;
+      		settings.spriteheight = 480;
       		// super constructor
 	    this._super(me.GUI_Object, "init", [x, y, settings]);
       		// define the object z order
