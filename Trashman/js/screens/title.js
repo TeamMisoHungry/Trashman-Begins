@@ -5,11 +5,16 @@ game.TitleScreen = me.ScreenObject.extend({
   
   onResetEvent : function() {       
     // title screen
-     me.game.world.addChild(new me.Sprite(0, 0, me.loader.getImage('title_screen')), 1);
-	   me.game.world.addChild(new game.startButton(20, 250));
-	   me.game.world.addChild(new game.credit(100, 250));
-	   me.game.world.addChild(new game.instrucButton(400, 250));
-
+  	me.game.world.addChild(new me.Sprite(0, 0, me.loader.getImage('title_screen')), 1);
+	me.game.world.addChild(new game.startButton(20, 250));
+	me.game.world.addChild(new game.credit(100, 250));
+	me.game.world.addChild(new game.instrucButton(400, 250));
+	me.input.bindKey(me.input.KEY.E, "enter", true);
+	this.handler = me.event.subscribe(me.event.KEYDOWN, function (action, keyCode, edge) {
+      		if (action === "enter") {
+      			me.state.change(me.state.END);
+	        }
+    	});
 /*	 if(me.audio.getCurrentTrack() == "title") return;
  	 me.audio.stopTrack();
  	 me.audio.playTrack("title", true);*/
@@ -20,7 +25,9 @@ game.TitleScreen = me.ScreenObject.extend({
    */
   onDestroyEvent : function() {
   	//me.audio.fade("title", 1, 0, 1000);
-   }
+  	me.input.unbindKey(me.input.KEY.E);
+  	me.event.unsubscribe(this.handler);
+  }
 });
 
 game.startButton = me.GUI_Object.extend({

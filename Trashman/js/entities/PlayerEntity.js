@@ -13,10 +13,7 @@ game.PlayerEntity = me.Entity.extend({
 		//setting deafauly horizontal & vertical speed
 
 		this.body.setVelocity(2.5, 2.5);
-
 		
-		//reset time limit
-		game.time.limit = 300;
 		//setting display to follow our position on both axis
 		me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
 		
@@ -96,13 +93,8 @@ game.PlayerEntity = me.Entity.extend({
     	this.time++;
     
     	if(this.time % 50 === 0){
-			game.time.limit--;
 			game.time.overallTime++;
 		}
-		if(game.time.limit == 0){
-			me.state.change(me.state.GAME_END);
-		}
-
 		//************CHECK FOR KEY INPUT ****************/
 
  		//pause button, hit P to pause and show option buttons
