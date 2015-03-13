@@ -17,13 +17,6 @@
   </data>
  </layer>
  <objectgroup name="Entities">
-  <object id="6" name="me.LevelEntity" x="276" y="936" width="117" height="12">
-   <properties>
-    <property name="duration" value="250"/>
-    <property name="fade" value="#000000"/>
-    <property name="to" value="toDesert2b"/>
-   </properties>
-  </object>
   <object id="9" name="me.LevelEntity" x="294" y="32" width="49" height="18">
    <properties>
     <property name="duration" value="250"/>

@@ -140,13 +140,6 @@
   </object>
  </objectgroup>
  <objectgroup name="Entities">
-  <object id="19" name="me.LevelEntity" x="20" y="320" width="12" height="76">
-   <properties>
-    <property name="duration" value="250"/>
-    <property name="fade" value="#000000"/>
-    <property name="to" value="toDesert3b"/>
-   </properties>
-  </object>
   <object id="22" name="me.LevelEntity" x="907.018" y="2.3171" width="14.0941" height="56.6252" rotation="90">
    <properties>
     <property name="duration" value="250"/>
@@ -169,11 +162,6 @@
   <object id="95" name="MimiEntity" x="582" y="283" width="24" height="24">
    <properties>
     <property name="image" value="Mimi"/>
-   </properties>
-  </object>
-  <object id="100" name="GumiEntity" x="864" y="18" width="32" height="32">
-   <properties>
-    <property name="image" value="Gumi"/>
    </properties>
   </object>
  </objectgroup>
