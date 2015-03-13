@@ -31,7 +31,7 @@
     <property name="spritewidth" value="10"/>
    </properties>
   </object>
-  <object id="65" name="AliceEntity" x="460" y="532" width="32" height="32">
+  <object id="65" name="AliceEntity" x="460" y="541" width="32" height="32">
    <properties>
     <property name="image" value="Alice"/>
    </properties>
@@ -77,7 +77,7 @@
   <object id="64" x="240" y="357">
    <polyline points="0,0 -12,12 8,8 0,0"/>
   </object>
-  <object id="67" x="464" y="536" width="24" height="24"/>
+  <object id="67" x="464" y="545" width="24" height="24"/>
   <object id="69" x="704" y="376" width="24" height="24"/>
  </objectgroup>
 </map>

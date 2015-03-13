@@ -23,6 +23,7 @@ game.JellyEntity = me.Entity.extend({
 		this._super(me.Entity, 'init', [x, y, settings]);
 		this.renderable.addAnimation("idle", [0],200);
 		this.renderable.setCurrentAnimation("idle");
+		this.body.collisionType = me.collision.types.NPC_OBJECT;
 	},
 
 	onCollision: function(response, other){
@@ -39,6 +40,7 @@ game.MikuEntity = me.Entity.extend({
 		this._super(me.Entity, 'init', [x, y, settings]);
 		this.renderable.addAnimation("idle", [0, 1, 2, 3, 4, 5],200);
 		this.renderable.setCurrentAnimation("idle");
+		this.body.collisionType = me.collision.types.NPC_OBJECT;
 	},
 
 	onCollision: function(response, other){
@@ -62,6 +64,7 @@ game.SakuraEntity = me.Entity.extend({
 		this._super(me.Entity, 'init', [x, y, settings]);
 		this.renderable.addAnimation("idle", [0, 1, 2, 3, 4, 5, 6],200);
 		this.renderable.setCurrentAnimation("idle");
+		this.body.collisionType = me.collision.types.NPC_OBJECT;
 	},
 
 	onCollision: function(response, other){
@@ -78,6 +81,7 @@ game.AliceEntity = me.Entity.extend({
 		this._super(me.Entity, 'init', [x, y, settings]);
 		this.renderable.addAnimation("idle", [0, 1, 2, 3, 4],200);
 		this.renderable.setCurrentAnimation("idle");
+		this.body.collisionType = me.collision.types.NPC_OBJECT;
 	},
 
 	onCollision: function(response, other){
@@ -96,6 +100,7 @@ game.MimiEntity = me.Entity.extend({
 		this._super(me.Entity, 'init', [x, y, settings]);
 		this.renderable.addAnimation("idle", [0, 1, 2, 3, 4, 5, 6],200);
 		this.renderable.setCurrentAnimation("idle");
+		this.body.collisionType = me.collision.types.NPC_OBJECT;
 	},
 
 	onCollision: function(response, other){
@@ -112,6 +117,7 @@ game.GumiEntity = me.Entity.extend({
 		this._super(me.Entity, 'init', [x, y, settings]);
 		this.renderable.addAnimation("idle", [0, 1, 2, 3, 4],200);
 		this.renderable.setCurrentAnimation("idle");
+		this.body.collisionType = me.collision.types.NPC_OBJECT;
 	},
 	update: function(dt) {
 		this.time++;
@@ -144,6 +150,7 @@ game.ArielEntity = me.Entity.extend({
 		this._super(me.Entity, 'init', [x, y, settings]);
 		this.renderable.addAnimation("idle", [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],200);
 		this.renderable.setCurrentAnimation("idle");
+		this.body.collisionType = me.collision.types.NPC_OBJECT;
 	},
 
 	onCollision: function(response, other){
@@ -160,6 +167,7 @@ game.RekiEntity = me.Entity.extend({
 		this._super(me.Entity, 'init', [x, y, settings]);
 		this.renderable.addAnimation("idle", [0, 1, 2, 3, 4, 5, 6],200);
 		this.renderable.setCurrentAnimation("idle");
+		this.body.collisionType = me.collision.types.NPC_OBJECT;
 	},
 
 	onCollision: function(response, other){
@@ -181,7 +189,7 @@ game.BrokenTurbineEntity = me.Entity.extend({
     this._super(me.Entity, 'init', [x, y, settings]);
   },
   onCollision : function (response, other) {
-		if(game.data.blade>0){
+		if(game.data.blade > 0){
 			game.data.fixing_turbine = true;
 			game.data.notTalking = false;
 			me.game.world.addChild(new game.chatbox(0, 0));
