@@ -25,7 +25,7 @@ game.HUD.Container = me.Container.extend({
         // add our child score object at the top left corner
         this.addChild(new game.HUD.ScoreItem(630, 460));
         this.addChild(new game.HUD.TimeItem(10, 10));
-        this.addChild(new game.HUD.Dialog(10, 90));
+        this.addChild(new game.HUD.Dialog(10, 450));
     }
 });
 
@@ -116,7 +116,7 @@ game.HUD.TimeItem = me.Renderable.extend({
 
 game.HUD.Dialog = me.Renderable.extend({
     init: function(x, y) {
-        this._super(me.Renderable, 'init', [x, y, 10, 10]);
+        this._super(me.Renderable, 'init', [x, y, 10, 450]);
         this.font = new me.BitmapFont("32x32Size8", 12);
         this.font.set("left");
     },
