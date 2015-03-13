@@ -13,6 +13,7 @@ var game = {
         iceDone : false,
         desertDone : false,
         cityDone : false
+        talkToAriel
 
     },
 
