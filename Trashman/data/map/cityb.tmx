@@ -199,7 +199,7 @@
     <property name="spritewidth" value="24"/>
    </properties>
   </object>
-  <object id="85" name="GarbageEntity" x="504" y="716" width="10" height="10">
+  <object id="85" name="GarbageEntity" x="560" y="376" width="10" height="10">
    <properties>
     <property name="image" value="garbage"/>
     <property name="spritewidth" value="10"/>
@@ -210,7 +210,7 @@
     <property name="image" value="Reki"/>
    </properties>
   </object>
-  <object id="105" name="GarbageEntity" x="200" y="696" width="10" height="10">
+  <object id="105" name="GarbageEntity" x="236" y="928" width="10" height="10">
    <properties>
     <property name="image" value="garbage"/>
     <property name="spritewidth" value="10"/>

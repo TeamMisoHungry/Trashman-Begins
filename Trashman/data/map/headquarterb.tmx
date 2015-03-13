@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="left-down" width="60" height="40" tilewidth="16" tileheight="16" nextobjectid="64">
+<map version="1.0" orientation="orthogonal" renderorder="left-down" width="60" height="40" tilewidth="16" tileheight="16" nextobjectid="70">
  <tileset firstgid="1" name="headquarter" tilewidth="16" tileheight="16">
   <image source="headquarter.png" trans="ff00ff" width="960" height="640"/>
  </tileset>
@@ -26,13 +26,13 @@
     <property name="to" value="toDesert1"/>
    </properties>
   </object>
-  <object id="27" name="mainPlayer" x="872" y="216" width="32" height="32">
+  <object id="27" name="mainPlayer" x="872" y="216" width="24" height="32">
    <properties>
     <property name="image" value="hero"/>
     <property name="spritewidth" value="24"/>
    </properties>
   </object>
-  <object id="28" name="GarbageEntity" x="420" y="320" width="10" height="10">
+  <object id="28" name="GarbageEntity" x="304" y="380" width="10" height="10">
    <properties>
     <property name="image" value="garbage"/>
     <property name="spritewidth" value="10"/>
@@ -43,6 +43,16 @@
     <property name="duration" value="250"/>
     <property name="fade" value="#000000"/>
     <property name="to" value="toAntar1"/>
+   </properties>
+  </object>
+  <object id="65" name="AliceEntity" x="460" y="532" width="32" height="32">
+   <properties>
+    <property name="image" value="Alice"/>
+   </properties>
+  </object>
+  <object id="66" name="SakuraEntity" x="700" y="372" width="32" height="32">
+   <properties>
+    <property name="image" value="Sakura"/>
    </properties>
   </object>
  </objectgroup>
@@ -69,7 +79,6 @@
   <object id="42" x="596" y="492">
    <polyline points="-2,-19 5,-15 0,-39 -5,-40 -1,-15"/>
   </object>
-  <object id="43" x="240" y="368"/>
   <object id="53" x="440" y="400">
    <polyline points="0,0 38,-28 77,4 76,46 0,49 0,0"/>
   </object>
@@ -79,5 +88,10 @@
   <object id="55" x="292" y="263">
    <polyline points="0,0 -1,6 44,5 40,5 0,5"/>
   </object>
+  <object id="64" x="240" y="357">
+   <polyline points="0,0 -12,12 8,8 0,0"/>
+  </object>
+  <object id="67" x="464" y="536" width="24" height="24"/>
+  <object id="69" x="704" y="376" width="24" height="24"/>
  </objectgroup>
 </map>

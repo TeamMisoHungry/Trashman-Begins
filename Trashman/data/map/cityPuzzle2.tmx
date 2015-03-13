@@ -15,7 +15,7 @@
     <property name="spritewidth" value="24"/>
    </properties>
   </object>
-  <object id="3" name="me.LevelEntity" x="784" y="532" width="104" height="16" rotation="90">
+  <object id="3" name="me.LevelEntity" x="784" y="532" width="104" height="8" rotation="90">
    <properties>
     <property name="duration" value="1"/>
     <property name="fade" value="#000000"/>

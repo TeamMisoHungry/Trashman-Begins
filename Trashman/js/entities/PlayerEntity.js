@@ -122,6 +122,13 @@ game.PlayerEntity = me.Entity.extend({
 		
         
 		/************ BELOW are for ice puzzle levels *********/
+		console.log(me.game.currentLevel.name);
+		//console.log(iceDone);
+		//check to see if complete quests
+		if (me.levelDirector.getCurrentLevelId() == "antarlevelend") {
+			game.data.iceDone = true;
+		}
+
 
  		//set score of penguin to 0 if failed antarlvl2
  		if (me.game.currentLevel.name == "antarlevelBegin"
