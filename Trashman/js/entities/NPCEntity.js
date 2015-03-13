@@ -18,7 +18,7 @@ game.JellyEntity = me.Entity.extend({
 	onCollision: function(response, other){
 		game.data.talking_to_jelly = true;
 		game.data.notTalking = false;
-		me.game.world.addChild(new game.chatbox(10, 80));
+		me.game.world.addChild(new game.chatbox(0, 0));
 		this.body.setCollisionMask(me.collision.types.NPC_OBJECT);
 	}
 });
@@ -35,6 +35,7 @@ game.MikuEntity = me.Entity.extend({
 		//Rescue penguins and then give them to Miku to get points.
 		game.data.talking_to_miku = true;
 		game.data.notTalking = false;
+		me.game.world.addChild(new game.NPCimage(10, 320));
 		me.game.world.addChild(new game.chatbox(0, 0));
 		var numPeng = game.data.penguin;
 		game.data.penguin = 0;
@@ -55,7 +56,7 @@ game.SakuraEntity = me.Entity.extend({
 		//Rescue penguins and then give them to Miku to get points.
 		//game.data.talking_to_miku = true;
 		//game.data.notTalking = false;
-		me.game.world.addChild(new game.chatbox(10, 80));
+		me.game.world.addChild(new game.chatbox(0, 0));
 		this.body.setCollisionMask(me.collision.types.NPC_OBJECT);
 	}
 });
@@ -72,7 +73,7 @@ game.AliceEntity = me.Entity.extend({
 		//Rescue penguins and then give them to Miku to get points.
 		//game.data.talking_to_miku = true;
 		//game.data.notTalking = false;
-		me.game.world.addChild(new game.chatbox(10, 80));
+		me.game.world.addChild(new game.chatbox(0, 0));
 		this.body.setCollisionMask(me.collision.types.NPC_OBJECT);
 	}
 });
@@ -89,7 +90,7 @@ game.MimiEntity = me.Entity.extend({
 		//Rescue penguins and then give them to Miku to get points.
 		//game.data.talking_to_miku = true;
 		//game.data.notTalking = false;
-		me.game.world.addChild(new game.chatbox(10, 80));
+		me.game.world.addChild(new game.chatbox(0, 0));
 		this.body.setCollisionMask(me.collision.types.NPC_OBJECT);
 	}
 });
@@ -106,7 +107,7 @@ game.GumiEntity = me.Entity.extend({
 		//Rescue penguins and then give them to Miku to get points.
 		//game.data.talking_to_miku = true;
 		//game.data.notTalking = false;
-		me.game.world.addChild(new game.chatbox(10, 80));
+		me.game.world.addChild(new game.chatbox(0, 0));
 		this.body.setCollisionMask(me.collision.types.NPC_OBJECT);
 	}
 });
@@ -123,7 +124,7 @@ game.ArielEntity = me.Entity.extend({
 		//Rescue penguins and then give them to Miku to get points.
 		//game.data.talking_to_miku = true;
 		//game.data.notTalking = false;
-		me.game.world.addChild(new game.chatbox(10, 80));
+		me.game.world.addChild(new game.chatbox(0, 0));
 		this.body.setCollisionMask(me.collision.types.NPC_OBJECT);
 	}
 });
@@ -140,7 +141,7 @@ game.RekiEntity = me.Entity.extend({
 		//Rescue penguins and then give them to Miku to get points.
 		//game.data.talking_to_miku = true;
 		//game.data.notTalking = false;
-		me.game.world.addChild(new game.chatbox(10, 80));
+		me.game.world.addChild(new game.chatbox(0, 0));
 		this.body.setCollisionMask(me.collision.types.NPC_OBJECT);
 	}
 });
@@ -155,7 +156,7 @@ game.BrokenTurbineEntity = me.Entity.extend({
 	onCollision: function(response, other){
 		game.data.fixing_turbine = true;
 		game.data.notTalking = false;
-		me.game.world.addChild(new game.chatbox(10, 80));
+		me.game.world.addChild(new game.chatbox(0, 0));
 		this.body.setCollisionMask(me.collision.types.NPC_OBJECT);
 		game.data.blade -= 1;
   		var new_turbine = me.pool.pull("FixedTurbineEntity", this.pos.x, this.pos.y, {});
@@ -211,4 +212,17 @@ game.chatbox = me.GUI_Object.extend({
  		game.data.talking_to_jelly = false;
  		game.data.notTalking = true;
     }
+});
+
+game.NPCimage = me.GUI_Object.extend({
+	init:function (x, y){
+		var settings = {};
+			settings.image = me.loader.getImage('Miku');
+      		settings.spritewidth = 200;
+      		settings.spriteheight = 200;
+      		// super constructor
+	    this._super(me.GUI_Object, "init", [x, y, settings]);
+      		// define the object z order
+      		//this.z = 0;
+	}
 });

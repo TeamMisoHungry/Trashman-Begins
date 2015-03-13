@@ -74,7 +74,7 @@ game.resources = [
 	{name: "instruc", type:"image", src:"data/img/gui/instructions.png"},
 	{name: "menu", type:"image", src:"data/img/gui/main.png"},
 	{name: "sampleChatBox", type:"image", src:"data/img/sprites/chatbox.png"},
-	{name: "TextBox", type:"image", src:"data/img/sprites/TextBox.png"},
+	{name: "TextBox", type:"image", src:"data/img/sprites/dialogueBox.png"},
 
 	/*
 	 * Endings
