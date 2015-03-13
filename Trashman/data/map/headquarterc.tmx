@@ -12,21 +12,7 @@
   </data>
  </layer>
  <objectgroup name="Entities">
-  <object id="23" name="me.LevelEntity" x="24" y="348" width="28" height="32">
-   <properties>
-    <property name="duration" value="250"/>
-    <property name="fade" value="#000000"/>
-    <property name="to" value="toCity1"/>
-   </properties>
-  </object>
-  <object id="26" name="me.LevelEntity" x="924" y="216" width="24" height="44">
-   <properties>
-    <property name="duration" value="250"/>
-    <property name="fade" value="#000000"/>
-    <property name="to" value="toDesert1"/>
-   </properties>
-  </object>
-  <object id="27" name="mainPlayer" x="860" y="508" width="24" height="32">
+  <object id="27" name="mainPlayer" x="906" y="220" width="24" height="32">
    <properties>
     <property name="image" value="hero"/>
     <property name="spritewidth" value="24"/>
@@ -36,13 +22,6 @@
    <properties>
     <property name="image" value="garbage"/>
     <property name="spritewidth" value="10"/>
-   </properties>
-  </object>
-  <object id="47" name="me.LevelEntity" x="880" y="580">
-   <properties>
-    <property name="duration" value="250"/>
-    <property name="fade" value="#000000"/>
-    <property name="to" value="toAntar1"/>
    </properties>
   </object>
   <object id="64" name="AliceEntity" x="324" y="340" width="32" height="32">

@@ -15,7 +15,6 @@ game.TitleScreen = me.ScreenObject.extend({
       			me.state.change(me.state.GAMEOVER);
 	        }
     	});
-  */ 
 /*	 if(me.audio.getCurrentTrack() == "title") return;
  	 me.audio.stopTrack();
  	 me.audio.playTrack("title", true);*/
