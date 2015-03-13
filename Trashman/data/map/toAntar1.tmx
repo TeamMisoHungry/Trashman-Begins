@@ -71,13 +71,6 @@
   </object>
  </objectgroup>
  <objectgroup name="Entities">
-  <object id="22" name="me.LevelEntity" x="453" y="185" width="14" height="44">
-   <properties>
-    <property name="duration" value="250"/>
-    <property name="fade" value="#00000"/>
-    <property name="to" value="headquarterc"/>
-   </properties>
-  </object>
   <object id="23" name="mainPlayer" x="346" y="198" width="32" height="32">
    <properties>
     <property name="image" value="hero"/>

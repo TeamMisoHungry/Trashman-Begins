@@ -15,13 +15,6 @@
   <object id="25" x="554" y="224" width="24" height="24"/>
  </objectgroup>
  <objectgroup name="Entities">
-  <object id="3" name="me.LevelEntity" x="10" y="795" width="9" height="73">
-   <properties>
-    <property name="duration" value="250"/>
-    <property name="fade" value="#000000"/>
-    <property name="to" value="toDesert1b"/>
-   </properties>
-  </object>
   <object id="4" name="me.LevelEntity" x="353" y="11" width="231" height="7">
    <properties>
     <property name="duration" value="250"/>
