@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-up" width="40" height="40" tilewidth="16" tileheight="16" nextobjectid="31">
+<map version="1.0" orientation="orthogonal" renderorder="right-up" width="40" height="40" tilewidth="16" tileheight="16" nextobjectid="32">
  <tileset firstgid="1" name="toAntar1" tilewidth="16" tileheight="16">
   <image source="toAntar1.png" width="640" height="640"/>
  </tileset>

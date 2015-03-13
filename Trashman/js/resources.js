@@ -7,6 +7,9 @@ game.resources = [
 	{name: "headquarter", type: "image", src: "data/map/headquarter.png"},
 	{name: "desert", type: "image", src: "data/map/desert.png"},
 	{name: "cityPuzzle1", type: "image", src: "data/map/cityPuzzle1.png"},
+	{name: "cityPuzzle2", type: "image", src: "data/map/cityPuzzle2.png"},
+	{name: "cityPuzzle3", type: "image", src: "data/map/cityPuzzle3.png"},
+	{name: "cityPuzzleBegin", type: "image", src: "data/map/cityPuzzleBegin.png"},
 	{name: "city", type: "image", src: "data/map/city.png"},
 	{name: "toCity1", type: "image", src: "data/map/toCity1.png"},
 	{name: "toCity2", type: "image", src: "data/map/toCity2.png"},
@@ -21,6 +24,7 @@ game.resources = [
 	{name: "antarlevel2a", type: "image", src: "data/map/antarlevel2a.png"},
 	{name: "antarlevel2", type: "image", src: "data/map/antarlevel2.png"},
 	{name: "antarlevel3", type: "image", src: "data/map/antarlevel3.png"},
+	{name: "black", type: "image", src: "data/img/map/black.png"},
 	
 
 	/*
@@ -40,6 +44,7 @@ game.resources = [
 	{name: "blade", type: "image", src: "data/img/sprites/turbineBlade.png"},
 	{name: "turret", type: "image", src: "data/img/sprites/TurretSheet.png"},
 	{name: "fire", type: "image", src: "data/img/sprites/laserBeam.png"},
+	{name: "potion", type: "image", src: "data/img/sprites/potion.png"},
 	//{name: "sign", type: "image", src: "data/img/sprites/sign.png"},
 	{name: "brokenTurbine", type: "image", src: "data/img/sprites/brokenTurbine.png"},
 	{name: "fixedTurbine", type: "image", src: "data/img/sprites/fixedTurbine.png"},
@@ -54,7 +59,8 @@ game.resources = [
 	{name: "Gumi", type: "image", src: "data/img/sprites/NPCs/Gumi.png"},
 	{name: "Reki", type: "image", src: "data/img/sprites/NPCs/Reki.png"},
 	{name: "Jelly", type: "image", src: "data/img/sprites/NPCs/Jelly.gif"},
-	
+
+	{name: "BigMiku", type: "image", src: "data/img/sprites/NPCs/BigMiku.png"},
 	//font
     {name: "32x32_font", type: "image", src: "data/img/font/32x32_font.png"},
     {name: "32x32Size8", type: "image", src: "data/img/font/32x32Size8.png"},	
@@ -73,6 +79,7 @@ game.resources = [
 	{name: "instruc", type:"image", src:"data/img/gui/instructions.png"},
 	{name: "menu", type:"image", src:"data/img/gui/main.png"},
 	{name: "sampleChatBox", type:"image", src:"data/img/sprites/chatbox.png"},
+	{name: "TextBox", type:"image", src:"data/img/sprites/dialogueBox.png"},
 
 	/*
 	 * Endings
@@ -97,14 +104,19 @@ game.resources = [
     //*******  CITY  ***********
     {name: "city", type: "tmx", src: "data/map/city.tmx"},
     {name: "cityb", type: "tmx", src: "data/map/cityb.tmx"},
+    {name: "cityc", type: "tmx", src: "data/map/cityc.tmx"}, //after done with mission
     {name: "toCity1", type: "tmx", src: "data/map/toCity1.tmx"},
 	{name: "toCity2", type: "tmx", src: "data/map/toCity2.tmx"},
 	{name: "toCity3", type: "tmx", src: "data/map/toCity3.tmx"},
 	{name: "toCity1b", type: "tmx", src: "data/map/toCity1b.tmx"},
 	{name: "toCity2b", type: "tmx", src: "data/map/toCity2b.tmx"},
 	{name: "toCity3b", type: "tmx", src: "data/map/toCity3b.tmx"},
+	{name: "cityPuzzleBegin", type: "tmx", src: "data/map/cityPuzzleBegin.tmx"},
 	{name: "cityPuzzle1", type: "tmx", src: "data/map/cityPuzzle1.tmx"},
-	
+	{name: "cityPuzzle2", type: "tmx", src: "data/map/cityPuzzle2.tmx"},
+	{name: "cityPuzzle3", type: "tmx", src: "data/map/cityPuzzle3.tmx"},
+	{name: "cityPuzzleEnd", type: "tmx", src: "data/map/cityPuzzleEnd.tmx"},
+
 	//*******  DESERT  **********
 	{name: "desert", type: "tmx", src: "data/map/desert.tmx"},
 	{name: "desertb", type: "tmx", src: "data/map/desertb.tmx"},
