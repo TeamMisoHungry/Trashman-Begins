@@ -17,7 +17,7 @@
   </object>
   <object id="3" name="me.LevelEntity" x="784" y="532" width="104" height="8" rotation="90">
    <properties>
-    <property name="duration" value="1"/>
+    <property name="duration" value="250"/>
     <property name="fade" value="#000000"/>
     <property name="to" value="cityPuzzle3"/>
    </properties>
