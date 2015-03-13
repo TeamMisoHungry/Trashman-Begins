@@ -39,6 +39,9 @@ game.MikuEntity = me.Entity.extend({
 		var numPeng = game.data.penguin;
 		game.data.penguin = 0;
 		game.data.score +=  100 * numPeng;
+		if (game.data.iceDone) {
+			game.data.blade += 1;
+		}
 		this.body.setCollisionMask(me.collision.types.NPC_OBJECT);
 	}
 });

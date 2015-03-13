@@ -24,6 +24,7 @@ game.resources = [
 	{name: "antarlevel2a", type: "image", src: "data/map/antarlevel2a.png"},
 	{name: "antarlevel2", type: "image", src: "data/map/antarlevel2.png"},
 	{name: "antarlevel3", type: "image", src: "data/map/antarlevel3.png"},
+	{name: "black", type: "image", src: "data/img/map/black.png"},
 	
 
 	/*

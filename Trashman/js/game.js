@@ -9,7 +9,10 @@ var game = {
         penguin : 0,
         blade : 0,
         talking : false,
-        notTalking : true
+        notTalking : true,
+        iceDone : false,
+        cityDone : false
+
     },
 
     item : {

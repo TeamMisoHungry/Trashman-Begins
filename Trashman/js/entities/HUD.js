@@ -108,7 +108,15 @@ game.HUD.TimeItem = me.Renderable.extend({
         this.font.draw(renderer, "HP: " + Math.trunc(game.data.hp), this.pos.x, this.pos.y);
         this.font.draw(renderer,"GARBAGE: " + game.item.garbage, this.pos.x, this.pos.y + 15);
         this.font.draw(renderer,"BLADES: " + game.data.blade, this.pos.x, this.pos.y + 30);
-        if (me.game.currentLevel.name == "antarlevel1" || me.game.currentLevel.name == "antarlevel2" || me.game.currentLevel.name == "antarlevel2a" || me.game.currentLevel.name == "antarlevel2b"){    
+        
+        if (me.game.currentLevel.name == "antarlevelbegin" 
+            ||me.game.currentLevel.name == "antarlevel1" 
+            ||me.game.currentLevel.name == "antarlevel1b" 
+            || me.game.currentLevel.name == "antarlevel2" 
+            || me.game.currentLevel.name == "antarlevel2a" 
+            || me.game.currentLevel.name == "antarlevel2b"
+            || me.game.currentLevel.name == "antarlevel3a" 
+            || me.game.currentLevel.name == "antarlevelend"){    
             this.font.draw(renderer,"PENGUIN: " + game.data.penguin, this.pos.x, this.pos.y + 45);
             }   
     }
@@ -123,8 +131,12 @@ game.HUD.Dialog = me.Renderable.extend({
     },
     
     update : function () {
+        console.log(me.levelDirector.getCurrentLevelId());
         if (game.data.talking_to_miku) {
-            game.data.dialog = "THANK YOU FOR SAVING THE PENGUINS!";
+            if (me.game.iceDone) {
+                game.data.dialog = "THANK YOU FOR SAVING THE PENGUINS!";
+            }
+            
             return true;
         }
         if(game.data.talking_to_jelly){
