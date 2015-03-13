@@ -282,8 +282,6 @@ game.PlayerEntity = me.Entity.extend({
 	        			this.renderable.flicker(750);
 	        			game.data.hp -= 10;
 	        		}
-	        	}else if(other.name == "cityboss"){
-	        		
 	        	}
 		      	return false;
 		      	break;

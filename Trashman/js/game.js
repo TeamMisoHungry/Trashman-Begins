@@ -87,7 +87,8 @@ var game = {
         me.pool.register("IceEnemyEntity2", game.IceEnemyEntity2);
         me.pool.register("DeadEntity", game.DeadEntity);
         me.pool.register("TurretEntity", game.TurretEntity);
-        me.pool.register("LaserEntity", game.LaserEntity); 
+        me.pool.register("LaserEntity", game.LaserEntity);
+        me.pool.register("ExplosionEntity", game.ExplosionEntity); 
 
         /*** COLLECTIBLES ***/
         me.pool.register("GarbageEntity", game.GarbageEntity);
