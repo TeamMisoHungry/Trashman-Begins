@@ -14,7 +14,7 @@ var game = {
         talking_to_sakura : false,
         talking_to_alice : false,
         talking_to_mimi : false,
-        talking_to_gumi : false
+        talking_to_gumi : false,
         talking_to_ariel : false,
         talking_to_reki : false,
         talking_to_broken_turbine : false,
