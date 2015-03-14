@@ -7,17 +7,6 @@
  * 1 penguin = 100 pts
  */
 
-game.TalkEntity = me.Entity.extend({	
-	init: function(x, y, settings){
-		settings.image = "Alicetalk";
-		settings.width = 50;
-		settings.height = 50;
-		settings.z = 5000;
-		this.z = 5000;
-		this._super(me.Entity, 'init', [x, y, settings]);
-	},
-});
-
 game.JellyEntity = me.Entity.extend({	
 
 	init: function(x, y, settings){
@@ -87,8 +76,6 @@ game.AliceEntity = me.Entity.extend({
 	},
 
 	onCollision: function(response, other){
-		var alice = me.pool.pull("TalkEntity", 10, 450, {image: "Alicetalk", width: 300, height: 300});
-		me.game.world.addChild(alice);
 		game.data.talking_to_alice = true;
 		game.data.notTalking = false;
 		me.game.world.addChild(new game.chatbox(0, 0));
@@ -281,7 +268,6 @@ game.chatbox = me.GUI_Object.extend({
 	        game.data.talking_to_reki = false;
 	        game.data.talking_to_gumi_noexit = false;
 	 		game.data.notTalking = true;
-	 		//me.game.world.removeChild(alice);
 	    }
 	}
 });
