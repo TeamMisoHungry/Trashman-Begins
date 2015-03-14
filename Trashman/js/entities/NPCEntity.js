@@ -111,26 +111,16 @@ game.GumiEntity = me.Entity.extend({
 	onCollision: function(response, other){
 		if(response.b.body.collisionType == me.collision.types.PLAYER_OBJECT){
 			if(me.game.currentLevel.name == "turbinemap"){
-				if(game.data.blade == 0){
-					game.data.talking_to_gumi_exit = true;
-					game.data.desertDone = true;
-				}
-				else{
-					game.data.talking_to_gumi_noexit = true;
-				}
+				game.data.talking_to_gumi_noexit = true;
 			}
-			else if(me.game.currentLevel.name == "desert" || me.game.currentLevel.name == "desertb"){
-				if(game.data.blade == 2){
-					game.data.talking_to_gumi_enter = true;
-				}
-				else{
-					game.data.talking_to_gumi = true;
-				}
+			else if(me.game.currentLevel.name == "desert"){
+				game.data.talking_to_gumi = true;
 			}
 		
 		game.data.notTalking = false;
 		me.game.world.addChild(new game.chatbox(0, 0));
 		this.body.setCollisionMask(me.collision.types.NPC_OBJECT);
+		
 		return false;
 		}
 		return false;
@@ -219,26 +209,27 @@ game.chatbox = me.GUI_Object.extend({
       		this.z = 10;
 	},
 	onClick:function (event){
- 		me.game.world.removeChild(this);
- 		if(game.data.talking_to_gumi_enter){
- 			me.levelDirector.loadLevel("turbinemap");
- 		}
- 		if(game.data.talking_to_gumi_exit){
- 			me.levelDirector.loadLevel("desertb");
- 		}
- 		game.data.talking_to_broken_turbine = false;
- 		game.data.talking_to_miku = false;
- 		game.data.talking_to_jelly = false;
- 		game.data.talking_to_sakura = false;
-        game.data.talking_to_alice = false;
-        game.data.talking_to_mimi = false;
-        game.data.talking_to_gumi = false;
-        game.data.talking_to_ariel = false;
-        game.data.talking_to_reki = false;
-        game.data.talking_to_gumi_enter = false;
-        game.data.talking_to_gumi_exit = false;
-        game.data.talking_to_gumi_noexit = false;
- 		game.data.notTalking = true;
-    }
+		
+	},
+	update: function(dt) {
+		if(me.input.isKeyPressed('talk')){
+	 		me.game.world.removeChild(this);
+	 		if(game.data.talking_to_gumi_enter){
+	 			me.levelDirector.loadLevel("turbinemap");
+	 		}
+	 		game.data.talking_to_broken_turbine = false;
+	 		game.data.talking_to_miku = false;
+	 		game.data.talking_to_jelly = false;
+	 		game.data.talking_to_sakura = false;
+	        game.data.talking_to_alice = false;
+	        game.data.talking_to_mimi = false;
+	        game.data.talking_to_gumi = false;
+	        game.data.talking_to_ariel = false;
+	        game.data.talking_to_reki = false;
+	        game.data.talking_to_gumi_noexit = false;
+	 		game.data.notTalking = true;
+	 		//me.game.world.removeChild();
+	    }
+	}
 });
 

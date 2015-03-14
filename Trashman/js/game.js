@@ -8,12 +8,21 @@ var game = {
         hp : 100,
         penguin : 0,
         blade : 0,
-        talking : false,
         notTalking : true,
+        talking_to_jelly : false,
+        talking_to_miku : false,
+        talking_to_sakura : false,
+        talking_to_alice : false,
+        talking_to_mimi : false,
+        talking_to_gumi : false,
+        talking_to_ariel : false,
+        talking_to_reki : false,
+        talking_to_broken_turbine : false,
+        //talking : false,
+        //notTalking : true,
         iceDone : false,
         desertDone : false,
         cityDone : false
-        talkToAriel
 
     },
 
@@ -122,6 +131,7 @@ var game = {
 		me.input.bindKey(me.input.KEY.S, "down");	
 		me.input.bindKey(me.input.KEY.P, "pause");
 		me.input.bindKey(me.input.KEY.R, "read");	
+		me.input.bindKey(me.input.KEY.T, "talk");
 		me.input.bindKey(me.input.KEY.SPACE, "throw", true);
         me.input.bindKey(me.input.KEY.I, "inventory");
 

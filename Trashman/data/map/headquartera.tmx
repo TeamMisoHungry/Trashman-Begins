@@ -33,7 +33,7 @@
   </object>
   <object id="65" name="AliceEntity" x="568" y="155" width="32" height="32">
    <properties>
-    <property name="image" value="Sakura"/>
+    <property name="image" value="Alice"/>
    </properties>
   </object>
   <object id="70" name="PotionEntity" x="262" y="526" width="30" height="30">
