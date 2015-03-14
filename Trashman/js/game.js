@@ -93,8 +93,6 @@ var game = {
         /*** ENEMY ***/
         me.pool.register("EnemyEntity", game.EnemyEntity);
         me.pool.register("EnemyEntity2", game.EnemyEntity2);
-        me.pool.register("IceEnemyEntity", game.IceEnemyEntity);
-        me.pool.register("IceEnemyEntity2", game.IceEnemyEntity2);
         me.pool.register("DeadEntity", game.DeadEntity);
         me.pool.register("TurretEntity", game.TurretEntity);
         me.pool.register("LaserEntity", game.LaserEntity);
