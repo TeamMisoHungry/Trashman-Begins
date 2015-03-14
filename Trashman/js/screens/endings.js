@@ -27,10 +27,10 @@ game.EndingScreen = me.ScreenObject.extend({
 		}
 		
 		game.time.overallTime = 0;
-		me.input.bindKey(me.input.KEY.W);
- 		me.input.bindKey(me.input.KEY.A);
- 		me.input.bindKey(me.input.KEY.S);
- 		me.input.bindKey(me.input.KEY.D);
+		me.input.bindKey(me.input.KEY.W, "up");
+ 		me.input.bindKey(me.input.KEY.A, "left");
+ 		me.input.bindKey(me.input.KEY.S, "right");
+ 		me.input.bindKey(me.input.KEY.D, "down");
 		me.input.bindKey(me.input.KEY.L, "enter", true);
     	this.handler = me.event.subscribe(me.event.KEYDOWN, function (action, keyCode, edge) {
       		if (action === "enter") {
