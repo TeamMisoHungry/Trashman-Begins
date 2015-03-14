@@ -136,7 +136,20 @@ game.HUD.Dialog = me.Renderable.extend({
     },
     
     update : function () {
-        var name = me.game.currentLevel.name;
+        var name = me.levelDirector.getCurrentLevelId();
+        console.log(game.data.bossMap);
+        
+        if (game.data.bossMap){
+            if( name == "citypuzzleend"){
+                game.data.dialog = "DESTROY THAT MACHINE ON THE RIGHT";
+            }
+            if ( name == "headquarterc"){
+                game.data.dialog = "CONGRATULATION AXEL, YOU COMPLETED ALL\n"+
+                                "THE TASKS";g
+
+            }
+        }
+
         if (game.data.talking_to_miku) {
             if((name == "antarctica") && (!game.data.iceDone)){
                 game.data.dialog = "OH NO... PLEASE HELP THE PENGUINS.";
@@ -171,25 +184,27 @@ game.HUD.Dialog = me.Renderable.extend({
                                     "MANAGER? HEE HEE. YOUR FIRST TASK\n"+
                                     "IS: GO HELP MIKU AT ANTARCTICA TOWN\n"+
                                     "AND THEN COME BACK TO ME. YOU CAN FIND\n"+
-                                    "ANTARCTICA TOWN IF YOU TRAVEL SOUTH FROM";
+                                    "ANTARCTICA TOWN IF YOU TRAVEL SOUTH FROM\n"+
+                                    "(CLICK BOX TO KEEP TALKING)";
                                     
             }
             if(name == "headquartera"){
                 game.data.dialog = "GOODJOB AXEL, YOU JUST COMPLETED YOUR\n"+ 
-                                    "FIRST TASK. OH, DID SHE GIVE YOU A\n"+ 
+                                    "FIRST TASK. OH, DID SHE GIVES YOU A\n"+ 
                                     "TURBINE BLADE? NICE, YOU WILL NEED\n"+ 
                                     "THEM LATER. FOR NOW, YOUR NEXT MISSION\n"+
                                     "IS TO HEAD WEST FROM HERE AND GET TO\n"+ 
-                                    "AOHARI CITY YOU WILL MEET REKI AND";
-                                    
+                                    "AOHARI CITY YOU WILL MEET REKI AND\n"+
+                                    "(CLICK BOX TO KEEP TALKING)";
             }
             if(name == "headquarterb"){
                 game.data.dialog = "YOU ARE GETTING GOOD  AT THIS. WOW.\n"+ 
                                     "REKI GAVE YOU A TURBINE BLADE. SHE\n"+ 
                                     "MUST HAVE LIKED YOU. IM SUCH A GOOD\n"+ 
                                     "MANAGER HEE HEE. ANYWAYS, YOUR NEXT AND\n"+ 
-                                    "LAST TASK IS TO MEET MIMI AT GOBI TOWN.\n"+ 
-                                    "SHE WILL TELL YOU HOW YOU  CAN USE THOSE";
+                                    "LAST TASK IS TO GO WEST, MEET MIMI AT GOBI TOWN.\n"+ 
+                                    "SHE WILL TELL YOU HOW YOU  CAN USE THOSE\n"+
+                                    "(CLICK BOX TO KEEP TALKING)";
             }
         	return true;
         }
@@ -201,7 +216,7 @@ game.HUD.Dialog = me.Renderable.extend({
                                     "IT, SO TRY TO COLLECT AS MANY POINTS AS\n"+
                                     "YOU CAN. ALSO, YOU CAN ONLY COME BACK TO\n"+
                                     "TIBBERS TOWN ONCE YOU ARE DONE WITH THE\n"+
-                                    "GIVEN TASK.";
+                                    "GIVEN TASK.\n(PRESS T TO CLOSE BOX)";
             }
             if(name == "headquartera"){
                 game.data.dialog = 
@@ -209,7 +224,7 @@ game.HUD.Dialog = me.Renderable.extend({
                                     "COME BACK AND TALK TO ME WHEN YOU'RE\n"+ 
                                     "DONE AND ONCE AGAIN, YOU CANNNOT COME\n"+ 
                                     "BACK HERE UNTIL YOU COMPLETE YOUR TASK.\n"+
-                                    "GOOD LUCK";
+                                    "GOOD LUCK\n(PRESS T TO CLOSE BOX)";
             }
             if(name == "headquarterb"){
                 game.data.dialog = "BLADES. ALSO, REMEMBER TO EXPLORE THE\n"+ 
@@ -217,19 +232,22 @@ game.HUD.Dialog = me.Renderable.extend({
                                     "BE ABLE TO FIND MORE TURBINE BLADES.\n"+
                                     "COME BACK HERE AFTER YOU ARE DONE\n"+
                                     "AND I WILL GRADE YOU BASED ON YOUR\n"+ 
-                                    "PERFORMANCE. WELL, GOOD LUCK.";
+                                    "PERFORMANCE. WELL, GOOD LUCK.\n(PRESS T TO CLOSE BOX)";
             }
         }
 
         if(game.data.talking_to_ariel){
-            game.data.dialog = "HI THERE, I FOUND THIS TURBINE BLADE\n"+
-                                "BY THE RIVER. HERE, YOU CAN TAKE IT.";
+            game.data.dialog = "OMG WHAT ARE YOU LOOKING AT.\n"+
+                                "!SHE THREW SOMETHING AT YOU......!\n"+
+                                "!YOU GAINED A TURBINE BLADE! HURRAY.";
         }
+
+
 
         if(game.data.talking_to_sakura){
             game.data.dialog = "OH! HELLO THERE HANDSOME YOUNG MAN.\n"+
                                 "I FOUND THIS TURBINE BLADE THE OTHER\n"+
-                                "DAY. I'LL GIVE IT TO YOU!";
+                                "DAY. I'LL GIVE IT TO YOU! WINKIE FACE";
         }
 
         if(game.data.talking_to_mimi){
@@ -259,15 +277,15 @@ game.HUD.Dialog = me.Renderable.extend({
                                     "THE CORPORATION. PLEASE HEAD NORTH FROM\n"+
                                     "HERE, I'LL MEET YOU. ";
             }
-            if(game == "citypuzzlebegin"){
+            if(name == "citypuzzlebegin"){
                 game.data.dialog = "ARE YOU READY? OKAY, YOU HAVE TO CAREFULLY\n"+
-                                    "OBSERVE THE MOVEMENTS OF THE ENEMIES AND\n"+
-                                    "THE LASER PATTERNS. THEN, TRY TO PASS THEM\n"+
+                                    "OBSERVE THE ENEMIES' MOVEMENTS AND\n"+
+                                    "THE LASERS' PATTERNS. THEN, TRY TO PASS THEM\n"+
                                     "WITHOUT GETTING HURT. THE MORE HP YOU \n"+
                                     "HAVE AT THE END, THE MORE POINTS IM\n"+
                                     "GOING TO GIVE YOU. LET'S GO.";
             }
-            if(game == "citypuzzleend"){
+            if(name == "citypuzzleend"){
                 game.data.dialog = "THANK YOU FOR HELPING ME. DID I TELL YOU\n"+
                                     "MY NAME? OOPS HAHA, IT IS REKI. NICE TO\n"+
                                     "MEET YOU. I WILL GIVE YOU POINTS BASED ON\n"+

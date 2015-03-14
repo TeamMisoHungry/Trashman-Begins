@@ -134,7 +134,6 @@ game.PlayerEntity = me.Entity.extend({
 			game.data.iceDone = true;
 		}
 
-
  		//set score of penguin to 0 if failed antarlvl2
  		if (me.game.currentLevel.name == "antarlevelBegin"
  		|| me.game.currentLevel.name == "antarlevel2a" 

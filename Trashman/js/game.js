@@ -21,8 +21,8 @@ var game = {
         talking_to_alice2 : false,
         iceDone : false,
         desertDone : false,
-        cityDone : false
-
+        bossMap: false,
+        cityDone : false,
     },
 
     item : {
@@ -119,6 +119,7 @@ var game = {
         me.pool.register("ArielEntity", game.ArielEntity);
         me.pool.register("RekiEntity", game.RekiEntity);
         me.pool.register("AliceEntity", game.AliceEntity);
+        me.pool.register("ScreenEntity", game.ScreenEntity);
 
         me.pool.register("JellyEntity", game.JellyEntity);
 		me.pool.register("TalkEntity", game.TalkEntity);

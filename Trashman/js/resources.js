@@ -42,10 +42,11 @@ game.resources = [
 	{name: "turret", type: "image", src: "data/img/sprites/TurretSheet.png"},
 	{name: "fire", type: "image", src: "data/img/sprites/laserBeam.png"},
 	{name: "potion", type: "image", src: "data/img/sprites/potion.png"},
-	{name: "boss", type: "image", src: "data/img/sprites/boss.png"},
+	{name: "boss", type: "image", src: "data/img/sprites/Cutiebot1.png"},
 	{name: "brokenTurbine", type: "image", src: "data/img/sprites/brokenTurbine.png"},
 	{name: "fixedTurbine", type: "image", src: "data/img/sprites/fixedTurbine.png"},
 	{name: "penguin", type: "image", src: "data/img/sprites/penguin.png"},
+	{name: "cutiebot", type: "image", src: "data/img/sprites/Cutiebot1.png"},
 	//NPC
 	{name: "Miku", type: "image", src: "data/img/sprites/NPCs/Miku.png"},
 	{name: "Sakura", type: "image", src: "data/img/sprites/NPCs/Sakura.png"},
@@ -64,7 +65,6 @@ game.resources = [
 	{name: "Gumitalk", type: "image", src: "data/img/sprites/dialogueboxes/gumiDialogueBox.png"},
 	{name: "Rekitalk", type: "image", src: "data/img/sprites/dialogueboxes/rekiDialogueBox.png"},
 	{name: "Turbinetalk", type: "image", src: "data/img/sprites/dialogueboxes/turbineDialogueBox.png"},
-
 	//font
 
     {name: "atascii", type: "image", src: "data/img/font/atascii_12pxb.png"},	

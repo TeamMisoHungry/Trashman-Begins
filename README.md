@@ -2,18 +2,18 @@
 **By the MisoHungry team**
 
 
+You can try out the game here: [http://www.tran2blogs.com/trashman/](http://)
 
+	PLEASE PLAY THIS ON CHROME. OTHERS ARE SLIGHTLY NOT COMPATIBLE WITH THIS GAME. ( IF YOU HAVE A TOUCHSCREEN LAPTOP, PLEASE USE TOUCHSCREEN FOR ALL THE BUTTONS ).
 
-
-
-PLEASE PLAY THIS ON CHROME. OTHERS ARE NOT COMPATIBLE WITH THIS GAME. ( IF YOU HAVE A TOUCHSCREEN LAPTOP, PLEASE USE TOUCHSCREEN FOR ALL THE BUTTONS)
+###DESCRIPTION:
 
 This game will be mostly adventure and education genres. Adventure from exploring and educational from talking to NPC’s who give the player actual data collected that has been collected by climate scientist for years. Another theme that is probably a little subtle is the sense of urgency. By including the time mechanic the player will get a sense that he or she has to hurry to achieve the best score. A problem in combating climate change right now is that we are running out of time. If we do not make rapid, progressive change, then time will run out. Mankind is getting closer and closer to the point of no return and by adding the time element to the game, the player will feel that pressure as well. The target audience is for people who know little about climate change but would like to know more. There will be facts that hopefully the player will find interesting and look more into how they can alter their behaviour and help make change in the real world.
 
 
 
 
-###Cheat sheet:
+###CHEAT SHEET:
 ######KEYS: 
 	1. WASD to move around
 	2. SPACE BAR to attack/punch
@@ -36,14 +36,14 @@ This game will be mostly adventure and education genres. Adventure from explorin
 9. After fixing the Turbine, you will be sent back to headquarter and that is where your ending will trigger based on your performance.
 
 ######ENDINGS:
-1. Best ending: You helped saving the world.
-2. Okay ending: You did your job.. nothing really changed though.
-3. Bad ending: You did not help anything and the world is in bad shape... probably going to be destroyed. 
+1. Best ending: "You helped saving the world." This ending is quite hard to get, especially for first time players. You have to finish this game quickly within a 	short amount of times. 
+2. Okay ending: "You did your job.. nothing really changed though." Not hard to get.
+3. Bad ending: "You did not help anything and the world is in bad shape... probably going to be destroyed." You can trigger this ending by going AFK or something. Even if you pass all the puzzles, you still can trigger this ending if you took too long.  
 
 
 
 
-###How to run the game:
+###HOW TO RUN GAME:
 
 Project file are in the directory Trashman.
 

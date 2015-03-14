@@ -119,7 +119,7 @@
     <property name="to" value="antarlevel3a"/>
    </properties>
   </object>
-  <object id="29" name="me.LevelEntity" x="295" y="1909" width="80" height="28">
+  <object id="29" name="me.LevelEntity" x="292.916" y="1908.48" width="76" height="24" rotation="-0.710332">
    <properties>
     <property name="duration" value="250"/>
     <property name="fade" value="#000000"/>

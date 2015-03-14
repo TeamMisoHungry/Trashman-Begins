@@ -121,9 +121,9 @@
     <property name="spritewidth" value="30"/>
    </properties>
   </object>
-  <object id="116" name="BrokenTurbineEntity" x="248" y="286" width="55" height="110"/>
-  <object id="117" name="BrokenTurbineEntity" x="436" y="286" width="55" height="110"/>
-  <object id="121" name="mainPlayer" x="200" y="688" width="24" height="32">
+  <object id="116" name="BrokenTurbineEntity" x="248" y="279" width="55" height="110"/>
+  <object id="117" name="BrokenTurbineEntity" x="436" y="281" width="55" height="110"/>
+  <object id="121" name="mainPlayer" x="80" y="880" width="24" height="32">
    <properties>
     <property name="image" value="hero"/>
     <property name="spritewidth" value="24"/>

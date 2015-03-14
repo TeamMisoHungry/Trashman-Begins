@@ -189,6 +189,7 @@ game.DeadEntity = me.Entity.extend({
 /*** Explosion entity***/
 game.ExplosionEntity = me.Entity.extend({
 	init: function(x, y, settings){
+    console.log("3");
 		settings.image = "expo";
 		settings. width = 128;
 		settings.height = 128;
@@ -315,25 +316,28 @@ game.bossEntity = me.Entity.extend({
 	init: function(x, y, settings){
 		settings.z = 4;
 		settings.name = "cityboss";
-		settings.width = 55;
-		settings.height = 60;
+		settings.width = 70;
+		settings.height = 62;
 		settings.image = "boss";
 		this._super(me.Entity, 'init', [x, y, settings]);
-		this.body.collisionType = me.collision.types.WORLD_SHAPE;
-		this.body.setCollisionMask(me.collision.types.PROJECTILE_OBJECT);
+		this.body.collisionType = me.collision.types.ENEMY_OBJECT;
+    //console.log("init");
 	},	
 	
 	update: function(dt){
+    //console.log("update");
 		me.collision.check(this);
 	},
 	
 	onCollision: function(response, other){
+    //console.log("1");
 		if(response.b.body.collisionType === me.collision.types.PROJECTILE_OBJECT){
 	  		var explosion = me.pool.pull("ExplosionEntity", this.pos.x - 30, this.pos.y - 25, {});
 	  		me.game.world.removeChild(other);
 	  		var trash = me.pool.pull("GarbageEntity", other.pos.x, other.pos.y, {image: "garbage", width: 10, height: 10});
-	  		me.game.world.addChild(trash);
-	 		me.game.world.removeChild(this);
+	  		//console.log("2");
+        me.game.world.addChild(trash);
+	 		  me.game.world.removeChild(this);
 	      	game.data.score += 200;
   		}
   		return false;

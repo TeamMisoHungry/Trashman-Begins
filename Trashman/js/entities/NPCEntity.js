@@ -7,22 +7,6 @@
  * 1 penguin = 100 pts
  */
 
-game.JellyEntity = me.Entity.extend({	
-
-	init: function(x, y, settings){
-		this._super(me.Entity, 'init', [x, y, settings]);
-		this.renderable.addAnimation("idle", [0],200);
-		this.renderable.setCurrentAnimation("idle");
-		this.body.collisionType = me.collision.types.NPC_OBJECT;
-	},
-
-	onCollision: function(response, other){
-		game.data.talking_to_jelly = true;
-		game.data.notTalking = false;
-		me.game.world.addChild(new game.chatbox(0, 0));
-		this.body.setCollisionMask(me.collision.types.NPC_OBJECT);
-	}
-});
 
 game.MikuEntity = me.Entity.extend({	
 
@@ -131,6 +115,21 @@ game.ArielEntity = me.Entity.extend({
 		game.data.notTalking = false;
 		me.game.world.addChild(new game.chatbox(0, 0));
 		game.data.blade += 1;
+		this.body.setCollisionMask(me.collision.types.NPC_OBJECT);
+	}
+});
+
+game.ScreenEntity = me.Entity.extend({	
+
+	init: function(x, y, settings){
+		this._super(me.Entity, 'init', [x, y, settings]);
+		this.body.collisionType = me.collision.types.NPC_OBJECT;
+	},
+
+	onCollision: function(response, other){
+		game.data.bossMap = true;
+		game.data.notTalking = false;
+		me.game.world.addChild(new game.chatbox(0, 0));
 		this.body.setCollisionMask(me.collision.types.NPC_OBJECT);
 	}
 });
@@ -259,6 +258,7 @@ game.chatbox = me.GUI_Object.extend({
 	        game.data.talking_to_gumi = false;
 	        game.data.talking_to_ariel = false;
 	        game.data.talking_to_reki = false;
+	        game.data.bossMAP = false;
 	 		game.data.notTalking = true;
 			game.data.talking_to_alice2 = false;
 	    }
