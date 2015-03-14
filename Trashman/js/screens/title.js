@@ -15,9 +15,9 @@ game.TitleScreen = me.ScreenObject.extend({
       			me.state.change(me.state.GAMEOVER);
 	        }
     	});
-/*	 if(me.audio.getCurrentTrack() == "title") return;
+	 if(me.audio.getCurrentTrack() == "title") return;
  	 me.audio.stopTrack();
- 	 me.audio.playTrack("title", true);*/
+ 	 me.audio.playTrack("title", true);
   },
  
   /**    
@@ -68,8 +68,8 @@ game.instrucButton = me.GUI_Object.extend({
 	init:function (x, y){
     	var settings = {};
       	settings.image = me.loader.getImage('instruc');
-      	settings.spritewidth = 75;
-      	settings.spriteheight = 15;
+      	settings.spritewidth = 125;
+      	settings.spriteheight = 20;
       	// super constructor
 	    this._super(me.GUI_Object, "init", [x, y, settings]);
       	// define the object z order
