@@ -217,18 +217,14 @@ game.HUD.Dialog = me.Renderable.extend({
         }
 
         if(game.data.talking_to_ariel){
-            if(name == "toDesert2"){
-                game.data.dialog = "HI THERE, I FOUND THIS TURBINE BLADE\n"+
-                                    "BY THE RIVER. HERE, YOU CAN TAKE IT.";
-            }
+            game.data.dialog = "HI THERE, I FOUND THIS TURBINE BLADE\n"+
+                                "BY THE RIVER. HERE, YOU CAN TAKE IT.";
         }
 
         if(game.data.talking_to_sakura){
-            if(name = "headquarter"){
-                game.data.dialog = "OH! HELLO THERE HANDSOME YOUNG MAN.\n"+
-                                    "I FOUND THIS TURBINE BLADE THE OTHER\n"+
-                                    "DAY. I'LL GIVE IT TO YOU!";
-            }
+            game.data.dialog = "OH! HELLO THERE HANDSOME YOUNG MAN.\n"+
+                                "I FOUND THIS TURBINE BLADE THE OTHER\n"+
+                                "DAY. I'LL GIVE IT TO YOU!";
         }
 
         if(game.data.talking_to_mimi){
