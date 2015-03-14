@@ -67,17 +67,17 @@ game.PlayerEntity = me.Entity.extend({
  			me.audio.stopTrack();
  			me.audio.playTrack("tocity", true);
  		}
- 		else if(name == "city"){
+ 		else if(name == "city" || name == "citypuzzle1" || name == "citypuzzle2" || name == "citypuzzle3" || name == "citypuzzlebegin" || name == "citypuzzleend"){
  			if(track == "city") return;
  			me.audio.stopTrack();
  			me.audio.playTrack("city", true);
  		}
- 		else if(name == "antarctica" || name == "toantar2" || name == "antarlevel2a" || name == "toantar2b"){
+ 		else if(name == "antarctica" || name == "toantar2"  || name == "toantar2b"  || name == "antarlevelbegin"  || name == "antarlevelend"){
  			if(track == "ice") return;
  			me.audio.stopTrack();
  			me.audio.playTrack("ice", true);
  		}
- 		else if (name == "antarlevel1" || name == "antarlevel2" || name == "antarlevel3"){
+ 		else if (name == "antarlevel1" || name == "antarlevel2" || name == "antarlevel3"|| name == "antarlevel2a" || name == "antarlevel3a"){
  			if(track == "icelevel") return;
 			me.audio.stopTrack();
  			me.audio.playTrack("icelevel", true);
