@@ -22,9 +22,9 @@ game.IntroScreen = me.ScreenObject.extend({
 	        }
     	});
     	
-    	if(me.audio.getCurrentTrack() == "hq") return;
+    	if(me.audio.getCurrentTrack() == "title") return;
  		me.audio.stopTrack();
- 	 	me.audio.playTrack("hq", true);
+ 	 	me.audio.playTrack("title", true);
     },
 
     /**

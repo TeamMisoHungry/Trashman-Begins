@@ -26,9 +26,9 @@ game.InstrucScreen = me.ScreenObject.extend({
 	        }
     	});
     	
-    	if(me.audio.getCurrentTrack() == "hq") return;
-	 	 me.audio.stopTrack();
-	 	 me.audio.playTrack("hq", true);
+    	if(me.audio.getCurrentTrack() == "title") return;
+ 		me.audio.stopTrack();
+ 	 	me.audio.playTrack("title", true);
     },
 
     /**
