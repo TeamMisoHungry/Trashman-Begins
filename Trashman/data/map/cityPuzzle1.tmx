@@ -23,13 +23,6 @@
     <property name="spritewidth" value="24"/>
    </properties>
   </object>
-  <object id="49" name="me.LevelEntity" x="304" y="12" width="36" height="8">
-   <properties>
-    <property name="duration" value="250"/>
-    <property name="fade" value="#000000"/>
-    <property name="to" value="cityPuzzleBegin"/>
-   </properties>
-  </object>
  </objectgroup>
  <objectgroup name="EnemyEntities">
   <object id="58" name="TurretEntity" x="272" y="163" width="16" height="14">

@@ -80,7 +80,7 @@
   </object>
   <object id="27" name="me.LevelEntity" x="4" y="772" width="308" height="16">
    <properties>
-    <property name="duration" value="1"/>
+    <property name="duration" value="250"/>
     <property name="fade" value="#000000"/>
     <property name="to" value="antarlevel1b"/>
    </properties>

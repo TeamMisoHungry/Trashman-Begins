@@ -121,7 +121,7 @@
   </object>
   <object id="27" name="me.LevelEntity" x="195" y="1232" width="89" height="14">
    <properties>
-    <property name="duration" value="1"/>
+    <property name="duration" value="250"/>
     <property name="fade" value="#000000"/>
     <property name="to" value="antarlevel2b"/>
    </properties>
