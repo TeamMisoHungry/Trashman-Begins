@@ -15,9 +15,9 @@ game.TitleScreen = me.ScreenObject.extend({
       			me.state.change(me.state.GAMEOVER);
 	        }
     	});
-	 if(me.audio.getCurrentTrack() == "title") return;
+	 if(me.audio.getCurrentTrack() == "hq") return;
  	 me.audio.stopTrack();
- 	 me.audio.playTrack("title", true);
+ 	 me.audio.playTrack("hq", true);
   },
  
   /**    

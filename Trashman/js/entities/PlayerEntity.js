@@ -55,17 +55,12 @@ game.PlayerEntity = me.Entity.extend({
  		
  		var track = me.audio.getCurrentTrack();
  		var name = me.game.currentLevel.name;
- 		
- 		if(name == "headquarter" || name == "headquartera" || name == "headquarterb" || name == "headquarterc"){
+ 		console.log(name);
+ 		if(name == "headquarter" || name == "headquartera" || name == "headquarterb" || name == "headquarterc"||name == "tocity1" || name == "todesert1" || name == "todesert2"
+ 				|| name == "toantar1"){
  			if(track == "hq") return;
  			me.audio.stopTrack();
  			me.audio.playTrack("hq", true);
- 		}
- 		else if (name == "tocity1" || name == "todesert1" || name == "todesert2"
- 				|| name == "toantar1" ){
- 			if (track == "forest") return;
- 			me.audio.stopTrack();
- 			me.audio.playTrack("forest", true);
  		}
  		else if(name == "tocity2" || name == "tocity3" ){
  			if(track == "tocity") return;
