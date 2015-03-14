@@ -240,8 +240,9 @@ game.HUD.Dialog = me.Renderable.extend({
         }
 
         if(game.data.talking_to_gumi){
-        	game.data.dialog = "YOU HAVE THE TURBINE BLADES? OKAY, YOU CAN\n"+
-                                "JUST SIMPLY TOUCH THE BROKEN ONES TO FIX IT\n";
+        	game.data.dialog = "YOU HAVE THE TURBINE BLADES? OKAY,\n"+ 
+                                "YOU CAN JUST SIMPLY TOUCH THE BROKEN\n"+
+                                "ONES TO FIX IT\n";
         }
 
         if(game.data.talking_to_reki){
