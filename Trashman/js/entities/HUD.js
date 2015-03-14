@@ -163,8 +163,8 @@ game.HUD.Dialog = me.Renderable.extend({
                 game.data.dialog = "HELLO AXEL! WELCOME TO TIBBERS TOWN!\n"+
                                     "I'M ALICE AND I'LL BE YOUR TASK MANAGER.\n"+
                                     "AREN'T YOU GLAD TO HAVE SUCH A CUTE\n"+
-                                    "MANAGER? HEE HEE. YOUR FIRST IS\n"+
-                                    "TASK: GO HELP MIKU AT ANTARCTICA TOWN\n"+
+                                    "MANAGER? HEE HEE. YOUR FIRST TASK\n"+
+                                    "IS: GO HELP MIKU AT ANTARCTICA TOWN\n"+
                                     "AND THEN COME BACK TO ME. YOU CAN FIND\n"+
                                     "ANTARCTICA TOWN IF YOU TRAVEL SOUTH FROM";
                                     
