@@ -19,6 +19,7 @@ game.EnemyEntity = me.Entity.extend({
      
  
     this._super(me.Entity, 'init', [x, y, settings]);
+    this.body.collisionType = me.collision.types.ENEMY_OBJECT;
   
     // set start/end position based on the initial area size
     x = this.pos.x;
@@ -95,6 +96,8 @@ game.EnemyEntity2 = me.Entity.extend({
      
     // call the parent constructor
     this._super(me.Entity, 'init', [x, y , settings]);
+    
+    this.body.collisionType = me.collision.types.ENEMY_OBJECT;
   
     // set start/end position based on the initial area size
     y = this.pos.y;
@@ -112,7 +115,7 @@ game.EnemyEntity2 = me.Entity.extend({
     this.body.setVelocity(1.5, 1.5);
     
     this.renderable.addAnimation("walkDown", [0, 1, 2, 3, 4, 5, 6, 7, 8]);
-  this.renderable.addAnimation("walkUp", [9, 10, 11, 12, 13, 14, 15, 16, 17]);     
+  	this.renderable.addAnimation("walkUp", [9, 10, 11, 12, 13, 14, 15, 16, 17]);     
   },
  
   // manage the enemy movement
@@ -188,6 +191,13 @@ game.ExplosionEntity = me.Entity.extend({
 		settings. width = 128;
 		settings.height = 128;
 		this._super(me.Entity, 'init', [x, y, settings]);
+		this.body.setCollisionType = me.collision.types.NO_OBJECT;
+		this.renderable.addAnimation("boom", [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]);
+		this.renderable.setCurrentAnimation("boom", (function(){
+			me.game.world.removeChild(this);
+			return false;
+		}).bind(this));
+		me.game.world.addChild(this, Infinity);
 	}
 	
 });
@@ -214,6 +224,7 @@ game.IceEnemyEntity = me.Entity.extend({
  
     this._super(me.Entity, 'init', [x, y, settings]);
   
+  	this.body.collisionType = me.collision.types.ENEMY_OBJECT;
     // set start/end position based on the initial area size
     x = this.pos.x;
     this.startX = x;
@@ -290,6 +301,8 @@ game.IceEnemyEntity2 = me.Entity.extend({
      
     // call the parent constructor
     this._super(me.Entity, 'init', [x, y , settings]);
+    
+    this.body.collisionType = me.collision.types.ENEMY_OBJECT;
   
     // set start/end position based on the initial area size
     y = this.pos.y;
@@ -475,11 +488,24 @@ game.bossEntity = me.Entity.extend({
 		settings.height = 60;
 		settings.image = "boss";
 		this._super(me.Entity, 'init', [x, y, settings]);
-		this.body.collisionType = me.collision.types.ACTION_OBJECT;
-
+		this.body.collisionType = me.collision.types.WORLD_SHAPE;
+		this.body.setCollisionMask(me.collision.types.PROJECTILE_OBJECT);
 	},	
 	
-	onCollision: function(){
-		return false;
+	update: function(dt){
+		me.collision.check(this);
+	},
+	
+	onCollision: function(response, other){
+		if(response.b.body.collisionType === me.collision.types.PROJECTILE_OBJECT){
+	  		var explosion = me.pool.pull("ExplosionEntity", this.pos.x - 30, this.pos.y - 25, {});
+	  		me.game.world.removeChild(other);
+	  		var trash = me.pool.pull("GarbageEntity", other.pos.x, other.pos.y, {image: "garbage", width: 10, height: 10});
+	  		me.game.world.addChild(trash);
+	 		me.game.world.removeChild(this);
+	      	game.data.score += 200;
+  		}
+  		return false;
+	
 	}
 });

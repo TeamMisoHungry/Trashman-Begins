@@ -7,12 +7,24 @@
  * 1 penguin = 100 pts
  */
 
+game.TalkEntity = me.Entity.extend({	
+	init: function(x, y, settings){
+		settings.image = "Alicetalk";
+		settings.width = 50;
+		settings.height = 50;
+		settings.z = 5000;
+		this.z = 5000;
+		this._super(me.Entity, 'init', [x, y, settings]);
+	},
+});
+
 game.JellyEntity = me.Entity.extend({	
 
 	init: function(x, y, settings){
 		this._super(me.Entity, 'init', [x, y, settings]);
 		this.renderable.addAnimation("idle", [0],200);
 		this.renderable.setCurrentAnimation("idle");
+		this.body.collisionType = me.collision.types.NPC_OBJECT;
 	},
 
 	onCollision: function(response, other){
@@ -29,6 +41,7 @@ game.MikuEntity = me.Entity.extend({
 		this._super(me.Entity, 'init', [x, y, settings]);
 		this.renderable.addAnimation("idle", [0, 1, 2, 3, 4, 5],200);
 		this.renderable.setCurrentAnimation("idle");
+		this.body.collisionType = me.collision.types.NPC_OBJECT;
 	},
 
 	onCollision: function(response, other){
@@ -52,25 +65,30 @@ game.SakuraEntity = me.Entity.extend({
 		this._super(me.Entity, 'init', [x, y, settings]);
 		this.renderable.addAnimation("idle", [0, 1, 2, 3, 4, 5, 6],200);
 		this.renderable.setCurrentAnimation("idle");
+		this.body.collisionType = me.collision.types.NPC_OBJECT;
 	},
 
 	onCollision: function(response, other){
 		game.data.talking_to_sakura = true;
 		game.data.notTalking = false;
 		me.game.world.addChild(new game.chatbox(0, 0));
+		game.data.blade += 1;
 		this.body.setCollisionMask(me.collision.types.NPC_OBJECT);
 	}
 });
 
-game.AliceEntity = me.Entity.extend({	
-
+game.AliceEntity = me.Entity.extend({
+	
 	init: function(x, y, settings){
 		this._super(me.Entity, 'init', [x, y, settings]);
 		this.renderable.addAnimation("idle", [0, 1, 2, 3, 4],200);
 		this.renderable.setCurrentAnimation("idle");
+		this.body.collisionType = me.collision.types.NPC_OBJECT;
 	},
 
 	onCollision: function(response, other){
+		var alice = me.pool.pull("TalkEntity", 10, 450, {image: "Alicetalk", width: 300, height: 300});
+		me.game.world.addChild(alice);
 		game.data.talking_to_alice = true;
 		game.data.notTalking = false;
 		me.game.world.addChild(new game.chatbox(0, 0));
@@ -84,6 +102,7 @@ game.MimiEntity = me.Entity.extend({
 		this._super(me.Entity, 'init', [x, y, settings]);
 		this.renderable.addAnimation("idle", [0, 1, 2, 3, 4, 5, 6],200);
 		this.renderable.setCurrentAnimation("idle");
+		this.body.collisionType = me.collision.types.NPC_OBJECT;
 	},
 
 	onCollision: function(response, other){
@@ -100,6 +119,7 @@ game.GumiEntity = me.Entity.extend({
 		this._super(me.Entity, 'init', [x, y, settings]);
 		this.renderable.addAnimation("idle", [0, 1, 2, 3, 4],200);
 		this.renderable.setCurrentAnimation("idle");
+		this.body.collisionType = me.collision.types.NPC_OBJECT;
 	},
 	update: function(dt) {
 		this.time++;
@@ -132,12 +152,14 @@ game.ArielEntity = me.Entity.extend({
 		this._super(me.Entity, 'init', [x, y, settings]);
 		this.renderable.addAnimation("idle", [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],200);
 		this.renderable.setCurrentAnimation("idle");
+		this.body.collisionType = me.collision.types.NPC_OBJECT;
 	},
 
 	onCollision: function(response, other){
 		game.data.talking_to_ariel = true;
 		game.data.notTalking = false;
 		me.game.world.addChild(new game.chatbox(0, 0));
+		game.data.blade += 1;
 		this.body.setCollisionMask(me.collision.types.NPC_OBJECT);
 	}
 });
@@ -148,13 +170,25 @@ game.RekiEntity = me.Entity.extend({
 		this._super(me.Entity, 'init', [x, y, settings]);
 		this.renderable.addAnimation("idle", [0, 1, 2, 3, 4, 5, 6],200);
 		this.renderable.setCurrentAnimation("idle");
+		this.body.collisionType = me.collision.types.NPC_OBJECT;
 	},
 
 	onCollision: function(response, other){
-		game.data.talking_to_reki = true;
-		game.data.notTalking = false;
-		me.game.world.addChild(new game.chatbox(0, 0));
-		this.body.setCollisionMask(me.collision.types.NPC_OBJECT);
+		if(me.game.currentLevel.name == "citypuzzleend"){
+			if(game.data.hp<=100 && game.data.hp>=80){
+				game.data.score += 500;
+			}
+			else if(game.data.hp<80 && game.data.hp>=30){
+				game.data.score += 250;
+			}
+			else if(game.data.hp<30){
+				game.data.score += 100;
+			}
+			game.data.talking_to_reki = true;
+			game.data.notTalking = false;
+			me.game.world.addChild(new game.chatbox(0, 0));
+			this.body.setCollisionMask(me.collision.types.NPC_OBJECT);
+		}
 	}
 });
 
@@ -169,7 +203,7 @@ game.BrokenTurbineEntity = me.Entity.extend({
     this._super(me.Entity, 'init', [x, y, settings]);
   },
   onCollision : function (response, other) {
-		if(game.data.blade>0){
+		if(game.data.blade > 0){
 			game.data.fixing_turbine = true;
 			game.data.notTalking = false;
 			me.game.world.addChild(new game.chatbox(0, 0));
@@ -195,7 +229,30 @@ game.FixedTurbineEntity = me.Entity.extend({
 game.chatbox = me.GUI_Object.extend({
 	init:function (x, y){
 		var settings = {};
+		if(game.data.talking_to_miku){
+			settings.image = me.loader.getImage('Mikutalk');
+		}
+		else if(game.data.talking_to_sakura){
+			settings.image = me.loader.getImage('Sakuratalk');
+		}
+		else if(game.data.talking_to_alice){
+			settings.image = me.loader.getImage('Alicetalk');
+		}
+		else if(game.data.talking_to_mimi){
+			settings.image = me.loader.getImage('Mimitalk');
+		}
+		else if(game.data.talking_to_gumi){
+			settings.image = me.loader.getImage('Gumitalk');
+		}
+		else if(game.data.talking_to_ariel){
+			settings.image = me.loader.getImage('Arieltalk');
+		}
+		else if(game.data.talking_to_reki){
+			settings.image = me.loader.getImage('Rekitalk');
+		}
+		else{
 			settings.image = me.loader.getImage('TextBox');
+		}
       		settings.spritewidth = 640;
       		settings.spriteheight = 480;
       		// super constructor
@@ -223,7 +280,7 @@ game.chatbox = me.GUI_Object.extend({
 	        game.data.talking_to_reki = false;
 	        game.data.talking_to_gumi_noexit = false;
 	 		game.data.notTalking = true;
-	 		//me.game.world.removeChild();
+	 		//me.game.world.removeChild(alice);
 	    }
 	}
 });
