@@ -270,16 +270,7 @@ game.chatbox = me.GUI_Object.extend({
 	        game.data.talking_to_ariel = false;
 	        game.data.talking_to_reki = false;
 	 		game.data.notTalking = true;
-
-	 		game.data.talking_to_broken_turbine2 = false;
-	 		game.data.talking_to_miku2 = false;
-	 		game.data.talking_to_jelly2 = false;
-	 		game.data.talking_to_sakura2 = false;
-	        game.data.talking_to_alice2 = false;
-	        game.data.talking_to_mimi2 = false;
-	        game.data.talking_to_gumi2 = false;
-	        game.data.talking_to_ariel2 = false;
-	        game.data.talking_to_reki2 = false;
+			game.data.talking_to_alice2 = false;
 	    }
 	}
 });
