@@ -141,23 +141,23 @@ game.HUD.Dialog = me.Renderable.extend({
         
         if (game.data.bossMap){
             if( name == "citypuzzleend"){
-                game.data.dialog = "DESTROY THAT MACHINE ON THE RIGHT";
+                game.data.dialog = "DESTROY THAT MACHINE ON THE RIGHT\n(PRESS T TO CLOSE BOX";
             }
             if ( name == "headquarterc"){
                 game.data.dialog = "CONGRATULATION AXEL, YOU COMPLETED ALL\n"+
-                                "THE TASKS";
+                                "THE TASKS\n(PRESS T TO CLOSE BOX";
 
             }
         }
 
         if (game.data.talking_to_miku) {
             if((name == "antarctica") && (!game.data.iceDone)){
-                game.data.dialog = "OH NO... PLEASE HELP THE PENGUINS.";
+                game.data.dialog = "OH NO... PLEASE HELP THE PENGUINS.\n(PRESS T TO CLOSE BOX";
             }
             if(name == "antarlevel1b" || name == "antarlevel2b"){
                 game.data.dialog = "THANK YOU. HERE ARE  SOME POINTS\n"+ 
                                     "FOR YOU. THERE ARE MORE PENGUINS \n"+ 
-                                    "AHEAD, HURRY.";
+                                    "AHEAD, HURRY. \n(PRESS T TO CLOSE BOX)";
             }
             if(name == "antarlevelbegin" || name == "antarlevel2a" || name == "antarlevel3a"){
                 game.data.dialog = "LETS HURRY. REMEMBER THAT SOME\n"+ 
@@ -165,14 +165,14 @@ game.HUD.Dialog = me.Renderable.extend({
                                     "JUST TRY TO SAVE AS MUCH AS YOU CAN.\n"+ 
                                     "I WILL GIVE YOU POINTS FOR EVERY PENGUINS\n"+
                                     "YOU SAVE. ALSO, PLEASE TALK TO ME AFTER\n"+
-                                    "YOU COMPLETE A LEVEL.";
+                                    "YOU COMPLETE A LEVEL. \n(PRESS T TO CLOSE BOX)";
             }
             if(name == "antarlevelend"){
                 game.data.dialog = "PHEW, WE SAVED MOST OF THEM. THANK YOU\n"+ 
                                     "AGAIN. AH, IM MIKU AND YOU ARE AXEL\n"+ 
                                     "RIGHT? NICE TO MEET YOU. YOU ARE A GOOD\n"+ 
                                     "GUY, SO I WILL GIVE YOU A TURBINE BLADE.\n"+ 
-                                    "IT WILL HELP YOU ALONG THE WAY. BYE.";
+                                    "IT WILL HELP YOU ALONG THE WAY. BYE. \n(PRESS T TO CLOSE BOX)";
             }
             return true;
         }
@@ -202,7 +202,7 @@ game.HUD.Dialog = me.Renderable.extend({
                                     "REKI GAVE YOU A TURBINE BLADE. SHE\n"+ 
                                     "MUST HAVE LIKED YOU. IM SUCH A GOOD\n"+ 
                                     "MANAGER HEE HEE. ANYWAYS, YOUR NEXT AND\n"+ 
-                                    "LAST TASK IS TO GO WEST, MEET MIMI AT GOBI TOWN.\n"+ 
+                                    "LAST TASK IS TO GO EAST, MEET MIMI AT GOBI TOWN.\n"+ 
                                     "SHE WILL TELL YOU HOW YOU  CAN USE THOSE\n"+
                                     "(CLICK BOX TO KEEP TALKING)";
             }
@@ -239,7 +239,7 @@ game.HUD.Dialog = me.Renderable.extend({
         if(game.data.talking_to_ariel){
             game.data.dialog = "OMG WHAT ARE YOU LOOKING AT.\n"+
                                 "!SHE THREW SOMETHING AT YOU......!\n"+
-                                "!YOU GAINED A TURBINE BLADE! HURRAY.";
+                                "!YOU GAINED A TURBINE BLADE! HURRAY. \n(PRESS T TO CLOSE BOX)";
         }
 
 
@@ -247,7 +247,7 @@ game.HUD.Dialog = me.Renderable.extend({
         if(game.data.talking_to_sakura){
             game.data.dialog = "OH! HELLO THERE HANDSOME YOUNG MAN.\n"+
                                 "I FOUND THIS TURBINE BLADE THE OTHER\n"+
-                                "DAY. I'LL GIVE IT TO YOU! WINKIE FACE";
+                                "DAY. I'LL GIVE IT TO YOU! WINKIE FACE. \n(PRESS T TO CLOSE BOX) ";
         }
 
         if(game.data.talking_to_mimi){
@@ -255,16 +255,16 @@ game.HUD.Dialog = me.Renderable.extend({
                                 "FOR YOU. YOUR LAST TASK IS TO FIX THE\n"+
                                 "TURBINES WITH ALL THE BLADES YOU'VE OBTAINED.\n"+
                                 "REMEMBER TO EXPLORE THE MAP,\n"+
-                                "YOU MIGHT BE ABLE TO FIND SOME MORE.";
+                                "YOU MIGHT BE ABLE TO FIND SOME MORE. \n(PRESS T TO CLOSE BOX)";
         }
 
         if (game.data.fixing_turbine) {
-            game.data.dialog = "YOU FIXED THE TURBINE";
+            game.data.dialog = "YOU FIXED THE TURBINE. \n(PRESS T TO CLOSE BOX)";
         }
 
         if(game.data.talking_to_gumi){
         	game.data.dialog = "YOU HAVE THE TURBINE BLADES? OKAY, YOU CAN\n"+
-                                "JUST SIMPLY TOUCH THE BROKEN ONES TO FIX IT\n";
+                                "JUST SIMPLY TOUCH THE BROKEN ONES TO FIX IT. \n(PRESS T TO CLOSE BOX)";
         }
 
         if(game.data.talking_to_reki){
@@ -275,7 +275,7 @@ game.HUD.Dialog = me.Renderable.extend({
                                     "OH HEY, ARE YOU THE ONE THAT ALICE SENT?\n"+
                                     "OKAY, I NEED YOU TO HELP ME TAKE DOWN\n"+
                                     "THE CORPORATION. PLEASE HEAD NORTH FROM\n"+
-                                    "HERE, I'LL MEET YOU. ";
+                                    "HERE, I'LL MEET YOU. (PRESS T TO CLOSE BOX)";
             }
             if(name == "citypuzzlebegin"){
                 game.data.dialog = "ARE YOU READY? OKAY, YOU HAVE TO CAREFULLY\n"+
@@ -283,14 +283,14 @@ game.HUD.Dialog = me.Renderable.extend({
                                     "THE LASERS' PATTERNS. THEN, TRY TO PASS THEM\n"+
                                     "WITHOUT GETTING HURT. THE MORE HP YOU \n"+
                                     "HAVE AT THE END, THE MORE POINTS IM\n"+
-                                    "GOING TO GIVE YOU. LET'S GO.";
+                                    "GOING TO GIVE YOU. LET'S GO. \n(PRESS T TO CLOSE BOX)";
             }
             if(name == "citypuzzleend"){
                 game.data.dialog = "THANK YOU FOR HELPING ME. DID I TELL YOU\n"+
                                     "MY NAME? OOPS HAHA, IT IS REKI. NICE TO\n"+
                                     "MEET YOU. I WILL GIVE YOU POINTS BASED ON\n"+
                                     "YOUR HP AND ALSO HERE IS A TURBINE BLADE\n"+
-                                    "TAKE GOOD CARE OF IT, BYE.";
+                                    "TAKE GOOD CARE OF IT, BYE. \n(PRESS T TO CLOSE BOX)";
             }
         }
         if (game.data.notTalking) {
