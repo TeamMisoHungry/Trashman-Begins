@@ -216,15 +216,67 @@ game.HUD.Dialog = me.Renderable.extend({
         }
 
         if(game.data.talking_to_ariel){
-
+            if(name == "toDesert2"){
+                game.data.dialog = "HI THERE, I FOUND THIS TURBINE BLADE\n"+
+                                    "BY THE RIVER. HERE, YOU CAN TAKE IT.";
+            }
         }
+
+        if(game.data.talking_to_sakura){
+            if(name = "headquarter"){
+                game.data.dialog = "OH! HELLO THERE HANDSOME YOUNG MAN.\n"+
+                                    "I FOUND THIS TURBINE BLADE THE OTHER\n"+
+                                    "DAY. I'LL GIVE IT TO YOU!";
+            }
+        }
+
+        if(game.data.talking_to_mimi){
+            game.data.dialog = "WELCOME TO GOBI TOWN! I HAVE BEEN WAITING\n"+
+                                "FOR YOU. YOUR LAST TASK IS TO FIX THE\n"+
+                                "TURBINES WITH ALL THE BLADES YOU'VE OBTAINED.\n"+
+                                "THERE ARE FIVE BROKEN ONES, SO I HOPE YOU\n"+
+                                "HAVE 5 BLADES. REMEMBER TO EXPLORE THE MAP,\n"+
+                                "YOU MIGHT BE ABLE TO FIND SOME MORE.";
+        }
+
         if (game.data.fixing_turbine) {
             game.data.dialog = "YOU FIXED THE TURBINE!";
         }
+
         if(game.data.talking_to_gumi){
-        	game.data.dialog = "YOU COLLECTED TURBINE BLADES TO HELP OUT? I'LL LET\n\
-                                YOU THROUGH";
+        	game.data.dialog = "YOU HAVE THEM TURBINE BLADES? OKAY, YOU CAN\n"+
+                                "JUST SIMPLE TOUCH THE BROKEN ONES TO FIX IT\n";
         }
+
+        if(game.data.talking_to_reki){
+            if(name == "city"){
+                game.data.dialog = "URG! THE CORPORATION IS PISSING ME OFF,\n"+
+                                    "WHAT'S WITH ALL THE POLLUTION AND\n"+
+                                    "TRASHES. I'M SO GOING TO TAKE YOU DOWN!\n"+
+                                    "OH HEY, ARE YOU THE ONE THAT ALICE SENT?\n"+
+                                    "OKAY, I NEED YOU TO HELP ME TAKE DOWN\n"+
+                                    "THE CORPORATION. PLEASE HEAD NORTH FROM\n"+
+                                    "HERE, I'LL MEET YOU. REMEMBER TO PICK UP\n"+
+                                    "THEM TRASH";
+            }
+            if(game == "cityPuzzleBegin"){
+                game.data.dialog = "ARE YOU READY? OKAY, YOU HAVE TO CAREFULLY\n"+
+                                    "OBSERVE THE MOVEMENTSOF THE ENEMIES AND\n"+
+                                    "THE LASER PATTERNS. THEN, TRY TO PASS THEM\n"+
+                                    "WITHOUT GETTING HIT. YOU WILL LOSE HP IF\n"+
+                                    "YOU TOUCH THE LASER OF THE ENEMIES. THE\n"+
+                                    "MORE HP YOU HAVE AT THE END, THE MORE\n"+
+                                    "POINTS I'M GOING TO GIVE YOU. LET'S GO";
+            }
+            if(game == "cityPuzzleEnd"){
+                game.data.dialog = "THANK YOU FOR HELPING ME. DID I TELL YOU\n"+
+                                    "MY NAME? OOPS HAHA, IT'S REKI. NICE TO\n"+
+                                    "MEET YOU. I'LL GIVE YOU POINTS BASED ON\n"+
+                                    "YOUR HP AND ALSO HERE'S A TURBIN BLADE\n"+
+                                    "TAKE GOOD CARE OF IT! BYE!";
+            }
+        }
+
         if(game.data.talking_to_gumi_noexit){
         	game.data.dialog = "THERE IS ANOTHER TURBINE BLADE LYING AROUND\n\
                                 SOMEWHERE HERE...";
