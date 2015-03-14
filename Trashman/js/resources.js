@@ -47,7 +47,6 @@ game.resources = [
 	{name: "fire", type: "image", src: "data/img/sprites/laserBeam.png"},
 	{name: "potion", type: "image", src: "data/img/sprites/potion.png"},
 	{name: "boss", type: "image", src: "data/img/sprites/boss.png"},
-	//{name: "sign", type: "image", src: "data/img/sprites/sign.png"},
 	{name: "brokenTurbine", type: "image", src: "data/img/sprites/brokenTurbine.png"},
 	{name: "fixedTurbine", type: "image", src: "data/img/sprites/fixedTurbine.png"},
 	{name: "penguin", type: "image", src: "data/img/sprites/penguin.png"},
@@ -101,6 +100,7 @@ game.resources = [
 	{name: "goodImage", type:"image", src:"data/endings/goodImage.png"},
 	{name: "okImage", type:"image", src:"data/endings/okImage.png"},
 	{name: "badImage", type:"image", src:"data/endings/badImage.png"},
+	{name: "crew", type:"image", src:"data/endings/credits.png"},
 	
     /* 
 	*  Maps
@@ -114,14 +114,9 @@ game.resources = [
 
     //*******  CITY  ***********
     {name: "city", type: "tmx", src: "data/map/city.tmx"},
-    {name: "cityb", type: "tmx", src: "data/map/cityb.tmx"},
-    {name: "cityc", type: "tmx", src: "data/map/cityc.tmx"}, //after done with mission
     {name: "toCity1", type: "tmx", src: "data/map/toCity1.tmx"},
 	{name: "toCity2", type: "tmx", src: "data/map/toCity2.tmx"},
 	{name: "toCity3", type: "tmx", src: "data/map/toCity3.tmx"},
-	{name: "toCity1b", type: "tmx", src: "data/map/toCity1b.tmx"},
-	{name: "toCity2b", type: "tmx", src: "data/map/toCity2b.tmx"},
-	{name: "toCity3b", type: "tmx", src: "data/map/toCity3b.tmx"},
 	{name: "cityPuzzleBegin", type: "tmx", src: "data/map/cityPuzzleBegin.tmx"},
 	{name: "cityPuzzle1", type: "tmx", src: "data/map/cityPuzzle1.tmx"},
 	{name: "cityPuzzle2", type: "tmx", src: "data/map/cityPuzzle2.tmx"},
@@ -134,18 +129,12 @@ game.resources = [
 	{name: "toDesert1", type: "tmx", src: "data/map/toDesert1.tmx"},
 	{name: "toDesert2", type: "tmx", src: "data/map/toDesert2.tmx"},
 	{name: "toDesert3", type: "tmx", src: "data/map/toDesert3.tmx"},
-	{name: "toDesert1b", type: "tmx", src: "data/map/toDesert1b.tmx"},
-	{name: "toDesert2b", type: "tmx", src: "data/map/toDesert2b.tmx"},
-	{name: "toDesert3b", type: "tmx", src: "data/map/toDesert3b.tmx"},
 	{name: "turbineMap", type: "tmx", src: "data/map/turbineMap.tmx"},
 	
 	//*******  ANTARCTICA  **********
 	{name: "antarctica", type: "tmx", src: "data/map/antarctica.tmx"},
-	{name: "antarcticab", type: "tmx", src: "data/map/antarcticab.tmx"},
 	{name: "toAntar1", type: "tmx", src: "data/map/toAntar1.tmx"},
 	{name: "toAntar2", type: "tmx", src: "data/map/toAntar2.tmx"},
-	{name: "toAntar1b", type: "tmx", src: "data/map/toAntar1b.tmx"},
-	{name: "toAntar2b", type: "tmx", src: "data/map/toAntar2b.tmx"},
 	{name: "antarlevelBegin", type: "tmx", src: "data/map/antarlevelBegin.tmx"},
 	{name: "antarlevel1", type: "tmx", src: "data/map/antarlevel1.tmx"},
 	{name: "antarlevel1b", type: "tmx", src: "data/map/antarlevel1b.tmx"},
@@ -153,7 +142,6 @@ game.resources = [
     {name: "antarlevel2a", type: "tmx", src: "data/map/antarlevel2a.tmx"},
     {name: "antarlevel2b", type: "tmx", src: "data/map/antarlevel2b.tmx"},
 	{name: "antarlevel3", type: "tmx", src: "data/map/antarlevel3.tmx"},
-	{name: "antarlevel3a", type: "tmx", src: "data/map/antarlevel3a.tmx"},
 	{name: "antarlevelEnd", type: "tmx", src: "data/map/antarlevelEnd.tmx"},
 	
 	//******** Intro and instructions ********

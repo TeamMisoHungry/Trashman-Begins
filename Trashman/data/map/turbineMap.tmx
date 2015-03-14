@@ -121,8 +121,14 @@
     <property name="spritewidth" value="30"/>
    </properties>
   </object>
-  <object id="113" name="BrokenTurbineEntity" x="452" y="290" width="55" height="110"/>
-  <object id="114" name="BrokenTurbineEntity" x="236" y="287.333" width="55" height="110"/>
+  <object id="114" name="PotionEntity" x="40" y="648" width="30" height="30">
+   <properties>
+    <property name="image" value="potion"/>
+    <property name="spritewidth" value="30"/>
+   </properties>
+  </object>
+  <object id="116" name="BrokenTurbineEntity" x="248" y="275" width="55" height="110"/>
+  <object id="117" name="BrokenTurbineEntity" x="436" y="275" width="55" height="110"/>
  </objectgroup>
  <objectgroup name="EnemyEntities">
   <object id="74" name="EnemyEntity" x="393.333" y="749.333" width="380" height="32">

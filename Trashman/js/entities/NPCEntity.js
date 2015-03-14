@@ -72,6 +72,7 @@ game.SakuraEntity = me.Entity.extend({
 		game.data.talking_to_sakura = true;
 		game.data.notTalking = false;
 		me.game.world.addChild(new game.chatbox(0, 0));
+		game.data.blade += 1;
 		this.body.setCollisionMask(me.collision.types.NPC_OBJECT);
 	}
 });
@@ -158,6 +159,7 @@ game.ArielEntity = me.Entity.extend({
 		game.data.talking_to_ariel = true;
 		game.data.notTalking = false;
 		me.game.world.addChild(new game.chatbox(0, 0));
+		game.data.blade += 1;
 		this.body.setCollisionMask(me.collision.types.NPC_OBJECT);
 	}
 });

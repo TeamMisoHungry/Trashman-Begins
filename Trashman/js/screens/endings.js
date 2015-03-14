@@ -2,25 +2,25 @@ game.EndingScreen = me.ScreenObject.extend({
 	onResetEvent: function(){
 		if(game.time.overallTime <= 400 && game.data.score >= 2000){
 			me.game.world.addChild(new me.ImageLayer("good", 640, 480, "goodImage", 5000));
-			//me.game.world.addChild(new game.ending("goodText"));
+			me.game.world.addChild(new game.ending("okText", 410, 650, "goodText", 5001));
 		}else if((game.time.overallTime > 400 && game.time.overallTime <= 600) && game.data.score >= 3000){
 			me.game.world.addChild(new me.ImageLayer("good", 640, 480, "goodImage", 5000));
-			//me.game.world.addChild(new game.ending("goodText"));
+			me.game.world.addChild(new game.ending("okText", 410, 650, "goodText", 5001));
 		}else if((game.time.overallTime > 400 && game.time.overallTime <= 600) && (game.data.score < 3000)){
 			me.game.world.addChild(new me.ImageLayer("ok", 640, 480, "okImage", 5000));
-			//me.game.world.addChild(new game.ending("okText"));
+			me.game.world.addChild(new game.ending("okText", 410, 650, "okText", 5001));
 		}else if(game.time.overallTime <= 400  && game.data.score < 2000){
 			me.game.world.addChild(new me.ImageLayer("ok", 640, 480, "okImage", 5000));
-			me.game.world.addChild(new game.ending("okText", 410, 380, "okText", 5001));
+			me.game.world.addChild(new game.ending("okText", 410, 650, "okText", 5001));
 		}else if(game.time.overallTime > 600 && game.data.score < 2000){
 			me.game.world.addChild(new me.ImageLayer("bad", 640, 480, "badImage", 5000));
-			//me.game.world.addChild(new game.ending("badText"));
+			me.game.world.addChild(new game.ending("okText", 410, 650, "badText", 5001));
 		}else if(game.time.overallTime > 600){
 			me.game.world.addChild(new me.ImageLayer("bad", 640, 480, "badImage", 5000));
-			//me.game.world.addChild(new game.ending("badText"));
+			me.game.world.addChild(new game.ending("okText", 410, 650, "badText", 5001));
 		}else{
 			me.game.world.addChild(new me.ImageLayer("ok", 640, 480, "okImage", 5000));
-			me.game.world.addChild(new game.ending("okText"));
+			me.game.world.addChild(new game.ending("okText", 410, 650, "okText", 5001));
 		}
 		
 		me.input.bindKey(me.input.KEY.L, "enter", true);
@@ -49,15 +49,16 @@ game.ending = me.ImageLayer.extend({
 		if(type == "badText"){
 			this.len = 740;
 		}else if(type == "goodText"){
-			this.len = 765;
+			this.len = 745;
 		}else{
-			this.len = 645;
+			this.len = 635;
 		}
 	},
 	
 	update: function(dt){
 		if(this.pos.y > this.len){
 			me.game.world.removeChild(this);
+			me.state.change(me.state.CREDITS);
 		}
 		this.pos.y += 0.75;
 		return(this._super(me.ImageLayer, 'update', [dt]) || this.pos.y !== 0);

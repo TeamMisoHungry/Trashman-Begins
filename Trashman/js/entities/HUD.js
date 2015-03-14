@@ -137,9 +137,9 @@ game.HUD.Dialog = me.Renderable.extend({
     
     update : function () {
         if (game.data.talking_to_miku) {
-            var name = me.game.currentLevel.name;
-            if((name = "antarctica") && (me.game.data.iceDone = false)){
-                game.data.dialog = "OH NO! PLEASE HELP THE PENGUINS!";
+            var name = me.levelDirector.getCurrentLevelId();
+            if((name == "antarctica") && (game.data.iceDone == false)){
+                game.data.dialog = "OH NO! PLEASE HELP THE PENGUIN!";
             }
             
             return true;
