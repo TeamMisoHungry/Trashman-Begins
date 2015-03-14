@@ -58,8 +58,6 @@ game.BulletEntity = me.Entity.extend({
      * (called when colliding with other objects)
      */
     onCollision : function (response, other) { 
-    	console.log(response.b.body.collisionType);
-    	console.log(me.collision.types.WORLD_SHAPE);
     	if (response.b.body.collisionType === me.collision.types.WORLD_SHAPE){
  			me.game.world.removeChild(this);
  			return false;

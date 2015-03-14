@@ -38,7 +38,7 @@
     <property name="spritewidth" value="32"/>
    </properties>
   </object>
-  <object id="8" name="mainPlayer" x="296" y="272" width="32" height="32">
+  <object id="8" name="mainPlayer" x="300" y="212" width="32" height="32">
    <properties>
     <property name="image" value="hero"/>
     <property name="spritewidth" value="24"/>
