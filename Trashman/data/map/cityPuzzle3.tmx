@@ -87,7 +87,6 @@
     <property name="spritewidth" value="16"/>
    </properties>
   </object>
-  <object id="32" name="EnemyEntity" x="564" y="720" width="120" height="24"/>
   <object id="58" name="TurretEntity" x="564" y="432" width="16" height="14">
    <properties>
     <property name="image" value="turret"/>
