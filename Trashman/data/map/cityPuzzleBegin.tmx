@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="16" tileheight="16" nextobjectid="21">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="16" tileheight="16" nextobjectid="23">
  <tileset firstgid="1" name="cityPuzzleBegin" tilewidth="16" tileheight="16">
   <image source="cityPuzzleBegin.png" trans="ff00ff" width="640" height="640"/>
  </tileset>
@@ -18,6 +18,7 @@
   <object id="12" x="352" y="212">
    <polyline points="0,0 0,8 -12,8 -12,0"/>
   </object>
+  <object id="22" x="276" y="268" width="28" height="24"/>
  </objectgroup>
  <objectgroup name="Entities">
   <object id="15" name="mainPlayer" x="308" y="316" width="24" height="32">
