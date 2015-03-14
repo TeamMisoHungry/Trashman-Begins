@@ -25,7 +25,13 @@ game.HUD.Container = me.Container.extend({
         // add our child score object at the top left corner
         this.addChild(new game.HUD.ScoreItem(630, 10));
         this.addChild(new game.HUD.TimeItem(10, 10));
-        this.addChild(new game.HUD.Dialog(20, 350));
+    	var dia = this.addChild(new game.HUD.Dialog(140, 350));
+    }
+    update : function(){
+    	if(game.data.talking_to_alice){
+    		this.removeChild(dia);
+    		var diaz = this.addChild(new game.HUD.Dialog(140, 350));
+    	}
     }
 });
 
@@ -125,12 +131,7 @@ game.HUD.TimeItem = me.Renderable.extend({
 
 game.HUD.Dialog = me.Renderable.extend({
     init: function(x, y) {
-    	if(game.data.talking_to_alice || game.data.talking_to_gumi || game.data.talking_to_sakura || game.data.talking_to_ariel || game.data.talking_to_mimi || game.data.talking_to_reki || game.data.talking_to_miku){
-    		this._super(me.Renderable, 'init', [x, y, 310, 450]);
-    	}
-    	else{
-    		this._super(me.Renderable, 'init', [x, y, 310, 450]);
-    	}
+    	this._super(me.Renderable, 'init', [x, y, 310, 450]);
         this.font = new me.BitmapFont("32x32Size8", 12);
         this.font.set("left");
     },
