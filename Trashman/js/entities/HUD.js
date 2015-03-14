@@ -25,7 +25,7 @@ game.HUD.Container = me.Container.extend({
         // add our child score object at the top left corner
         this.addChild(new game.HUD.ScoreItem(630, 10));
         this.addChild(new game.HUD.TimeItem(10, 10));
-        this.addChild(new game.HUD.Dialog(20, 344));
+        this.addChild(new game.HUD.Dialog(145, 344));
     }
 });
 
@@ -125,7 +125,13 @@ game.HUD.TimeItem = me.Renderable.extend({
 
 game.HUD.Dialog = me.Renderable.extend({
     init: function(x, y) {
-    	if(game.data.talking_to_alice || game.data.talking_to_gumi || game.data.talking_to_sakura || game.data.talking_to_ariel || game.data.talking_to_mimi || game.data.talking_to_reki || game.data.talking_to_miku){
+    	if(game.data.talking_to_alice || 
+            game.data.talking_to_gumi || 
+            game.data.talking_to_sakura || 
+            game.data.talking_to_ariel || 
+            game.data.talking_to_mimi || 
+            game.data.talking_to_reki || 
+            game.data.talking_to_miku){
     		this._super(me.Renderable, 'init', [x, y, 310, 450]);
     	}
     	else{
@@ -136,88 +142,92 @@ game.HUD.Dialog = me.Renderable.extend({
     },
     
     update : function () {
+        var name = me.game.currentLevel.name;
         if (game.data.talking_to_miku) {
-            var name = me.game.currentLevel.name;
             if((name == "antarctica") && (!me.game.data.iceDone)){
                 game.data.dialog = "OH NO! PLEASE HELP THE PENGUIN!";
             }
             if(name == "antarlevel1b" || name == "antarlevel2b"){
-                game.data.dialog = "THANK YOU! HERE ARE  SOME POINTS FOR YOU.\n"+
-                                   "THERE ARE MORE PENGUINS AHEAD, LET'S HURRY!";
+                game.data.dialog = "THANK YOU! HERE ARE  SOME POINTS\n"+ 
+                                    "FOR YOU. THERE ARE MORE PENGUINS \n"+ 
+                                    "AHEAD, LET'S HURRY!";
             }
             if(name == "antarlevelBegin" || name == "antarlevel2a" || name == "antarlevel3a"){
-                game.data.dialog = "LET'S HURRY! REMEMBER THAT SOME PENGUINS ARE\n"+
-                                   "IMPOSSIBLE TO SAVE, SO JUST TRY TO SAVE AS MUCH\n"+
-                                   "AS YOU CAN. I'LL GIVE YOU POINTS FOR EVERY PENGUIN\n"+
-                                   "YOU SAVE.";
+                game.data.dialog = "LET'S HURRY! REMEMBER THAT SOME\n"+ 
+                                    "PENGUINS ARE IMPOSSIBLE TO SAVE, SO\n"+ 
+                                    "JUST TRY TO SAVE AS MUCH AS YOU CAN.\n"+ 
+                                    "I'LL GIVE YOU POINTS FOR EVERY PENGUIN\n"+
+                                    "YOU SAVE.";
             }
             if(name == "antarlevelEnd"){
-                game.data.dialog = "PHEW, WE SAVED MOST OF THEM. THANK YOU AGAIN. AH!\n"+
-                                    "I ALMOST FORGOT TO INTRODUCE MYSELF. I'M MIKU AND...\n"+
-                                    "YOU'RE AXEL RIGHT? NICE TO MEET YOU. YOU'RE A GOOD\n"+
-                                    "GUY, SO I'LL GIVE YOU A TURBINE BLADE. IT WILL HELP\n"+
-                                    "YOU ALONG THE WAY. YOU SHOULD GO BACK AND TALK TO\n"+
-                                    "ALICE. BYE!";
+                game.data.dialog = "PHEW, WE SAVED MOST OF THEM. THANK YOU\n"+ 
+                                    "AGAIN. AH! I ALMOST FORGOT TO INTRODUCE\n"+ 
+                                    "MYSELF. I'M MIKU AND...YOU'RE AXEL RIGHT?\n"+ 
+                                    "NICE TO MEET YOU. YOU'RE A GOOD GUY, SO\n"+ 
+                                    "I'LL GIVE YOU A TURBINE BLADE. IT WILL\n"+ 
+                                    "HELP YOU ALONG THE WAY. YOU SHOULD GO\n"+
+                                    "BACK AND TALK TO ALICE. BYE!";
             }
             return true;
         }
         if(game.data.talking_to_alice){
-            /*
-        	if(!game.data.iceDone){
-        		game.data.dialog = "WELCOME TO THE HEADQUARTERS! HEAD SOUTH FOR YOUR\n\
-                                    FIRST MISSION AND REPORT TO ME AFTER YOU FINISH!";
-        	}
-        	else if(!game.data.desertDone){
-        		game.data.dialog = "GOOD WORK SAVING THE PENGUINS! NOW HEAD EAST FOR\n\
-                                    YOUR NEXT MISSION!";
-        	}
-        	else if(!game.data.cityDone){
-        		game.data.dialog = "THANK YOU FOR FIXING THE WIND TURBINES! ALL THAT\n\
-                                    IS LEFT IS TO DEFEAT THE EVIL CORPORATION.\n\
-                                    HEAD WEST FOR YOUR LAST MISSION!";
-        	}
-        	else {
-        		game.data.dialog = "YOU DID IT! YOU SAVED THE WORLD FROM DESTRUCTION!\n\
-                                    THE EVIL CORPORATION HAS REFORMED THEIR WAYS AND\n\
-                                    ARE WORKING TO UNDO THE HARM THEY HAVE DONE";
-        	}
-            */
-            var name = me.game.currentLevel.name;
             if(name == "headquarter"){
-                game.data.dialog = "HELLO AXEL! WELCOME TO TIBBERS TOWN! I'M ALICE\n"+
-                                    "AND I'LL BE YOUR TASK MANAGER. AREN'T  YOU GLAD\n"+
-                                    "TO HAVE SUCH A CUTE MANAGER? HEE HEE. WEL, HERE'S\n"+
-                                    "YOUR FIRST TASK: GO HELP MIKU AT ANTARCTICA TOWN\n"+
-                                    "AND THEN COME BACK TO ME. YOU CAN FIND ANTARCTICA\n"+
-                                    "TOWN IF YOU TRAVEL SOUTH FROM HERE. OH OH! ANOTHER\n"+
-                                    "THING! ONCE YOU PASSED A MAP, YOU CANNOT COME BACK\n"+
-                                    "TO IT, SO TRY TO COLLECT AS MANY POINTS AS YOU CAN.\n"+
-                                    "ALSO, YOU CAN ONLY COME BACK TO TIBBERS TOWN ONCE\n"+
-                                    "YOU ARE DONE WITH THE GIVEN TASK.";
+                game.data.dialog = "HELLO AXEL! WELCOME TO TIBBERS TOWN!\n"+
+                                    "I'M ALICE AND I'LL BE YOUR TASK MANAGER.\n"+
+                                    "AREN'T YOU GLAD TO HAVE SUCH A CUTE\n"+
+                                    "MANAGER? HEE HEE. WEL, HERE'S YOUR FIRST\n"+
+                                    "TASK: GO HELP MIKU AT ANTARCTICA TOWN\n"+
+                                    "AND THEN COME BACK TO ME. YOU CAN FIND\n"+
+                                    "ANTARCTICA TOWN IF YOU TRAVEL SOUTH FROM\n"+
+                                    "HERE. OH OH! ANOTHER THING! ONCE YOU\n"+
+                                    "PASSED A MAP, YOU CANNOT COME BACK TO\n"+
+                                    "IT, SO TRY TO COLLECT AS MANY POINTS AS";
                                     
             }
             if(name == "headquartera"){
-                game.data.dialog = "GOODJOB AXEL, YOU JUST COMPLETED YOUR FIRST TASK!\n"+
-                                    "OH! DID SHE GIVE YOU A TURBINE BLADE?! NICE, YOU\n"+
-                                    "WILL NEED THEM LATER. FOR NOW, YOUR NEXT MISSION\n"+
-                                    "IS TO HEAD WEST FROM HERE AND GET TO AOHARI CITY.\n"+
-                                    "YOU WILL MEET REKI AND  SHE WILL TELL YOU WHAT TO\n"+
-                                    "DO. ALSO, COME BACK AND TALK TO ME WHEN YOU'RE DONE.\n"+
-                                    "AND ONCE AGAIN, YOU CANNNOT COME BACK HERE UNTIL YOU\n"+
-                                    "COMPLETE YOUR TASK. GOODLUCK!";
+                game.data.dialog = "GOODJOB AXEL, YOU JUST COMPLETED YOUR\n"+ 
+                                    "FIRST TASK! OH! DID SHE GIVE YOU A\n"+ 
+                                    "TURBINE BLADE?! NICE, YOU WILL NEED\n"+ 
+                                    "THEM LATER. FOR NOW, YOUR NEXT MISSION\n"+
+                                    "IS TO HEAD WEST FROM HERE AND GET TO\n"+ 
+                                    "AOHARI CITY YOU WILL MEET REKI AND\n"+  
+                                    "SHE WILL TELL YOU WHAT TO DO. ALSO,\n"+ 
+                                    "COME BACK AND TALK TO ME WHEN YOU'RE\n"+ 
+                                    "DONE AND ONCE AGAIN, YOU CANNNOT COME\n"+ 
+                                    "BACK HERE UNTIL YOU COMPLETE YOUR TASK.";
+                                    
             }
             if(name == "headquarterb"){
-                game.data.dialog = "YOU'RE GETTING GOOD  AT THIS! WOW! REKI GAVE YOU\n"+
-                                    "A TURBINE BLADE. SHE MUST HAVE LIKED YOU. I'M\n"+
-                                    "SUCH A GOOD MANAGER HEE HEE. ANYWAYS, YOUR NEXT\n"+
-                                    "AND LAST TASK IS TO MEET MIMI AT GOBI TOWN. SHE\n"+
-                                    "WILL TELL YOU HOW YOU  CAN USE THOSE BLADES. ALSO,\n"+
-                                    "REMEMBER TO EXPLORE THE AREAS AND TALK TO  NEW NPC,\n"+
-                                    "YOU MIGHT BE ABLE TO FIND MORE TURBINE BLADES.\n"+
-                                    "COME BACK HERE AFTER YOU ARE DONE AND I WILL GRADE\n"+
-                                    "YOU BASED ON YOUR PERFORMANCE. WELL, GOOD LUCK!";
+                game.data.dialog = "YOU'RE GETTING GOOD  AT THIS! WOW!\n"+ 
+                                    "REKI GAVE YOU A TURBINE BLADE. SHE\n"+ 
+                                    "MUST HAVE LIKED YOU. I'M SUCH A GOOD\n"+ 
+                                    "MANAGER HEE HEE. ANYWAYS, YOUR NEXT AND\n"+ 
+                                    "LAST TASK IS TO MEET MIMI AT GOBI TOWN.\n"+ 
+                                    "SHE WILL TELL YOU HOW YOU  CAN USE THOSE\n"+ 
+                                    "BLADES. ALSO, REMEMBER TO EXPLORE THE\n"+ 
+                                    "AREAS AND TALK TO  NEW NPC, YOU MIGHT\n"+ 
+                                    "BE ABLE TO FIND MORE TURBINE BLADES.\n"+
+                                    "COME BACK HERE AFTER YOU ARE DONE";
             }
         	return true;
+        }
+        if(game.data.talking_to_alice2){
+            if(name == "headquarter"){
+                game.data.dialog = "YOU CAN ALSO, YOU CAN ONLY COME BACK TO\n"+
+                                    "TIBBERS TOWN ONCE YOU ARE DONE WITH THE\n"+
+                                    "GIVEN TASK.";
+            }
+            if(name == "headquartera"){
+                game.data.dialog = "GOODLUCK!";
+            }
+            if(name == "headquarterb"){
+                game.data.dialog = "AND I WILL GRADE YOU BASED ON YOUR\n"+ 
+                                    "PERFORMANCE. WELL, GOOD LUCK!";
+            }
+        }
+
+        if(game.data.talking_to_ariel){
+
         }
         if (game.data.fixing_turbine) {
             game.data.dialog = "YOU FIXED THE TURBINE!";
