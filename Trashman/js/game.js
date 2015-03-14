@@ -124,7 +124,7 @@ var game = {
         me.pool.register("AliceEntity", game.AliceEntity);
 
         me.pool.register("JellyEntity", game.JellyEntity);
-
+		me.pool.register("TalkEntity", game.TalkEntity);
 		
 		//enable the keyboard
 		me.input.bindKey(me.input.KEY.A, "left");
