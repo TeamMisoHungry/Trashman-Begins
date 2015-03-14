@@ -59,6 +59,14 @@ game.resources = [
 	{name: "Gumi", type: "image", src: "data/img/sprites/NPCs/Gumi.png"},
 	{name: "Reki", type: "image", src: "data/img/sprites/NPCs/Reki.png"},
 	{name: "Jelly", type: "image", src: "data/img/sprites/NPCs/Jelly.gif"},
+	
+	{name: "Mikutalk", type: "image", src: "data/img/sprites/dialogueboxes/mikuDialogueBox.png"},
+	{name: "Sakuratalk", type: "image", src: "data/img/sprites/dialogueboxes/sakuraDialogueBox.png"},
+	{name: "Alicetalk", type: "image", src: "data/img/sprites/dialogueboxes/aliceDialogueBox.png"},
+	{name: "Arieltalk", type: "image", src: "data/img/sprites/dialogueboxes/arielDialogueBox.png"},
+	{name: "Mimitalk", type: "image", src: "data/img/sprites/dialogueboxes/mimiDialogueBox.png"},
+	{name: "Gumitalk", type: "image", src: "data/img/sprites/dialogueboxes/gumiDialogueBox.png"},
+	{name: "Rekitalk", type: "image", src: "data/img/sprites/dialogueboxes/rekiDialogueBox.png"},
 
 	//font
     {name: "32x32_font", type: "image", src: "data/img/font/32x32_font.png"},
