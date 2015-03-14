@@ -228,6 +228,10 @@ game.PlayerEntity = me.Entity.extend({
 		//if player hp drops to 0
 		if (game.data.hp <= 0){
 			me.state.change(me.state.GAME_END);
+			if(this.time == 0){
+				location.reload();
+			}
+			
 		}
         // apply physics to the body (this moves the entity)
         this.body.update(dt);
