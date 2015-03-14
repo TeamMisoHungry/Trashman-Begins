@@ -19,8 +19,6 @@ var game = {
         talking_to_reki : false,
         talking_to_broken_turbine : false,
         talking_to_alice2 : false,
-        //talking : false,
-        //notTalking : true,
         iceDone : false,
         desertDone : false,
         cityDone : false
