@@ -249,7 +249,10 @@ game.chatbox = me.GUI_Object.extend({
       		this.z = 10;
 	},
 	onClick:function (event){
-		
+		if(game.data.talking_to_alice){
+			game.data.talking_to_alice = false;
+			game.data.talking_to_alice2 = true;
+		}
 	},
 	update: function(dt) {
 		if(me.input.isKeyPressed('talk')){
@@ -266,8 +269,8 @@ game.chatbox = me.GUI_Object.extend({
 	        game.data.talking_to_gumi = false;
 	        game.data.talking_to_ariel = false;
 	        game.data.talking_to_reki = false;
-	        game.data.talking_to_gumi_noexit = false;
 	 		game.data.notTalking = true;
+			game.data.talking_to_alice2 = false;
 	    }
 	}
 });

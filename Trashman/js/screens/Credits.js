@@ -2,13 +2,20 @@ game.CreditsScreen = me.ScreenObject.extend({
 	onResetEvent: function(){
 		me.game.world.addChild(new me.ImageLayer("credits", 640, 480, "credits", 5000));
 		me.game.world.addChild(new game.credits("crew", 410, 1565, "crew", 5001));
+		me.input.bindKey(me.input.KEY.ENTER, "enter", true);
+    	this.handler = me.event.subscribe(me.event.KEYDOWN, function (action, keyCode, edge) {
+      		if (action === "enter") {
+				me.state.change(me.state.MENU);
+	        }
+    	});
 	}, 
-   /**    
-   *  action to perform when leaving this screen (state change)
-   */
-  onDestroyEvent : function() {
-
-  }
+   	/**    
+   	*  action to perform when leaving this screen (state change)
+   	*/
+  	onDestroyEvent : function() {
+  		me.input.unbindKey(me.input.KEY.ENTER);
+    	me.event.unsubscribe(this.handler);
+  	}
 });
 
 game.credits = me.ImageLayer.extend({

@@ -9,9 +9,9 @@
   </data>
  </layer>
  <objectgroup name="EnemyEntities">
-  <object id="46" name="IceEnemyEntity" x="256" y="892" width="240" height="36"/>
-  <object id="79" name="IceEnemyEntity" x="259" y="1664" width="124" height="36"/>
-  <object id="80" name="IceEnemyEntity" x="236" y="2300" width="276" height="36"/>
+  <object id="46" name="EnemyEntity" x="256" y="892" width="240" height="36"/>
+  <object id="79" name="EnemyEntity" x="259" y="1664" width="124" height="36"/>
+  <object id="80" name="EnemyEntity" x="236" y="2300" width="276" height="36"/>
  </objectgroup>
  <objectgroup name="Entities">
   <object id="6" name="me.LevelEntity" x="345" y="343" width="44" height="24">
