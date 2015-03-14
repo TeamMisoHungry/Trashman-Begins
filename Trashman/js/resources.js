@@ -134,6 +134,7 @@ game.resources = [
     {name: "antarlevel2a", type: "tmx", src: "data/map/antarlevel2a.tmx"},
     {name: "antarlevel2b", type: "tmx", src: "data/map/antarlevel2b.tmx"},
 	{name: "antarlevel3", type: "tmx", src: "data/map/antarlevel3.tmx"},
+	{name: "antarlevel3a", type: "tmx", src: "data/map/antarlevel3a.tmx"},
 	{name: "antarlevelEnd", type: "tmx", src: "data/map/antarlevelEnd.tmx"},
 	
 	//******** Intro and instructions ********
