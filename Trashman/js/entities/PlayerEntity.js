@@ -38,6 +38,17 @@ game.PlayerEntity = me.Entity.extend({
  		this.right1 = false;
  		this.up = false;
  		this.down = true; 	
+ 		
+ 		if(me.levelDirector.getCurrentLevelId() == "headquarterc"){
+ 			me.input.unbindKey(me.input.KEY.W);
+ 			me.input.unbindKey(me.input.KEY.A);
+ 			me.input.unbindKey(me.input.KEY.S);
+ 			me.input.unbindKey(me.input.KEY.D);
+ 			var change = me.timer.setInterval(function(){
+ 				me.timer.clearInterval(change);
+ 				me.state.change(me.state.GAMEOVER);
+ 			}, 2000);
+ 		}
 
 
  		/*** MUSIC ***/
