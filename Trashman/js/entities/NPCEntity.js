@@ -123,11 +123,11 @@ game.GumiEntity = me.Entity.extend({
 				game.data.talking_to_gumi = true;
 			}
 		
-		game.data.notTalking = false;
-		me.game.world.addChild(new game.chatbox(0, 0));
-		this.body.setCollisionMask(me.collision.types.NPC_OBJECT);
+			game.data.notTalking = false;
+			me.game.world.addChild(new game.chatbox(0, 0));
+			this.body.setCollisionMask(me.collision.types.NPC_OBJECT);
 		
-		return false;
+			return false;
 		}
 		return false;
 	}
@@ -171,11 +171,12 @@ game.RekiEntity = me.Entity.extend({
 			else if(game.data.hp<30){
 				game.data.score += 100;
 			}
-			game.data.talking_to_reki = true;
-			game.data.notTalking = false;
-			me.game.world.addChild(new game.chatbox(0, 0));
-			this.body.setCollisionMask(me.collision.types.NPC_OBJECT);
 		}
+		game.data.talking_to_reki = true;
+		game.data.notTalking = false;
+		me.game.world.addChild(new game.chatbox(0, 0));
+		this.body.setCollisionMask(me.collision.types.NPC_OBJECT);		
+		return false;
 	}
 });
 

@@ -168,6 +168,7 @@ game.EnemyEntity2 = me.Entity.extend({
   }
 });
 
+/*** Dead guy animation entity ***/
 game.DeadEntity = me.Entity.extend({
   init : function(x, y, settings){
     settings.image = "badGuy2";
@@ -185,6 +186,7 @@ game.DeadEntity = me.Entity.extend({
   
 });
 
+/*** Explosion entity***/
 game.ExplosionEntity = me.Entity.extend({
 	init: function(x, y, settings){
 		settings.image = "expo";
@@ -200,177 +202,6 @@ game.ExplosionEntity = me.Entity.extend({
 		me.game.world.addChild(this, Infinity);
 	}
 	
-});
-
-
-/*************************** ICE LEVEL ENEMIES **************************/
-
-game.IceEnemyEntity = me.Entity.extend({
-  init: function(x, y, settings) {
-    // define this here instead of tiled
-    settings.image = "badRobot";
-    settings.name = "badRobot";
-     
-    // save the area size defined in Tiled
-    var width = settings.width;
-    var height = settings.height;
-
-    this.alwaysUpdate = true;
-    // adjust the size setting information to match the sprite size
-    // so that the entity object is created with the right size
-    settings.spritewidth = settings.width = 40;
-    settings.spriteheight = settings.height = 32;
-    
- 
-    this._super(me.Entity, 'init', [x, y, settings]);
-  
-  	this.body.collisionType = me.collision.types.ENEMY_OBJECT;
-    // set start/end position based on the initial area size
-    x = this.pos.x;
-    this.startX = x;
-    this.endX   = x + width - settings.spritewidth;
-    this.pos.x  = x + width - settings.spritewidth;
- 
-    // manually update the entity bounds as we manually change the position
-    this.updateBounds();
- 
-    // to remember which side we were walking
-    this.walkLeft = false;
- 
-    // walking speed
-    this.body.setVelocity(1.5, 1.5); 
-       
-  },
- 
-  // manage the enemy movement
-  update: function(dt) {
-    if(this.alive) {
-      if (this.walkLeft && this.pos.x <= this.startX) {
-        this.walkLeft = false;
-      }else if (!this.walkLeft && this.pos.x >= this.endX) {
-        this.walkLeft = true;
-    }
-    // make it walk
-    this.renderable.flipX(this.walkLeft);
-    this.body.vel.x += (this.walkLeft) ? -this.body.accel.x * me.timer.tick : this.body.accel.x * me.timer.tick;
-    }else {
-      this.body.vel.x = 0;
-    }
-           
-    // update the body movement
-    this.body.update(dt);
-    me.collision.check(this);
-    // return true if we moved or if the renderable was updated
-    return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0 || this.body.vel.y !== 0);
-  },
-   
-  /**
-   * colision handler
-   * (called when colliding with other objects)
-   */
-  onCollision : function (response, other) {
-  	//collision with trash
-  	if(response.b.body.collisionType === me.collision.types.PROJECTILE_OBJECT){
-  		var shot = me.pool.pull("DeadEntity", this.pos.x, this.pos.y, {});
-  		me.game.world.removeChild(other);
-  		var trash = me.pool.pull("GarbageEntity", other.pos.x, other.pos.y, {image: "garbage", width: 10, height: 10});
-  		me.game.world.addChild(trash);
- 		me.game.world.removeChild(this);
-      	game.data.score += 100;
-  	}
-  	return false;
-  }
-  
-});
-
-game.IceEnemyEntity2 = me.Entity.extend({
-  init: function(x, y, settings) {
-    // define this here instead of tiled
-    settings.image = "badRobot2";
-    settings.name = "badRobot2";
-     
-    // save the area size defined in Tiled
-    var width = settings.width;
-    var height = settings.height;
-
-  
-    // adjust the size setting information to match the sprite size
-    // so that the entity object is created with the right size
-    settings.spritewidth = settings.width = 40;
-    settings.spriteheight = settings.height = 32;
-     
-    // call the parent constructor
-    this._super(me.Entity, 'init', [x, y , settings]);
-    
-    this.body.collisionType = me.collision.types.ENEMY_OBJECT;
-  
-    // set start/end position based on the initial area size
-    y = this.pos.y;
-    this.startY = y;
-    this.endY   = y + height - settings.spriteheight;
-    this.pos.y = y + height - settings.spriteheight;
- 
-    // manually update the entity bounds as we manually change the position
-    this.updateBounds();
- 
-    // to remember which side we were walking
-    this.walkUp = false;
- 
-    // walking & jumping speed
-    this.body.setVelocity(1.5, 1.5);
-    
-    this.renderable.addAnimation("walkDown", [0, 1, 2, 3, 4, 5, 6, 7, 8]);
-  this.renderable.addAnimation("walkUp", [9, 10, 11, 12, 13, 14, 15, 16, 17]);     
-  },
- 
-  // manage the enemy movement
-  update: function(dt) {
-  //console.log(this);
-    if (this.alive) {
-      if (this.walkUp && this.pos.y <= this.startY) {
-        this.walkUp = false;
-      }else if (!this.walkUp && this.pos.y >= this.endY) {
-        this.walkUp = true;
-      }
-      // make it walk
-      if(this.walkUp){
-        if(!this.renderable.isCurrentAnimation("walkUp")){
-          this.renderable.setCurrentAnimation("walkUp");
-        }
-      }else{
-        if(!this.renderable.isCurrentAnimation("walkDown")){
-          this.renderable.setCurrentAnimation("walkDown");
-        }
-      }
-      this.body.vel.y += (this.walkUp) ? -this.body.accel.y * me.timer.tick : this.body.accel.y * me.timer.tick;
-     
-    }else {
-      this.body.vel.y = 0;
-    }
-  
-    // update the body movement
-    this.body.update(dt);
-    me.collision.check(this);     
-    // return true if we moved or if the renderable was updated
-    return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0 || this.body.vel.y !== 0);
-  },
-
-  /**
-   * colision handler
-   * (called when colliding with other objects)
-   */
-  onCollision : function (response, other) {
-  	//collision with trash
-  	if(response.b.body.collisionType === me.collision.types.PROJECTILE_OBJECT){
-  		var shot = me.pool.pull("DeadEntity", this.pos.x, this.pos.y, {});
-  		me.game.world.removeChild(other);
-  		var trash = me.pool.pull("GarbageEntity", other.pos.x, other.pos.y, {image: "garbage", width: 10, height: 10});
-  		me.game.world.addChild(trash);
- 		me.game.world.removeChild(this);
-      	game.data.score += 100;
-  	}
-  	return false;
-  }
 });
 
 /*******************************TURRET**********************************/
