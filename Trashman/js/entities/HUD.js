@@ -125,7 +125,12 @@ game.HUD.TimeItem = me.Renderable.extend({
 
 game.HUD.Dialog = me.Renderable.extend({
     init: function(x, y) {
-        this._super(me.Renderable, 'init', [x, y, 10, 450]);
+    	if(game.data.talking_to_alice || game.data.talking_to_gumi || game.data.talking_to_sakura || game.data.talking_to_ariel || game.data.talking_to_mimi || game.data.talking_to_reki || game.data.talking_to_miku){
+    		this._super(me.Renderable, 'init', [x, y, 310, 450]);
+    	}
+    	else{
+    		this._super(me.Renderable, 'init', [x, y, 10, 450]);
+    	}
         this.font = new me.BitmapFont("32x32Size8", 12);
         this.font.set("left");
     },
@@ -134,7 +139,7 @@ game.HUD.Dialog = me.Renderable.extend({
         if (game.data.talking_to_miku) {
             var name = me.game.currentLevel.name;
             if((name = "antarctica") && (me.game.data.iceDone = false)){
-                game.data.dialog = "OH NO! PLEASE HELP THE PENGUIN!";
+                game.data.dialog = "OH NO! PLEASE HELP THE PENGUINS!";
             }
             
             return true;

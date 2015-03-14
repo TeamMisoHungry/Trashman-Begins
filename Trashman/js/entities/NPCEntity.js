@@ -9,6 +9,7 @@
 
 game.TalkEntity = me.Entity.extend({	
 	init: function(x, y, settings){
+		settings.image = "Alicetalk";
 		settings.width = 50;
 		settings.height = 50;
 		settings.z = 5000;
@@ -171,10 +172,21 @@ game.RekiEntity = me.Entity.extend({
 	},
 
 	onCollision: function(response, other){
-		game.data.talking_to_reki = true;
-		game.data.notTalking = false;
-		me.game.world.addChild(new game.chatbox(0, 0));
-		this.body.setCollisionMask(me.collision.types.NPC_OBJECT);
+		if(me.game.currentLevel.name == "citypuzzleend"){
+			if(game.data.hp<=100 && game.data.hp>=80){
+				game.data.score += 500;
+			}
+			else if(game.data.hp<80 && game.data.hp>=30){
+				game.data.score += 250;
+			}
+			else if(game.data.hp<30){
+				game.data.score += 100;
+			}
+			game.data.talking_to_reki = true;
+			game.data.notTalking = false;
+			me.game.world.addChild(new game.chatbox(0, 0));
+			this.body.setCollisionMask(me.collision.types.NPC_OBJECT);
+		}
 	}
 });
 
@@ -215,7 +227,30 @@ game.FixedTurbineEntity = me.Entity.extend({
 game.chatbox = me.GUI_Object.extend({
 	init:function (x, y){
 		var settings = {};
+		if(game.data.talking_to_miku){
+			settings.image = me.loader.getImage('Mikutalk');
+		}
+		else if(game.data.talking_to_sakura){
+			settings.image = me.loader.getImage('Sakuratalk');
+		}
+		else if(game.data.talking_to_alice){
+			settings.image = me.loader.getImage('Alicetalk');
+		}
+		else if(game.data.talking_to_mimi){
+			settings.image = me.loader.getImage('Mimitalk');
+		}
+		else if(game.data.talking_to_gumi){
+			settings.image = me.loader.getImage('Gumitalk');
+		}
+		else if(game.data.talking_to_ariel){
+			settings.image = me.loader.getImage('Arieltalk');
+		}
+		else if(game.data.talking_to_reki){
+			settings.image = me.loader.getImage('Rekitalk');
+		}
+		else{
 			settings.image = me.loader.getImage('TextBox');
+		}
       		settings.spritewidth = 640;
       		settings.spriteheight = 480;
       		// super constructor
@@ -243,7 +278,7 @@ game.chatbox = me.GUI_Object.extend({
 	        game.data.talking_to_reki = false;
 	        game.data.talking_to_gumi_noexit = false;
 	 		game.data.notTalking = true;
-	 		me.game.world.removeChild(alice);
+	 		//me.game.world.removeChild(alice);
 	    }
 	}
 });

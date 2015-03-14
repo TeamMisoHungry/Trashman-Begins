@@ -273,7 +273,7 @@ game.IceEnemyEntity = me.Entity.extend({
   	if(response.b.body.collisionType === me.collision.types.PROJECTILE_OBJECT){
   		var shot = me.pool.pull("DeadEntity", this.pos.x, this.pos.y, {});
   		me.game.world.removeChild(other);
-  		var trash = me.pool.pull("GarbageEntity", other.pos.x, other.pos.y, {image: "alice", width: 10, height: 10});
+  		var trash = me.pool.pull("GarbageEntity", other.pos.x, other.pos.y, {image: "garbage", width: 10, height: 10});
   		me.game.world.addChild(trash);
  		me.game.world.removeChild(this);
       	game.data.score += 100;
