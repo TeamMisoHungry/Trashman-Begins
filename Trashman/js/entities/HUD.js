@@ -246,9 +246,8 @@ game.HUD.Dialog = me.Renderable.extend({
         }
 
         if(game.data.talking_to_gumi){
-        	game.data.dialog =  "YOU HAVE THE TURBINE BLADES? OKAY, YOU \n"+
-                                "CAN JUST SIMPLY TOUCH THE BROKEN ONES \n"+
-                                "TO FIX THEM";
+        	game.data.dialog = "YOU HAVE THE TURBINE BLADES? OKAY, YOU CAN\n"+
+                                "JUST SIMPLY TOUCH THE BROKEN ONES TO FIX IT\n";
         }
 
         if(game.data.talking_to_reki){
@@ -270,7 +269,7 @@ game.HUD.Dialog = me.Renderable.extend({
                                     "MORE POINTS I'M GOING TO GIVE YOU.\n"+
                                     "LET'S GO!";
             }
-            if(name == "citypuzzleend"){
+            if(game == "citypuzzleend"){
                 game.data.dialog = "THANK YOU FOR HELPING ME. DID I TELL YOU\n"+
                                     "MY NAME? OOPS HAHA, IT IS REKI. NICE TO\n"+
                                     "MEET YOU. I WILL GIVE YOU POINTS BASED ON\n"+
