@@ -40,7 +40,7 @@
     <property name="image" value="Reki"/>
    </properties>
   </object>
-  <object id="21" name="bossEntity" x="341" y="249" width="55" height="60">
+  <object id="21" name="bossEntity" x="332" y="246" width="55" height="60">
    <properties>
     <property name="image" value="boss"/>
    </properties>

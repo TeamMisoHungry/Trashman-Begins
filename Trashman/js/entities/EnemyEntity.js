@@ -19,7 +19,7 @@ game.EnemyEntity = me.Entity.extend({
      
  
     this._super(me.Entity, 'init', [x, y, settings]);
-    this.body.collisionType = me.collision.types.ENEMY_OBJECT;
+    this.body.setCollisionType = me.collision.types.ENEMY_OBJECT;
   
     // set start/end position based on the initial area size
     x = this.pos.x;
@@ -97,7 +97,7 @@ game.EnemyEntity2 = me.Entity.extend({
     // call the parent constructor
     this._super(me.Entity, 'init', [x, y , settings]);
     
-    this.body.collisionType = me.collision.types.ENEMY_OBJECT;
+    this.body.setCollisionType = me.collision.types.ENEMY_OBJECT;
   
     // set start/end position based on the initial area size
     y = this.pos.y;
@@ -212,7 +212,7 @@ game.TurretEntity = me.Entity.extend({
     this._super(me.Entity, 'init', [x, y, settings]);
     this.renderable.addAnimation("safe", [1]);
     this.renderable.addAnimation("prep", [0, 2]);
-    this.body.collisionType = me.collision.types.NO_OBJECT;
+    this.body.setCollisionType = me.collision.types.NO_OBJECT;
     this.time = 0;
     this.safe = true;
     this.prep = false;
@@ -264,7 +264,7 @@ game.TurretEntity2 = me.Entity.extend({
 		this._super(me.Entity, 'init', [x, y, settings]);
 		this.renderable.addAnimation("safe", [1]);
 		this.renderable.addAnimation("prep", [0, 2]);
-		this.body.collisionType = me.collision.types.NO_OBJECT;
+		this.body.setCollisionType = me.collision.types.NO_OBJECT;
 		this.time = 0;
 		this.safe = true;
 		this.prep = false;
@@ -319,12 +319,13 @@ game.bossEntity = me.Entity.extend({
 		settings.height = 60;
 		settings.image = "boss";
 		this._super(me.Entity, 'init', [x, y, settings]);
-		this.body.collisionType = me.collision.types.WORLD_SHAPE;
+		this.body.setCollisionType = me.collision.types.ENEMY_SHAPE;
 		this.body.setCollisionMask(me.collision.types.PROJECTILE_OBJECT);
 	},	
 	
 	update: function(dt){
 		me.collision.check(this);
+		return (this._super(me.Entity, 'update', [dt]));
 	},
 	
 	onCollision: function(response, other){
