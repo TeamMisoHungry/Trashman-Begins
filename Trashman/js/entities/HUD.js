@@ -129,7 +129,7 @@ game.HUD.Dialog = me.Renderable.extend({
     		this._super(me.Renderable, 'init', [x, y, 310, 450]);
     	}
     	else{
-    		this._super(me.Renderable, 'init', [x, y, 10, 450]);
+    		this._super(me.Renderable, 'init', [x, y, 310, 450]);
     	}
         this.font = new me.BitmapFont("32x32Size8", 12);
         this.font.set("left");
