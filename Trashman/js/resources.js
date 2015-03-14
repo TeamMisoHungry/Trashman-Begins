@@ -152,8 +152,8 @@ game.resources = [
     {name: "begin3", type: "image", src: "data/intro/intro3.png"},
     
      //BGM
-    /*
-	//{name: "title", type: "audio", src: "data/bgm/"},
+    
+	{name: "title", type: "audio", src: "data/bgm/"},
 	{name: "hq2", type: "audio", src: "data/bgm/"},
 	{name: "hq", type: "audio", src: "data/bgm/"},
 	{name: "city", type: "audio", src: "data/bgm/"},
@@ -163,7 +163,7 @@ game.resources = [
 	//{name: "forest", type: "audio", src: "data/bgm/"},
 	{name: "icelevel", type: "audio", src: "data/bgm/"},
 	
-	 * SFX
+	
 	 
-	{name: "hit", type: "audio", src: "data/sfx/"},*/
+	{name: "hit", type: "audio", src: "data/sfx/"},
 ];

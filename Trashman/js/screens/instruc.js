@@ -14,6 +14,7 @@ game.InstrucScreen = me.ScreenObject.extend({
     	array.push(intro1, intro2, intro3, intro4, final);
     	var i = 0;
     	
+		 
     	me.input.bindKey(me.input.KEY.ENTER, "enter", true);
     	me.game.world.addChild(array[i]);
     	this.handler = me.event.subscribe(me.event.KEYDOWN, function (action, keyCode, edge) {
@@ -25,7 +26,9 @@ game.InstrucScreen = me.ScreenObject.extend({
 	        }
     	});
     	
-    	
+    	if(me.audio.getCurrentTrack() == "title") return;
+ 		me.audio.stopTrack();
+ 	 	me.audio.playTrack("title", true);
     },
 
     /**

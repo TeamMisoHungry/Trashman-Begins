@@ -115,6 +115,7 @@ game.HUD.TimeItem = me.Renderable.extend({
             || me.game.currentLevel.name == "antarlevel2" 
             || me.game.currentLevel.name == "antarlevel2a" 
             || me.game.currentLevel.name == "antarlevel2b"
+            || me.game.currentLevel.name == "antarlevel3" 
             || me.game.currentLevel.name == "antarlevel3a" 
             || me.game.currentLevel.name == "antarlevelend"){    
             this.font.draw(renderer,"PENGUIN: " + game.data.penguin, this.pos.x, this.pos.y + 45);
@@ -134,7 +135,7 @@ game.HUD.Dialog = me.Renderable.extend({
         var name = me.game.currentLevel.name;
         if (game.data.talking_to_miku) {
             if((name == "antarctica") && (!game.data.iceDone)){
-                game.data.dialog = "OH NO! PLEASE HELP THE PENGUIN!";
+                game.data.dialog = "OH NO! PLEASE HELP THE PENGUINS!";
             }
             if(name == "antarlevel1b" || name == "antarlevel2b"){
                 game.data.dialog = "THANK YOU! HERE ARE  SOME POINTS\n"+ 
@@ -169,7 +170,7 @@ game.HUD.Dialog = me.Renderable.extend({
                                     "AND THEN COME BACK TO ME. YOU CAN FIND\n"+
                                     "ANTARCTICA TOWN IF YOU TRAVEL SOUTH FROM\n"+
                                     "HERE. OH OH! ANOTHER THING! ONCE YOU\n"+
-                                    "PASSED A MAP, YOU CANNOT COME BACK TO\n"+
+                                    "PASS A MAP, YOU CANNOT COME BACK TO\n"+
                                     "IT, SO TRY TO COLLECT AS MANY POINTS AS";
                                     
             }
@@ -194,7 +195,7 @@ game.HUD.Dialog = me.Renderable.extend({
                                     "LAST TASK IS TO MEET MIMI AT GOBI TOWN.\n"+ 
                                     "SHE WILL TELL YOU HOW YOU  CAN USE THOSE\n"+ 
                                     "BLADES. ALSO, REMEMBER TO EXPLORE THE\n"+ 
-                                    "AREAS AND TALK TO  NEW NPC, YOU MIGHT\n"+ 
+                                    "AREAS AND TALK TO NEW NPC, YOU MIGHT\n"+ 
                                     "BE ABLE TO FIND MORE TURBINE BLADES.\n"+
                                     "COME BACK HERE AFTER YOU ARE DONE";
             }
@@ -202,7 +203,7 @@ game.HUD.Dialog = me.Renderable.extend({
         }
         if(game.data.talking_to_alice2){
             if(name == "headquarter"){
-                game.data.dialog = "YOU CAN ALSO, YOU CAN ONLY COME BACK TO\n"+
+                game.data.dialog = "YOU CAN. ALSO, YOU CAN ONLY COME BACK TO\n"+
                                     "TIBBERS TOWN ONCE YOU ARE DONE WITH THE\n"+
                                     "GIVEN TASK.";
             }
@@ -240,42 +241,37 @@ game.HUD.Dialog = me.Renderable.extend({
         }
 
         if(game.data.talking_to_gumi){
-        	game.data.dialog = "YOU HAVE THEM TURBINE BLADES? OKAY, YOU CAN\n"+
-                                "JUST SIMPLE TOUCH THE BROKEN ONES TO FIX IT\n";
+        	game.data.dialog = "YOU HAVE THE TURBINE BLADES? OKAY, YOU CAN\n"+
+                                "JUST SIMPLY TOUCH THE BROKEN ONES TO FIX IT\n";
         }
 
         if(game.data.talking_to_reki){
             if(name == "city"){
                 game.data.dialog = "URG! THE CORPORATION IS PISSING ME OFF,\n"+
                                     "WHAT'S WITH ALL THE POLLUTION AND\n"+
-                                    "TRASHES. I'M SO GOING TO TAKE YOU DOWN!\n"+
+                                    "TRASH. I'M SO GOING TO TAKE YOU DOWN!\n"+
                                     "OH HEY, ARE YOU THE ONE THAT ALICE SENT?\n"+
                                     "OKAY, I NEED YOU TO HELP ME TAKE DOWN\n"+
                                     "THE CORPORATION. PLEASE HEAD NORTH FROM\n"+
                                     "HERE, I'LL MEET YOU. REMEMBER TO PICK UP\n"+
-                                    "THEM TRASH";
+                                    "THE TRASH";
             }
-            if(name == "citypuzzlebegin"){
+            if(game == "citypuzzlebegin"){
                 game.data.dialog = "ARE YOU READY? OKAY, YOU HAVE TO CAREFULLY\n"+
-                                    "OBSERVE THE MOVEMENTSOF THE ENEMIES AND\n"+
+                                    "OBSERVE THE MOVEMENTS OF THE ENEMIES AND\n"+
                                     "THE LASER PATTERNS. THEN, TRY TO PASS THEM\n"+
                                     "WITHOUT GETTING HIT. YOU WILL LOSE HP IF\n"+
-                                    "YOU TOUCH THE LASER OF THE ENEMIES. THE\n"+
+                                    "YOU TOUCH THE LASER OR THE ENEMIES. THE\n"+
                                     "MORE HP YOU HAVE AT THE END, THE MORE\n"+
-                                    "POINTS I'M GOING TO GIVE YOU. LET'S GO";
+                                    "POINTS I'M GOING TO GIVE YOU. LET'S GO!";
             }
-            if(name == "citypuzzleend"){
+            if(game == "citypuzzleend"){
                 game.data.dialog = "THANK YOU FOR HELPING ME. DID I TELL YOU\n"+
                                     "MY NAME? OOPS HAHA, IT'S REKI. NICE TO\n"+
                                     "MEET YOU. I'LL GIVE YOU POINTS BASED ON\n"+
-                                    "YOUR HP AND ALSO HERE'S A TURBIN BLADE\n"+
+                                    "YOUR HP AND ALSO HERE'S A TURBINE BLADE\n"+
                                     "TAKE GOOD CARE OF IT! BYE!";
             }
-        }
-
-        if(game.data.talking_to_gumi_noexit){
-        	game.data.dialog = "THERE IS ANOTHER TURBINE BLADE LYING AROUND\n\
-                                SOMEWHERE HERE...";
         }
         if (game.data.notTalking) {
             game.data.dialog = "";
