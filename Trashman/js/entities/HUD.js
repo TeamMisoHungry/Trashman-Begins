@@ -145,7 +145,7 @@ game.HUD.Dialog = me.Renderable.extend({
             }
             if ( name == "headquarterc"){
                 game.data.dialog = "CONGRATULATION AXEL, YOU COMPLETED ALL\n"+
-                                "THE TASKS";g
+                                "THE TASKS";
 
             }
         }

@@ -11,7 +11,7 @@
  <objectgroup name="Entities">
   <object id="2" name="me.LevelEntity" x="233" y="1">
    <properties>
-    <property name="duration" value="1"/>
+    <property name="duration" value="250"/>
     <property name="fade" value="#000000"/>
     <property name="to" value="antarlevel2a"/>
    </properties>
@@ -19,7 +19,7 @@
   </object>
   <object id="3" name="me.LevelEntity" x="329" y="194" width="140" height="44">
    <properties>
-    <property name="duration" value="1"/>
+    <property name="duration" value="250"/>
     <property name="fade" value="#000000"/>
     <property name="to" value="antarlevel2a"/>
    </properties>
@@ -32,77 +32,77 @@
   </object>
   <object id="9" name="me.LevelEntity" x="424" y="340" width="112" height="60">
    <properties>
-    <property name="duration" value="1"/>
+    <property name="duration" value="250"/>
     <property name="fade" value="#000000"/>
     <property name="to" value="antarlevel2a"/>
    </properties>
   </object>
   <object id="11" name="me.LevelEntity" x="330" y="531" width="140" height="28">
    <properties>
-    <property name="duration" value="1"/>
+    <property name="duration" value="250"/>
     <property name="fade" value="#000000"/>
     <property name="to" value="antarlevel2a"/>
    </properties>
   </object>
   <object id="12" name="me.LevelEntity" x="279" y="645" width="96" height="28">
    <properties>
-    <property name="duration" value="1"/>
+    <property name="duration" value="250"/>
     <property name="fade" value="#000000"/>
     <property name="to" value="antarlevel2a"/>
    </properties>
   </object>
   <object id="13" name="me.LevelEntity" x="262" y="773" width="32" height="28">
    <properties>
-    <property name="duration" value="1"/>
+    <property name="duration" value="250"/>
     <property name="fade" value="#000000"/>
     <property name="to" value="antarlevel2a"/>
    </properties>
   </object>
   <object id="14" name="me.LevelEntity" x="359" y="774" width="32" height="28">
    <properties>
-    <property name="duration" value="1"/>
+    <property name="duration" value="250"/>
     <property name="fade" value="#000000"/>
     <property name="to" value="antarlevel2a"/>
    </properties>
   </object>
   <object id="15" name="me.LevelEntity" x="455" y="774" width="32" height="28">
    <properties>
-    <property name="duration" value="1"/>
+    <property name="duration" value="250"/>
     <property name="fade" value="#000000"/>
     <property name="to" value="antarlevel2a"/>
    </properties>
   </object>
   <object id="16" name="me.LevelEntity" x="343" y="883" width="112" height="80">
    <properties>
-    <property name="duration" value="1"/>
+    <property name="duration" value="250"/>
     <property name="fade" value="#000000"/>
     <property name="to" value="antarlevel2a"/>
    </properties>
   </object>
   <object id="18" name="me.LevelEntity" x="274" y="913" width="11" height="14">
    <properties>
-    <property name="duration" value="1"/>
+    <property name="duration" value="250"/>
     <property name="fade" value="#000000"/>
     <property name="to" value="antarlevel2a"/>
    </properties>
   </object>
   <object id="19" name="me.LevelEntity" x="513" y="466" width="11" height="14">
    <properties>
-    <property name="duration" value="1"/>
+    <property name="duration" value="250"/>
     <property name="fade" value="#000000"/>
     <property name="to" value="antarlevel2a"/>
    </properties>
   </object>
   <object id="20" name="me.LevelEntity" x="386" y="130" width="11" height="14">
    <properties>
-    <property name="duration" value="1"/>
+    <property name="duration" value="250"/>
     <property name="fade" value="#000000"/>
     <property name="to" value="antarlevel2a"/>
    </properties>
   </object>
   <object id="21" name="me.LevelEntity" x="309" y="449" width="20" height="14">
    <properties>
-    <property name="duration" value="1"/>
+    <property name="duration" value="250"/>
     <property name="fade" value="#000000"/>
     <property name="to" value="antarlevel2a"/>
    </properties>
