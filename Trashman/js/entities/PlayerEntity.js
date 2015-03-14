@@ -6,7 +6,7 @@ game.PlayerEntity = me.Entity.extend({
      * constructor
      */
     init:function (x, y, settings) {
-    	console.log(game.time.overallTime);
+    	
         // call the constructor
     	this._super(me.Entity, 'init', [x, y , settings]);
 
@@ -55,7 +55,7 @@ game.PlayerEntity = me.Entity.extend({
  		
  		var track = me.audio.getCurrentTrack();
  		var name = me.game.currentLevel.name;
- 		console.log(name);
+ 
  		if(name == "headquarter" || name == "headquartera" || name == "headquarterb" || name == "headquarterc"||name == "tocity1" || name == "todesert1" || name == "todesert2"
  				|| name == "toantar1"){
  			if(track == "hq") return;
