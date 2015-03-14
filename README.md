@@ -3,6 +3,11 @@
 
 
 
+
+
+
+PLEASE PLAY THIS ON CHROME. OTHERS ARE NOT COMPATIBLE WITH THIS GAME. ( IF YOU HAVE A TOUCHSCREEN LAPTOP, PLEASE USE TOUCHSCREEN FOR ALL THE BUTTONS)
+
 This game will be mostly adventure and education genres. Adventure from exploring and educational from talking to NPC’s who give the player actual data collected that has been collected by climate scientist for years. Another theme that is probably a little subtle is the sense of urgency. By including the time mechanic the player will get a sense that he or she has to hurry to achieve the best score. A problem in combating climate change right now is that we are running out of time. If we do not make rapid, progressive change, then time will run out. Mankind is getting closer and closer to the point of no return and by adding the time element to the game, the player will feel that pressure as well. The target audience is for people who know little about climate change but would like to know more. There will be facts that hopefully the player will find interesting and look more into how they can alter their behaviour and help make change in the real world.
 
 
