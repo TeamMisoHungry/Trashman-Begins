@@ -228,11 +228,12 @@ game.HUD.Dialog = me.Renderable.extend({
         }
 
         if(game.data.talking_to_mimi){
-            game.data.dialog = "WELCOME TO GOBI TOWN! I HAVE BEEN WAITING\n"+
-                                "FOR YOU. YOUR LAST TASK IS TO FIX THE\n"+
-                                "TURBINES WITH ALL THE BLADES YOU'VE OBTAINED.\n"+
-                                "REMEMBER TO EXPLORE THE MAP,\n"+
-                                "YOU MIGHT BE ABLE TO FIND SOME MORE.";
+            game.data.dialog =  "WELCOME TO GOBI TOWN! I HAVE BEEN \n"+
+                                "WAITING FOR YOU. YOUR LAST TASK IS TO \n"+
+                                "FIX THE TURBINES WITH ALL THE BLADES \n"+
+                                "YOU'VE OBTAINED. REMEMBER TO EXPLORE THE \n"+
+                                "MAP, YOU MIGHT BE ABLE TO FIND SOME \n"+
+                                "MORE.";
         }
 
         if (game.data.fixing_turbine) {
@@ -240,8 +241,9 @@ game.HUD.Dialog = me.Renderable.extend({
         }
 
         if(game.data.talking_to_gumi){
-        	game.data.dialog = "YOU HAVE THE TURBINE BLADES? OKAY, YOU CAN\n"+
-                                "JUST SIMPLY TOUCH THE BROKEN ONES TO FIX IT\n";
+        	game.data.dialog =  "YOU HAVE THE TURBINE BLADES? OKAY, YOU \n"+
+                                "CAN JUST SIMPLY TOUCH THE BROKEN ONES \n"+
+                                "TO FIX THEM";
         }
 
         if(game.data.talking_to_reki){
@@ -255,12 +257,13 @@ game.HUD.Dialog = me.Renderable.extend({
                                     "HERE, I'LL MEET YOU. ";
             }
             if(name == "citypuzzlebegin"){
-                game.data.dialog = "ARE YOU READY? OKAY, YOU HAVE TO CAREFULLY\n"+
-                                    "OBSERVE THE MOVEMENTS OF THE ENEMIES AND\n"+
-                                    "THE LASER PATTERNS. THEN, TRY TO PASS THEM\n"+
-                                    "WITHOUT GETTING HURT. THE MORE HP YOU \n"+
-                                    "HAVE AT THE END, THE MORE POINTS I'M\n"+
-                                    "GOING TO GIVE YOU. LET'S GO!";
+                game.data.dialog =  "ARE YOU READY? OKAY, YOU HAVE TO\n"+
+                                    "CAREFULLY OBSERVE THE MOVEMENTS OF \n"+
+                                    "THE ENEMIES AND THE LASER PATTERNS. THEN, \n"+
+                                    "TRY TO PASS THEM WITHOUT GETTING HURT. \n"+
+                                    "THE MORE HP YOU HAVE AT THE END, THE \n"+
+                                    "MORE POINTS I'M GOING TO GIVE YOU.\n"+
+                                    "LET'S GO!";
             }
             if(name == "citypuzzleend"){
                 game.data.dialog = "THANK YOU FOR HELPING ME. DID I TELL YOU\n"+

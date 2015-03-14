@@ -4,7 +4,7 @@ game.PlayScreen = me.ScreenObject.extend({
      */
     onResetEvent: function() {
 		//load level
-		me.levelDirector.loadLevel("headquarter");
+		me.levelDirector.loadLevel("turbinemap");
 
         // reset the score
         game.data.score = 0;
