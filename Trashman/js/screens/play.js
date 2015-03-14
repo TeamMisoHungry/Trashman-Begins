@@ -4,7 +4,7 @@ game.PlayScreen = me.ScreenObject.extend({
      */
     onResetEvent: function() {
 		//load level
-		me.levelDirector.loadLevel("headquarter");
+		me.levelDirector.loadLevel("citypuzzleEnd");
 
         // reset the score
         game.data.score = 0;
@@ -14,7 +14,6 @@ game.PlayScreen = me.ScreenObject.extend({
         this.HUD = new game.HUD.Container();
         me.game.world.addChild(this.HUD);
         
-        console.log(me.levelDirector.getCurrentLevelId());
     },
 
     /**
