@@ -130,8 +130,7 @@ game.PlayerEntity = me.Entity.extend({
 				me.audio.play("hit");
 			}
 		}
-		
-        
+
 		/************ BELOW are for ice puzzle levels *********/
 		//console.log(me.game.currentLevel.name);
 		//console.log(iceDone);
@@ -359,3 +358,5 @@ game.quitButton = me.GUI_Object.extend({
 		me.state.change(me.state.MENU);
 	},
 });
+
+

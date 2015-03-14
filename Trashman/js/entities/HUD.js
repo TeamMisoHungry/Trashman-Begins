@@ -141,14 +141,14 @@ game.HUD.Dialog = me.Renderable.extend({
                                     "FOR YOU. THERE ARE MORE PENGUINS \n"+ 
                                     "AHEAD, LET'S HURRY!";
             }
-            if(name == "antarlevelBegin" || name == "antarlevel2a" || name == "antarlevel3a"){
+            if(name == "antarlevelbegin" || name == "antarlevel2a" || name == "antarlevel3a"){
                 game.data.dialog = "LET'S HURRY! REMEMBER THAT SOME\n"+ 
                                     "PENGUINS ARE IMPOSSIBLE TO SAVE, SO\n"+ 
                                     "JUST TRY TO SAVE AS MUCH AS YOU CAN.\n"+ 
                                     "I'LL GIVE YOU POINTS FOR EVERY PENGUIN\n"+
                                     "YOU SAVE.";
             }
-            if(name == "antarlevelEnd"){
+            if(name == "antarlevelend"){
                 game.data.dialog = "PHEW, WE SAVED MOST OF THEM. THANK YOU\n"+ 
                                     "AGAIN. AH! I ALMOST FORGOT TO INTRODUCE\n"+ 
                                     "MYSELF. I'M MIKU AND...YOU'RE AXEL RIGHT?\n"+ 
@@ -164,7 +164,7 @@ game.HUD.Dialog = me.Renderable.extend({
                 game.data.dialog = "HELLO AXEL! WELCOME TO TIBBERS TOWN!\n"+
                                     "I'M ALICE AND I'LL BE YOUR TASK MANAGER.\n"+
                                     "AREN'T YOU GLAD TO HAVE SUCH A CUTE\n"+
-                                    "MANAGER? HEE HEE. WEL, HERE'S YOUR FIRST\n"+
+                                    "MANAGER? HEE HEE. WELL, HERE'S YOUR FIRST\n"+
                                     "TASK: GO HELP MIKU AT ANTARCTICA TOWN\n"+
                                     "AND THEN COME BACK TO ME. YOU CAN FIND\n"+
                                     "ANTARCTICA TOWN IF YOU TRAVEL SOUTH FROM\n"+
@@ -216,18 +216,14 @@ game.HUD.Dialog = me.Renderable.extend({
         }
 
         if(game.data.talking_to_ariel){
-            if(name == "toDesert2"){
-                game.data.dialog = "HI THERE, I FOUND THIS TURBINE BLADE\n"+
-                                    "BY THE RIVER. HERE, YOU CAN TAKE IT.";
-            }
+            game.data.dialog = "HI THERE, I FOUND THIS TURBINE BLADE\n"+
+                                "BY THE RIVER. HERE, YOU CAN TAKE IT.";
         }
 
         if(game.data.talking_to_sakura){
-            if(name = "headquarter"){
-                game.data.dialog = "OH! HELLO THERE HANDSOME YOUNG MAN.\n"+
-                                    "I FOUND THIS TURBINE BLADE THE OTHER\n"+
-                                    "DAY. I'LL GIVE IT TO YOU!";
-            }
+            game.data.dialog = "OH! HELLO THERE HANDSOME YOUNG MAN.\n"+
+                                "I FOUND THIS TURBINE BLADE THE OTHER\n"+
+                                "DAY. I'LL GIVE IT TO YOU!";
         }
 
         if(game.data.talking_to_mimi){
@@ -259,7 +255,7 @@ game.HUD.Dialog = me.Renderable.extend({
                                     "HERE, I'LL MEET YOU. REMEMBER TO PICK UP\n"+
                                     "THEM TRASH";
             }
-            if(game == "cityPuzzleBegin"){
+            if(name == "citypuzzlebegin"){
                 game.data.dialog = "ARE YOU READY? OKAY, YOU HAVE TO CAREFULLY\n"+
                                     "OBSERVE THE MOVEMENTSOF THE ENEMIES AND\n"+
                                     "THE LASER PATTERNS. THEN, TRY TO PASS THEM\n"+
@@ -268,7 +264,7 @@ game.HUD.Dialog = me.Renderable.extend({
                                     "MORE HP YOU HAVE AT THE END, THE MORE\n"+
                                     "POINTS I'M GOING TO GIVE YOU. LET'S GO";
             }
-            if(game == "cityPuzzleEnd"){
+            if(name == "citypuzzleend"){
                 game.data.dialog = "THANK YOU FOR HELPING ME. DID I TELL YOU\n"+
                                     "MY NAME? OOPS HAHA, IT'S REKI. NICE TO\n"+
                                     "MEET YOU. I'LL GIVE YOU POINTS BASED ON\n"+
