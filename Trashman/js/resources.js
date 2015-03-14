@@ -63,6 +63,7 @@ game.resources = [
 	{name: "Mimitalk", type: "image", src: "data/img/sprites/dialogueboxes/mimiDialogueBox.png"},
 	{name: "Gumitalk", type: "image", src: "data/img/sprites/dialogueboxes/gumiDialogueBox.png"},
 	{name: "Rekitalk", type: "image", src: "data/img/sprites/dialogueboxes/rekiDialogueBox.png"},
+	{name: "Turbinetalk", type: "image", src: "data/img/sprites/dialogueboxes/turbineDialogueBox.png"},
 
 	//font
 
