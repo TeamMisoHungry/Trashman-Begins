@@ -66,8 +66,9 @@ game.resources = [
 	{name: "Turbinetalk", type: "image", src: "data/img/sprites/dialogueboxes/turbineDialogueBox.png"},
 
 	//font
-    {name: "32x32_font", type: "image", src: "data/img/font/32x32_font.png"},
-    {name: "32x32Size8", type: "image", src: "data/img/font/32x32Size8.png"},	
+
+    {name: "atascii", type: "image", src: "data/img/font/atascii_12pxb.png"},	
+    {name: "atascii_small", type: "image", src: "data/img/font/atascii_10px.png"},
 
 	/*
 	 * Screens
