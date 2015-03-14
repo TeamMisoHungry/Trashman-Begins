@@ -25,17 +25,7 @@ game.HUD.Container = me.Container.extend({
         // add our child score object at the top left corner
         this.addChild(new game.HUD.ScoreItem(630, 10));
         this.addChild(new game.HUD.TimeItem(10, 10));
-<<<<<<< HEAD
-    	var dia = this.addChild(new game.HUD.Dialog(140, 350));
-    }
-    update : function(){
-    	if(game.data.talking_to_alice){
-    		this.removeChild(dia);
-    		var diaz = this.addChild(new game.HUD.Dialog(140, 350));
-    	}
-=======
-        this.addChild(new game.HUD.Dialog(20, 344));
->>>>>>> 26292259d2b25dfd58ff1e41a41acaa8af8427d4
+    	this.addChild(new game.HUD.Dialog(140, 350));
     }
 });
 
