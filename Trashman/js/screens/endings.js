@@ -1,28 +1,36 @@
 game.EndingScreen = me.ScreenObject.extend({
 	onResetEvent: function(){
-		if(game.time.overallTime <= 400 && game.data.score >= 2000){
+		if(game.time.overallTime <= 400 && game.data.score >= 5000){
 			me.game.world.addChild(new me.ImageLayer("good", 640, 480, "goodImage", 5000));
-			me.game.world.addChild(new game.ending("okText", 410, 650, "goodText", 5001));
-		}else if((game.time.overallTime > 400 && game.time.overallTime <= 600) && game.data.score >= 3000){
+			me.game.world.addChild(new game.ending("goodText", 410, 650, "goodText", 5001));
+		}else if((game.time.overallTime > 400 && game.time.overallTime <= 600) && game.data.score >= 7000){
 			me.game.world.addChild(new me.ImageLayer("good", 640, 480, "goodImage", 5000));
-			me.game.world.addChild(new game.ending("okText", 410, 650, "goodText", 5001));
-		}else if((game.time.overallTime > 400 && game.time.overallTime <= 600) && (game.data.score < 3000)){
+			me.game.world.addChild(new game.ending("goodText", 410, 650, "goodText", 5001));
+		}else if((game.time.overallTime > 400 && game.time.overallTime <= 600) && (game.data.score < 7000 && game.data.score > 5000)){
 			me.game.world.addChild(new me.ImageLayer("ok", 640, 480, "okImage", 5000));
 			me.game.world.addChild(new game.ending("okText", 410, 650, "okText", 5001));
-		}else if(game.time.overallTime <= 400  && game.data.score < 2000){
+		}else if(game.time.overallTime <= 400  && game.data.score < 5000){
 			me.game.world.addChild(new me.ImageLayer("ok", 640, 480, "okImage", 5000));
 			me.game.world.addChild(new game.ending("okText", 410, 650, "okText", 5001));
-		}else if(game.time.overallTime > 600 && game.data.score < 2000){
+		}else if(game.time.overallTime > 600 && game.data.score < 5000){
 			me.game.world.addChild(new me.ImageLayer("bad", 640, 480, "badImage", 5000));
-			me.game.world.addChild(new game.ending("okText", 410, 650, "badText", 5001));
+			me.game.world.addChild(new game.ending("badText", 410, 650, "badText", 5001));
 		}else if(game.time.overallTime > 600){
 			me.game.world.addChild(new me.ImageLayer("bad", 640, 480, "badImage", 5000));
-			me.game.world.addChild(new game.ending("okText", 410, 650, "badText", 5001));
+			me.game.world.addChild(new game.ending("badText", 410, 650, "badText", 5001));
+		}else if(game.time.overallTime > 600 && game.data.score > 10000){
+			me.game.world.addChild(new me.ImageLayer("good", 640, 480, "goodImage", 5000));
+			me.game.world.addChild(new game.ending("goodText", 410, 650, "goodText", 5001));
 		}else{
 			me.game.world.addChild(new me.ImageLayer("ok", 640, 480, "okImage", 5000));
 			me.game.world.addChild(new game.ending("okText", 410, 650, "okText", 5001));
 		}
 		
+		game.time.overallTime = 0;
+		me.input.bindKey(me.input.KEY.W);
+ 		me.input.bindKey(me.input.KEY.A);
+ 		me.input.bindKey(me.input.KEY.S);
+ 		me.input.bindKey(me.input.KEY.D);
 		me.input.bindKey(me.input.KEY.L, "enter", true);
     	this.handler = me.event.subscribe(me.event.KEYDOWN, function (action, keyCode, edge) {
       		if (action === "enter") {
