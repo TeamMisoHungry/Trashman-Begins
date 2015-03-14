@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="left-down" width="60" height="40" tilewidth="16" tileheight="16" nextobjectid="80">
+<map version="1.0" orientation="orthogonal" renderorder="left-down" width="60" height="40" tilewidth="16" tileheight="16" nextobjectid="89">
  <tileset firstgid="1" name="headquarter" tilewidth="16" tileheight="16">
   <image source="headquarter.png" trans="ff00ff" width="960" height="640"/>
  </tileset>
@@ -31,6 +31,11 @@
     <property name="to" value="toAntar1"/>
    </properties>
   </object>
+  <object id="82" name="AliceEntity" x="460" y="309" width="32" height="32">
+   <properties>
+    <property name="image" value="Alice"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup name="collision">
   <object id="3" x="4" y="396">
@@ -55,7 +60,6 @@
   <object id="42" x="596" y="492">
    <polyline points="-2,-19 5,-15 0,-39 -5,-40 -1,-15"/>
   </object>
-  <object id="43" x="240" y="368"/>
   <object id="53" x="440" y="400">
    <polyline points="0,0 38,-28 77,4 76,46 0,49 0,0"/>
   </object>
@@ -64,6 +68,10 @@
   </object>
   <object id="55" x="292" y="263">
    <polyline points="0,0 -1,6 44,5 40,5 0,5"/>
+  </object>
+  <object id="86" x="464" y="312" width="24" height="24"/>
+  <object id="88" x="240" y="356">
+   <polyline points="0,0 -12,8 12,12 0,0"/>
   </object>
  </objectgroup>
  <objectgroup name="EnemyEntities"/>
