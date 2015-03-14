@@ -136,7 +136,7 @@ game.HUD.Dialog = me.Renderable.extend({
     },
     
     update : function () {
-        var name = me.game.currentLevel.name;
+        var name = me.levelDirector.getCurrentLevelId();
         if (game.data.talking_to_miku) {
             if((name == "antarctica") && (!game.data.iceDone)){
                 game.data.dialog = "OH NO... PLEASE HELP THE PENGUINS.";
@@ -269,7 +269,7 @@ game.HUD.Dialog = me.Renderable.extend({
                                     "MORE POINTS I'M GOING TO GIVE YOU.\n"+
                                     "LET'S GO!";
             }
-            if(game == "citypuzzleend"){
+            if(name == "citypuzzleend"){
                 game.data.dialog = "THANK YOU FOR HELPING ME. DID I TELL YOU\n"+
                                     "MY NAME? OOPS HAHA, IT IS REKI. NICE TO\n"+
                                     "MEET YOU. I WILL GIVE YOU POINTS BASED ON\n"+
