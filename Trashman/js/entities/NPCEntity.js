@@ -108,28 +108,12 @@ game.GumiEntity = me.Entity.extend({
 		this.renderable.setCurrentAnimation("idle");
 		this.body.collisionType = me.collision.types.NPC_OBJECT;
 	},
-	update: function(dt) {
-		this.time++;
-		this.body.update(dt);
-		me.collision.check(this);
-		return (this._super(me.Entity, 'update', [dt]));
-	},
 	onCollision: function(response, other){
-		if(response.b.body.collisionType == me.collision.types.PLAYER_OBJECT){
-			if(me.game.currentLevel.name == "turbinemap"){
-				game.data.talking_to_gumi_noexit = true;
-			}
-			else if(me.game.currentLevel.name == "desert"){
-				game.data.talking_to_gumi = true;
-			}
-		
+			game.data.talking_to_gumi = true;
 			game.data.notTalking = false;
 			me.game.world.addChild(new game.chatbox(0, 0));
 			this.body.setCollisionMask(me.collision.types.NPC_OBJECT);
-		
 			return false;
-		}
-		return false;
 	}
 });
 
@@ -171,6 +155,9 @@ game.RekiEntity = me.Entity.extend({
 			else if(game.data.hp<30){
 				game.data.score += 100;
 			}
+		}
+		if (me.game.currentLevel.name == "citypuzzleend") {
+			game.data.blade += 1;
 		}
 		game.data.talking_to_reki = true;
 		game.data.notTalking = false;
@@ -238,6 +225,9 @@ game.chatbox = me.GUI_Object.extend({
 		else if(game.data.talking_to_reki){
 			settings.image = me.loader.getImage('Rekitalk');
 		}
+		else if(game.data.fixing_turbine){
+			settings.image = me.loader.getImage('Turbinetalk');
+		}
 		else{
 			settings.image = me.loader.getImage('TextBox');
 		}
@@ -260,7 +250,7 @@ game.chatbox = me.GUI_Object.extend({
 	 		if(game.data.talking_to_gumi_enter){
 	 			me.levelDirector.loadLevel("turbinemap");
 	 		}
-	 		game.data.talking_to_broken_turbine = false;
+	 		game.data.fixing_turbine = false;
 	 		game.data.talking_to_miku = false;
 	 		game.data.talking_to_jelly = false;
 	 		game.data.talking_to_sakura = false;

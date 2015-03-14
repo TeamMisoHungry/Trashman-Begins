@@ -254,7 +254,7 @@ game.HUD.Dialog = me.Renderable.extend({
                                     "THE CORPORATION. PLEASE HEAD NORTH FROM\n"+
                                     "HERE, I'LL MEET YOU. ";
             }
-            if(game == "citypuzzlebegin"){
+            if(name == "citypuzzlebegin"){
                 game.data.dialog = "ARE YOU READY? OKAY, YOU HAVE TO CAREFULLY\n"+
                                     "OBSERVE THE MOVEMENTS OF THE ENEMIES AND\n"+
                                     "THE LASER PATTERNS. THEN, TRY TO PASS THEM\n"+
@@ -262,7 +262,7 @@ game.HUD.Dialog = me.Renderable.extend({
                                     "HAVE AT THE END, THE MORE POINTS I'M\n"+
                                     "GOING TO GIVE YOU. LET'S GO!";
             }
-            if(game == "citypuzzleend"){
+            if(name == "citypuzzleend"){
                 game.data.dialog = "THANK YOU FOR HELPING ME. DID I TELL YOU\n"+
                                     "MY NAME? OOPS HAHA, IT'S REKI. NICE TO\n"+
                                     "MEET YOU. I'LL GIVE YOU POINTS BASED ON\n"+
