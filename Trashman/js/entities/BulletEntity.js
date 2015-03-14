@@ -17,6 +17,7 @@ game.BulletEntity = me.Entity.extend({
         this.left1 = direction[2];
         this.right1 = direction[3];
         this.timer = 0;
+        this.body.setCollisionMask(me.collision.types.WORLD_SHAPE | me.collision.types.ENEMY_OBJECT);
     },
   
             
@@ -57,6 +58,8 @@ game.BulletEntity = me.Entity.extend({
      * (called when colliding with other objects)
      */
     onCollision : function (response, other) { 
+    	console.log(response.b.body.collisionType);
+    	console.log(me.collision.types.WORLD_SHAPE);
     	if (response.b.body.collisionType === me.collision.types.WORLD_SHAPE){
  			me.game.world.removeChild(this);
  			return false;

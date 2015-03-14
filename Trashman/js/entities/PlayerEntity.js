@@ -6,7 +6,7 @@ game.PlayerEntity = me.Entity.extend({
      * constructor
      */
     init:function (x, y, settings) {
-    	
+    	console.log(game.time.overallTime);
         // call the constructor
     	this._super(me.Entity, 'init', [x, y , settings]);
 
@@ -282,8 +282,6 @@ game.PlayerEntity = me.Entity.extend({
 	        			this.renderable.flicker(750);
 	        			game.data.hp -= 10;
 	        		}
-	        	}else if(other.name == "cityboss"){
-	        		
 	        	}
 		      	return false;
 		      	break;
